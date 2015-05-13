@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
 	res.render('index', { 
 		title: 'CafeJefe', 
-		mainLogo: '../public/images/cafeJefe.jpg'
+		mainLogo: './images/cafeJefe.jpg'
 		    });
 });
 
