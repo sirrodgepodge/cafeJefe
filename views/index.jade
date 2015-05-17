@@ -2,5 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Holla at #{title}
-  img(src= mainLogo )
+  div(class="purchase_toggle" id="single") Once
+  div(class="purchase_toggle selected" id="subscription") Subscription
+  form(action="/" method="post")
+    input(type="hidden" id="purch_type" name="purch" value="subscription")
+    input(type="submit" name="1-bag-" value="Subscribe")
+    input(type="submit" name="2-bag-" value="Subscribe")
+    input(type="submit" name="3-bag-" value="Subscribe")
+    input(type="submit" name="4-bag-" value="Subscribe")  
+  img(src= mainLogo)

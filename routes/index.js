@@ -9,4 +9,17 @@ router.get('/', function(req, res, next) {
 		    });
 });
 
+router.post('/', function(req, res, next){
+	var url= "https://cafejefe-test.chargebee.com/hosted_pages/plans/";
+	var purch=req.body.purch;
+	delete req.body.purch;
+	for (prop in req.body){
+	    url+=prop;
+	    console.log(url);
+	}
+	url+=purch;
+	console.log(url);
+	res.redirect(301, url);
+});
+
 module.exports = router;

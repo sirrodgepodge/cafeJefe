@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+.purchase_toggle {
+  border-radius: 4px;
+  border: 2px;
+}
+
+.selected {
+  background-color: #00B7FF;
+}
