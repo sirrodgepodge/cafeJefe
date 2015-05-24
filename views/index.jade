@@ -5,10 +5,14 @@ block content
   div(class="jumbotron")
     div(class="nav row")
       ul(class="nav-pills")
+        .col-md-2
         li(class="purchase_toggle col-md-4" id="purchase") One Time Purchase
         li(class="purchase_toggle col-md-4 active" id="subscribe") Monthly Subscription, Save 10%!
+        .col-md-2
     form(action="/" method="post")
-      input(type="submit" class="buy_btn" name="1-bag-" value="Subscribe")
-      input(type="submit" class="buy_btn" name="2-bag-" value="Subscribe")
-      input(type="submit" class="buy_btn" name="3-bag-" value="Subscribe")
-      input(type="submit" class="buy_btn" name="4-bag-" value="Subscribe")  
+      .col-md-2
+      input(type="submit" class="buy_btn col-md-2" name="1-bag-" value="Subscribe")
+      input(type="submit" class="buy_btn col-md-2" name="2-bag-" value="Subscribe")
+      input(type="submit" class="buy_btn col-md-2" name="3-bag-" value="Subscribe")
+      input(type="submit" class="buy_btn col-md-2" name="4-bag-" value="Subscribe")  
+      .col-md-2
