@@ -2,12 +2,13 @@ extends layout
 
 block content
   h1= title
-  div(class="purchase_toggle" id="single") Once
-  div(class="purchase_toggle selected" id="subscription") Subscription, Save 10%!
-  form(action="/" method="post")
-    input(type="hidden" id="purch_type" name="purch" value="subscription")
-    input(type="submit" name="1-bag-" value="Subscribe 1")
-    input(type="submit" name="2-bag-" value="Subscribe 2")
-    input(type="submit" name="3-bag-" value="Subscribe 3")
-    input(type="submit" name="4-bag-" value="Subscribe 4")  
-  img(src= mainLogo)
+  div(class="jumbotron")
+    div(class="nav row")
+      ul(class="nav-pills")
+        li(class="purchase_toggle col-md-4" id="purchase") One Time Purchase
+        li(class="purchase_toggle col-md-4 active" id="subscribe") Monthly Subscription, Save 10%!
+    form(action="/" method="post")
+      input(type="submit" class="buy_btn" name="1-bag-" value="Subscribe")
+      input(type="submit" class="buy_btn" name="2-bag-" value="Subscribe")
+      input(type="submit" class="buy_btn" name="3-bag-" value="Subscribe")
+      input(type="submit" class="buy_btn" name="4-bag-" value="Subscribe")  

@@ -4,21 +4,17 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.render('index', { 
-		title: 'CafeJefe', 
-		mainLogo: './images/cafeJefe.jpg'
+		title: 'CafeJefe'
 		    });
 });
 
 router.post('/', function(req, res, next){
 	var url= "https://cafejefe-test.chargebee.com/hosted_pages/plans/";
-	var purch=req.body.purch;
-	delete req.body.purch;
 	for (prop in req.body){
 	    url+=prop;
+	    url+=req.body[prop].toLowerCase();
 	    console.log(url);
 	}
-	url+=purch;
-	console.log(url);
 	res.redirect(301, url);
 });
 

@@ -1,17 +1,37 @@
 body {
-  padding: 50px;
+  padding: 0px;
+  margin: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+.jumbotron {
+  background: url('images/cafeJefe.jpg') 0 /cover;
 }
 
 .purchase_toggle {
+  position: relative;
   border-radius: 4px;
   border: 2px;
+  color: brown;
+  text-align: center;
+  float: none;
 }
 
-.selected {
-  background-color: #00B7FF;
+.active {
+  color: white;
+  background-color: brown;
+  text-align: center;
+}
+
+ul .nav-pills {
+   float: none;
+   margin: 0 auto;
+}
+
+div,li,ul {
+  padding-left: 0;
+}
+
+li {
+  list-style-type: none;
 }

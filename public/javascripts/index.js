@@ -1,12 +1,17 @@
 var main = function() {
+    //create static jQuery selector vars
     var $purchase_toggle= $('.purchase_toggle');
+    var $buy_btn= $('.buy_btn');
+
     $purchase_toggle.click(function(){
-	    if(!$(this).hasClass('selected')){
+	    if(!$(this).hasClass('active')){
 		$purchase_toggle.each(function() {
-			$(this).toggleClass('selected');
-		    })
-		    var purch_type_val = $(this).attr('id');
-		$('#purch_type').attr('value',purch_type_val);
+			$(this).toggleClass('active');
+		    });
+		var purch_type_val = $(this).attr('id');
+		$buy_btn.each(function(){
+			$(this).attr('value',purch_type_val.slice(0,1).toUpperCase()+purch_type_val.slice(1));
+		    });
 	    }
 	});
 };
