@@ -15,6 +15,7 @@ body {
   color: brown;
   text-align: center;
   float: none;
+  font-size: 1.4em;
 }
 
 .active {
@@ -34,4 +35,14 @@ div,li,ul {
 
 li {
   list-style-type: none;
+}
+
+.labels {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.sublabels {
+  padding-top: 0;
+  margin-top: 0;
 }

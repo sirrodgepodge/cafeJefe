@@ -6,13 +6,27 @@ block content
     div(class="nav row")
       ul(class="nav-pills")
         .col-md-2
-        li(class="purchase_toggle col-md-4" id="purchase") One Time Purchase
-        li(class="purchase_toggle col-md-4 active" id="subscribe") Monthly Subscription, Save 10%!
+        li(class="purchase_toggle col-4" id="purchase") One Time Purchase
+        li(class="purchase_toggle col-4 active" id="subscribe") Monthly Subscription, Save 10%!
         .col-md-2
-    form(action="/" method="post")
+    div(class="row labels")
       .col-md-2
-      input(type="submit" class="buy_btn col-md-2" name="1-bag-" value="Subscribe")
-      input(type="submit" class="buy_btn col-md-2" name="2-bag-" value="Subscribe")
-      input(type="submit" class="buy_btn col-md-2" name="3-bag-" value="Subscribe")
-      input(type="submit" class="buy_btn col-md-2" name="4-bag-" value="Subscribe")  
+      h2(class="col-2") 1 bag
+      h2(class="col-2") 2 bags
+      h2(class="col-2") 3 bags
+      h2(class="col-2") 4 bags
+      .col-md-2
+    div(class="row labels sublabels")
+      .col-md-2
+      h5(class="col-2") 12oz ~ 1/2 cup/day
+      h5(class="col-2") 24 oz ~ 1 cup/day
+      h5(class="col-2") 36 oz ~ 1.5 cups/day
+      h5(class="col-2") 48 oz ~ 2 cups/day
+      .col-md-2
+    form(action="/" method="post" class="row")
+      .col-md-2
+      input(type="submit" class="buy_btn col-2" name="1-bag-" value="Subscribe")
+      input(type="submit" class="buy_btn col-2" name="2-bag-" value="Subscribe")
+      input(type="submit" class="buy_btn col-2" name="3-bag-" value="Subscribe")
+      input(type="submit" class="buy_btn col-2" name="4-bag-" value="Subscribe")  
       .col-md-2
