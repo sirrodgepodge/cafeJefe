@@ -1,6 +1,6 @@
 body {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -42,7 +42,7 @@ li {
   margin-bottom: 0;
 }
 
-.sublabels {
-  padding-top: 0;
-  margin-top: 0;
+.sublabels h1, h2, h5, h6 {
+  padding: 0;
+  margin: 0;
 }
