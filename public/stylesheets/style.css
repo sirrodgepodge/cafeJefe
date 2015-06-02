@@ -4,24 +4,38 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-.jumbotron {
-  background: url('images/cafeJefe.jpg') 0 /cover;
+/*.jumbotron {
+  background: url('../images/cafeJefe.jpg') 0 /cover;
+}*/
+
+.title {
+  margin-left: 0;
+  background-color: black;
+}
+
+.title>img{
+  float: none;
+  margin: 0 auto;
 }
 
 .purchase_toggle {
   position: relative;
   border-radius: 4px;
-  border: 2px;
   color: brown;
   text-align: center;
-  float: none;
   font-size: 1.4em;
 }
 
-.active {
+.active-pill {
   color: white;
   background-color: brown;
   text-align: center;
+}
+
+.active-text {
+  border-style: solid;
+  border-width: 4px;
+  border-color: brown;
 }
 
 ul .nav-pills {
@@ -37,12 +51,20 @@ li {
   list-style-type: none;
 }
 
-.labels {
+.labels, .nav-pills {
   text-align: center;
+  padding: 12px;
+}
+
+.h1, .h2, .h3, h1, h2, h3 {
+  margin-top: 0;
   margin-bottom: 0;
 }
 
-.sublabels h1, h2, h5, h6 {
-  padding: 0;
-  margin: 0;
+.nav-pills {
+  margin-bottom: 4%;
+}
+
+.nav-pills>li+li {
+  margin-left: 0;
 }
