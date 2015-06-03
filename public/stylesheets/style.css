@@ -4,12 +4,9 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-/*.jumbotron {
-  background: url('../images/cafeJefe.jpg') 0 /cover;
-}*/
-
 .title {
   margin-left: 0;
+  border-bottom: solid 2px #D9D9D9;
   background-color: black;
 }
 
@@ -50,9 +47,23 @@ li {
   list-style-type: none;
 }
 
-.labels, .nav-pills, .price {
+.amount {
+  padding-bottom: 12px;
+  margin-bottom: 10px;
+  border-bottom: solid 4px #000;
+  width: 70%;
+  float: none;
+  margin: 0 auto 5px;
+}
+
+.nav-pills, .price {
   text-align: center;
-  padding: 12px;
+  padding: 18px;
+}
+
+.labels {
+  text-align: center;
+  padding: 18px;
 }
 
 .h1, .h2, .h3, h1, h2, h3 {
@@ -61,7 +72,7 @@ li {
 }
 
 .nav-pills {
-  margin-bottom: 4%;
+  margin: 1% 0 3%;
 }
 
 .nav-pills>li+li {
