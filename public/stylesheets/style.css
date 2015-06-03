@@ -26,7 +26,8 @@ body {
 }
 
 .active-pill {
-  border-bottom: solid 3px #900D13;
+  border-bottom: solid 4px #900D13;
+  font-weight: bold;
 }
 
 .active-text {
