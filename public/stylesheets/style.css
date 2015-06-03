@@ -14,28 +14,23 @@ body {
 }
 
 .title>img{
-  float: none;
-  margin: 0 auto;
+  vertical-align: baseline; 
 }
 
 .purchase_toggle {
   position: relative;
-  border-radius: 4px;
-  color: brown;
+  color: #000;
   text-align: center;
   font-size: 1.4em;
 }
 
 .active-pill {
-  color: white;
-  background-color: brown;
-  text-align: center;
+  border-bottom: solid 3px #900D13;
 }
 
 .active-text {
-  border-style: solid;
-  border-width: 4px;
-  border-color: brown;
+  background-color: #FAF7F1;
+  border: solid 4px #900D13;
 }
 
 ul .nav-pills {
@@ -67,4 +62,74 @@ li {
 
 .nav-pills>li+li {
   margin-left: 0;
+}
+
+/*/////////////////experimenting//////////////*/
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+.button_fill {
+  text-align: center;
+  background: #ccc;
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  margin: 25px;
+}
+.button_fill.grey {
+  background: #445561;
+  color: white;
+}
+.button_fill.orange {
+  background: #f26b43;
+  color: #fff;
+}
+.button_fill.orange .button-inside {
+  color: #f26b43;
+}
+.button_fill.orange .button-inside.full {
+  border: 1px solid #f26b43;
+}
+.button-text {
+  padding: 0 25px;
+  line-height: 56px;
+  letter-spacing: .1em;
+}
+.button-inside {
+  width: 0;
+  height: 56px;
+  margin: 0;
+  float: left;
+  position: absolute;
+  top: 1px;
+  left: 50%;
+  line-height: 55px;
+  color: #445561;
+  background: #fff;
+  text-align: center;
+  overflow: hidden;
+  -webkit-transition: width 0.5s, left 0.5s, margin 0.5s;
+  -moz-transition: width 0.5s, left 0.5s, margin 0.5s;
+  -o-transition: width 0.5s, left 0.5s, margin 0.5s;
+  transition: width 0.5s, left 0.5s, margin 0.5s;
+}
+.button-inside.full {
+  width: 100%;
+  left: 0;
+  top: 0;
+  margin-right: -50px;
+  border: 1px solid #445561;
+}
+.inside-text {
+  text-align: center;
+  position: absolute;
+  right: 50%;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+  transform: translateX(50%);
 }

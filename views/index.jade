@@ -1,9 +1,8 @@
 extends layout
 
 block content
-  h1(class="title row")
-    img(src="../images/cafe_jefe_text.jpg")
-  //- div(class="jumbotron")
+  div(class="title row")
+    img(src="../images/cafe_jefe_text.svg")
   div(class="nav row")
     ul(class="nav-pills")
       li(class="purchase_toggle col-xs-6 col-md-4 col-md-offset-2" id="purchase") One Time Purchase
@@ -28,3 +27,9 @@ block content
     h5 48 oz ~ 2 cups/day
     form(action="/" method="post")
       input(type="submit" class="buy_btn col-xs-10 col-xs-offset-1" name="4-bag-" value="Subscribe")  
+  //- experimenting
+  //- a(href="#")
+  .button_fill.grey
+    .button-text Learn More
+    .button-inside
+      .inside-text Learn&nbspMore

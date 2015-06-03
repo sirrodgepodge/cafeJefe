@@ -3,6 +3,7 @@ var main = function() {
     var $purchase_toggle= $('.purchase_toggle');
     var $labels= $('.labels');
     var $buy_btn= $('.buy_btn');
+    var $button_fill= $('.button_fill');
 
     $purchase_toggle.click(function(){
 		if(!$(this).hasClass('active-pill')){
@@ -21,6 +22,22 @@ var main = function() {
 			$('.active-text').toggleClass('active-text');
 			$(this).toggleClass('active-text');
 		}
+	});
+
+	$button_fill.hover(function () {
+		$(this).children(".button-inside").addClass('full');
+	}, function() {
+		$(this).children(".button-inside").removeClass('full');
+	});
+
+	$button_fill.click(function(){
+		$.ajax({
+			url: "/",
+			type: "POST",
+			data: {
+				1: "-bag-subscribe"
+			}
+		});
 	});
 };
 
