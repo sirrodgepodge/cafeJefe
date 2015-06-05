@@ -1,6 +1,6 @@
 //create static jQuery selector vars
 var $purchase_toggle= $('.purchase_toggle');
-var $labels= $('.label');
+var $label= $('.label_');
 var $buy_btn= $('.buy_btn');
 var $button_fill= $('.button_fill');
 var $price= $('.price');
