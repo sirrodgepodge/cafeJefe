@@ -1,6 +1,6 @@
 //create static jQuery selector vars
 var $purchase_toggle= $('.purchase_toggle');
-var $labels= $('.labels');
+var $labels= $('.label');
 var $buy_btn= $('.buy_btn');
 var $button_fill= $('.button_fill');
 var $price= $('.price');
@@ -40,7 +40,7 @@ var main = function() {
 		}
 	});
 
-	$labels.click(function(){
+	$label.click(function(){
 		if(!$(this).hasClass('active-text')){
 			$('.active-text').toggleClass('active-text');
 			$(this).toggleClass('active-text');
