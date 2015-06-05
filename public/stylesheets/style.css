@@ -35,7 +35,7 @@ body {
   border: solid 4px #900D13;
 }
 
-.labels:hover {
+.label:hover {
   background-color: #FAF7F1;
 }
 
@@ -67,11 +67,17 @@ li {
 }
 
 .labels {
+    float: none;
+    margin: 0 auto;
+}
+
+.label {
   text-align: center;
   padding: 18px;
   cursor: pointer;
-  /*border: 1px solid #ccc;*/
-  /*margin: 10px;*/
+  border: 1px solid #ccc;
+  margin: 10px;
+  
 }
 
 .h1, .h2, .h3, h1, h2, h3 {
