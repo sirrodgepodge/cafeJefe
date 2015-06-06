@@ -43,6 +43,7 @@ li {
 .amount {
   padding-bottom: 12px;
   white-space: nowrap;
+  word-spacing: -.12em;
   border-bottom: solid 4px #000;
   width: 70%;
   float: none;
