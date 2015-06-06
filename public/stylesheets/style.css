@@ -33,6 +33,7 @@ li {
   text-align: center;
   font-size: 1.4em;
   cursor: pointer;
+  margin-bottom: 1.1em;
 }
 
 .price {
