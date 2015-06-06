@@ -1,3 +1,10 @@
+html {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -7,11 +14,14 @@ body {
 .title {
   border-bottom: solid 2px #D9D9D9;
   background-color: black;
+  width: 100%;
+  left: 0;
 }
 
 .title>img{
   vertical-align: baseline;
   max-width: 100%;
+  margin-left: 0;
 }
 
 ul .nav-pills {
