@@ -7,8 +7,8 @@ var $price= $('.price');
 
 //prices array
 var prices={
-	purchase:[16,30,42,51.96],
-	subscribe:[15,28,38.97,48]
+	purchase:[16,30,42,52],
+	subscribe:[15,28,39,48]
 };
 
 var main = function() {
@@ -25,8 +25,7 @@ var main = function() {
 				$(this).toggleClass('active-pill');
 			});
 			purchTypeVal = $(this).attr('id');
-			$('button-text').html(purchTypeVal.slice(0,1).toUpperCase()+purchTypeVal.slice(1));
-			//$('inside').html(purchTypeVal.slice(0,1).toUpperCase()+purchTypeVal.slice(1));
+			$('.button-text').html(purchTypeVal.slice(0,1).toUpperCase()+purchTypeVal.slice(1));
 			inc = 0;
 			$price.each(function(){
 				$(this).html('$'+prices[purchTypeVal][inc]);
