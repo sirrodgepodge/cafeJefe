@@ -90,11 +90,11 @@ li {
 
 .active-text {
   border: solid 4px #900D13;
-  padding: 14px;
+  padding: 14px 0;
 }
 
 .label_:not(.active-text) {
-  padding: 18px;
+  padding: 18px 0;
 }
 
 .label_ img{
