@@ -42,11 +42,11 @@ li {
 
 .amount {
   padding-bottom: 12px;
-  margin-bottom: 10px;
+  white-space: nowrap;
   border-bottom: solid 4px #000;
   width: 70%;
   float: none;
-  margin: 0 auto 5px;
+  margin: 0 auto 10px;
 }
 
 .active-pill {
