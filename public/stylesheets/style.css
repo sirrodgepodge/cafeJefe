@@ -2,12 +2,11 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
-  /*overflow: auto;*/
+  overflow: auto;
 }
 
 body {
   padding: 0;
-  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -120,7 +119,9 @@ li {
 /*//////////////////map part////////////////*/
 #map{
   height: 480px;
-  width: auto;
+  width: 100%;
+  display: block;
+
 }
 
 /*/////////////////button part//////////////*/
