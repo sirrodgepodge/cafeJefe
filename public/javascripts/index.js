@@ -54,7 +54,7 @@ var main = function() {
 
 	$("#map").gmap3({
 		marker: {
-		address:"2150 shattuck avenue, berkeley, CA 94704",
+		address:"255 n sierra st, reno, NV 89501",
 		options:{ icon: "img/marker.png"}},
 		map:{
 			options:{

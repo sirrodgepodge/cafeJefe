@@ -118,8 +118,9 @@ li {
 }
 
 /*//////////////////map part////////////////*/
-section{
-  height:200px;
+#map{
+  height: 480px;
+  width: auto;
 }
 
 /*/////////////////button part//////////////*/
