@@ -2,7 +2,7 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: auto;
+  /*overflow: auto;*/
 }
 
 body {
@@ -115,6 +115,11 @@ li {
 
 .nav-pills>li+li {
   margin-left: 0;
+}
+
+/*//////////////////map part////////////////*/
+#map{
+  heigh
 }
 
 /*/////////////////button part//////////////*/
