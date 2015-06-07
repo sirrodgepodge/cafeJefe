@@ -51,6 +51,22 @@ var main = function() {
 	}, function() {
 		$(this).children(".button-inside").removeClass('full');
 	});
+
+	$("#map").gmap3({
+		marker: {
+		address:"2150 shattuck avenue, berkeley, CA 94704",
+		options:{ icon: "img/marker.png"}},
+		map:{
+			options:{
+				styles: [{
+					stylers: [ { "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]
+				},],
+				zoom: 15,
+				scrollwheel:false,
+				draggable: true
+			}
+		}
+	});
 };
 
 $(document).ready(main);
