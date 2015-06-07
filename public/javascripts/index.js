@@ -55,7 +55,7 @@ var main = function() {
 	$("#map").gmap3({
 		marker: {
 		address:"255 n sierra st, reno, NV 89501",
-		options:{ icon: "img/marker.png"}},
+		options:{ icon: "images/marker.png"}},
 		map:{
 			options:{
 				styles: [{
