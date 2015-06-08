@@ -123,11 +123,11 @@ li {
 
 /*footer image*/
 .footer-logo {
-    margin-top: 8px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .footer-info {
-    margin-top: 12px;
     margin-bottom: 20px;
 }
 
