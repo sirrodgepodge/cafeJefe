@@ -171,6 +171,9 @@ li {
 .black {
   background: #000;
 }
+.white {
+    background: #fff;
+}
 .button-text {
   padding: 0 20px;
   line-height: 42px;
