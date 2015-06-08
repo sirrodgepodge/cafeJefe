@@ -79,7 +79,7 @@ li {
 
 .labels {
     float: none;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     padding: 0;
 }
 
@@ -120,8 +120,13 @@ li {
   margin-left: 0;
 }
 
+/*footer image*/
+.footer-logo {
+    margin-top: 8px;
+}
+
 .footer-info {
-    margin-top: 10px;
+    margin-top: 12px;
     margin-bottom: 20px;
 }
 
@@ -130,7 +135,6 @@ li {
   height: 480px;
   width: 100%;
   display: block;
-  margin: 30px 0;
 }
 
 /*//////////////////back-to-top button//////*/
