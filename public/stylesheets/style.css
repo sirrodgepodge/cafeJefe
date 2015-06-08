@@ -120,6 +120,11 @@ li {
   margin-left: 0;
 }
 
+.footer-info {
+    display: block;
+    margin-bottom: 20px;
+}
+
 /*//////////////////map part////////////////*/
 #map{
   height: 480px;
