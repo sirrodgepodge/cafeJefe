@@ -132,7 +132,7 @@ li {
 }
 
 /*//////////////////map part////////////////*/
-#map{
+#map {
   height: 480px;
   width: 100%;
   display: block;
@@ -141,7 +141,7 @@ li {
 /*//////////////////back-to-top button//////*/
 .back-to-top {
     display: block;
-    background: #121212;
+    background: #000;
     width: 45px;
     height: 40px;
     font-size: 28px;
