@@ -133,10 +133,10 @@ li {
   position: relative;
   text-transform: uppercase;
   border-radius: 5px;
-}
-.button_fill.black {
-  background: #000;
   color: #900D13;
+}
+.black {
+  background: #000;
 }
 .button-text {
   padding: 0 20px;
