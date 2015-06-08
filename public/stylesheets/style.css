@@ -23,6 +23,10 @@ body {
   margin-left: 0;
 }
 
+img{
+    display: block;
+}
+
 ul .nav-pills {
    float: none;
    margin: 0 auto;
