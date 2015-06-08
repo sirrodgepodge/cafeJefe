@@ -54,7 +54,7 @@ var main = function() {
 
 	$("#map").gmap3({
 		marker: {
-		address:"255 n sierra st, reno, NV 89501",
+		address:"6147 Lakeside Dr #102, Reno, NV 89511",
 		options:{ icon: "images/Marker_Mask.png"}},
 		map:{
 			options:{
