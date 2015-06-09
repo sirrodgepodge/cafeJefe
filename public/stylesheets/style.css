@@ -138,8 +138,8 @@ li {
 
 /*//////////////////map part////////////////*/
 #map {
-  height: 480px;
-  width: 100%;
+  /*height: 480px;
+  width: 100%;*/
   display: block;
 }
 

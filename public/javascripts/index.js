@@ -52,7 +52,7 @@ var main = function() {
 		$(this).children(".button-inside").removeClass('full');
 	});
 
-	$("#map").gmap3({
+    $("#map").width('100%').height('480px').gmap3({
 		marker: {
 		address:"6147 Lakeside Dr #102, Reno, NV 89511",
 		options:{ icon: "images/Marker_Mask.png"}},
