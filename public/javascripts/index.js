@@ -78,8 +78,8 @@ var main = function() {
             map:{
                 options:{
                     styles: [{
-                        stylers: [ { "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]
-                    }],
+                        stylers: [{ "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]
+                    },],
                     zoom: 15,
                     scrollwheel:false,
                     draggable: true,

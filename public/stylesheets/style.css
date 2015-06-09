@@ -189,9 +189,9 @@ li {
 }
 .button-text {
     margin: 0 auto;
-  /*padding: 0 20px;*/
-  line-height: 42px;
-  letter-spacing: .1em;
+    padding: 0 20px;
+    line-height: 42px;
+    letter-spacing: .1em;
 }
 .button-inside {
   width: 0;
