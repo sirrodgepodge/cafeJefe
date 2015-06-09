@@ -83,7 +83,7 @@ var main = function() {
                     zoom: 15,
                     scrollwheel:false,
                     draggable: true,
-                    center: new google.maps.LatLng(addrLatLng[0][0],addrLatLng[0][1])
+                    center: new google.maps.LatLng(data[0][0],data[0][1])
                 }
             }
         });
