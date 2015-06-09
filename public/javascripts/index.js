@@ -55,7 +55,7 @@ var main = function() {
     var addresses = ["6147 Lakeside Drive, Reno, NV 89502","300 W Rosemary Lane, falls church, va 22046"];
     
     var toLatLng = function(addressArr) {
-	addressArr= typeof addressArr='object'&&addressArr||[addressArr];
+	var addressArr= typeof addressArr==='object'&&addressArr||[addressArr];
 	var results = [];
 	for(var i = 0; i<addressArr.length; i++){
 	    $.getJSON('http://maps.googleapis.com/api/geocode/json?address='+addressArr[i]+'&sensor=false', null, function(data) {
