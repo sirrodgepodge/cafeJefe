@@ -54,7 +54,7 @@ var main = function() {
     
     var addresses = ["6147 Lakeside Drive, Reno, NV 89502","300 W Rosemary Lane, falls church, va 22046"];
     
-    var toLatLng = function(addressArr) {
+    var toLatLng = function(addressArr, cb) {
 	var addressArr= typeof addressArr==='object'&&addressArr||[addressArr];
 	var results = [];
 	for(var i = 0; i<addressArr.length; i++){
@@ -63,31 +63,32 @@ var main = function() {
 		results.push([addrObj.lat, addrObj.lng]);
 	    })
 	}
-	return results;
+	cb(null, results);
     }
     
-    var addrLatLng = toLatLng(addresses);
-    console.log(addrLatLng);
-    var map = $("#map").gmap3({
-	marker: {
-	    address: "300 W Rosemary Lane, falls church, va 22046",
-	    options:{
-		icon: "images/Marker_Mask.png"
-	    }
-	},
-	map:{
-	    options:{
-		styles: [{
-		    stylers: [ { "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]
-		}],
-		zoom: 15,
-		scrollwheel:false,
-		draggable: true,
-		center: new google.maps.LatLng(addrLatLng[0][0],addrLatLng[0][1])
-	    }
-	}
+    toLatLng(addresses, function(err, data){
+	console.log(data);
+	var map = $("#map").gmap3({
+            marker: {
+                address: "300 W Rosemary Lane, falls church, va 22046",
+                options:{
+                    icon: "images/Marker_Mask.png"
+                }
+            },
+            map:{
+                options:{
+                    styles: [{
+                        stylers: [ { "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]
+                    }],
+                    zoom: 15,
+                    scrollwheel:false,
+                    draggable: true,
+                    center: new google.maps.LatLng(addrLatLng[0][0],addrLatLng[0][1])
+                }
+            }
+        });
+	console.dir(map);
     });
-    console.dir(map);
 };
 
 $(document).ready(main);
