@@ -12,7 +12,7 @@ body {
 }
 
 .title {
-  border-bottom: solid 2px #D9D9D9;
+  border-bottom: solid 2px #E1DED9;
   background-color: black;
   width: 105%;
   left: 0;
@@ -48,7 +48,11 @@ li {
   font-size: 1.4em;
   cursor: pointer;
   margin-bottom: 1.1em;
-  border-bottom: solid 4px #D9D9D9;
+  border-bottom: solid 4px #E1DED9;
+}
+
+.purchase_toggle:hover {
+  border-bottom: solid 4px #900D13;
 }
 
 .price {
