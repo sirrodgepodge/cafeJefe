@@ -52,9 +52,9 @@ var main = function() {
 		$(this).children(".button-inside").removeClass('full');
 	});
 
-    $("#map").width('100%').height('480px').gmap3({
+    $("#map").gmap3({
 		marker: {
-		address:"6147 Lakeside Dr #102, Reno, NV 89511",
+		    address: ["6147 Lakeside Dr #102, Reno, NV 89511", "300 W Rosemary Lane, Falls Church, VA 22046"],
 		options:{ icon: "images/Marker_Mask.png"}},
 		map:{
 			options:{
