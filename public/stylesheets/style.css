@@ -32,6 +32,7 @@ body {
 
 #save {
     float: right;
+    margin-top: -4px;
 }
 
 .title>img{
