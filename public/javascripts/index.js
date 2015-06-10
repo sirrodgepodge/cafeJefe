@@ -61,36 +61,40 @@ var main = function() {
 };
 
 var mapLoad = function (addresses) {
-    var map,
-		mapOptions = {
-        center: new google.maps.LatLng(0, 0),
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        styles: [{
-            stylers: [{ "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]
-        }],
-        zoom: 15,
-        scrollwheel:false,
-        draggable: true,
-    };
+    $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + addresses[0] + '&sensor=false', null, function (centerData) {
+		var centerCoord = centerData.results[0].geometry.location;
+		var map,
+			mapOptions = {
+			center: new google.maps.LatLng(centerCoord.lat, centerCoord.lng),
+			mapTypeId: google.maps.MapTypeId.ROADMAP,
+			styles: [{
+				stylers: [{ "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]
+			},],
+			zoom: 15,
+			scrollwheel:false,
+			draggable: true,
+		};
 
-    map = new google.maps.Map($('#map')[0], mapOptions);
+		map = new google.maps.Map($('#map')[0], mapOptions);
 
-    var bounds = new google.maps.LatLngBounds();
-    for (var x = 0; x < addresses.length; x++) {
-        $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + addresses[x] + '&sensor=false', null, function (data) {
-            var p = data.results[0].geometry.location;
-            var latlng = new google.maps.LatLng(p.lat, p.lng);
-            bounds.extend(latlng);
-            new google.maps.Marker({
-                position: latlng,
-                map: map,
-                options: {
-					icon: "images/Marker_Mask.png"
-                }
-            });
-            map.fitBounds(bounds);
-        });
-    }
+		// var bounds = new google.maps.LatLngBounds(); //this code autofits & zooms to include all markers, bad if there's only one
+		for (var x = 0; x < addresses.length; x++) {
+			$.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + addresses[x] + '&sensor=false', null, function (data) {
+				var p = data.results[0].geometry.location;
+				var latlng = new google.maps.LatLng(p.lat, p.lng);
+				bounds.extend(latlng);
+				new google.maps.Marker({
+					position: latlng,
+					map: map,
+					options: {
+						icon: "images/Marker_Mask.png"
+					}
+				});
+				// map.fitBounds(bounds);
+			});
+		}
+		console.log(map);
+	});
 };
 
 $(document).ready(main, mapLoad(addresses));
