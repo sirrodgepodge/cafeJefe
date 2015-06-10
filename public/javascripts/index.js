@@ -61,7 +61,7 @@ var main = function() {
     });
 
     $backToTop.click(function(){
-	$('body').animate({scrollTop:0},1000);
+	$('body').animate({scrollTop:0}, $(window).scrollTop());
     });
 };
 
