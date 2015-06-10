@@ -27,6 +27,7 @@ body {
 
 #subscribe{
     float: left;
+    padding: 0;
 }
 
 #save {
