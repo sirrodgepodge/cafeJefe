@@ -28,10 +28,10 @@ body {
 #save {
     float: right;
     background-color: #e1ded9;
-    margin-top: -5px;
+    margin-top: -4px;
     padding: 2px;
     border: solid 1px #E1DED9;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 @media (max-width: 1276px) {
@@ -70,6 +70,7 @@ li {
   color: #000;
   text-align: left;
   cursor: pointer;
+  font-size: 16px;
   margin-bottom: 1.1em;
   border-top: solid 4px #E1DED9;
   padding-top: 6px;
