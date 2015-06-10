@@ -25,6 +25,10 @@ body {
     font-weight: 400;
 }
 
+#subscribe{
+    float: left;
+}
+
 #save {
     float: right;
 }
@@ -53,6 +57,7 @@ li {
 }
 
 .purchase_toggle {
+    clear:both;
   position: relative;
   color: #000;
   text-align: left;
