@@ -25,11 +25,6 @@ body {
     font-weight: 400;
 }
 
-#subscribe{
-    float: left;
-    padding: 0;
-}
-
 #save {
     float: right;
     margin-top: -4px;
