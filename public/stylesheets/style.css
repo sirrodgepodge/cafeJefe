@@ -25,6 +25,10 @@ body {
     font-weight: 400;
 }
 
+.sub-motto {
+    font-size: 17px;
+}
+
 #save {
     float: right;
     background-color: #e1ded9;
