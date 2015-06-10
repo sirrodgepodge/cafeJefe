@@ -86,9 +86,7 @@ var mapLoad = function (addresses) {
 				new google.maps.Marker({
 					position: latlng,
 					map: map,
-					options: {
-						icon: "images/Marker_Mask.png"
-					}
+					icon: "images/Marker_Mask.png"
 				});
 				// map.fitBounds(bounds);
 			});
