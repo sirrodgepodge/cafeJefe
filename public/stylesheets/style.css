@@ -105,12 +105,12 @@ li {
 }
 
 .active-text {
-  border: solid 4px #900D13;
-  padding: 14px 0;
+  border: solid 6px #900D13;
+  padding: 14px -2;
 }
 
 .label_:not(.active-text) {
-    padding: 18px 4px;
+    padding: 18px -2px;
     border: solid 1px #E1DED9; 
 }
 
