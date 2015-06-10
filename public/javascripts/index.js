@@ -91,7 +91,6 @@ var mapLoad = function (addresses) {
 				// map.fitBounds(bounds);
 			});
 		}
-		console.log(map);
 	});
 };
 
