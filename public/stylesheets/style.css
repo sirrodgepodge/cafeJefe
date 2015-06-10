@@ -34,7 +34,7 @@ body {
     font-size: 15px;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1225px) {
     #save {
 	display: none!important;
     }
