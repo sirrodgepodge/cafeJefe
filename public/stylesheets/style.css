@@ -24,6 +24,10 @@ body {
   margin-left: 0;
 }
 
+.motto {
+  text-align: center;
+}
+
 img{
     display: block;
 }
