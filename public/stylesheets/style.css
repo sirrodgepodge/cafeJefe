@@ -35,7 +35,7 @@ body {
 
 @media (min-width: 1276px) {
     #save {
-	display: hidden;
+	display: none!important;
     }
 }
 
