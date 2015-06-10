@@ -165,6 +165,7 @@ li {
     -moz-transition: 0.2s all linear;
     transition: 0.2s all linear;
     cursor: pointer;
+    font-family: FontAwesome;
 }
 
 /*/////////////////button part//////////////*/
