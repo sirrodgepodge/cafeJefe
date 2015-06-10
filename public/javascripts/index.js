@@ -59,6 +59,10 @@ var main = function() {
     }, function() {
 	$(this).children(".button-inside").removeClass('full');
     });
+
+    $backToTop.click(function(){
+	window.scrollTo(0,0);
+    });
 };
 
 var mapLoad = function (addresses) {
