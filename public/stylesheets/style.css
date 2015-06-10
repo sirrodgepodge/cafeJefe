@@ -28,6 +28,7 @@ body {
 #save {
     float: right;
     background-color: #e1ded9;
+    margin-top: -3px;
     padding: 2px;
     border: solid 1px #E1DED9;
 }
