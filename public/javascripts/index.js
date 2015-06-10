@@ -2,8 +2,9 @@
 var $purchase_toggle= $('.purchase_toggle');
 var $label= $('.label_');
 var $buy_btn= $('.buy_btn');
-var $button_fill= $('.button_fill');
+var $buttonFill= $('.button_fill');
 var $price= $('.price');
+var $backToTop= $('.back-to-top');
 
 //prices array
 var prices={
@@ -53,7 +54,7 @@ var main = function() {
 	}
     });
     
-    $button_fill.hover(function () {
+    $buttonFill.hover(function () {
 	$(this).children(".button-inside").addClass('full');
     }, function() {
 	$(this).children(".button-inside").removeClass('full');
