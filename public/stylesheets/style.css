@@ -51,15 +51,15 @@ li {
 .purchase_toggle {
   position: relative;
   color: #000;
-  text-align: center;
+  text-align: left;
   font-size: 1.3em;
   cursor: pointer;
   margin-bottom: 1.1em;
-  border-bottom: solid 4px #E1DED9;
+  border-top: solid 4px #E1DED9;
 }
 
 .purchase_toggle:hover {
-  border-bottom: solid 4px #900D13;
+  border-top: solid 4px #900D13;
 }
 
 .price {
@@ -77,7 +77,7 @@ li {
 }
 
 .active-pill {
-  border-bottom: solid 4px #900D13;
+  border-top: solid 4px #900D13;
   font-weight: bold;
 }
 
