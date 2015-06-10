@@ -16,16 +16,13 @@ body {
   background-color: black;
   width: 105%;
   left: 0;
+  margin-bottom: 10px;
 }
 
 .title>img{
   vertical-align: baseline;
   max-width: 100%;
   margin-left: 0;
-}
-
-.motto {
-  text-align: center;
 }
 
 img{
@@ -129,6 +126,7 @@ li {
 .nav-pills>li+li {
   margin-left: 0;
 }
+
 
 /*footer image*/
 .footer-logo {
