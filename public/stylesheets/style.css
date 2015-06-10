@@ -129,12 +129,12 @@ li {
 
 .active-text {
   border: solid 6px #900D13;
-  padding: 12px 2px;
+  padding: 16px 2px;
 }
 
 .label_:not(.active-text) {
-    padding: 17px 3px;
-    border: solid 1px #E1DED9; 
+    padding: 18px 3px;
+    /*border: solid 1px #E1DED9;*/ 
 }
 
 .label_ img{
