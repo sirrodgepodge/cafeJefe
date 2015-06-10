@@ -25,6 +25,10 @@ body {
     font-weight: 400;
 }
 
+#save {
+    float: right;
+}
+
 .title>img{
   vertical-align: baseline;
   max-width: 100%;
