@@ -28,6 +28,8 @@ body {
 #save {
     float: right;
     background-color: #e1ded9;
+    padding: 2px;
+    border: solid 1px #E1DED9;
 }
 
 .title>img{
