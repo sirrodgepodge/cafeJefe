@@ -33,6 +33,13 @@ body {
     border: solid 1px #E1DED9;
 }
 
+@media (min-width: 1276px) {
+    #save {
+	display: hidden;
+    }
+}
+
+
 .title>img{
   vertical-align: baseline;
   max-width: 100%;
