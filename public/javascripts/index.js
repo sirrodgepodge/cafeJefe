@@ -49,7 +49,7 @@ var main = function() {
     
     $label.click(function(){
 	if(!$(this).hasClass('active-text')){
-	    $('.active-text').children('div').toggleClass('active-text');
+	    $('.active-text').toggleClass('active-text');
 	    $(this).children('div').toggleClass('active-text');
 	}
     });
