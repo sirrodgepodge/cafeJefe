@@ -12,11 +12,22 @@ body {
 }
 
 .title {
-  border-bottom: solid 2px #E1DED9;
+  border-bottom: solid 3px #E1DED9;
   background-color: black;
   width: 105%;
   left: 0;
   margin-bottom: 24px;
+}
+
+.title>img{
+    vertical-align: baseline;
+    max-width: 100%;
+    width: 400px;
+    margin-left: 0;
+}
+
+img{
+    display: block;
 }
 
 .motto {
@@ -43,17 +54,6 @@ body {
     #save {
 	display: none!important;
     }
-}
-
-
-.title>img{
-  vertical-align: baseline;
-  max-width: 100%;
-  margin-left: 0;
-}
-
-img{
-    display: block;
 }
 
 ul .nav-pills {
@@ -133,7 +133,7 @@ li {
 }
 
 .label_:not(.active-text) {
-    padding: 18px 3px;
+    padding: 19px 3px;
     /*border: solid 1px #E1DED9;*/ 
 }
 
