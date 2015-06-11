@@ -18,9 +18,9 @@ block content
       .label_.col-xs-6.col-sm-3(class= n===2? "active-text": "")
         .h2.amount #{n} bag
         .h1.price
-        img(src="../images/" + n + " bag" + n>1? 's': '' + ".png")
+        img(src="../images/#{n}bag#{n>1? 's': ''}.png")
         .h5 ~ #{n*12}oz ~
-        a.buy_btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/" + n + "-bag-subscribe")
+        a.buy_btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{n}-bag-subscribe")
           .button_fill.black
             .button-text Subscribe
             .button-inside
