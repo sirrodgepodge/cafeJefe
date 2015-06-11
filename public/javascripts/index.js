@@ -93,7 +93,7 @@ var mapLoad = function (addresses) {
 		    map: map,
 		    icon: "images/Marker_Mask.png"
 		});
-		if(x>0) map.fitBounds(bounds);
+		if(addresses.length>1) map.fitBounds(bounds);
 	    });
 	}
     });
