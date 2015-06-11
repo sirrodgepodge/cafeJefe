@@ -119,6 +119,10 @@ li {
     padding: 0;
 }
 
+.label_ {
+    padding: 0;
+}
+
 .label_ > div {
   text-align: center;
   cursor: pointer;
