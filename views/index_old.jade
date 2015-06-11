@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  div(class="title")
+    img(src="../images/cafe_jefe_text.svg")
+  h1(class="motto text-center") Mi Caf&eacute; es su Caf&eacute;
+  .h4(class="sub-motto text-center") Fair trade #[i(class='icon ion-coffee')] from around the #[i(class="fa fa-globe")] to your #[span(class="glyphicon glyphicon-home", aria-hidden="true")]
+  div(class="nav row")
+    ul(class="nav-pills")
+      div(class="col-xs-6 col-sm-3 col-sm-offset-3")
+        li(class="purchase_toggle" id="purchase") One Time Purchase
+      div(class="col-xs-6 col-sm-3")  
+        li(class="purchase_toggle active-pill" id="subscribe") Monthly Subscription
+          div(id="save") Save 10%
+  .labels(class="col-lg-10 col-lg-offset-1 container")
+    div(class="label_ col-xs-6 col-sm-3 active-text")
+      .h2(class="amount") 1 bag
+      .h1(class="price")
+      img(src="../images/1 bag.png")
+      .h5 ~ 12oz ~
+      a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/1-bag-subscribe" class="buy_btn")
+        .button_fill.black
+          .button-text Subscribe
+          .button-inside
+            .inside
+    div(class="label_ col-xs-6 col-sm-3")
+      .h2(class="amount") 2 bags
+      .h1(class="price")
+      img(src="../images/2 bags.png")
+      .h5 ~ 24oz ~
+      a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/2-bag-subscribe" class="buy_btn")
+        .button_fill.black
+          .button-text Subscribe
+          .button-inside
+            .inside
+    div(class="label_ col-xs-6 col-sm-3")
+      .h2(class="amount") 3 bags
+      .h1(class="price")
+      img(src="../images/3 bags.png")
+      .h5 ~ 36oz ~
+      a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/3-bag-subscribe" class="buy_btn")
+        .button_fill.black
+          .button-text Subscribe
+          .button-inside
+            .inside
+    div(class="label_ col-xs-6 col-sm-3")
+      .h2(class="amount") 4 bags
+      .h1(class="price")
+      img(src="../images/4 bags.png")
+      .h5 ~ 48oz ~
+      a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/4-bag-subscribe" class="buy_btn")
+        .button_fill.black
+          .button-text Subscribe
+          .button-inside
+            .inside
+  .white
+    div(id="map" class="col-xs-12")
+  footer(class="black")
+    .col-xs-12(class="text-center white-text")
+      .back-to-top
+        i(class="fa fa-angle-double-up")
+    .text-center(class="container")
+      .row
+        .col-md-12(class="footer-logo")
+          a(href="#")
+            img(src="../images/cafe_jefe_text.svg" class="col-xs-2 col-xs-offset-5")
+        .footer-info(class="col-xs-12")
+          .footer-copyright Copyright &#169; 2014 CafeJefe LLC All Rights Reserved
