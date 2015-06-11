@@ -134,7 +134,7 @@ li {
 
 .label_:not(.active-text) {
     padding: 19px 3px;
-    /*border: solid 1px #E1DED9;*/ 
+    border: solid 1px #E1DED9; 
 }
 
 .label_ img{
