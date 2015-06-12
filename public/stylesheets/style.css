@@ -171,7 +171,8 @@ li {
 .merchandise > img {
     display: inline;
     padding: 0 25px;
-    margin: auto;
+    margin: auto
+    width: 25%;
 }
 
 /*footer image*/
