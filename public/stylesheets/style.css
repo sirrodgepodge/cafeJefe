@@ -33,7 +33,7 @@ img{
 .motto {
     font-size: 42px;
     font-family: lato, sans-serif;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .sub-motto {
@@ -52,7 +52,7 @@ img{
 
 @media (max-width: 1150px) {
   #save {
-	   display: none!important;
+    display: none!important;
   }
 }
 
@@ -70,7 +70,7 @@ li {
 }
 
 .purchase_toggle {
-    clear:both;
+  clear:both;
   position: relative;
   color: #000;
   text-align: left;
@@ -104,7 +104,7 @@ li {
   font-weight: bold;
 }
 
-.label_:hover {
+.label_>div:hover {
   background-color: #FAF7F1;
 }
 
@@ -123,12 +123,12 @@ li {
     padding: 0;
 }
 
-.label_ > div {
+.label_>div {
   text-align: center;
   cursor: pointer;
 }
 
-.label_ > div:not(.active-text) {
+.label_>div:not(.active-text) {
     border: solid 1px #E1DED9;
     padding: 16px 2px;
     margin: 6px;
@@ -174,7 +174,13 @@ li {
 #map {
     height: 480px;
     display: block;
-    max-height: 90%;
+    max-height: 20%;
+}
+
+@media (max-width: 768px) {
+  #map {
+    height: 400px;
+  }
 }
 
 /*//////////////////back-to-top button//////*/
