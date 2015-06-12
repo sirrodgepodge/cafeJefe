@@ -164,7 +164,14 @@ li {
     width: 100%
     margin:0;
     padding:0;
-    border-image: url('../images/cafe_jefe_border.svg') 67 round round;
+    border-image: url('../images/cafe_jefe_border.svg') 200 round round;
+    background-color: #000;
+}
+
+.merchandise > img {
+    display: inline;
+    padding: 0 25px;
+    margin: auto;
 }
 
 /*footer image*/
