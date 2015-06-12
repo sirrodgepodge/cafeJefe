@@ -8,8 +8,8 @@ var $backToTop= $('.back-to-top');
 
 //prices array
 var prices={
-	purchase: [16,30,42,52],
-	subscribe: [15,28,39,48]
+    purchase: [16,30,42,52],
+    subscribe: [15,28,39,48]
 };
 
 //addresses array for map markers

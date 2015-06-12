@@ -159,6 +159,13 @@ li {
   margin-left: 0;
 }
 
+/*merchandise*/
+.merchandise{
+    width: 100%
+    margin:0;
+    padding:0;
+    border-image: url('../images/cafe_jefe_border.svg') 67 round round;
+}
 
 /*footer image*/
 .footer-logo {
