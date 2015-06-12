@@ -164,16 +164,16 @@ li {
     width: 100%;
     margin: 0;
     padding: 0;
-    border-image: url('../images/cafe_jefe_border.svg') 200 round round;
+    border-image: url('../images/cafe_jefe_border.svg') 245 round round;
     background-color: #000;
+    border-width: 100px;
 }
 
 .merchandise > img {
     display: inline;
-    padding: 0 25px;
-    margin: auto;
+    padding: 0 25%;
     width: 25%;
-    border-radius: 5px;
+    border-radius: 1000px;
 }
 
 /*footer image*/
