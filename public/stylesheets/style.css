@@ -171,8 +171,8 @@ li {
 
 .merchandise > img {
     display: inline;
-    margin: 0 25%;
-    width: 25%;
+    margin-left: 6.75%;
+    width: 40%;
     border-radius: 1000px;
 }
 
