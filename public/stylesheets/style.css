@@ -14,14 +14,14 @@ body {
 .title {
   border-bottom: solid 3px #E1DED9;
   background-color: black;
-  width: 105%;
+  width: 100%;
   left: 0;
   margin-bottom: 24px;
 }
 
 .title>img{
     vertical-align: baseline;
-    max-width: 97.5%;
+    max-width: 99.6%;
     width: 400px;
     margin-left: 0;
 }
