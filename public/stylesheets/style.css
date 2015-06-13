@@ -155,19 +155,18 @@ li {
 }
 
 /*merchandise*/
-.merchandise{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border-image: url('../images/cafe_jefe_border_invert.svg') 245 round round;
-    background-color: #FFF;
-    border-width: 110px;
+.merch-sect{
+  border-image: url('../images/cafe_jefe_border_invert.svg') 245 round round;
+  background-color: #FFF;
+  border-width: 110px;
 }
 
-.merchandise > img {
-    display: inline;
-    margin-left: 6.75%;
-    width: 40%;
+.merch-ind {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.merch-ind > img {
     border-radius: 1000px;
 }
 
@@ -185,7 +184,6 @@ li {
 #map {
     height: 480px;
     display: block;
-    max-height: 20%;
 }
 
 @media (max-width: 768px) {
