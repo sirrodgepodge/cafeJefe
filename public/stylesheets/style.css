@@ -1,7 +1,10 @@
+* {
+  overflow-x: hidden;
+}
+
 html {
     width: 100%;
     max-width: 100%;
-    overflow-x: hidden;
     margin: 0;
     padding: 0;
 }
@@ -54,11 +57,6 @@ img{
   #save {
     display: none!important;
   }
-}
-
-ul .nav-pills {
-   float: none;
-   margin: 0 auto;
 }
 
 div,li,ul {
@@ -152,11 +150,8 @@ li {
 }
 
 .nav-pills {
-  margin: 1% 0 3%;
-}
-
-.nav-pills>li+li {
-  margin-left: 0;
+  float: none;
+  margin: 8px auto;
 }
 
 /*merchandise*/
