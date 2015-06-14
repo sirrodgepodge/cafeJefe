@@ -197,13 +197,14 @@ li {
 #map {
     height: 480px;
     display: block;
+    max-height: 80%;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   #map {
     height: 400px;
   }
-}
+}*/
 
 /*//////////////////back-to-top button//////*/
 .back-to-top {
