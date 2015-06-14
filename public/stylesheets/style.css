@@ -83,7 +83,7 @@ li {
   border-top: solid 4px #900D13;
 }
 
-.price {
+.h1 {
   font-size: 4rem;
 }
 
@@ -156,14 +156,27 @@ li {
 
 /*merchandise*/
 .merch-sect{
-  border-image: url('../images/cafe_jefe_border_invert.svg') 245 round round;
+  border-image: url('../images/cafe_jefe_border_invert.svg') 245 245 245 245 round round;
   background-color: #FFF;
-  border-width: 110px;
+  border-width: 120px;
+  padding:0;
+}
+
+@media (max-width: 768px) {
+  .merch-sect {
+    border-image: url('../images/cafe_jefe_border_invert.svg') 108 90 115 88 round round;
+    border-width: 90px;
+  }
+}
+
+.merch-sect > .motto{
+  margin-top: 20px;
+  margin-bottom: 25px;
 }
 
 .merch-ind {
   padding: 5px;
-  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
 .merch-ind > img {
