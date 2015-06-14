@@ -53,7 +53,7 @@ img{
     font-size: 15px;
 }
 
-@media (min-width:768px) and (max-width:1176px) {
+@media (max-width:608px), ((min-width:768px) and (max-width:1176px)) {
   #save {
     display: none!important;
   }
