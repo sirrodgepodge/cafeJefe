@@ -168,16 +168,16 @@ li {
     .merch-ind {
 	padding: 0;
     }
-    .merch-ind~.merch-ind {
-	margin-bottom: 25px;
+    .merch-ind+.merch-ind {
+	margin-top: 25px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991) {
-    .merch-ind:nth-last-child(1) {
-	margin-bottom: 0;
+    .merch-ind {
+	padding: 3% 2.2%;
     }
-    .merch-ind:nth-last-child(2) {
+    .merch-ind {
 	margin-bottom: 0;
     }
 }
@@ -187,8 +187,8 @@ li {
   margin: 0 25px 35px;
 }
 
-.merch-ind {
-    padding: 5px;
+.merch-ind+.merch-ind {
+    padding-left: 1.1%;
 }
 
 .merch-ind > a {
