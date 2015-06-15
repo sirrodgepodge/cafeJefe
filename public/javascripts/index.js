@@ -4,48 +4,56 @@ var $label= $('.label_');
 var $buy_btn= $('.buy_btn');
 var $buttonFill= $('.button_fill');
 var $price= $('.price');
-var $backToTop= $('.back-to-top');
+var $merchPrice = $('.merch-price');
+var $backToTop= $('.back-to-top, .title');
+
 
 //prices array
 var prices={
     purchase: [16,30,42,52],
-    subscribe: [15,28,39,48]
+    subscribe: [15,28,39,48],
+    merch: [20,12,20,20]
 };
+
 
 //addresses array for map markers
 var addresses = [
-		// '300 W Rosemary Lane, falls church, va 22046',
-        '6147 Lakeside Drive, Reno, NV 89502'
+    // '300 W Rosemary Lane, falls church, va 22046',
+    '6147 Lakeside Drive, Reno, NV 89502'
 ];
 
 
 var main = function() {
+    //initialize prices
     var purchTypeVal= $('.active-pill').attr('id');
     var inc= 0;
     $price.each(function(){
 	$(this).html('$'+prices[purchTypeVal][inc]);
+	$merchPrice[inc].html('$'+prices[merch][inc]);
 	inc++;
     });
     
+    
+    //Toggle between Subscription vs. One-Time Purchase
     $purchase_toggle.click(function(){
-		if(!$(this).hasClass('active-pill')){
-			$purchase_toggle.each(function() {
-				$(this).toggleClass('active-pill');
-			});
-			purchTypeVal = $(this).attr('id');
-			$('.button-text').html(purchTypeVal.slice(0,1).toUpperCase()+purchTypeVal.slice(1));
-			inc = 0;
-			$price.each(function(){
-				$(this).html('$'+prices[purchTypeVal][inc]);
-				inc++;
-			});
-
-			$buy_btn.each(function(){
-			var currVal = $(this).attr('href').slice(0, $(this).attr('href').lastIndexOf("-")+1);
-			$(this).attr('href', currVal + purchTypeVal);
-		});
-		}
-	});
+	if(!$(this).hasClass('active-pill')){
+	    $purchase_toggle.each(function() {
+		$(this).toggleClass('active-pill');
+	    });
+	    purchTypeVal = $(this).attr('id');
+	    $('.button-text').html(purchTypeVal.slice(0,1).toUpperCase()+purchTypeVal.slice(1));
+	    inc = 0;
+	    $price.each(function(){
+		$(this).html('$'+prices[purchTypeVal][inc]);
+		inc++;
+	    });
+	    
+	    $buy_btn.each(function(){
+		var currVal = $(this).attr('href').slice(0, $(this).attr('href').lastIndexOf("-")+1);
+		$(this).attr('href', currVal + purchTypeVal);
+	    });
+	}
+    });
     
     $label.click(function(){
 	if(!$(this).hasClass('active-text')){
