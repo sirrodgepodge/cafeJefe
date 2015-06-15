@@ -194,6 +194,9 @@ li {
 	padding: 3% 2.2%;
 	margin-bottom: 0;
     }
+    .merch-ind:nth-last-of-type(1), .merch-ind:nth-last-of-type(2) {
+	margin-top: 25px;
+    }
 }
 
 @media (min-width: 992px) {
