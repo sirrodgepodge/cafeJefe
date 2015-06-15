@@ -170,12 +170,13 @@ li {
 }
 
 .merch-ind {
-  padding: 5px;
+    padding: 5px;
+    margin-bottom: 25px;
 }
 
-.merch-ind+.merch-ind {
+/*.merch-ind+.merch-ind {
     margin-top: 25px;
-}
+}*/
 
 .merch-ind > img {
     border-radius: 100%;
