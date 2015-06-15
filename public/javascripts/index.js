@@ -29,6 +29,7 @@ var main = function() {
     var inc= 0;
     $price.each(function(){
 	$(this).html('$'+prices[purchTypeVal][inc]);
+	console.log($merchPrice);
 	$merchPrice[inc].html('$'+prices[merch][inc]);
 	inc++;
     });
