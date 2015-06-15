@@ -191,7 +191,7 @@ li {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-    .merch-sect > motto {
+    .merch-sect > .motto {
 	margin: 0 25px 5px;
     }
     .merch-ind {
