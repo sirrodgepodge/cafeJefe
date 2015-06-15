@@ -180,7 +180,13 @@ li {
 }
 
 .merch-ind > img {
-    border-radius: 1000px;
+    border-radius: 100%;
+    border: solid #E1DED9 6px;
+    padding: 0;
+}
+
+.merch-ing > img:hover {
+    border: solid #000;
 }
 
 /*footer image*/
