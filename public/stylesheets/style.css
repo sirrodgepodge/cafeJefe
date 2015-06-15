@@ -107,7 +107,7 @@ li {
 
 .labels {
     float: none;
-    margin: 0 auto 30px;
+    margin: 0 auto;
     padding: 0;
 }
 
@@ -155,7 +155,30 @@ li {
     background-color: #FFF;
     border-width: 120px;
     padding:0;
-    margin: 20px 35px 40px;
+    margin: 50px 35px;
+}
+
+.merch-sect > .motto{
+    margin: 0 25px 35px;
+}
+
+.merch-ind+.merch-ind {
+    padding-left: 1.1%;
+}
+
+.merch-ind > a {
+    text-decoration:none;
+    color: #000;
+}
+
+.merch-ind > a > img {
+    border-radius: 100%;
+    border: solid #E1DED9 6px;
+    padding: 0;
+}
+
+.merch-ind > a > img:hover {
+    border: solid #000 6px;
 }
 
 @media (max-width: 767px) {
@@ -176,39 +199,8 @@ li {
 @media (min-width: 768px) and (max-width: 991) {
     .merch-ind {
 	padding: 3% 2.2%;
-    }
-    .merch-ind {
 	margin-bottom: 0;
     }
-}
-
-
-.merch-sect > .motto{
-  margin: 0 25px 35px;
-}
-
-.merch-ind+.merch-ind {
-    padding-left: 1.1%;
-}
-
-.merch-ind > a {
-    text-decoration:none;
-    color: #000;
-}
-
-.merch-ind > a:hover {
-    font-weight: bold;
-}
-
-.merch-ind > a > img {
-    border-radius: 100%;
-    border: solid #E1DED9 6px;
-    padding: 0;
-    margin-bottom: 
-}
-
-.merch-ind > a > img:hover {
-    border: solid #000 6px;
 }
 
 /*footer image*/
