@@ -47,7 +47,7 @@ img{
     font-size: 15px;
 }
 
-@media (min-width:0) and (max-width:606px), (min-width:768) and (max-width:840), (min-width:992) and (max-width:1150px) {
+@media (min-width:0) and (max-width:606px), (min-width:768px) and (max-width:840px), (min-width:992px) and (max-width:1150px) {
   #save {
     display: none!important;
   }
@@ -189,7 +189,7 @@ li {
     }
 }
 
-@media (max-width: 768px) and (min-width: 991) {
+@media (max-width: 768px) and (min-width: 991px) {
     .merch-sect > motto {
 	margin: 0 25px 5px;
     }
