@@ -57,9 +57,9 @@ div,li,ul {
   padding-left: 0;
 }
 
-li {
+/*li {
   list-style-type: none;
-}
+}*/
 
 .purchase_toggle {
   clear:both;
@@ -68,7 +68,7 @@ li {
   text-align: left;
   cursor: pointer;
   font-size: 16px;
-  margin-bottom: 1.1em;
+  margin-bottom: 20px;
   border-top: solid 4px #E1DED9;
   padding-top: 6px;
 }
@@ -154,6 +154,7 @@ li {
   background-color: #FFF;
   border-width: 120px;
   padding:0;
+  margin-bottom: 25px;
 }
 
 @media (max-width: 768px) {
@@ -189,6 +190,7 @@ li {
     border-radius: 100%;
     border: solid #E1DED9 6px;
     padding: 0;
+    margin-bottom: 
 }
 
 .merch-ind > a > img:hover {
