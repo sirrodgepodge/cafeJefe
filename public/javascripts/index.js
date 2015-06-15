@@ -33,7 +33,7 @@ var main = function() {
     });
     inc = 0;
     $merchPrice.each(function(){
-	$(this).html('$'+prices[merch][inc]);
+	$(this).html('$'+prices['merch'][inc]);
 	inc++;
     });
     
