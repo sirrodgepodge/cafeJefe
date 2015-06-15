@@ -186,7 +186,7 @@ li {
 }
 
 .merch-ing > img:hover {
-    border: solid #000;
+    border: solid #000 6px;
 }
 
 /*footer image*/
