@@ -162,10 +162,6 @@ li {
     margin: 0 25px 35px;
 }
 
-.merch-ind+.merch-ind {
-    padding-left: 1.1%;
-}
-
 .merch-ind > a {
     text-decoration:none;
     color: #000;
@@ -188,9 +184,6 @@ li {
 	border-width: 90px;
 	margin: 40px 10px;
     }
-    .merch-ind {
-	padding: 0;
-    }
     .merch-ind+.merch-ind {
 	margin-top: 25px;
     }
@@ -200,6 +193,12 @@ li {
     .merch-ind {
 	padding: 3% 2.2%;
 	margin-bottom: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .merch-ind+.merch-ind {
+	padding-left: 1.1%;
     }
 }
 
