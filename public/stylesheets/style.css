@@ -156,7 +156,7 @@ li {
 
 /*merchandise*/
 .merch-sect{
-  border-image: url('../images/cafe_jefe_border_invert.svg') 245 245 245 245 round round;
+  border-image: url('../images/cafe_jefe_border_invert.svg') 245 round;
   background-color: #FFF;
   border-width: 120px;
   padding:0;
@@ -164,7 +164,7 @@ li {
 
 @media (max-width: 768px) {
   .merch-sect {
-    border-image: url('../images/cafe_jefe_border_invert.svg') 108 90 115 88 round round;
+    border-image: url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round;
     border-width: 90px;
   }
 }
