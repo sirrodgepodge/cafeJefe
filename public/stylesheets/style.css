@@ -163,11 +163,6 @@ li {
     margin: 0 25px 35px;
 }
 
-.merch-ind > a {
-    text-decoration:none;
-    color: #000;
-}
-
 .merch-ind > a > img {
     border-radius: 100%;
     border: solid #E1DED9 6px;
@@ -176,6 +171,12 @@ li {
 
 .merch-ind > a > img:hover {
     border: solid #000 6px;
+}
+
+.merch-price {
+    text-decoration:none;
+    color: #000;
+    margin-top: 
 }
 
 @media (max-width: 767px) {
