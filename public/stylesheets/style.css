@@ -163,7 +163,7 @@ li {
 	-moz-border-image: url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round;
 	border-image: url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round;
 	border-width: 90px;
-	margin: 5px 40px;
+	margin: 40px 10px;
     }
     .merch-ind {
 	padding: 0;
