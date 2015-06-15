@@ -49,7 +49,7 @@ img{
     font-size: 15px;
 }
 
-@media (max-width:608px), (min-width:768px) and (max-width:1176px) {
+@media (max-width:608px), (min-width:790) and (max-width:991), (max-width:1150px) {
   #save {
     display: none!important;
   }
@@ -202,14 +202,8 @@ li {
 #map {
     height: 480px;
     display: block;
-    max-height: 80vh;
+    max-height: 90vh;
 }
-
-/*@media (max-width: 768px) {
-  #map {
-    height: 400px;
-  }
-}*/
 
 /*//////////////////back-to-top button//////*/
 .back-to-top {
