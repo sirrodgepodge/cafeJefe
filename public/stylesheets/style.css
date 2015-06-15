@@ -174,8 +174,8 @@ li {
     margin-bottom: 25px;
 }
 
-/*.merch-ind+.merch-ind {
-    margin-top: 25px;
+.merch-ind:last-of-type {
+    margin-bottom: 0px;
 }*/
 
 .merch-ind > img {
@@ -202,7 +202,7 @@ li {
 #map {
     height: 480px;
     display: block;
-    max-height: 70%;
+    max-height: 80vh;
 }
 
 /*@media (max-width: 768px) {
