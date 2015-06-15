@@ -120,7 +120,7 @@ li {
   cursor: pointer;
 }
 
-.label_>div:not(.active-text) {
+.label_ > div:not(.active-text) {
     border: solid 1px #E1DED9;
     padding: 14px 0px;
     margin: 8px;
@@ -176,13 +176,13 @@ li {
     margin-bottom: 0px;
 }
 
-.merch-ind > img {
+.merch-ind > a > img {
     border-radius: 100%;
     border: solid #E1DED9 6px;
     padding: 0;
 }
 
-.merch-ind > img:hover {
+.merch-ind > a > img:hover {
     border: solid #000 6px;
 }
 
