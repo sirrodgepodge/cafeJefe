@@ -155,28 +155,40 @@ li {
     background-color: #FFF;
     border-width: 120px;
     padding:0;
-    margin-bottom: 25px;
+    margin: 35px 40px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .merch-sect {
 	-moz-border-image: url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round;
 	border-image: url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round;
 	border-width: 90px;
+	margin: 5px 40px;
+    }
+    .merch-ind {
+	padding: 0;
+    }
+    .merch-ind+.merch-ind {
+	margin-bottom: 25px;
     }
 }
 
+@media (min-width: 768px) and (max-width: 991) {
+    .merch-ind:nth-last-child(1) {
+	margin-bottom: 0;
+    }
+    .merch-ind:nth-last-child(2) {
+	margin-bottom: 0;
+    }
+}
+
+
 .merch-sect > .motto{
-  margin-bottom: 25px;
+  margin: 40px 25px;
 }
 
 .merch-ind {
     padding: 5px;
-    margin-bottom: 25px;
-}
-
-.merch-ind:last-of-type {
-    margin-bottom: 0px;
 }
 
 .merch-ind > a {
