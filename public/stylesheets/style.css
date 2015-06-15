@@ -150,18 +150,20 @@ li {
 
 /*merchandise*/
 .merch-sect{
-  border-image: url('../images/cafe_jefe_border_invert.svg') 245 round;
-  background-color: #FFF;
-  border-width: 120px;
-  padding:0;
-  margin-bottom: 25px;
+    -moz-border-image: url('../images/cafe_jefe_border_invert.svg') 245 round;
+    border-image: url('../images/cafe_jefe_border_invert.svg') 245 round;
+    background-color: #FFF;
+    border-width: 120px;
+    padding:0;
+    margin-bottom: 25px;
 }
 
 @media (max-width: 768px) {
-  .merch-sect {
-    border-image: url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round;
-    border-width: 90px;
-  }
+    .merch-sect {
+	-moz-border-image: url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round;
+	border-image: url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round;
+	border-width: 90px;
+    }
 }
 
 .merch-sect > .motto{
