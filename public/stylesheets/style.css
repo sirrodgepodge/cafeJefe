@@ -194,7 +194,7 @@ li {
 	padding: 3% 2.2%;
 	margin-bottom: 0;
     }
-    div.merch-ind:nth-last-child(1), div.merch-ind:nth-last-child(2) {
+    .merch-ind last {
 	margin-top: 30px;
     }
 }
