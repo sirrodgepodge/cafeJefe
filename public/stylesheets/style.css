@@ -176,7 +176,7 @@ li {
 .merch-price {
     text-decoration:none;
     color: #000;
-    margin-top: 9px;
+    margin-top: 4px;
 }
 
 @media (max-width: 767px) {
@@ -205,7 +205,10 @@ li {
 
 @media (min-width: 992px) {
     .merch-ind+.merch-ind {
-	padding-left: 1.1%;
+	padding: 0 1.5%;
+    }
+    .merch-price {
+	margin-top: 8px;
     }
 }
 
