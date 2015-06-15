@@ -204,7 +204,7 @@ li {
 }
 
 @media (min-width: 992px) {
-    .merch-ind+.merch-ind {
+    .merch-ind {
 	padding: 0 1.5%;
     }
     .merch-price {
