@@ -47,7 +47,7 @@ img{
     font-size: 15px;
 }
 
-@media (min-width:0) and (max-width:595px), (min-width:768px) and (max-width:864px), (min-width:992px) and (max-width:1149px) {
+@media (min-width:0) and (max-width:590px), (min-width:768px) and (max-width:864px), (min-width:992px) and (max-width:1142px) {
   #save {
     display: none!important;
   }
