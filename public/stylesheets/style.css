@@ -155,7 +155,8 @@ li {
     background-color: #FFF;
     border-width: 120px;
     padding:0;
-    margin: 50px 35px;
+    margin: 50px 2.5%;
+    width: 95%;
 }
 
 .merch-sect > .motto{
