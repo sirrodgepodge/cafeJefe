@@ -168,7 +168,7 @@ li {
     .merch-ind {
 	padding: 0;
     }
-    .merch-ind+.merch-ind {
+    .merch-ind~.merch-ind {
 	margin-bottom: 25px;
     }
 }
@@ -184,7 +184,7 @@ li {
 
 
 .merch-sect > .motto{
-  margin: 40px 25px;
+  margin: 0 25px 35px;
 }
 
 .merch-ind {
