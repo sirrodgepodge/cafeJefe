@@ -155,7 +155,7 @@ li {
     background-color: #FFF;
     border-width: 120px;
     padding:0;
-    margin: 35px 40px;
+    margin: 20px 35px 40px;
 }
 
 @media (max-width: 767px) {
