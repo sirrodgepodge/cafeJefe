@@ -54,12 +54,12 @@ img{
 }
 
 div,li,ul {
-  padding-left: 0;
+    padding-left: 0;
 }
 
-/*li {
+li {
   list-style-type: none;
-}*/
+}
 
 .purchase_toggle {
   clear:both;
