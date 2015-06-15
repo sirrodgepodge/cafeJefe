@@ -29,11 +29,13 @@ var main = function() {
     var inc= 0;
     $price.each(function(){
 	$(this).html('$'+prices[purchTypeVal][inc]);
-	console.log($merchPrice);
-	$merchPrice[inc].html('$'+prices[merch][inc]);
 	inc++;
     });
-    
+    inc = 0;
+    $merchPrice.each(function(){
+	$(this).html('$'+prices[merch][inc]);
+	inc++;
+    });
     
     //Toggle between Subscription vs. One-Time Purchase
     $purchase_toggle.click(function(){
