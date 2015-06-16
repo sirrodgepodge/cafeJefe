@@ -25,7 +25,7 @@ var addresses = [
 
 var main = function() {
     // Initialize prices
-    var purchTypeVal= $('.active-purch').attr('id');
+    var purchTypeVal= $('.active-purch-type').attr('id');
     var inc= 0;
     $coffeePrice.each(function(){
 	$(this).html('$'+prices[purchTypeVal][inc]);
@@ -39,9 +39,9 @@ var main = function() {
     
     // Toggle between Subscription vs. One-Time Purchase
     $purchaseToggle.click(function(){
-	if(!$(this).hasClass('active-purch')){
+	if(!$(this).hasClass('active-purch-type')){
 	    $purchase_toggle.each(function() {
-		$(this).toggleClass('active-purch');
+		$(this).toggleClass('active-purch-type');
 	    });
 	    purchTypeVal = $(this).attr('id');
 	    $('.button-text').html(purchTypeVal.slice(0,1).toUpperCase()+purchTypeVal.slice(1));
@@ -66,9 +66,9 @@ var main = function() {
     });
     
     $buttonFill.hover(function () {
-	$(this).children(".button-inside").addClass('full');
+	$(this).children('.button-inside').addClass('full');
     }, function() {
-	$(this).children(".button-inside").removeClass('full');
+	$(this).children('.button-inside').removeClass('full');
     });
 
     $backToTop.click(function(){
@@ -84,7 +84,7 @@ var mapLoad = function (addresses) {
 	    center: new google.maps.LatLng(centerCoord.lat, centerCoord.lng),
 	    mapTypeId: google.maps.MapTypeId.ROADMAP,
 	    styles: [{
-		stylers: [{ "saturation":-100 }, { "lightness": 0 }, { "gamma": 0.5 }]
+		stylers: [{'saturation':-100 }, {'lightness': 0 }, {'gamma': 0.5 }]
 	    },],
 	    zoom: 15,
 	    scrollwheel:false,
@@ -102,7 +102,7 @@ var mapLoad = function (addresses) {
 		new google.maps.Marker({
 		    position: latlng,
 		    map: map,
-		    icon: "images/Marker_Mask.png"
+		    icon: 'images/Marker_Mask.png'
 		});
 		if(addresses.length>1) map.fitBounds(bounds);
 	    });
