@@ -1,8 +1,63 @@
+// Stored values
 $phoneMax: 767; 
 $tabletMin: 768px;
 $tabletMax: 991px;
 $laptopMin: 992px;
+$border-yellowish: #E1DED9;
+$main-color: #900D13;
 
+.black {
+    background: #000;
+}
+.white {
+    background: #fff;
+}
+.white-text {
+    color: #fff;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-transform: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin transform($transf) {
+    -webkit-transform: $trans;
+    -moz-transform: $trans;
+    -ms-transform: $trans;
+    -o-transform: $trans;
+    transform: $trans;
+}
+
+@mixin transition($transit) {
+    -webkit-transition: $transit;
+    -moz-transition: $transit;
+    -ms-transition: $transit;
+    -o-transition: $transit;
+    transition: $transit;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin border-image($specs) {
+    -webkit-border-image: $specs;
+    -moz-border-image: $specs;
+    -ms-border-image: $specs;
+    -o-border-image: $specs;
+    border-image: $specs;
+}
+
+
+// Set base
 html {
     width: 100%;
     margin: 0;
@@ -13,8 +68,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+
+// Set top part
 .title {
-  border-bottom: solid 3px #E1DED9;
+  border-bottom: solid 3px $border-yellowish;
   background-color: black;
   width: 100%;
   left: 0;
@@ -44,10 +101,10 @@ img{
 
 #save {
     float: right;
-    background-color: #e1ded9;
+    background-color: #e4e1dc;
     margin-top: -3px;
     padding: 2px;
-    border: solid 1px #E1DED9;
+    border: solid 1px $border-yellowish;
     border-radius: 1px;
     font-size: 15px;
 }
@@ -67,19 +124,19 @@ li {
 }
 
 .purchase_toggle {
-  clear:both;
+  clear: both;
   position: relative;
   color: #000;
   text-align: left;
   cursor: pointer;
   font-size: 16px;
   margin-bottom: 30px;
-  border-top: solid 4px #E1DED9;
+  border-top: solid 4px $border-yellowish;
   padding-top: 6px;
 }
 
 .purchase_toggle:hover {
-  border-top: solid 4px #900D13;
+  border-top: solid 4px $main-color;
 }
 
 .h1 {
@@ -90,14 +147,14 @@ li {
   padding-bottom: 12px;
   white-space: nowrap;
   word-spacing: -.12em;
-  border-bottom: solid 4px #000;
+  border-bottom: solid 4px black;
   width: 70%;
   float: none;
   margin: 0 auto 10px;
 }
 
 .active-pill {
-  border-top: solid 4px #900D13;
+  border-top: solid 4px $main-color;
   font-weight: bold;
 }
 
@@ -126,13 +183,13 @@ li {
 }
 
 .label_ > div:not(.active-text) {
-    border: solid 1px #E1DED9;
+    border: solid 1px $border-yellowish;
     padding: 14px 0px;
     margin: 8px;
 }
 
 .active-text {
-    border: solid 9px #900D13;
+    border: solid 9px $main-color;
     padding: 14px 0px;
 }
 
@@ -155,47 +212,48 @@ li {
 
 /*merchandise*/
 .merch-sect{
-    -moz-border-image: url('../images/cafe_jefe_border_invert.svg') 245 round;
-    border-image: url('../images/cafe_jefe_border_invert.svg') 245 round;
-    background-color: #FFF;
+    @include border-image(url('../images/cafe_jefe_border_invert.svg') 245 round);
+    background-color: white;
     border-width: 120px;
-    padding:0;
+    padding: 0;
     margin: 50px 2.5%;
     width: 95%;
+    .motto{
+        margin: 0 25px 35px;
+    }
+    .merch-ind > a > img {
+	a {
+	    img {
+		border-radius: 100%;
+		border: solid $border-yellowish 6px;
+		padding: 0;
+	    }
+	    img:hover {
+		border: solid black 6px;
+	    }
+	    .merch-price {
+		text-decoration:none;
+		color: black;
+		margin-top: 4px;
+	    }
+	}
+    }
 }
 
-.merch-sect > .motto{
-    margin: 0 25px 35px;
-}
-
-.merch-ind > a > img {
-    border-radius: 100%;
-    border: solid #E1DED9 6px;
-    padding: 0;
-}
-
-.merch-ind > a > img:hover {
-    border: solid #000 6px;
-}
-
-.merch-price {
-    text-decoration:none;
-    color: #000;
-    margin-top: 4px;
-}
 
 @media (max-width: $phoneMax) {
     .merch-sect {
-	-moz-border-image: url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round;
-	border-image: url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round;
+	@include border-image(url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round);
 	border-width: 90px;
 	margin: 40px 10px;
     }
     .merch-ind+.merch-ind {
 	margin-top: 30px;
     }
-    .merch-sect > .motto {
-	margin-bottom: 40px;
+    .merch-sect {
+	.motto {
+	    margin-bottom: 40px;
+	}
     }
 }
 
@@ -217,28 +275,30 @@ li {
     }
 }
 
-/*footer image*/
-.footer-logo {
-    margin: 10px auto 5px;
-    width: 156px;
-}
-
-.footer-info {
-    margin-bottom: 20px;
-}
-
 /*//////////////////map part////////////////*/
 #map {
-    height: 480px;
     display: block;
+    height: 480px;
     max-height: 90vh;
     border-top: solid 6px #eee;
 }
 
+/*//////////////////footer//////////////////*/
+footer {
+    .footer-logo {
+        margin: 10px auto 5px;
+        width: 156px;
+    }
+    .footer-copyright {
+        margin: 0 auto 20px;
+    }
+}
+
 /*//////////////////back-to-top button//////*/
 .back-to-top {
-    display: block;
-    background: #000;
+    background: black;
+    color: white;
+    text-align: center;
     width: 45px;
     height: 40px;
     font-size: 28px;
@@ -248,89 +308,42 @@ li {
     left: 0;
     right: 0;
     margin: auto;
-    color: #fff;
-    -webkit-border-radius: 3px 3px 0 0;
-    -moz-border-radius: 3px 3px 0 0;
-    -o-border-radius: 3px 3px 0 0;
-    border-radius: 3px 3px 0 0;
-    -webkit-transform: translateZ(0);
-    -moz-transform: translateZ(0);
-    -ms-transform: translateZ(0);
-    -o-transform: translateZ(0);
-    transform: translateZ(0);
-    -webkit-transition: 0.2s all linear;
-    -moz-transition: 0.2s all linear;
-    -ms-transition: 0.2s all linear;
-    -o-transition: 0.2s all linear;
-    transition: 0.2s all linear;
     cursor: pointer;
     font-family: FontAwesome;
+    @include border-radius(3px 3px 0 0);
+    @include transform(translateZ(0));
 }
 
 /*/////////////////button part//////////////*/
 .button_fill {
   text-align: center;
-  background: #ccc;
+  background: black;
+  color: $main-color;
   display: inline-block;
   position: relative;
   text-transform: uppercase;
-  border-radius: 5px;
-  color: #900D13;
-}
-.black {
-  background: #000;
-}
-.white {
-    background: #fff;
-}
-.white-text {
-    color: #fff;
-}
-.button-text {
-    margin: 0 auto;
-    padding: 0 20px;
-    line-height: 42px;
-    letter-spacing: .1em;
-}
-.button-inside {
-  width: 0;
-  height: 42px;
-  margin: 0;
-  float: left;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  line-height: 42px;
-  background: #900D13;
-  text-align: center;
-  overflow: hidden;
-  border-radius: 5px;
-  background-image: url('/images/coffee-love.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  -webkit-transition: width 0.5s, left 0.5s, margin 0.5s;
-  -moz-transition: width 0.5s, left 0.5s, margin 0.5s;
-  -o-transition: width 0.5s, left 0.5s, margin 0.5s;
-  transition: width 0.5s, left 0.5s, margin 0.5s;
-}
-.button-inside.full {
-  width: 100%;
-  left: 0;
-  top: 0;
-  margin-right: -50px;
-  border: 1px solid #000;
-  border-radius: 5px;
-}
-.inside {
-  text-align: center;
-  position: absolute;
-  right: 50%;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  -webkit-transform: translateX(50%);
-  -moz-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  -o-transform: translateX(50%);
-  transform: translateX(50%);
+  @include border-radius(5px);
+  .button-text {
+      margin: 0 auto;
+      padding: 0 20px;
+      line-height: 42px;
+      letter-spacing: .1em;
+  }
+  .button-inside {
+      width: 0;
+      height: 42px;
+      margin: 0;
+      top: 0;
+      left: 50%;
+      position: absolute;
+      background: $main-color;
+      background: url('/images/coffee-love.png') no-repeat center /contain;
+      @include border-radius(5px);    
+      @include transition(width 0.5s, left 0.5s, margin 0.5s);
+      .full {
+	  width: 100%;
+	  left: 0;
+	  border: 1px solid black;
+      }
+  }
 }
