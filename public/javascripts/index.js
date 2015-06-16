@@ -1,9 +1,9 @@
 //create static jQuery selector vars
-var $purchase_toggle= $('.purchase-toggle');
-var $label= $('.label_');
-var $buy_btn= $('.buy-btn');
+var $purchaseToggle= $('.purchase-toggle');
+var $coffeeInd= $('.coffee-ind');
+var $buyBtn= $('.buy-btn');
 var $buttonFill= $('.button-fill');
-var $price= $('.price');
+var $coffeePrice= $('.coffee-price');
 var $merchPrice = $('.merch-price');
 var $backToTop= $('.back-to-top, .title');
 
@@ -27,7 +27,7 @@ var main = function() {
     //initialize prices
     var purchTypeVal= $('.active-purch').attr('id');
     var inc= 0;
-    $price.each(function(){
+    $coffeePrice.each(function(){
 	$(this).html('$'+prices[purchTypeVal][inc]);
 	inc++;
     });
@@ -38,7 +38,7 @@ var main = function() {
     });
     
     //Toggle between Subscription vs. One-Time Purchase
-    $purchase_toggle.click(function(){
+    $purchaseToggle.click(function(){
 	if(!$(this).hasClass('active-purch')){
 	    $purchase_toggle.each(function() {
 		$(this).toggleClass('active-purch');
@@ -46,22 +46,22 @@ var main = function() {
 	    purchTypeVal = $(this).attr('id');
 	    $('.button-text').html(purchTypeVal.slice(0,1).toUpperCase()+purchTypeVal.slice(1));
 	    inc = 0;
-	    $price.each(function(){
+	    $coffeePrice.each(function(){
 		$(this).html('$'+prices[purchTypeVal][inc]);
 		inc++;
 	    });
 	    
-	    $buy_btn.each(function(){
+	    $buyBtn.each(function(){
 		var currVal = $(this).attr('href').slice(0, $(this).attr('href').lastIndexOf("-")+1);
 		$(this).attr('href', currVal + purchTypeVal);
 	    });
 	}
     });
     
-    $label.click(function(){
-	if(!$(this).hasClass('active-amount')){
-	    $('.active-amount').toggleClass('active-amount');
-	    $(this).children('div').toggleClass('active-amount');
+    $coffeeInd.click(function(){
+	if(!$(this).hasClass('active-coffee-amount')){
+	    $('.active-coffee-amount').toggleClass('active-coffee-amount');
+	    $(this).children('.coffee-ind-inside').toggleClass('active-coffee-amount');
 	}
     });
     

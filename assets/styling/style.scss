@@ -76,6 +76,15 @@ div,li,ul {
     padding-left: 0;
 }
 
+.h1 {
+    font-size: 4rem;
+}
+.
+h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 
 // Set title section
 .title {
@@ -92,6 +101,7 @@ div,li,ul {
   }
 }
 
+
 // Motto
 .motto {
     font-size: 42px;
@@ -103,7 +113,8 @@ div,li,ul {
     font-size: 17px;
 }
 
-//
+
+// Purchase type toggle
 .purch-type {
     float: none;
     text-align: center;
@@ -137,70 +148,94 @@ div,li,ul {
     .purchase-toggle:hover {
         border-top: solid 4px $main-color;
     }
-    .active-purch {
+    .active-purch-type {
         border-top: solid 4px $main-color;
         font-weight: bold;
     }
 }
 
-.h1 {
-  font-size: 4rem;
-}
 
-.labels {
+// Coffee amount selection
+.coffee-sect {
     float: none;
     margin: 0 auto;
     padding: 0;
-    .label_ {
+    .coffee-ind {
 	padding: 0;
-	.amount {
-            padding-bottom: 12px;
-            white-space: nowrap;
-            word-spacing: -.12em;
-            border-bottom: solid 4px black;
-            width: 70%;
-            float: none;
-            margin: 0 auto 10px;
-	}
-	div {
+	.coffee-ind-inside {
             text-align: center;
             cursor: pointer;
-	}
-	div:not(.active-text) {
+	    .amount {
+                padding-bottom: 12px;
+                white-space: nowrap;
+                word-spacing: -.12em;
+                border-bottom: solid 4px black;
+                width: 70%;
+                float: none;
+                margin: 0 auto 10px;
+            }
+	    .price {
+                padding: 18px;
+            }
+            .coffee-pic{
+                display: block;
+                float: none;
+                margin: auto;
+                width: 100%;
+            }
+        }
+        .coffee-ind-inside:hover {
+            background-color: #FAF7F1;
+        }
+	.coffee-ind-inside:not(.active-text) {
 	    border: solid 1px $border-yellowish;
 	    padding: 14px 0px;
 	    margin: 8px;
 	}
-	div:hover {
-            background-color: #FAF7F1;
-	}
-	.active-amount {
+	.active-coffee-amount {
             border: solid 9px $main-color;
             padding: 14px 0px;
         }
-	.price {
-            padding: 18px;
-        }
-	img{
-            display: block;
-            float: none;
-            margin: auto;
-            width: 100%;
-	}
     }
 }
 
-.h1, .h2, .h3, h1, h2, h3 {
-  margin-top: 0;
-  margin-bottom: 0;
+
+// Buy button styling
+.button-fill {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: black;
+    color: $main-color;
+    @include border-radius(5px);
+    .button-text {
+        margin: 0 auto;
+        padding: 0 20px;
+        line-height: 42px;
+        letter-spacing: .1em;
+    }
+    .button-inside {
+        width: 0;
+        height: 42px;
+        margin: 0;
+        top: 0;
+        left: 50%;
+        position: absolute;
+        background: $main-color;
+        background: url('/images/coffee-love.png') no-repeat center /contain;
+        @include border-radius(5px);    
+        @include transition(width 0.5s, left 0.5s, margin 0.5s);
+        .full {
+            width: 100%;
+            left: 0;
+            border: 1px solid black;
+        }
+    }
 }
 
-.nav-pills {
-  float: none;
-  margin: 8px auto;
-}
 
-/*merchandise*/
+// Merchandise section
 .merch-sect{
     @include border-image(url('../images/cafe_jefe_border_invert.svg') 245 round);
     background-color: white;
@@ -229,7 +264,6 @@ div,li,ul {
 	}
     }
 }
-
 
 @media (max-width: $phoneMax) {
     .merch-sect {
@@ -267,7 +301,8 @@ div,li,ul {
     }
 }
 
-/*//////////////////map part////////////////*/
+
+// Map section
 #map {
     display: block;
     height: 480px;
@@ -275,67 +310,32 @@ div,li,ul {
     border-top: solid 6px #eee;
 }
 
-/*//////////////////footer//////////////////*/
+
+// Footer section
 footer {
+    .back-to-top {
+        text-align: center;
+        background-color: black;
+        color: white;
+        width: 45px;
+        height: 40px;
+        font-size: 28px;
+        line-height: 38px;
+        position: absolute;
+        top: -40px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        cursor: pointer;
+        font-family: FontAwesome;
+        @include border-radius(3px 3px 0 0);
+        @include transform(translateZ(0));
+    }
     .footer-logo {
         margin: 10px auto 5px;
         width: 156px;
     }
     .footer-copyright {
         margin: 0 auto 20px;
-    }
-}
-
-/*//////////////////back-to-top button//////*/
-.back-to-top {
-    text-align: center;
-    background-color: black;
-    color: white;
-    width: 45px;
-    height: 40px;
-    font-size: 28px;
-    line-height: 38px;
-    position: absolute;
-    top: -40px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    cursor: pointer;
-    font-family: FontAwesome;
-    @include border-radius(3px 3px 0 0);
-    @include transform(translateZ(0));
-}
-
-/*/////////////////button part//////////////*/
-.button-fill {
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: black;
-    color: $main-color;
-    @include border-radius(5px);
-    .button-text {
-	margin: 0 auto;
-	padding: 0 20px;
-	line-height: 42px;
-	letter-spacing: .1em;
-    }
-    .button-inside {
-	width: 0;
-	height: 42px;
-	margin: 0;
-	top: 0;
-	left: 50%;
-	position: absolute;
-	background: $main-color;
-	background: url('/images/coffee-love.png') no-repeat center /contain;
-	@include border-radius(5px);    
-	@include transition(width 0.5s, left 0.5s, margin 0.5s);
-	.full {
-	    width: 100%;
-	    left: 0;
-	    border: 1px solid black;
-	}
     }
 }

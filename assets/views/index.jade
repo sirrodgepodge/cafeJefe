@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  div.title
+  .title
     img(src="../images/cafe_jefe_text.svg")
   h1.motto.text-center Mi caf&eacute; es su caf&eacute;
   h4.sub-motto.text-center Fair trade #[i.icon.ion-coffee] from the #[i.fa.fa-globe] to your #[span.glyphicon.glyphicon-home(aria-hidden="true")]
@@ -9,17 +9,17 @@ block content
     .col-xs-6.col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
       .purchase-toggle#purchase One Time Purchase
     .col-xs-6.col-sm-4.col-md-3
-      .purchase-toggle.active-purch#subscribe Monthly Subscription
+      .purchase-toggle.active-purch-type#subscribe Monthly Subscription
         #save Save 15%
-  .labels.col-lg-10.col-lg-offset-1.container
+  .coffee-sect.col-lg-10.col-lg-offset-1.container
     - var n=1
     while n<5
-      .label_.col-xs-6.col-sm-3
-        div(class= n===2? "active-text": "")
-          .h2.amount #{n} bag
-          .h1.price
-          img(src="../images/#{n} bag#{n>1? 's': ''}.png")
-          .h5 ~ #{n*12}oz ~
+      .coffee-ind.col-xs-6.col-sm-3
+        .coffee-ind-inside(class= n===2? "active-coffee-amount": "")
+          .h2.coffee-amount #{n} bag
+          .h1.coffee-price
+          img.coffee-pic(src="../images/#{n} bag#{n>1? 's': ''}.png")
+          .h5.oz-coffee-amount ~ #{n*12}oz ~
           a.buy-btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{n}-bag-subscribe")
             .button-fill
               .button-text Subscribe

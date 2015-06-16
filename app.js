@@ -1,4 +1,4 @@
-var express = require('express');
+Bvar express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -26,7 +26,7 @@ app.use(sass({
         src: path.join(__dirname, 'assets', 'styling'), //where the sass files at
         dest: path.join(__dirname, 'public', 'stylesheets'), //where they will be converted to css
         debug: true
-    }));
+}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
