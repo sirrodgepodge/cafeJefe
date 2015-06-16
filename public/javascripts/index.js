@@ -1,4 +1,4 @@
-//create static jQuery selector vars
+// Create static jQuery selector vars
 var $purchaseToggle= $('.purchase-toggle');
 var $coffeeInd= $('.coffee-ind');
 var $buyBtn= $('.buy-btn');
@@ -8,7 +8,7 @@ var $merchPrice = $('.merch-price');
 var $backToTop= $('.back-to-top, .title');
 
 
-//prices array
+// Prices array
 var prices={
     purchase: [18,33,46,57],
     subscribe: [15,28,39,48],
@@ -16,7 +16,7 @@ var prices={
 };
 
 
-//addresses array for map markers
+// Addresses array for map markers
 var addresses = [
     // '300 W Rosemary Lane, falls church, va 22046',
     '6147 Lakeside Dr #102, Reno, NV 89502'
@@ -24,7 +24,7 @@ var addresses = [
 
 
 var main = function() {
-    //initialize prices
+    // Initialize prices
     var purchTypeVal= $('.active-purch').attr('id');
     var inc= 0;
     $coffeePrice.each(function(){
@@ -37,7 +37,7 @@ var main = function() {
 	inc++;
     });
     
-    //Toggle between Subscription vs. One-Time Purchase
+    // Toggle between Subscription vs. One-Time Purchase
     $purchaseToggle.click(function(){
 	if(!$(this).hasClass('active-purch')){
 	    $purchase_toggle.each(function() {

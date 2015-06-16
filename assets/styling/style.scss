@@ -6,16 +6,6 @@ $laptopMin: 992px;
 $border-yellowish: #E1DED9;
 $main-color: #900D13;
 
-.black {
-    background: #000;
-}
-.white {
-    background: #fff;
-}
-.white-text {
-    color: #fff;
-}
-
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
     -moz-border-radius: $radius;
@@ -57,7 +47,7 @@ $main-color: #900D13;
 }
 
 
-// Set base
+// Base formatting
 html {
     width: 100%;
     margin: 0;
@@ -86,7 +76,7 @@ h1, .h2, .h3, h1, h2, h3 {
 }
 
 
-// Set title section
+// Title section
 .title {
   border-bottom: solid 3px $border-yellowish;
   background-color: black;
@@ -187,7 +177,7 @@ h1, .h2, .h3, h1, h2, h3 {
         .coffee-ind-inside:hover {
             background-color: #FAF7F1;
         }
-	.coffee-ind-inside:not(.active-text) {
+	.coffee-ind-inside:not(.active-coffee-amount) {
 	    border: solid 1px $border-yellowish;
 	    padding: 14px 0px;
 	    margin: 8px;
@@ -196,41 +186,40 @@ h1, .h2, .h3, h1, h2, h3 {
             border: solid 9px $main-color;
             padding: 14px 0px;
         }
-    }
-}
-
-
-// Buy button styling
-.button-fill {
-    display: inline-block;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-    background-color: black;
-    color: $main-color;
-    @include border-radius(5px);
-    .button-text {
-        margin: 0 auto;
-        padding: 0 20px;
-        line-height: 42px;
-        letter-spacing: .1em;
-    }
-    .button-inside {
-        width: 0;
-        height: 42px;
-        margin: 0;
-        top: 0;
-        left: 50%;
-        position: absolute;
-        background: $main-color;
-        background: url('/images/coffee-love.png') no-repeat center /contain;
-        @include border-radius(5px);    
-        @include transition(width 0.5s, left 0.5s, margin 0.5s);
-        .full {
-            width: 100%;
-            left: 0;
-            border: 1px solid black;
-        }
+	
+        // Buy button styling
+        .button-fill {
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: black;
+            color: $main-color;
+            @include border-radius(5px);
+            .button-text {
+                margin: 0 auto;
+                padding: 0 20px;
+                line-height: 42px;
+                letter-spacing: .1em;
+            }
+            .button-inside {
+                width: 0;
+                height: 42px;
+                margin: 0;
+                top: 0;
+                left: 50%;
+                position: absolute;
+                background: $main-color;
+                background: url('/images/coffee-love.png') no-repeat center /contain;
+                @include border-radius(5px);    
+                @include transition(width 0.5s, left 0.5s, margin 0.5s);
+                .full {
+                    width: 100%;
+                    left: 0;
+                    border: 1px solid black;
+                }
+            }
+        }       
     }
 }
 
