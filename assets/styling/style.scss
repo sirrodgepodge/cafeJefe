@@ -68,27 +68,31 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+img{
+    display: block;
+}
 
-// Set top part
+div,li,ul {
+    padding-left: 0;
+}
+
+
+// Set title section
 .title {
   border-bottom: solid 3px $border-yellowish;
   background-color: black;
   width: 100%;
   left: 0;
   margin-bottom: 24px;
+  img{
+      vertical-align: baseline;
+      max-width: 99.6%;
+      width: 400px;
+      margin-left: 0;
+  }
 }
 
-.title>img{
-    vertical-align: baseline;
-    max-width: 99.6%;
-    width: 400px;
-    margin-left: 0;
-}
-
-img{
-    display: block;
-}
-
+// Motto
 .motto {
     font-size: 42px;
     font-family: lato, sans-serif;
@@ -99,105 +103,91 @@ img{
     font-size: 17px;
 }
 
-#save {
-    float: right;
-    background-color: #e4e1dc;
-    margin-top: -3px;
-    padding: 2px;
-    border: solid 1px $border-yellowish;
-    border-radius: 1px;
-    font-size: 15px;
-}
-
-@media (max-width:590px), (min-width: $tabletMin) and (max-width:864px), (min-width: $laptopMin) and (max-width:1142px) {
-  #save {
-    display: none!important;
-  }
-}
-
-div,li,ul {
-    padding-left: 0;
-}
-
-li {
-  list-style-type: none;
-}
-
-.purchase_toggle {
-  clear: both;
-  position: relative;
-  color: #000;
-  text-align: left;
-  cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 30px;
-  border-top: solid 4px $border-yellowish;
-  padding-top: 6px;
-}
-
-.purchase_toggle:hover {
-  border-top: solid 4px $main-color;
+//
+.purch-type {
+    float: none;
+    text-align: center;
+    padding: 18px;
+    margin: 8px auto;
+    .purchase-toggle {
+        clear: both;
+        position: relative;
+        color: black;
+        text-align: left;
+        cursor: pointer;
+        font-size: 16px;
+        padding-top: 6px;
+	border-top: solid 4px $border-yellowish;
+	margin-bottom: 30px;
+	#save {
+            float: right;
+            background-color: $border-yellowish;
+            font-size: 15px;
+	    padding: 2px;
+            border: solid 1px $border-yellowish;
+            border-radius: 1px;
+	    margin-top: -3px;
+	}
+	@media (max-width:590px), (min-width: $tabletMin) and (max-width:864px), (min-width: $laptopMin) and (max-width:1142px) {
+            #save {
+		display: none!important;
+            }
+	}
+    }
+    .purchase-toggle:hover {
+        border-top: solid 4px $main-color;
+    }
+    .active-purch {
+        border-top: solid 4px $main-color;
+        font-weight: bold;
+    }
 }
 
 .h1 {
   font-size: 4rem;
 }
 
-.amount {
-  padding-bottom: 12px;
-  white-space: nowrap;
-  word-spacing: -.12em;
-  border-bottom: solid 4px black;
-  width: 70%;
-  float: none;
-  margin: 0 auto 10px;
-}
-
-.active-pill {
-  border-top: solid 4px $main-color;
-  font-weight: bold;
-}
-
-.label_>div:hover {
-  background-color: #FAF7F1;
-}
-
-.nav-pills, .price {
-  text-align: center;
-  padding: 18px;
-}
-
 .labels {
     float: none;
     margin: 0 auto;
     padding: 0;
-}
-
-.label_ {
-    padding: 0;
-}
-
-.label_>div {
-  text-align: center;
-  cursor: pointer;
-}
-
-.label_ > div:not(.active-text) {
-    border: solid 1px $border-yellowish;
-    padding: 14px 0px;
-    margin: 8px;
-}
-
-.active-text {
-    border: solid 9px $main-color;
-    padding: 14px 0px;
-}
-
-.label_ img{
-  display: block;
-  float: none;
-  margin: auto;
-  width: 100%;
+    .label_ {
+	padding: 0;
+	.amount {
+            padding-bottom: 12px;
+            white-space: nowrap;
+            word-spacing: -.12em;
+            border-bottom: solid 4px black;
+            width: 70%;
+            float: none;
+            margin: 0 auto 10px;
+	}
+	div {
+            text-align: center;
+            cursor: pointer;
+	}
+	div:not(.active-text) {
+	    border: solid 1px $border-yellowish;
+	    padding: 14px 0px;
+	    margin: 8px;
+	}
+	div:hover {
+            background-color: #FAF7F1;
+	}
+	.active-amount {
+            border: solid 9px $main-color;
+            padding: 14px 0px;
+        }
+	.price {
+            padding: 18px;
+        }
+	img{
+            display: block;
+            float: none;
+            margin: auto;
+            width: 100%;
+	}
+    }
 }
 
 .h1, .h2, .h3, h1, h2, h3 {
@@ -298,9 +288,9 @@ footer {
 
 /*//////////////////back-to-top button//////*/
 .back-to-top {
+    text-align: center;
     background-color: black;
     color: white;
-    text-align: center;
     width: 45px;
     height: 40px;
     font-size: 28px;
@@ -317,35 +307,35 @@ footer {
 }
 
 /*/////////////////button part//////////////*/
-.button_fill {
-  text-align: center;
-  background-color: black;
-  color: $main-color;
-  display: inline-block;
-  position: relative;
-  text-transform: uppercase;
-  @include border-radius(5px);
-  .button-text {
-      margin: 0 auto;
-      padding: 0 20px;
-      line-height: 42px;
-      letter-spacing: .1em;
-  }
-  .button-inside {
-      width: 0;
-      height: 42px;
-      margin: 0;
-      top: 0;
-      left: 50%;
-      position: absolute;
-      background: $main-color;
-      background: url('/images/coffee-love.png') no-repeat center /contain;
-      @include border-radius(5px);    
-      @include transition(width 0.5s, left 0.5s, margin 0.5s);
-      .full {
-	  width: 100%;
-	  left: 0;
-	  border: 1px solid black;
-      }
-  }
+.button-fill {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: black;
+    color: $main-color;
+    @include border-radius(5px);
+    .button-text {
+	margin: 0 auto;
+	padding: 0 20px;
+	line-height: 42px;
+	letter-spacing: .1em;
+    }
+    .button-inside {
+	width: 0;
+	height: 42px;
+	margin: 0;
+	top: 0;
+	left: 50%;
+	position: absolute;
+	background: $main-color;
+	background: url('/images/coffee-love.png') no-repeat center /contain;
+	@include border-radius(5px);    
+	@include transition(width 0.5s, left 0.5s, margin 0.5s);
+	.full {
+	    width: 100%;
+	    left: 0;
+	    border: 1px solid black;
+	}
+    }
 }

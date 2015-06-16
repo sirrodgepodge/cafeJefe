@@ -1,8 +1,8 @@
 //create static jQuery selector vars
-var $purchase_toggle= $('.purchase_toggle');
+var $purchase_toggle= $('.purchase-toggle');
 var $label= $('.label_');
-var $buy_btn= $('.buy_btn');
-var $buttonFill= $('.button_fill');
+var $buy_btn= $('.buy-btn');
+var $buttonFill= $('.button-fill');
 var $price= $('.price');
 var $merchPrice = $('.merch-price');
 var $backToTop= $('.back-to-top, .title');
@@ -25,7 +25,7 @@ var addresses = [
 
 var main = function() {
     //initialize prices
-    var purchTypeVal= $('.active-pill').attr('id');
+    var purchTypeVal= $('.active-purch').attr('id');
     var inc= 0;
     $price.each(function(){
 	$(this).html('$'+prices[purchTypeVal][inc]);
@@ -39,9 +39,9 @@ var main = function() {
     
     //Toggle between Subscription vs. One-Time Purchase
     $purchase_toggle.click(function(){
-	if(!$(this).hasClass('active-pill')){
+	if(!$(this).hasClass('active-purch')){
 	    $purchase_toggle.each(function() {
-		$(this).toggleClass('active-pill');
+		$(this).toggleClass('active-purch');
 	    });
 	    purchTypeVal = $(this).attr('id');
 	    $('.button-text').html(purchTypeVal.slice(0,1).toUpperCase()+purchTypeVal.slice(1));
@@ -59,9 +59,9 @@ var main = function() {
     });
     
     $label.click(function(){
-	if(!$(this).hasClass('active-text')){
-	    $('.active-text').toggleClass('active-text');
-	    $(this).children('div').toggleClass('active-text');
+	if(!$(this).hasClass('active-amount')){
+	    $('.active-amount').toggleClass('active-amount');
+	    $(this).children('div').toggleClass('active-amount');
 	}
     });
     
