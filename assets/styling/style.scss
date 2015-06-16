@@ -258,8 +258,10 @@ li {
 }
 
 @media (min-width: $tabletMin) and (max-width: $tabletMax) {
-    .merch-sect > .motto {
-	margin: 0 25px 8px;
+    .merch-sect{
+	.motto {
+	    margin: 0 25px 8px;
+	}
     }
     .merch-ind {
 	padding: 30px 2.2% 0;
@@ -317,7 +319,7 @@ footer {
 /*/////////////////button part//////////////*/
 .button_fill {
   text-align: center;
-  background: black;
+  background-color: black;
   color: $main-color;
   display: inline-block;
   position: relative;
