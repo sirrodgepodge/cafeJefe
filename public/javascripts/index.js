@@ -10,7 +10,7 @@ var $backToTop= $('.back-to-top, .title');
 
 //prices array
 var prices={
-    purchase: [16,30,42,52],
+    purchase: [18,33,46,57],
     subscribe: [15,28,39,48],
     merch: [20,12,20,20]
 };
