@@ -19,7 +19,7 @@ var prices={
 //addresses array for map markers
 var addresses = [
     // '300 W Rosemary Lane, falls church, va 22046',
-    '6147 Lakeside Drive, Reno, NV 89502'
+    '6147 Lakeside Dr #102, Reno, NV 89502'
 ];
 
 
