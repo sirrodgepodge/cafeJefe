@@ -7,27 +7,27 @@ $border-yellowish: #E1DED9;
 $main-color: #900D13;
 
 @mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-transform: $radius;
-    -o-border-radius: $radius;
-    border-radius: $radius;
+    -webkit-border-radius: #{$radius};
+    -moz-border-radius: #{$radius};
+    -ms-transform: #{$radius};
+    -o-border-radius: #{$radius};
+    border-radius: #{$radius};
 }
 
 @mixin transform($transf) {
-    -webkit-transform: $trans;
-    -moz-transform: $trans;
-    -ms-transform: $trans;
-    -o-transform: $trans;
-    transform: $trans;
+    -webkit-transform: #{$trans};
+    -moz-transform: #{$trans};
+    -ms-transform: #{$trans};
+    -o-transform: #{$trans};
+    transform: #{$trans};
 }
 
 @mixin transition($transit) {
-    -webkit-transition: $transit;
-    -moz-transition: $transit;
-    -ms-transition: $transit;
-    -o-transition: $transit;
-    transition: $transit;
+    -webkit-transition: #{$transit};
+    -moz-transition: #{$transit};
+    -ms-transition: #{$transit};
+    -o-transition: #{$transit};
+    transition: #{$transit};
 }
 
 @mixin border-radius($radius) {
@@ -226,7 +226,7 @@ div,li,ul {
 
 // Merchandise section
 .merch-sect{
-    @include border-image(url('../images/cafe_jefe_border_invert.svg') 245 round);
+    @include border-image("url('../images/cafe_jefe_border_invert.svg') 245 round");
     background-color: white;
     border-width: 120px;
     padding: 0;
@@ -256,7 +256,7 @@ div,li,ul {
 
 @media (max-width: $phoneMax) {
     .merch-sect {
-	@include border-image(url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round);
+	@include border-image("url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round");
 	border-width: 90px;
 	margin: 40px 10px;
     }
@@ -317,7 +317,7 @@ footer {
         margin: auto;
         cursor: pointer;
         font-family: FontAwesome;
-        @include border-radius(3px 3px 0 0);
+        @include border-radius('3px 3px 0 0');
         @include transform(translateZ(0));
     }
     .footer-logo {
