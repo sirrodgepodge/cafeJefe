@@ -1,70 +1,85 @@
 // Stored values
-$phoneMax: 767; 
-$tabletMin: 768px;
-$tabletMax: 991px;
-$laptopMin: 992px;
-$border-yellowish: #E1DED9;
-$main-color: #900D13;
+$phone-max: 767px; 
+$tablet-min: 768px;
+$tablet-max: 991px;
+$laptop-min: 992px;
+$border-yellowish: #e1ded9;
+$main-color: #900d13;
 
+@mixin vend($prop, $val) {
+  -webkit-#{$prop}: #{$val};
+  -moz-#{$prop}: #{$val};
+  -ms-#{$prop}: #{$val};
+  -o-#{$prop}: #{$val};
+  #{$prop}: #{$val};
+}
+/*
 @mixin transform($transf) {
-    -webkit-transform: $trans;
-    -moz-transform: $trans;
-    -ms-transform: $trans;
-    -o-transform: $trans;
-    transform: $trans;
+  -webkit-transform: $transf;
+  -moz-transform: $transf;
+  -ms-transform: $transf;
+  -o-transform: $transf;
+  transform: $transf;
 }
 
 @mixin transition($transit) {
-    -webkit-transition: $transit;
-    -moz-transition: $transit;
-    -ms-transition: $transit;
-    -o-transition: $transit;
-    transition: $transit;
+  -webkit-transition: $transit;
+  -moz-transition: $transit;
+  -ms-transition: $transit;
+  -o-transition: $transit;
+  transition: $transit;
 }
 
 @mixin border-radius($radius-top, $radius-right, $radius-bottom, $radius-left) {
-    -webkit-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-    -moz-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-    -ms-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-    -o-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-    border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+  -webkit-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+  -moz-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+  -ms-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+  -o-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+  border-radius: $radius-top $radius-right $radius-bottom $radius-left;
 }
 
-@mixin border-image($img, $cornerDim, $top, $side) {
-    -webkit-border-image: $img $cornerDim $top $side;
-    -moz-border-image: $img $cornerDim $top $side;
-    -ms-border-image: $img $cornerDim $top $side;
-    -o-border-image: $img $cornerDim $top $side;
-    border-image: $img $cornerDim $top $side;
+@mixin border-image($img, $corner-dim, $top, $side) {
+  -webkit-border-image: $img $corner-dim $top $side;
+  -moz-border-image: $img $corner-dim $top $side;
+  -ms-border-image: $img $corner-dim $top $side;
+  -o-border-image: $img $corner-dim $top $side;
+  border-image: $img $corner-dim $top $side;
 }
-
+*/
 
 // Base formatting
 html {
-    width: 100%;
-    margin: 0;
+  margin: 0;
+  width: 100%;
 }
 
 body {
-  padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
 }
 
-img{
-    display: block;
+img {
+  display: block;
 }
 
-div,li,ul {
-    padding-left: 0;
+div,
+li,
+ul {
+  padding-left: 0;
 }
 
 .h1 {
-    font-size: 4rem;
+  font-size: 4rem;
 }
 
-.h1, .h2, .h3, h1, h2, h3 {
-    margin-top: 0;
-    margin-bottom: 0;
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 
@@ -75,248 +90,247 @@ div,li,ul {
   width: 100%;
   left: 0;
   margin-bottom: 24px;
-  img{
-      vertical-align: baseline;
-      max-width: 99.6%;
-      width: 400px;
-      margin-left: 0;
+  img {
+    vertical-align: baseline;
+    max-width: 99.6%;
+    width: 400px;
+    margin-left: 0;
   }
 }
 
 
 // Motto
 .motto {
-    font-size: 42px;
-    font-family: lato, sans-serif;
-    font-weight: 300;
+  font-size: 42px;
+  font-family: lato, sans-serif;
+  font-weight: 300;
 }
 
 .sub-motto {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 
 // Purchase type toggle
 .purch-type {
-    float: none;
-    text-align: center;
-    padding: 18px;
-    margin: 8px auto;
-    .purchase-toggle {
-        clear: both;
-        position: relative;
-        color: black;
-        text-align: left;
-        cursor: pointer;
-        font-size: 16px;
-        padding-top: 6px;
-	border-top: solid 4px $border-yellowish;
-	margin-bottom: 30px;
-	#save {
-            float: right;
-            background-color: $border-yellowish;
-            font-size: 15px;
-	    padding: 2px;
-            border: solid 1px $border-yellowish;
-            border-radius: 1px;
-	    margin-top: -3px;
-	}
-	@media (max-width:590px), (min-width: $tabletMin) and (max-width:864px), (min-width: $laptopMin) and (max-width:1142px) {
-            #save {
-		display: none!important;
-            }
-	}
+  float: none;
+  text-align: center;
+  padding: 18px;
+  margin: 8px auto;
+  .purchase-toggle {
+    clear: both;
+    position: relative;
+    color: black;
+    text-align: left;
+    cursor: pointer;
+    font-size: 16px;
+    padding-top: 6px;
+    border-top: solid 4px $border-yellowish;
+    margin-bottom: 30px;
+    #save {
+      float: right;
+      background-color: $border-yellowish;
+      font-size: 15px;
+      padding: 2px;
+      border: solid 1px $border-yellowish;
+      border-radius: 1px;
+      margin-top: -3px;
     }
-    .purchase-toggle:hover {
-        border-top: solid 4px $main-color;
+    @media (max-width:590px), (min-width: $tablet-min) and (max-width:864px), (min-width: $laptop-min) and (max-width:1142px) {
+      #save {
+        display: none!important;
+      }
     }
-    .active-purch-type {
-        border-top: solid 4px $main-color;
-        font-weight: bold;
-    }
+  }
+  .purchase-toggle:hover {
+    border-top: solid 4px $main-color;
+  }
+  .active-purch-type {
+    border-top: solid 4px $main-color;
+    font-weight: bold;
+  }
 }
 
 
 // Coffee amount selection
 .coffee-sect {
-    float: none;
-    margin: 0 auto;
+  float: none;
+  margin: 0 auto;
+  padding: 0;
+  .coffee-ind {
     padding: 0;
-    .coffee-ind {
-	padding: 0;
-	.coffee-ind-inside {
-            text-align: center;
-            cursor: pointer;
-	    .amount {
-                padding-bottom: 12px;
-                white-space: nowrap;
-                word-spacing: -.12em;
-                border-bottom: solid 4px black;
-                width: 70%;
-                float: none;
-                margin: 0 auto 10px;
-            }
-	    .price {
-                padding: 18px;
-            }
-            .coffee-pic{
-                display: block;
-                float: none;
-                margin: auto;
-                width: 100%;
-            }
-        }
-        .coffee-ind-inside:hover {
-            background-color: #FAF7F1;
-        }
-	.coffee-ind-inside:not(.active-coffee-amount) {
-	    border: solid 1px $border-yellowish;
-	    padding: 14px 0px;
-	    margin: 8px;
-	}
-	.active-coffee-amount {
-            border: solid 9px $main-color;
-            padding: 14px 0px;
-        }
-	
-        // Buy button styling
-        .button-fill {
-            display: inline-block;
-            position: relative;
-            text-align: center;
-            text-transform: uppercase;
-            background-color: black;
-            color: $main-color;
-            @include border-radius(5px, 5px, 5px, 5px);
-            .button-text {
-                margin: 0 auto;
-                padding: 0 20px;
-                line-height: 42px;
-                letter-spacing: .1em;
-            }
-            .button-inside {
-                width: 0;
-                height: 42px;
-                margin: 0;
-                top: 0;
-                left: 50%;
-                position: absolute;
-                background: $main-color;
-                background: url('/images/coffee-love.png') no-repeat center /contain;
-                @include border-radius(5px);    
-                @include transition(0.5s);
-                .full {
-                    width: 100%;
-                    left: 0;
-                    border: 1px solid black;
-                }
-            }
-        }       
+    .coffee-ind-inside {
+      text-align: center;
+      cursor: pointer;
+      .amount {
+        padding-bottom: 12px;
+        white-space: nowrap;
+        word-spacing: -.12em;
+        border-bottom: solid 4px black;
+        width: 70%;
+        float: none;
+        margin: 0 auto 10px;
+      }
+      .price {
+        padding: 18px;
+      }
+      .coffee-pic {
+        display: block;
+        float: none;
+        margin: auto;
+        width: 100%;
+      }
     }
+    .coffee-ind-inside:hover {
+      background-color: #FAF7F1;
+    }
+    .coffee-ind-inside:not(.active-coffee-amount) {
+      border: solid 1px $border-yellowish;
+      padding: 14px 0px;
+      margin: 8px;
+    }
+    .active-coffee-amount {
+      border: solid 9px $main-color;
+      padding: 14px 0px;
+    }
+    
+    // Buy button styling
+    .button-fill {
+      @include vend(border-radius, 5px);
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: black;
+      color: $main-color;
+      .button-text {
+        margin: 0 auto;
+        padding: 0 20px;
+        line-height: 42px;
+        letter-spacing: .1em;
+      }
+      .button-inside {
+        @include vend(border-radius, 5px);    
+        @include vend(transition, 0.5s);
+	width: 0;
+        height: 42px;
+        margin: 0;
+        top: 0;
+        left: 50%;
+        position: absolute;
+        background: $main-color url('/images/coffee-love.png')  no-repeat center /contain;
+        .full {
+          width: 100%;
+          left: 0;
+          border: 1px solid black;
+        }
+      }
+    }       
+  }
 }
 
 
 // Merchandise section
-.merch-sect{
-    @include border-image(url('../images/cafe_jefe_border_invert.svg'), 245, round, round);
-    background-color: white;
-    border-width: 120px;
-    padding: 0;
-    margin: 50px 2.5%;
-    width: 95%;
-    .motto{
-        margin: 0 25px 35px;
+.merch-sect {
+  @include vend(border-image, (url('../images/cafe_jefe_border_invert.svg') 245 round round));
+  background-color: white;
+  border-width: 120px;
+  padding: 0;
+  margin: 50px 2.5%;
+  width: 95%;
+  .motto {
+    margin: 0 25px 35px;
+  }
+  .merch-ind > a > img {
+    a {
+      img {
+	border-radius: 100%;
+	border: solid $border-yellowish 6px;
+	padding: 0;
+      }
+      img:hover {
+	border: solid black 6px;
+      }
+      .merch-price {
+	text-decoration:none;
+	color: black;
+	margin-top: 4px;
+      }
     }
-    .merch-ind > a > img {
-	a {
-	    img {
-		border-radius: 100%;
-		border: solid $border-yellowish 6px;
-		padding: 0;
-	    }
-	    img:hover {
-		border: solid black 6px;
-	    }
-	    .merch-price {
-		text-decoration:none;
-		color: black;
-		margin-top: 4px;
-	    }
-	}
-    }
+  }
 }
 
-@media (max-width: $phoneMax) {
-    .merch-sect {
-	@include border-image(url('../images/cafe_jefe_border_invert_no_inside.svg'), 245, round, round);
-	border-width: 90px;
-	margin: 40px 10px;
+@media (max-width: $phone-max) {
+  .merch-sect {
+    @include vend(border-image, (url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round round));
+    border-width: 90px;
+    margin: 40px 10px;
+  }
+  .merch-ind+.merch-ind {
+    margin-top: 30px;
+  }
+  .merch-sect {
+    .motto {
+      margin-bottom: 40px;
     }
-    .merch-ind+.merch-ind {
-	margin-top: 30px;
-    }
-    .merch-sect {
-	.motto {
-	    margin-bottom: 40px;
-	}
-    }
+  }
 }
 
-@media (min-width: $tabletMin) and (max-width: $tabletMax) {
-    .merch-sect{
-	.motto {
-	    margin: 0 25px 8px;
-	}
+@media (min-width: $tablet-min) and (max-width: $tablet-max) {
+  .merch-sect {
+    .motto {
+      margin: 0 25px 8px;
     }
-    .merch-ind {
-	padding: 30px 2.2% 0;
-    }
+  }
+  .merch-ind {
+    padding: 30px 2.2% 0;
+  }
 }
 
-@media (min-width: $laptopMin) {
-    .merch-ind {
-	padding: 0 1.25%;
-    }
-    .merch-price {
-	margin-top: 8px;
-    }
+@media (min-width: $laptop-min) {
+  .merch-ind {
+    padding: 0 1.25%;
+  }
+  .merch-price {
+    margin-top: 8px;
+  }
 }
 
 
 // Map section
 #map {
-    display: block;
-    height: 480px;
-    max-height: 90vh;
-    border-top: solid 6px #eee;
+  display: block;
+  height: 480px;
+  max-height: 90vh;
+  border-top: solid 6px #eee;
 }
 
 
 // Footer section
 footer {
-    .back-to-top {
-        text-align: center;
-        background-color: black;
-        color: white;
-        width: 45px;
-        height: 40px;
-        font-size: 28px;
-        line-height: 38px;
-        position: absolute;
-        top: -40px;
-        left: 0;
-        right: 0;
-        margin: auto;
-        cursor: pointer;
-        font-family: FontAwesome;
-        @include border-radius(3px, 3px, 0, 0);
-        @include transform(translateZ(0));
-    }
-    .footer-logo {
-        margin: 10px auto 5px;
-        width: 156px;
-    }
-    .footer-copyright {
-        margin: 0 auto 20px;
-    }
+  .back-to-top {
+    @include vend(border-radius,(3px 3px 0 0));
+    @include transform(translateZ(0));
+    text-align: center;
+    background-color: black;
+    color: white;
+    width: 45px;
+    height: 40px;
+    font-size: 28px;
+    line-height: 38px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    font-family: FontAwesome;
+  }
+  .footer-logo {
+    margin: 10px auto 5px;
+    width: 156px;
+  }
+  .footer-copyright {
+    margin: 0 auto 20px;
+  }
 }
