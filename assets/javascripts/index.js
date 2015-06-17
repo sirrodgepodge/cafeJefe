@@ -33,7 +33,7 @@ var main = function() {
     });
     inc = 0;
     $merchPrice.each(function(){
-	$(this).html('$'+prices['merch'][inc]);
+	$(this).html('$'+prices.merch[inc]);
 	inc++;
     });
     
@@ -72,7 +72,7 @@ var main = function() {
     });
 
     $backToTop.click(function(){
-	$('body').animate({scrollTop:0}, $(window).scrollTop()*.65);
+	$('body').animate({scrollTop:0}, $(window).scrollTop()*0.65);
     });
 };
 
