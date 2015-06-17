@@ -69,8 +69,8 @@ div,li,ul {
 .h1 {
     font-size: 4rem;
 }
-.
-h1, .h2, .h3, h1, h2, h3 {
+
+.h1, .h2, .h3, h1, h2, h3 {
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -212,7 +212,7 @@ h1, .h2, .h3, h1, h2, h3 {
                 background: $main-color;
                 background: url('/images/coffee-love.png') no-repeat center /contain;
                 @include border-radius(5px);    
-                @include transition(width 0.5s, left 0.5s, margin 0.5s);
+                @include transition('width 0.5s, left 0.5s, margin 0.5s');
                 .full {
                     width: 100%;
                     left: 0;
