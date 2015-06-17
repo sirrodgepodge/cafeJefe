@@ -6,44 +6,36 @@ $laptopMin: 992px;
 $border-yellowish: #E1DED9;
 $main-color: #900D13;
 
-@mixin border-radius($radius) {
-    -webkit-border-radius: #{$radius};
-    -moz-border-radius: #{$radius};
-    -ms-transform: #{$radius};
-    -o-border-radius: #{$radius};
-    border-radius: #{$radius};
-}
-
 @mixin transform($transf) {
-    -webkit-transform: #{$trans};
-    -moz-transform: #{$trans};
-    -ms-transform: #{$trans};
-    -o-transform: #{$trans};
-    transform: #{$trans};
+    -webkit-transform: $trans;
+    -moz-transform: $trans;
+    -ms-transform: $trans;
+    -o-transform: $trans;
+    transform: $trans;
 }
 
 @mixin transition($transit) {
-    -webkit-transition: #{$transit};
-    -moz-transition: #{$transit};
-    -ms-transition: #{$transit};
-    -o-transition: #{$transit};
-    transition: #{$transit};
+    -webkit-transition: $transit;
+    -moz-transition: $transit;
+    -ms-transition: $transit;
+    -o-transition: $transit;
+    transition: $transit;
 }
 
-@mixin border-radius($radius) {
-    -webkit-border-radius: $radius;
-    -moz-border-radius: $radius;
-    -ms-border-radius: $radius;
-    -o-border-radius: $radius;
-    border-radius: $radius;
+@mixin border-radius($radius-top, $radius-right, $radius-bottom, $radius-left) {
+    -webkit-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+    -moz-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+    -ms-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+    -o-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
+    border-radius: $radius-top $radius-right $radius-bottom $radius-left;
 }
 
-@mixin border-image($specs) {
-    -webkit-border-image: $specs;
-    -moz-border-image: $specs;
-    -ms-border-image: $specs;
-    -o-border-image: $specs;
-    border-image: $specs;
+@mixin border-image($img, $cornerDim, $top, $side) {
+    -webkit-border-image: $img $cornerDim $top $side;
+    -moz-border-image: $img $cornerDim $top $side;
+    -ms-border-image: $img $cornerDim $top $side;
+    -o-border-image: $img $cornerDim $top $side;
+    border-image: $img $cornerDim $top $side;
 }
 
 
@@ -195,7 +187,7 @@ div,li,ul {
             text-transform: uppercase;
             background-color: black;
             color: $main-color;
-            @include border-radius(5px);
+            @include border-radius(5px, 5px, 5px, 5px);
             .button-text {
                 margin: 0 auto;
                 padding: 0 20px;
@@ -212,7 +204,7 @@ div,li,ul {
                 background: $main-color;
                 background: url('/images/coffee-love.png') no-repeat center /contain;
                 @include border-radius(5px);    
-                @include transition('width 0.5s, left 0.5s, margin 0.5s');
+                @include transition(0.5s);
                 .full {
                     width: 100%;
                     left: 0;
@@ -226,7 +218,7 @@ div,li,ul {
 
 // Merchandise section
 .merch-sect{
-    @include border-image("url('../images/cafe_jefe_border_invert.svg') 245 round");
+    @include border-image(url('../images/cafe_jefe_border_invert.svg'), 245, round, round);
     background-color: white;
     border-width: 120px;
     padding: 0;
@@ -256,7 +248,7 @@ div,li,ul {
 
 @media (max-width: $phoneMax) {
     .merch-sect {
-	@include border-image("url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round");
+	@include border-image(url('../images/cafe_jefe_border_invert_no_inside.svg'), 245, round, round);
 	border-width: 90px;
 	margin: 40px 10px;
     }
@@ -317,7 +309,7 @@ footer {
         margin: auto;
         cursor: pointer;
         font-family: FontAwesome;
-        @include border-radius('3px 3px 0 0');
+        @include border-radius(3px, 3px, 0, 0);
         @include transform(translateZ(0));
     }
     .footer-logo {
