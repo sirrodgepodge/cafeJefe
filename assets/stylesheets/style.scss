@@ -13,39 +13,6 @@ $main-color: #900d13;
   -o-#{$prop}: #{$val};
   #{$prop}: #{$val};
 }
-/*
-@mixin transform($transf) {
-  -webkit-transform: $transf;
-  -moz-transform: $transf;
-  -ms-transform: $transf;
-  -o-transform: $transf;
-  transform: $transf;
-}
-
-@mixin transition($transit) {
-  -webkit-transition: $transit;
-  -moz-transition: $transit;
-  -ms-transition: $transit;
-  -o-transition: $transit;
-  transition: $transit;
-}
-
-@mixin border-radius($radius-top, $radius-right, $radius-bottom, $radius-left) {
-  -webkit-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-  -moz-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-  -ms-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-  -o-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-  border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-}
-
-@mixin border-image($img, $corner-dim, $top, $side) {
-  -webkit-border-image: $img $corner-dim $top $side;
-  -moz-border-image: $img $corner-dim $top $side;
-  -ms-border-image: $img $corner-dim $top $side;
-  -o-border-image: $img $corner-dim $top $side;
-  border-image: $img $corner-dim $top $side;
-}
-*/
 
 // Base formatting
 html {
