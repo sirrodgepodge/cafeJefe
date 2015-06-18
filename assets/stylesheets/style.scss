@@ -310,7 +310,7 @@ h3 {
 footer {
   .back-to-top {
     @include vend(border-radius,(3px 3px 0 0));
-    @include transform(translateZ(0));
+    @include vend(transform,translateZ(0));
     text-align: center;
     background-color: black;
     color: white;
