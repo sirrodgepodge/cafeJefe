@@ -199,7 +199,7 @@ h3 {
 
 // Merchandise section
 .merch-sect {
-  @include vend(border-image, (url('../images/cafe_jefe_border_invert.svg') 245 round round));
+  @include vend(border-image, (url('../images/cafe_jefe_border_invert.svg') 245 round));
   background-color: white;
   border-width: 120px;
   padding: 0;
@@ -229,7 +229,7 @@ h3 {
 
 @media (max-width: $phone-max) {
   .merch-sect {
-    @include vend(border-image, (url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round round));
+    @include vend(border-image, (url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round));
     border-width: 90px;
     margin: 40px 10px;
   }
