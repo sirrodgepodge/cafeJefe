@@ -238,4 +238,5 @@ footer {
     margin: 10px auto 5px;
     width: 156px; }
   footer .footer-copyright {
-    margin: 0 auto 20px; }
+    text-align: center;
+    margin-bottom: 20px; }
