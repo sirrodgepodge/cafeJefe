@@ -1,36 +1,3 @@
-/*
-@mixin transform($transf) {
-  -webkit-transform: $transf;
-  -moz-transform: $transf;
-  -ms-transform: $transf;
-  -o-transform: $transf;
-  transform: $transf;
-}
-
-@mixin transition($transit) {
-  -webkit-transition: $transit;
-  -moz-transition: $transit;
-  -ms-transition: $transit;
-  -o-transition: $transit;
-  transition: $transit;
-}
-
-@mixin border-radius($radius-top, $radius-right, $radius-bottom, $radius-left) {
-  -webkit-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-  -moz-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-  -ms-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-  -o-border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-  border-radius: $radius-top $radius-right $radius-bottom $radius-left;
-}
-
-@mixin border-image($img, $corner-dim, $top, $side) {
-  -webkit-border-image: $img $corner-dim $top $side;
-  -moz-border-image: $img $corner-dim $top $side;
-  -ms-border-image: $img $corner-dim $top $side;
-  -o-border-image: $img $corner-dim $top $side;
-  border-image: $img $corner-dim $top $side;
-}
-*/
 html {
   margin: 0;
   width: 100%; }
@@ -185,11 +152,11 @@ h3 {
           border: 1px solid black; }
 
 .merch-sect {
-  -webkit-border-image: url("../images/cafe_jefe_border_invert.svg") 245 round round;
-  -moz-border-image: url("../images/cafe_jefe_border_invert.svg") 245 round round;
-  -ms-border-image: url("../images/cafe_jefe_border_invert.svg") 245 round round;
-  -o-border-image: url("../images/cafe_jefe_border_invert.svg") 245 round round;
-  border-image: url("../images/cafe_jefe_border_invert.svg") 245 round round;
+  -webkit-border-image: url("../images/cafe_jefe_border_invert.svg") 245 round;
+  -moz-border-image: url("../images/cafe_jefe_border_invert.svg") 245 round;
+  -ms-border-image: url("../images/cafe_jefe_border_invert.svg") 245 round;
+  -o-border-image: url("../images/cafe_jefe_border_invert.svg") 245 round;
+  border-image: url("../images/cafe_jefe_border_invert.svg") 245 round;
   background-color: white;
   border-width: 120px;
   padding: 0;
@@ -197,24 +164,24 @@ h3 {
   width: 95%; }
   .merch-sect .motto {
     margin: 0 25px 35px; }
-  .merch-sect .merch-ind > a > img a img {
+  .merch-sect .merch-ind a img {
     border-radius: 100%;
     border: solid #e1ded9 6px;
     padding: 0; }
-  .merch-sect .merch-ind > a > img a img:hover {
+  .merch-sect .merch-ind a img:hover {
     border: solid black 6px; }
-  .merch-sect .merch-ind > a > img a .merch-price {
+  .merch-sect .merch-ind a .merch-price {
     text-decoration: none;
     color: black;
     margin-top: 4px; }
 
 @media (max-width: 767px) {
   .merch-sect {
-    -webkit-border-image: url("../images/cafe_jefe_border_invert_no_inside.svg") 245 round round;
-    -moz-border-image: url("../images/cafe_jefe_border_invert_no_inside.svg") 245 round round;
-    -ms-border-image: url("../images/cafe_jefe_border_invert_no_inside.svg") 245 round round;
-    -o-border-image: url("../images/cafe_jefe_border_invert_no_inside.svg") 245 round round;
-    border-image: url("../images/cafe_jefe_border_invert_no_inside.svg") 245 round round;
+    -webkit-border-image: url("../images/cafe_jefe_border_invert_no_inside.svg") 245 round;
+    -moz-border-image: url("../images/cafe_jefe_border_invert_no_inside.svg") 245 round;
+    -ms-border-image: url("../images/cafe_jefe_border_invert_no_inside.svg") 245 round;
+    -o-border-image: url("../images/cafe_jefe_border_invert_no_inside.svg") 245 round;
+    border-image: url("../images/cafe_jefe_border_invert_no_inside.svg") 245 round;
     border-width: 90px;
     margin: 40px 10px; }
   .merch-ind + .merch-ind {
@@ -240,35 +207,35 @@ h3 {
   max-height: 90vh;
   border-top: solid 6px #eee; }
 
-footer .back-to-top {
-  -webkit-border-radius: 3px 3px 0 0;
-  -moz-border-radius: 3px 3px 0 0;
-  -ms-border-radius: 3px 3px 0 0;
-  -o-border-radius: 3px 3px 0 0;
-  border-radius: 3px 3px 0 0;
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
-  transform: translateZ(0);
-  text-align: center;
+footer {
   background-color: black;
-  color: white;
-  width: 45px;
-  height: 40px;
-  font-size: 28px;
-  line-height: 38px;
-  position: absolute;
-  top: -40px;
-  left: 0;
-  right: 0;
-  margin: auto;
-  cursor: pointer;
-  font-family: FontAwesome; }
-
-footer .footer-logo {
-  margin: 10px auto 5px;
-  width: 156px; }
-
-footer .footer-copyright {
-  margin: 0 auto 20px; }
+  margin: 0 auto; }
+  footer .back-to-top {
+    -webkit-border-radius: 3px 3px 0 0;
+    -moz-border-radius: 3px 3px 0 0;
+    -ms-border-radius: 3px 3px 0 0;
+    -o-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+    text-align: center;
+    color: white;
+    width: 45px;
+    height: 40px;
+    font-size: 28px;
+    line-height: 38px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    font-family: FontAwesome; }
+  footer .footer-logo {
+    margin: 10px auto 5px;
+    width: 156px; }
+  footer .footer-copyright {
+    margin: 0 auto 20px; }
