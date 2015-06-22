@@ -1,6 +1,6 @@
 // Stored values
-$phone-max: 767px;
-$tablet-min: 768px;
+$phone-max: 679px;
+$tablet-min: 680px;
 $tablet-max: 991px;
 $laptop-min: 992px;
 $border-yellowish: #e1ded9;
@@ -182,7 +182,7 @@ h3 {
                 left: 50%;
                 position: absolute;
                 background: $main-color url('/images/coffee-love.png') no-repeat center /contain;
-                .full {
+                &.full {
                     width: 100%;
                     left: 0;
                     border: 1px solid black;
@@ -202,16 +202,18 @@ h3 {
     width: 95%;
     .motto {
         margin: 0 25px 35px;
+        font-family: 'Indie Flower', cursive;
+        font-size: 7rem;
     }
     .merch-ind {
         a {
             img {
                 border-radius: 100%;
-                border: solid $border-yellowish 6px;
+                border: 6px solid $border-yellowish;
                 padding: 0;
             }
             img:hover {
-                border: solid black 6px;
+                border-color: black;
             }
             .merch-price {
                 text-decoration: none;
@@ -227,13 +229,14 @@ h3 {
         @include vend(border-image, (url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round));
         border-width: 90px;
         margin: 40px 10px;
-    }
-    .merch-ind+.merch-ind {
-        margin-top: 30px;
-    }
-    .merch-sect {
         .motto {
             margin-bottom: 40px;
+        }
+        .merch-ind+.merch-ind {
+            margin-top: 30px;
+        }
+        .merch-ind{
+            padding: 0;
         }
     }
 }
@@ -285,6 +288,7 @@ footer {
         right: 0;
         margin: auto;
         cursor: pointer;
+        background-color: inherit;
         font-family: FontAwesome;
     }
     .footer-logo {

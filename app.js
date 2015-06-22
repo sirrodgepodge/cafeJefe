@@ -25,6 +25,7 @@ app.use(cookieParser());
 app.use(sass({
         src: path.join(__dirname, 'assets'), //where the sass files at
         dest: path.join(__dirname, 'public'), //where they will be converted to css
+        outputStyle: 'compressed',
         debug: true
 }));
 app.use(express.static(path.join(__dirname, 'public')));
