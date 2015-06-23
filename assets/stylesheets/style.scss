@@ -47,6 +47,25 @@ h3 {
     margin-top: 0;
 }
 
+//Landing
+.landing {
+    height: 0;
+}
+.landing2 {
+    height: 0;
+}
+
+@media(min-width: $tablet-min) {
+    .landing {
+        height: 50vh;
+        background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
+    }
+    .landing2 {
+        height: 50vh;
+        background: url('/images/two_coffees_short.jpg') no-repeat center /cover;
+    }
+}
+
 // Title section
 .title {
     border-bottom: solid 3px $border-yellowish;
@@ -58,7 +77,7 @@ h3 {
         vertical-align: baseline;
         max-width: 99.6%;
         width: 400px;
-        margin-left: 0;
+        margin: 0 auto;
     }
 }
 
@@ -208,7 +227,7 @@ h3 {
         font-family: 'Indie Flower', cursive;
         font-size: 7rem;
     }
-    @media max-width: $phone-max {
+    @media (max-width: $phone-max) {
         font-size: 5rem;
     }
     .merch-ind {
