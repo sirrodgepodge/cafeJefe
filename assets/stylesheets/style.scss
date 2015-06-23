@@ -208,6 +208,9 @@ h3 {
         font-family: 'Indie Flower', cursive;
         font-size: 7rem;
     }
+    @media max-width: $phone-max {
+        font-size: 5rem;
+    }
     .merch-ind {
         a {
             img {
