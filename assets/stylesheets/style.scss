@@ -1,6 +1,6 @@
 // Stored values
-$phone-max: 679px;
-$tablet-min: 680px;
+$phone-max: 767px;
+$tablet-min: 768px;
 $tablet-max: 991px;
 $laptop-min: 992px;
 $border-yellowish: #e1ded9;
@@ -20,7 +20,6 @@ html {
 }
 
 body {
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
     padding: 0;
 }
 
@@ -99,9 +98,9 @@ h3 {
             border-radius: 1px;
             margin-top: -3px;
         }
-        @media (max-width: 590px),
-        (min-width: $tablet-min) and (max-width: 864px),
-        (min-width: $laptop-min) and (max-width: 1142px) {
+        @media (max-width: 605px),
+        (min-width: $tablet-min) and (max-width: 895px),
+        (min-width: $laptop-min) and (max-width: 1170px) {
             #save {
                 display: none!important;
             }
@@ -137,12 +136,16 @@ h3 {
             }
             .coffee-price {
                 padding: 18px;
+                font-weight: 200;
             }
             .coffee-pic {
                 display: block;
                 float: none;
                 margin: auto;
                 width: 100%;
+            }
+            .oz-coffee-amount {
+                font-size: 14px;
             }
         }
         .coffee-ind-inside:hover {
