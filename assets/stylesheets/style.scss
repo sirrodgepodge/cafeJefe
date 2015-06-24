@@ -331,27 +331,34 @@ h3 {
     min-height: 0;
 }
 
+.back-to-top {
+    display: none;
+}
+
+@media (min-width: $tablet-min) {
+    .back-to-top {
+	@include vend(border-radius, (3px 3px 0 0));
+	@include vend(transform, translateZ(0));
+	text-align: center;
+	color: white;
+	width: 45px;
+	height: 40px;
+	font-size: 28px;
+	line-height: 38px;
+	position: absolute;
+	top: -40px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	cursor: pointer;
+	background-color: inherit;
+	font-family: FontAwesome;
+    }
+}
+
 footer {
     background-color: black;
     margin: 0 auto;
-    .back-to-top {
-        @include vend(border-radius, (3px 3px 0 0));
-        @include vend(transform, translateZ(0));
-        text-align: center;
-        color: white;
-        width: 45px;
-        height: 40px;
-        font-size: 28px;
-        line-height: 38px;
-        position: absolute;
-        top: -40px;
-        left: 0;
-        right: 0;
-        margin: auto;
-        cursor: pointer;
-        background-color: inherit;
-        font-family: FontAwesome;
-    }
     .footer-logo {
         margin: 10px auto 5px;
         width: 156px;
