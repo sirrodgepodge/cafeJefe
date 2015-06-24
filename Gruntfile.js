@@ -16,7 +16,9 @@ module.exports = function(grunt) {
 		'assets/stylesheets/*.scss'
 	    ],
 	    options: {
-		colorizeOutput: true
+		    colorizeOutput: true,
+		    compact: true,
+		    force: true
 	    }
 	}
     });

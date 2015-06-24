@@ -5,6 +5,9 @@ $tablet-max: 991px;
 $laptop-min: 992px;
 $border-yellowish: #e1ded9;
 $main-color: #900d13;
+$title-height: 10;
+
+// Handle vendor prefixes
 @mixin vend($prop, $val) {
     -webkit-#{$prop}: $val;
     -moz-#{$prop}: $val;
@@ -57,29 +60,60 @@ h3 {
 
 @media(min-width: $tablet-min) {
     .landing {
-        height: 50vh;
+        position: relative;
+        left: 0;
+        top: 0;
+        height: #{100 - $title-height}vh;
         background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
     }
     .landing2 {
-        height: 50vh;
+        position: relative;
+        left: 0;
+        top: 0;
+        height: #{100 - $title-height}vh;
+        border-bottom: solid 3px $border-yellowish;
+        margin-bottom: 24px;
         background: url('/images/two_coffees_short.jpg') no-repeat center /cover;
     }
 }
 
+// .parallax-overlay {
+//     position: absolute;
+//     left: 0;
+//     top: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-image: url(/images/shader.png);
+//     background-repeat: repeat;
+//     background-color: rgba(44,62,80,0.1);
+//     z-index: -1;
+    
+// }
+
 // Title section
+.place-holder {
+    height: #{$title-height}vh;
+    width: 100%;
+}
 .title {
+    position: sticky;
     border-bottom: solid 3px $border-yellowish;
     background-color: black;
     width: 100%;
     left: 0;
-    margin-bottom: 24px;
+    height: #{$title-height}vh;
     img {
         vertical-align: baseline;
-        max-width: 99.6%;
-        width: 400px;
+        height: 100%;
         margin: 0 auto;
     }
+    &.sticky {
+        top: 0;
+        position: fixed;
+        z-index: 3;
+    }
 }
+
 
 // Motto
 .motto {

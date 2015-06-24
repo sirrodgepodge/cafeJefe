@@ -6,6 +6,8 @@ var $buttonFill = $('.button-fill');
 var $coffeePrice = $('.coffee-price');
 var $merchPrice = $('.merch-price');
 var $backToTop = $('.back-to-top, .title');
+var $title = $('.title');
+var $body = $('body');
 
 
 // Prices array
@@ -23,6 +25,7 @@ var addresses = [
 ];
 
 
+// UI Functionality
 var main = function() {
     // Initialize prices
     var purchTypeVal = $('.active-purch-type').attr('id');
@@ -78,6 +81,8 @@ var main = function() {
     });
 };
 
+
+// Load Google Maps
 var mapLoad = function(addresses) {
     $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + addresses[0] + '&sensor=false', null, function(centerData) {
         var centerCoord = centerData.results[0].geometry.location;
@@ -118,4 +123,31 @@ var mapLoad = function(addresses) {
     });
 };
 
-$(document).ready(main, mapLoad(addresses));
+// Handle fixing title bar at the top of the page
+var $placeHolder = document.createElement('div');
+$placeHolder.className = 'place-holder';
+console.log($placeHolder);
+var isAdded = false;
+var breakPoint = $title.offset().top;
+var first = true;
+
+var stickyTitle = function() {
+    $(window).scroll(function() {
+        console.log('listen');
+        if (window.pageYOffset >= breakPoint && !isAdded) {
+            $title.addClass('sticky');
+            $body.before($placeHolder);
+            if(first) {
+                $placeHolder = $('.place-holder');
+                first = false;
+            }
+            isAdded = true;
+        } else if (window.pageYOffset < breakPoint && isAdded) {
+            $title.removeClass('sticky');
+            $placeHolder.detach();
+            isAdded = false;
+        }
+    });
+};
+
+$(document).ready(main, mapLoad(addresses), stickyTitle());
