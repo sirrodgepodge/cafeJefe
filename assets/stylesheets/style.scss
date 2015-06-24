@@ -5,7 +5,7 @@ $tablet-max: 991px;
 $laptop-min: 992px;
 $border-yellowish: #e1ded9;
 $main-color: #900d13;
-$title-height: 10;
+$title-height: 11;
 
 // Handle vendor prefixes
 @mixin vend($prop, $val) {
@@ -54,46 +54,34 @@ h3 {
 .landing {
     height: 0;
 }
-.landing2 {
-    height: 0;
-}
 
 @media(min-width: $tablet-min) {
     .landing {
         position: relative;
+        z-index: -2;
         left: 0;
         top: 0;
-        height: #{100 - $title-height}vh;
+        height: 100vh;
         background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
-    }
-    .landing2 {
-        position: relative;
-        left: 0;
-        top: 0;
-        height: #{100 - $title-height}vh;
-        border-bottom: solid 3px $border-yellowish;
-        margin-bottom: 24px;
-        background: url('/images/two_coffees_short.jpg') no-repeat center /cover;
     }
 }
 
-// .parallax-overlay {
-//     position: absolute;
-//     left: 0;
-//     top: 0;
-//     width: 100%;
-//     height: 100%;
-//     background-image: url(/images/shader.png);
-//     background-repeat: repeat;
-//     background-color: rgba(44,62,80,0.1);
-//     z-index: -1;
-    
-// }
-
+.parallax-overlay {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url(/images/shader.png) repeat;
+}
 // Title section
 .place-holder {
     height: #{$title-height}vh;
     width: 100%;
+    &.no-show {
+        display: none;
+    }
 }
 .title {
     position: sticky;
@@ -117,6 +105,7 @@ h3 {
 
 // Motto
 .motto {
+    margin-top: 24px;
     font-size: 42px;
     font-family: lato, sans-serif;
     font-weight: 300;

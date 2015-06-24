@@ -7,7 +7,7 @@ var $coffeePrice = $('.coffee-price');
 var $merchPrice = $('.merch-price');
 var $backToTop = $('.back-to-top, .title');
 var $title = $('.title');
-var $body = $('body');
+var $placeHolder = $('.place-holder');
 
 
 // Prices array
@@ -124,28 +124,16 @@ var mapLoad = function(addresses) {
 };
 
 // Handle fixing title bar at the top of the page
-var $placeHolder = document.createElement('div');
-$placeHolder.className = 'place-holder';
-console.log($placeHolder);
+var breakPoint = Math.ceil($title.offset().top);
+var pagePos = 0;
 var isAdded = false;
-var breakPoint = $title.offset().top;
-var first = true;
-
 var stickyTitle = function() {
-    $(window).scroll(function() {
-        console.log('listen');
-        if (window.pageYOffset >= breakPoint && !isAdded) {
-            $title.addClass('sticky');
-            $body.before($placeHolder);
-            if(first) {
-                $placeHolder = $('.place-holder');
-                first = false;
-            }
-            isAdded = true;
-        } else if (window.pageYOffset < breakPoint && isAdded) {
-            $title.removeClass('sticky');
-            $placeHolder.detach();
-            isAdded = false;
+    window.addEventListener('scroll',function() {
+        pagePos = window.pageYOffset;
+        if (pagePos - breakPoint >= 0 && !isAdded || pagePos - breakPoint < 0 && isAdded) {
+            $title.toggleClass('sticky');
+            $placeHolder.toggleClass('no-show');
+            isAdded = !isAdded;
         }
     });
 };
