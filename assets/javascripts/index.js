@@ -124,10 +124,10 @@ var mapLoad = function(addresses) {
 };
 
 // Handle fixing title bar at the top of the page
-var breakPoint = Math.ceil($title.offset().top);
-var pagePos = 0;
-var isAdded = false;
 var stickyTitle = function() {
+    var breakPoint = Math.ceil($title.offset().top);
+    var pagePos = 0;
+    var isAdded = false;
     window.addEventListener('scroll',function() {
         pagePos = window.pageYOffset;
         if (pagePos - breakPoint >= 0 && !isAdded || pagePos - breakPoint < 0 && isAdded) {
