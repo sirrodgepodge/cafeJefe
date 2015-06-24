@@ -50,31 +50,46 @@ h3 {
     margin-top: 0;
 }
 
-//Landing
-.landing {
-    height: 0;
+//For Mobile
+.landing, .shading, #map {
+    display: none;
 }
 
+//For Desktop
 @media(min-width: $tablet-min) {
+    //Landing image
     .landing {
+        display: block;
         position: relative;
         z-index: -2;
         left: 0;
         top: 0;
         height: 100vh;
+        box-sizing: content-box;
+        border-bottom: solid 1px #222;
         background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
+    }
+    .shading {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: url(/images/shader.png) repeat;
+    }
+    
+    // Map section
+    #map {
+        display: block;
+        height: 480px;
+        max-height: 90vh;
+        border-top: solid 6px #eee;
     }
 }
 
-.parallax-overlay {
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url(/images/shader.png) repeat;
-}
+
 // Title section
 .place-holder {
     height: #{$title-height}vh;
@@ -309,13 +324,6 @@ h3 {
     }
 }
 
-// Map section
-#map {
-    display: block;
-    height: 480px;
-    max-height: 90vh;
-    border-top: solid 6px #eee;
-}
 
 // Footer section
 footer {
