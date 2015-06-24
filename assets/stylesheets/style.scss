@@ -5,7 +5,7 @@ $tablet-max: 991px;
 $laptop-min: 992px;
 $border-yellowish: #e1ded9;
 $main-color: #900d13;
-$title-height: 11;
+$title-height: 10.8;
 
 // Handle vendor prefixes
 @mixin vend($prop, $val) {
@@ -64,9 +64,8 @@ h3 {
         z-index: -2;
         left: 0;
         top: 0;
-        height: 100vh;
-        box-sizing: content-box;
-        border-bottom: solid 1px #222;
+        height: #{100- $title-height}vh;
+        border-bottom: solid 2px #222;
         background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
     }
     .shading {
@@ -75,8 +74,8 @@ h3 {
         z-index: -1;
         left: 0;
         top: 0;
-        width: 100vw;
-        height: 100vh;
+        width: 100%;
+        height: #{100 - $title-height}vh;
         background: url(/images/shader.png) repeat;
     }
     
@@ -104,6 +103,7 @@ h3 {
     width: 100%;
     left: 0;
     height: #{$title-height}vh;
+    box-sizing: content-box;
     img {
         vertical-align: baseline;
         height: 100%;
