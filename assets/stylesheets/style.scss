@@ -49,6 +49,7 @@ ul {
 ////For Desktop
 @media(min-width: $tablet-min) {    
     .landing {
+	display: block;
 	background-color: #000;
 	height: #{100 - $title-height}vh;
 	box-sizing: content-box;
