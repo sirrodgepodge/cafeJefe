@@ -51,13 +51,13 @@ ul {
     .landing {
 	display: block;
 	background-color: #000;
-	height: #{100 - $title-height}vh;
+	height: 100vh;
 	box-sizing: content-box;
 	border-bottom: solid 2px #222;
     }
     
     // Image
-    #landing-img {
+    .landing-img {
 	@include vend(transition, 1s);
 	display: block;
 	opacity: 0;
@@ -70,7 +70,7 @@ ul {
     }
     
     // Shading
-    #shading {
+    .shading {
 	@include vend(transition, 2s);
         display: block;
         visibility: hidden;
