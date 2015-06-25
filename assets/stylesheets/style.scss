@@ -50,7 +50,7 @@ ul {
 @media(min-width: $tablet-min) {    
     .landing {
 	background-color: #000;
-	height #{100 - $title-height}vh;
+	height: #{100 - $title-height}vh;
 	box-sizing: content-box;
 	border-bottom: solid 2px #222;
     }
