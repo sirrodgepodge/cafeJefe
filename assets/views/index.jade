@@ -2,8 +2,9 @@ extends layout
 
 block content
   .place-holder.no-show
-  .shading
-  .landing
+    #landing
+    #shading
+  .landing-img
   .title
     img(src="../images/cafe_jefe_text.svg")
   .coffee-head.text-center Mi caf&eacute; es su caf&eacute;
@@ -36,3 +37,4 @@ block content
           img(src="../images/#{m}.jpg").col-xs-12
           .merch-price.h1.text-center.col-xs-12
   include footer
+  include script
