@@ -57,7 +57,7 @@ ul {
     
     // Image
     #landing-img {
-	@include(vend(transition, 1s));
+	@include vend(transition, 1s);
 	display: block;
 	opacity: 0;
         position: relative;
@@ -70,7 +70,7 @@ ul {
     
     // Shading
     #shading {
-	@include(vend(transition, 2s));
+	@include vend(transition, 2s);
         display: block;
         visibility: hidden;
 	position: absolute;
