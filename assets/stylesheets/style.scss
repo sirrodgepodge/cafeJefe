@@ -261,16 +261,14 @@ h3 {
     @include vend(border-image, (url('../images/cafe_jefe_border_invert.svg') 245 round));
     background-color: white;
     border-width: 120px;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     margin: 50px 2.5%;
     width: 95%;
     .motto {
         margin: 0 25px 35px;
         font-family: 'Indie Flower', cursive;
         font-size: 7rem;
-    }
-    @media (max-width: $phone-max) {
-        font-size: 5rem;
     }
     .merch-ind {
         a {
@@ -297,7 +295,8 @@ h3 {
         border-width: 90px;
         margin: 40px 10px;
         .motto {
-            margin-bottom: 40px;
+            margin: 0 0 40px;
+	    font-size: 5rem;
         }
         .merch-ind+.merch-ind {
             margin-top: 30px;
