@@ -17,12 +17,9 @@ $title-height: 11;
 }
 
 // Base formatting
-html {
+html, body {
     margin: 0;
     width: 100%;
-}
-
-body {
     padding: 0;
 }
 
@@ -282,9 +279,10 @@ h3 {
                 border-color: black;
             }
             .merch-price {
-                text-decoration: none;
-                color: black;
                 margin-top: 15px;
+		text-decoration: none;
+		font-size: 3.6rem;
+                color: black;
             }
         }
     }
