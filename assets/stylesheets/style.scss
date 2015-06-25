@@ -49,6 +49,8 @@ ul {
 ////For Desktop
 @media(min-width: $tablet-min) {    
     .landing {
+	position: relative;
+	z-index: -3;
 	display: block;
 	background-color: #000;
 	height: 100vh;
