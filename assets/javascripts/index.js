@@ -89,7 +89,7 @@ var mapLoad = function(addresses) {
         var map,
             mapOptions = {
                 center: new google.maps.LatLng(centerCoord.lat, centerCoord.lng),
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeId: google.maps.MapTypeId.TERRAIN,
                 styles: [{
                     stylers: [{
                         'saturation': -100
