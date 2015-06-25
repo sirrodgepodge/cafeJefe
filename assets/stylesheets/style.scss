@@ -84,9 +84,11 @@ h3 {
         display: block;
         height: 480px;
         max-height: 80vh;
+        .marker-caption, .gm-style-iw {
+            line-height: 1;
+        }
         .marker-caption {
-            margin: 0;
-            line-height: .9;
+            margin: 1.6px 0 0;
         }
     }
 }
