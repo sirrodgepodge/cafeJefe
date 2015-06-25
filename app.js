@@ -30,7 +30,7 @@ app.use(sass({
         outputStyle: 'compressed',
         debug: true
 }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public'), {maxAge: 1800000}));
 
 // routes
 app.use('/', routes);
