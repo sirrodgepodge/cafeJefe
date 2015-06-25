@@ -107,19 +107,36 @@ var mapLoad = function(addresses) {
         map = new google.maps.Map($('#map')[0], mapOptions);
 
         var bounds = new google.maps.LatLngBounds(); //this code autofits & zooms to include all markers, bad if there's only one
-        for (var x = 0; x < addresses.length; x++) {
-            $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + addresses[x] + '&sensor=false', null, function(data) {
+        addresses.forEach(function(val, index) {
+            $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + val + '&sensor=false', null, function(data) {
                 var p = data.results[0].geometry.location;
                 var latlng = new google.maps.LatLng(p.lat, p.lng);
                 bounds.extend(latlng);
-                new google.maps.Marker({
+                
+                //Add marker
+                var marker = new google.maps.Marker({
                     position: latlng,
                     map: map,
                     icon: 'images/Marker_Mask.png'
                 });
-                if (addresses.length > 1) map.fitBounds(bounds);
+
+                //Create pop-up window object
+                var infowindow = new google.maps.InfoWindow({
+                    content: '<p class="marker-caption">' + val + '</p>'
+                });
+                
+                //Add listeners to marker to open and close info window on click
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.open(map, marker);
+                });
+
+                google.maps.event.addListener(infowindow, 'closeclick', function() {
+                    map.setCenter(marker.getPosition());
+                });
+
+                if(index>1) map.fitBounds(bounds);
             });
-        }
+        });
     });
 };
 
