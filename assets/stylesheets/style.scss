@@ -265,6 +265,8 @@ ul {
 // Merchandise section
 .merch-sect {
     @include vend(border-image, (url('../images/cafe_jefe_border_invert.svg') 245 round));
+    clear: both;
+    float: left;
     background-color: white;
     border-width: 120px;
     padding-left: 0;
