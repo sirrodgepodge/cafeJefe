@@ -1,7 +1,9 @@
 script(type='text/javascript').
-  var landingImg = document.getElementsByClassName('landing-img');
-  var shading = document.getElementsByClassName('shading');
+  if(screen.width >= 768) {
+    var landingImg = document.getElementsByClassName('landing-img');
+    var shading = document.getElementsByClassName('shading');
     setTimeout(function() {
       landingImg[0].className += ' show';
       shading[0].className += ' show';
-    },2000);
+    },1000);
+  } 

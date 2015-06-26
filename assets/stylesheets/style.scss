@@ -302,7 +302,7 @@ ul {
         @include vend(border-image, (url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round));
         border-width: 90px;
         margin: 40px 10px;
-        .motto {
+        .merch-head {
             margin: 0 0 40px;
 	    font-size: 5rem;
         }
@@ -373,6 +373,7 @@ ul {
 footer {
     background-color: black;
     margin: 0 auto;
+    padding: 0;
     .footer-logo {
         margin: 10px auto 5px;
         width: 156px;
