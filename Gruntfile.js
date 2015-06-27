@@ -20,13 +20,19 @@ module.exports = function(grunt) {
 		    compact: true,
 		    force: true
 	    }
+	},
+	exec: {
+	    browserifying: {
+		cmd: 'echo heyhey'
+	    }
 	}
     });
 
     // Load tasks
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-scss-lint');
+    grunt.loadNpmTasks('grunt-exec');
     
     // Set default tasks
-    grunt.registerTask('default', ['uglify','scsslint']);
+    grunt.registerTask('default', ['uglify','scsslint','exec']);
 };
