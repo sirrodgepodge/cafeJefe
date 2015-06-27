@@ -23,7 +23,7 @@ module.exports = function(grunt) {
 	},
 	exec: {
 	    browserifying: {
-		cmd: 'echo heyhey'
+			cmd: 'echo heyhey'
 	    }
 	}
     });

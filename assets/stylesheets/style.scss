@@ -5,7 +5,6 @@ $tablet-max: 991px;
 $laptop-min: 992px;
 $border-yellowish: #e1ded9;
 $main-color: #900d13;
-$title-height: 11;
 
 // Handle vendor prefixes
 @mixin vend($prop, $val) {
@@ -48,6 +47,11 @@ ul {
 
 ////For Desktop
 @media(min-width: $tablet-min) {    
+    @keyframes hover-bounch {
+        from {margin-top: 90vh;}
+        to {margin-top: 91vh;}
+    }
+
     .landing {
 	position: relative;
 	z-index: -3;
@@ -56,35 +60,60 @@ ul {
 	height: 100vh;
 	box-sizing: content-box;
 	border-bottom: solid 2px #222;
+
+        // Image
+        .landing-img {
+    	@include vend(transition, 1s);
+    	display: block;
+    	opacity: 0;
+            position: relative;
+            z-index: -2;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
+        }
+        
+        // Shading
+        .shading {
+    	@include vend(transition, 1s);
+            display: block;
+            visibility: hidden;
+    	position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url(/images/shader.png) repeat;
+        }
+        
+        .landing-caption {
+            .landing-head{
+                position: fixed;
+                top: 0;
+                z-index: 5;
+                background: url('/images/cafe_jefe_text_invert.svg') no-repeat center /contain;
+                width: 100%;
+                height: 11.5vh;
+            }
+            .landing-story{
+
+            }
+            .landing-product{
+
+            }
+        }
+        .down-anim{
+            position: absolute;
+            margin: 90vh 0 0;
+            font-size: 36px;
+            width: 100%;
+            color: white;
+            text-align: center;
+        }
     }
-    
-    // Image
-    .landing-img {
-	@include vend(transition, 1s);
-	display: block;
-	opacity: 0;
-        position: relative;
-        z-index: -2;
-        left: 0;
-        top: 0;
-        height: 100%;
-        background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
-    }
-    
-    // Shading
-    .shading {
-	@include vend(transition, 2s);
-        display: block;
-        visibility: hidden;
-	position: absolute;
-        z-index: -1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: url(/images/shader.png) repeat;
-    }
-    
+
     // Map section
     #map {
         display: block;
@@ -101,6 +130,7 @@ ul {
 
 
 // Title section
+$title-height: 11.5;
 .place-holder {
     height: #{$title-height}vh;
     width: 100%;
@@ -111,15 +141,11 @@ ul {
 .title {
     position: sticky;
     border-bottom: solid 3px $border-yellowish;
-    background-color: black;
+    background: black url("../images/cafe_jefe_text.svg") no-repeat center /contain;
     width: 100%;
     left: 0;
     height: #{$title-height}vh;
-    img {
-        vertical-align: baseline;
-        height: 100%;
-        margin: 0 auto;
-    }
+    padding: 2px 0;
     &.sticky {
         top: 0;
         position: fixed;
