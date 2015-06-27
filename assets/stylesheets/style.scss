@@ -5,6 +5,7 @@ $tablet-max: 991px;
 $laptop-min: 992px;
 $border-yellowish: #e1ded9;
 $main-color: #900d13;
+$title-height: 11.5;
 
 // Handle vendor prefixes
 @mixin vend($prop, $val) {
@@ -79,7 +80,7 @@ ul {
     	@include vend(transition, 1s);
             display: block;
             visibility: hidden;
-    	position: absolute;
+    	    position: absolute;
             z-index: -1;
             left: 0;
             top: 0;
@@ -95,7 +96,7 @@ ul {
                 z-index: 5;
                 background: url('/images/cafe_jefe_text_invert.svg') no-repeat center /contain;
                 width: 100%;
-                height: 11.5vh;
+                height: #{$title-height}vh;
             }
             .landing-story{
 
@@ -136,7 +137,6 @@ ul {
 
 
 // Title section
-$title-height: 11.5;
 .place-holder {
     height: #{$title-height}vh;
     width: 100%;
