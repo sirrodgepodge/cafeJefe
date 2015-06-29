@@ -8,10 +8,9 @@ var $purchaseToggle = $('.purchase-toggle'),
     $backToTop = $('.back-to-top, .title'),
     $title = $('.title'),
     $placeHolder = $('.place-holder');
+    $landingToggle = $('.landing-toggle');
+    $landingHead = $('.landing-head');
     $downAnim = $('.down-anim');
-
-// Store page height of top of title
-var titleTop = Math.ceil($title.offset().top);
 
 // Prices array
 var prices = {
@@ -149,23 +148,45 @@ var mapLoad = function(addresses) {
     });
 };
 
+// Store page height of top of title
+var titleTop = Math.ceil($title.offset().top),
+    downAnimReached = titleTop*0.395+4.5; //when Page position is such that the white "CafeJefe" is right above the down arrow;
+
 // Handle fixing title bar at the top of the page
 var listeners = function() {
-    $(window).resize(function() {
-        titleTop = Math.ceil($title.offset().top);
-    });
-
     var pagePos = 0;
-    var isAdded = false;
+    var titleHeight = 0;
+    var titleFixed = false;
+    var landingHeadDimmed = false;
+    var topTextShowing = true;
+
     var landingScroll = function() {
-        pagePos = window.pageYOffset;
-        if (pagePos - titleTop >= 0 && !isAdded || pagePos - titleTop < 0 && isAdded) {
+        pagePos = window.pageYOffset; //calculates current vertical scroll position
+        //fixes main title to top of page
+        if (pagePos >= titleTop && !titleFixed || pagePos < titleTop && titleFixed) {
             $title.toggleClass('sticky');
             $placeHolder.toggleClass('no-show');
-            isAdded = !isAdded;
+            titleFixed = !titleFixed;
         }
+        //dims top title once below DownAnim
+        if (pagePos >= downAnimReached && !landingHeadDimmed || pagePos < downAnimReached && landingHeadDimmed) {
+            $landingHead.toggleClass('dim');
+            landingHeadDimmed = !landingHeadDimmed;
+        }
+        //fades all but title with scroll
+        if (pagePos < downAnimReached && !topTextShowing) topTextShowing = true;
+        if (pagePos===0) $landingToggle.add($downAnim).css('opacity', 1);
+        else if (pagePos >= downAnimReached && topTextShowing) $landingToggle.add($downAnim).css('opacity', +(topTextShowing = false));
+        else if (pagePos > 0 && pagePos < downAnimReached) $landingToggle.add($downAnim).css('opacity', 1-pagePos/downAnimReached);
     };
     landingScroll();
+
+    //Re-measure title distance from top of screen if screen is resized
+    $(window).resize(function() {
+        titleTop = Math.ceil($title.offset().top);
+        downAnimReached = titleTop*0.395+4.5;
+        landingScroll();
+    });
     window.addEventListener('scroll',landingScroll);
 };
 

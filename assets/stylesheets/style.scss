@@ -31,6 +31,10 @@ html, body {
     visibility: visible!important;
 }
 
+.dim {
+    opacity: .12!important;
+}
+
 //Landing image
 
 ////For Mobile
@@ -79,73 +83,80 @@ html, body {
             height: 100%;
             background: url(/images/shader.png) repeat;
         }
-        //white text in landing
-        .landing-text {
-            @include vend(transition, 1s);
-            z-index: 1;
-            opacity: 0;
-            color: white;
-            .landing-head {
-                position: fixed;
-                top: 39.2vh;
-                z-index: 5;
-                background: url('/images/cafe_jefe_text_invert.svg') no-repeat center /contain;
-                width: 100%;
-                height: calc(#{$title-height}vh - 3px);
-            }
-            //Dream/Product
-            .landing-toggle {
-                cursor: pointer;
-                position: absolute;
-                top: 2.5vh;
-                text-align: center;
-                margin: 0 9vw;
-                font-family: lato, sans-serif;
+    }
+    //white text in landing
+    .landing-text {
+        @include vend(transition, 1s);
+        z-index: 1;
+        opacity: 0;
+        color: white;
+        .landing-head {
+            position: fixed;
+            top: calc(39vh - 1.5px);
+            z-index: 5;
+            background: url('/images/cafe_jefe_text_invert.svg') no-repeat center /contain;
+            width: 100%;
+            height: calc(#{$title-height}vh - 3px);
+            transition: opacity .35s ease-in-out;
+        }
+        //Dream/Product
+        .landing-toggle {
+            cursor: pointer;
+            position: absolute;
+            top: 2.5vh;
+            text-align: center;
+            margin: 0 9vw;
+            font-family: lato, sans-serif;
+            vertical-align: top;
+            > * {
+                margin: 0 1.5vw;
+                width: 38vw;
+                display: inline-block;
                 vertical-align: top;
-                > * {
-                    margin: 0 1.5vw;
-                    width: 38vw;
-                    display: inline-block;
-                    vertical-align: top;
-                }
-                .head {
-                    font-size: 25px;
-                    transition: border-bottom .75s;
-                    border-bottom: solid 3px rgba(255,255,255,0);
-                    &.selected{
-                        border-bottom: solid 3px rgba(255,255,255,1);
-                    }
-                }
-                .head:hover, .head.landing-active {
+            }
+            .head {
+                font-size: 25px;
+                transition: border-bottom .75s;
+                border-bottom: solid 3px rgba(255,255,255,0);
+                &.selected{
                     border-bottom: solid 3px rgba(255,255,255,1);
                 }
-                .full {
-                    margin-top:10px;
+            }
+            .head:hover, .head.landing-active {
+                border-bottom: solid 3px rgba(255,255,255,1);
+            }
+            .full {
+                margin-top:10px;
+                text-align: left;
+                font-size: 16px;
+                display: none;
+                transition: 2s;
+            }
+            .dream {
+                .head {
+                    text-align: right;
+                }
+            }
+            .product {
+                .head {
                     text-align: left;
-                    font-size: 16px;
-                    display: none;
-                    transition: 2s;
-                }
-                .dream {
-                    .head {
-                        text-align: right;
-                    }
-                }
-                .product {
-                    .head {
-                        text-align: left;
-                    }
                 }
             }
-            .down-anim {
-                @include vend(animation, (hover-bounce ease-in-out 1.5s infinite alternate));
-                position: absolute;
-                margin: 90vh calc(50vw - 20px) 0; 
-                font-size: 40px;
-                width: 40px;
-                text-align: center;
-                text-shadow: 0 0 4px #000;
-            }
+        }
+        .down-anim {
+            @include vend(animation, (hover-bounce ease-in-out 1.5s infinite alternate));
+            cursor: pointer;
+            position: absolute;
+            top: 90vh;
+            margin: 0 calc(50vw - 20px); 
+            font-size: 40px;
+            width: 40px;
+            text-align: center;
+            text-shadow: 0 0 4px #000;
+            transition: text-shadow .8s;
+        }
+        .down-anim:hover {
+            text-shadow: 0 0 8px #FFF; 
         }
     }
 
@@ -277,6 +288,7 @@ html, body {
             }
             .oz-coffee-amount {
                 font-size: 14px;
+                margin-bottom: 1px;
             }
         }
         .coffee-ind-inside:hover {
