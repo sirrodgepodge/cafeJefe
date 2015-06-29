@@ -1,14 +1,17 @@
 // Create static jQuery selector vars
-var $purchaseToggle = $('.purchase-toggle');
-var $coffeeInd = $('.coffee-ind');
-var $buyBtn = $('.buy-btn');
-var $buttonFill = $('.button-fill');
-var $coffeePrice = $('.coffee-price');
-var $merchPrice = $('.merch-price');
-var $backToTop = $('.back-to-top, .title');
-var $title = $('.title');
-var $placeHolder = $('.place-holder');
+var $purchaseToggle = $('.purchase-toggle'),
+    $coffeeInd = $('.coffee-ind'),
+    $buyBtn = $('.buy-btn'),
+    $buttonFill = $('.button-fill'),
+    $coffeePrice = $('.coffee-price'),
+    $merchPrice = $('.merch-price'),
+    $backToTop = $('.back-to-top, .title'),
+    $title = $('.title'),
+    $placeHolder = $('.place-holder');
+    $downAnim = $('.down-anim');
 
+// Store page height of top of title
+var titleTop = Math.ceil($title.offset().top);
 
 // Prices array
 var prices = {
@@ -79,6 +82,12 @@ var main = function() {
             scrollTop: 0
         }, $(window).scrollTop() * 0.65);
     });
+
+    $downAnim.click(function() {
+        $('html, body').animate({
+            scrollTop: titleTop
+        }, titleTop-$(window).scrollTop() * 0.8);
+    });
 };
 
 
@@ -141,18 +150,23 @@ var mapLoad = function(addresses) {
 };
 
 // Handle fixing title bar at the top of the page
-var stickyTitle = function() {
-    var breakPoint = Math.ceil($title.offset().top);
+var listeners = function() {
+    $(window).resize(function() {
+        titleTop = Math.ceil($title.offset().top);
+    });
+
     var pagePos = 0;
     var isAdded = false;
-    window.addEventListener('scroll',function() {
+    var landingScroll = function() {
         pagePos = window.pageYOffset;
-        if (pagePos - breakPoint >= 0 && !isAdded || pagePos - breakPoint < 0 && isAdded) {
+        if (pagePos - titleTop >= 0 && !isAdded || pagePos - titleTop < 0 && isAdded) {
             $title.toggleClass('sticky');
             $placeHolder.toggleClass('no-show');
             isAdded = !isAdded;
         }
-    });
+    };
+    landingScroll();
+    window.addEventListener('scroll',landingScroll);
 };
 
-$(document).ready(main, mapLoad(addresses), stickyTitle());
+$(document).ready(main, mapLoad(addresses), listeners());

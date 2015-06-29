@@ -5,19 +5,24 @@ block content
   .landing
     .landing-img
     .shading
-    .landing-caption
+    .landing-text
       .landing-head
-      .landing-story
-      .landing-product
-    .down-anim.glyphicon.glyphicon-menu-down
+      .landing-toggle
+        .dream
+          .head The Dream
+          .full I want to take the CREAM out of the coffee
+        .product
+          .head The Coffee
+          .full I give you that delicious fair trade coffee on a monthly basis!
+      .down-anim.glyphicon.glyphicon-menu-down
   .title
   .coffee-head.text-center Mi caf&eacute; es su caf&eacute;
   h4.coffee-sub-head.text-center Fair trade #[i.icon.ion-coffee] from the #[i.fa.fa-globe] to your #[span.glyphicon.glyphicon-home(aria-hidden="true")]
   .purch-type
     .col-xs-6.col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
-      .purchase-toggle#purchase One Time Purchase
+      #purchase.purchase-toggle One Time Purchase
     .col-xs-6.col-sm-4.col-md-3
-      .purchase-toggle.active-purch-type#subscribe Monthly Subscription
+      #subscribe.purchase-toggle.active-purch-type Monthly Subscription
         #save Save 15%
   .coffee-sect.col-lg-10.col-lg-offset-1.container
     - var n=1

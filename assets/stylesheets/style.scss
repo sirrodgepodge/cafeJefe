@@ -21,16 +21,8 @@ html, body {
     margin: 0;
     width: 100%;
     padding: 0;
-}
-
-img {
-    display: block;
-}
-
-div,
-li,
-ul {
-    padding-left: 0;
+    position: absolute;
+    z-index: 0;
 }
 
 ////for fade-in
@@ -48,11 +40,12 @@ ul {
 
 ////For Desktop
 @media(min-width: $tablet-min) {    
+    //animation for bottom hover
     @keyframes hover-bounce {
-        from {margin-top: 90vh;}
-        to {margin-top: 91vh;}
+        from {transform: translate(0, 0)}
+        to {transform: translate(0, 1.5vh);}
     }
-
+    //main
     .landing {
 	position: relative;
 	z-index: -3;
@@ -61,12 +54,11 @@ ul {
 	height: 100vh;
 	box-sizing: content-box;
 	border-bottom: solid 2px #222;
-
+    display: block;
         // Image
         .landing-img {
-    	@include vend(transition, 1s);
-    	display: block;
-    	opacity: 0;
+    	    @include vend(transition, 1s);
+    	    opacity: 0;
             position: relative;
             z-index: -2;
             left: 0;
@@ -74,10 +66,9 @@ ul {
             height: 100%;
             background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
         }
-        
         // Shading
         .shading {
-    	@include vend(transition, 1s);
+    	    @include vend(transition, 1s);
             display: block;
             visibility: hidden;
     	    position: absolute;
@@ -88,36 +79,73 @@ ul {
             height: 100%;
             background: url(/images/shader.png) repeat;
         }
-        
-        .landing-caption {
-            .landing-head{
+        //white text in landing
+        .landing-text {
+            @include vend(transition, 1s);
+            z-index: 1;
+            opacity: 0;
+            color: white;
+            .landing-head {
                 position: fixed;
-                top: 0;
+                top: 39.2vh;
                 z-index: 5;
                 background: url('/images/cafe_jefe_text_invert.svg') no-repeat center /contain;
                 width: 100%;
-                height: #{$title-height}vh;
+                height: calc(#{$title-height}vh - 3px);
             }
-            .landing-story{
-
+            //Dream/Product
+            .landing-toggle {
+                cursor: pointer;
+                position: absolute;
+                top: 2.5vh;
+                text-align: center;
+                margin: 0 9vw;
+                font-family: lato, sans-serif;
+                vertical-align: top;
+                > * {
+                    margin: 0 1.5vw;
+                    width: 38vw;
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                .head {
+                    font-size: 25px;
+                    transition: border-bottom .75s;
+                    border-bottom: solid 3px rgba(255,255,255,0);
+                    &.selected{
+                        border-bottom: solid 3px rgba(255,255,255,1);
+                    }
+                }
+                .head:hover, .head.landing-active {
+                    border-bottom: solid 3px rgba(255,255,255,1);
+                }
+                .full {
+                    margin-top:10px;
+                    text-align: left;
+                    font-size: 16px;
+                    display: none;
+                    transition: 2s;
+                }
+                .dream {
+                    .head {
+                        text-align: right;
+                    }
+                }
+                .product {
+                    .head {
+                        text-align: left;
+                    }
+                }
             }
-            .landing-product{
-
+            .down-anim {
+                @include vend(animation, (hover-bounce ease-in-out 1.5s infinite alternate));
+                position: absolute;
+                margin: 90vh calc(50vw - 20px) 0; 
+                font-size: 40px;
+                width: 40px;
+                text-align: center;
+                text-shadow: 0 0 4px #000;
             }
-        }
-        .down-anim{
-            position: absolute;
-            margin: 90vh 0 0;
-            font-size: 36px;
-            width: 100%;
-            color: white;
-            text-align: center;
-            animation-name: hover-bounce;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-            -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
-            animation-direction: alternate;
-            transition-timing-function: linear;
         }
     }
 
@@ -188,6 +216,7 @@ ul {
         padding-top: 6px;
         border-top: solid 4px $border-yellowish;
         margin-bottom: 30px;
+        transition: border-top .3s ease-in-out;
         #save {
             float: right;
             background-color: $border-yellowish;
@@ -232,11 +261,13 @@ ul {
                 width: 70%;
                 float: none;
                 margin: 0 auto 10px;
+                font-family: lato, sans-serif;
             }
             .coffee-price {
                 padding: 18px;
                 font-weight: 200;
-                font-size: 40px
+                font-size: 40px;
+                font-family: 'Indie Flower', cursive;
             }
             .coffee-pic {
                 display: block;
@@ -309,13 +340,15 @@ ul {
     font-family: 'Indie Flower', cursive;
     .merch-head {
         margin: 0 25px 35px;
-        font-family: 'Indie Flower', cursive;
+        font-family: lato, sans-serif;
+        font-size: 53px;
         font-size: 7rem;
     }
     .merch-ind {
         a {
             img {
-                border-radius: 100%;
+                border-radius: 50%;
+                box-shadow: 0 0 10% 0 #000 inset;
                 border: 6px solid $border-yellowish;
                 padding: 0;
             }
@@ -339,12 +372,12 @@ ul {
         margin: 40px 10px;
         .merch-head {
             margin: 0 0 40px;
-	    font-size: 5rem;
+	       font-size: 4rem;
         }
         .merch-ind+.merch-ind {
             margin-top: 30px;
         }
-        .merch-ind{
+        .merch-ind {
             padding: 0;
         }
     }
@@ -413,6 +446,7 @@ footer {
     .footer-logo {
         margin: 10px auto 5px;
         width: 156px;
+        display: block;
     }
     .footer-copyright {
         text-align: center;
