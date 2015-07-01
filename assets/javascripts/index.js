@@ -8,8 +8,9 @@ var $purchaseToggle = $('.purchase-toggle'),
     $backToTop = $('.back-to-top, .title'),
     $title = $('.title'),
     $placeHolder = $('.place-holder');
-    $landingToggle = $('.landing-toggle');
     $landingHead = $('.landing-head');
+    $landingNotHead = $('.landing-not-head');
+    $landingTogglers = $('.dream, .product');
     $downAnim = $('.down-anim');
 
 // Prices array
@@ -67,6 +68,14 @@ var main = function() {
         if (!$(this).hasClass('active-coffee-amount')) {
             $('.active-coffee-amount').toggleClass('active-coffee-amount');
             $(this).children('.coffee-ind-inside').toggleClass('active-coffee-amount');
+        }
+    });
+
+    $landingTogglers.click(function() {
+        if (!$(this).hasClass('landing-active')) {
+            if(!$landingHead.hasClass('hide')) $landingHead.addClass('hide');
+            $('.landing-active').toggleClass('landing-active');
+            $(this).toggleClass('landing-active');
         }
     });
 
@@ -175,9 +184,9 @@ var listeners = function() {
         }
         //fades all but title with scroll
         if (pagePos < downAnimReached && !topTextShowing) topTextShowing = true;
-        if (pagePos===0) $landingToggle.add($downAnim).css('opacity', 1);
-        else if (pagePos >= downAnimReached && topTextShowing) $landingToggle.add($downAnim).css('opacity', +(topTextShowing = false));
-        else if (pagePos > 0 && pagePos < downAnimReached) $landingToggle.add($downAnim).css('opacity', 1-pagePos/downAnimReached);
+        if (pagePos===0) $landingNotHead.add($downAnim).css('opacity', 1);
+        else if (pagePos >= downAnimReached && topTextShowing) $landingNotHead.add($downAnim).css('opacity', +(topTextShowing = false));
+        else if (pagePos > 0 && pagePos < downAnimReached) $landingNotHead.add($downAnim).css('opacity', 1-pagePos/downAnimReached);
     };
     landingScroll();
 

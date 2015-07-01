@@ -35,6 +35,10 @@ html, body {
     opacity: .12!important;
 }
 
+.hide {
+    opacity: 0!important;
+}
+
 //Landing image
 
 ////For Mobile
@@ -68,7 +72,12 @@ html, body {
             left: 0;
             top: 0;
             height: 100%;
-            background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
+            &.img2 {
+                background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
+            }
+            &.img1 {
+                background: url('/images/jojobee.jpeg') no-repeat center /cover;
+            }
         }
         // Shading
         .shading {
@@ -91,16 +100,17 @@ html, body {
         opacity: 0;
         color: white;
         .landing-head {
+            @include vend(transition, (opacity .35s ease-in-out));
             position: fixed;
             top: calc(39vh - 1.5px);
             z-index: 5;
             background: url('/images/cafe_jefe_text_invert.svg') no-repeat center /contain;
             width: 100%;
             height: calc(#{$title-height}vh - 3px);
-            transition: opacity .35s ease-in-out;
+            transition: opacity .5s ease-in-out;
         }
         //Dream/Product
-        .landing-toggle {
+        .landing-not-head {
             cursor: pointer;
             position: absolute;
             top: 2.5vh;
@@ -108,39 +118,40 @@ html, body {
             margin: 0 9vw;
             font-family: lato, sans-serif;
             vertical-align: top;
-            > * {
+            .dream,.product {
+                display: inline-block;
                 margin: 0 1.5vw;
                 width: 38vw;
-                display: inline-block;
                 vertical-align: top;
             }
+            .dream .head {
+                text-align: right;
+            }
+            .product .head {
+                text-align: left;
+            }
             .head {
+                // margin: 0 1.5vw;
+                // width: 38vw;
+                // vertical-align: top;
                 font-size: 25px;
                 transition: border-bottom .75s;
                 border-bottom: solid 3px rgba(255,255,255,0);
-                &.selected{
-                    border-bottom: solid 3px rgba(255,255,255,1);
-                }
             }
-            .head:hover, .head.landing-active {
+            .head:hover, .landing-active .head {
                 border-bottom: solid 3px rgba(255,255,255,1);
             }
             .full {
+                clear: both;
                 margin-top:10px;
                 text-align: left;
                 font-size: 16px;
-                display: none;
+                opacity: 0;
                 transition: 2s;
             }
-            .dream {
-                .head {
-                    text-align: right;
-                }
-            }
-            .product {
-                .head {
-                    text-align: left;
-                }
+            .landing-active .full {
+                @include vend(transition, 2s);
+                opacity: 1;
             }
         }
         .down-anim {
