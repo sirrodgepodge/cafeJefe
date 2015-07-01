@@ -58,7 +58,7 @@ html, body {
 	position: relative;
 	z-index: -3;
 	display: block;
-	background-color: #000;
+	background-color: #FFF;
 	height: 100vh;
 	box-sizing: content-box;
 	border-bottom: solid 2px #222;
@@ -72,10 +72,10 @@ html, body {
             left: 0;
             top: 0;
             height: 100%;
-            &.img2 {
+            &.img1 {
                 background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
             }
-            &.img1 {
+            &.img2 {
                 background: url('/images/jojobee.jpeg') no-repeat center /cover;
             }
         }
@@ -145,7 +145,7 @@ html, body {
                 clear: both;
                 margin-top:10px;
                 text-align: left;
-                font-size: 16px;
+                font-size: 19px;
                 opacity: 0;
                 transition: 2s;
             }
@@ -216,10 +216,12 @@ html, body {
     font-size: 42px;
     font-family: lato, sans-serif;
     font-weight: 300;
+    text-align: center;
 }
 
 .coffee-sub-head {
     font-size: 17px;
+    text-align: center;
 }
 
 // Purchase type toggle
