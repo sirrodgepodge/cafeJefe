@@ -1,5 +1,8 @@
 #!/usr/bin/env node;
 
+//new Relic
+require('newrelic');
+
 //Module dependencies
 var app = require('../app');
 var debug = require('debug')('cafeJefe:server');
