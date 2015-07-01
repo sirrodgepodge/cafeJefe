@@ -1,7 +1,7 @@
 #!/usr/bin/env node;
 
-//new Relic
-require('../newrelic');
+//New Relic
+require('newrelic');
 
 //Module dependencies
 var app = require('../app');
