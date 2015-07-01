@@ -62,7 +62,7 @@ html, body {
 	height: 100vh;
 	box-sizing: content-box;
 	border-bottom: solid 2px #222;
-    display: block;
+	display: block;
         // Image
         .landing-img {
     	    @include vend(transition, 1s);
@@ -109,7 +109,7 @@ html, body {
             height: calc(#{$title-height}vh - 3px);
             transition: opacity .5s ease-in-out;
         }
-        //Dream/Product
+        //Dream & Product
         .landing-not-head {
             cursor: pointer;
             position: absolute;
@@ -118,7 +118,7 @@ html, body {
             margin: 0 9vw;
             font-family: lato, sans-serif;
             vertical-align: top;
-            .dream,.product {
+            .dream, .product {
                 display: inline-block;
                 margin: 0 1.5vw;
                 width: 38vw;
@@ -148,6 +148,9 @@ html, body {
                 font-size: 19px;
                 opacity: 0;
                 transition: 2s;
+		p i {
+		    text-align: right;
+		}
             }
             .landing-active .full {
                 @include vend(transition, 2s);
