@@ -36,7 +36,6 @@ html, body {
 }
 
 .fade-out {
-    @include vend(transition, (opacity 1s));
     opacity: 0!important;
 }
 
@@ -73,10 +72,10 @@ html, body {
             left: 0;
             top: 0;
             height: 100%;
-            &.img1 {
+            &.product-img {
                 background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
             }
-            &.img2 {
+            &.dream-img {
                 background: url('/images/jojobee.jpeg') no-repeat center /cover;
             }
         }
@@ -144,17 +143,17 @@ html, body {
             }
             .full {
                 clear: both;
-                margin-top:10px;
+                margin: 1.7vw 14px 0;
                 text-align: left;
                 font-size: 19px;
                 opacity: 0;
                 transition: 2s;
-		p i {
-		    text-align: right;
-		}
+        		.quote {
+        		    text-align: right;
+        		}
             }
             .landing-active .full {
-                @include vend(transition, 2s);
+                @include vend(transition, 1.5s);
                 opacity: 1;
             }
         }

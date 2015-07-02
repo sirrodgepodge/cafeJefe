@@ -73,9 +73,18 @@ var main = function() {
 
     $landingTogglers.click(function() {
         if (!$(this).hasClass('landing-active')) {
-            if(!$landingHead.hasClass('fade-out')) $landingHead.addClass('fade-out');
-            $('.landing-active').toggleClass('landing-active');
-            $(this).toggleClass('landing-active');
+            if(!$landingHead.hasClass('fade-out')) {
+                $landingHead.addClass('fade-out');
+                var tempThis = this;
+                setTimeout(function(){
+                    $(tempThis).toggleClass('landing-active');
+                    $('.landing-img').toggleClass('show');
+                },250);
+            } else {
+                $('.landing-active').toggleClass('landing-active');
+                $(this).toggleClass('landing-active');
+                $('.landing-img').toggleClass('show');
+            }
         }
     });
 
