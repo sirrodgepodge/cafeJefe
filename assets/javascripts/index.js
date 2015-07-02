@@ -73,7 +73,7 @@ var main = function() {
 
     $landingTogglers.click(function() {
         if (!$(this).hasClass('landing-active')) {
-            if(!$landingHead.hasClass('hide')) $landingHead.addClass('hide');
+            if(!$landingHead.hasClass('fade-out')) $landingHead.addClass('fade-out');
             $('.landing-active').toggleClass('landing-active');
             $(this).toggleClass('landing-active');
         }
