@@ -130,9 +130,6 @@ html, body {
                 text-align: left;
             }
             .head {
-                // margin: 0 1.5vw;
-                // width: 38vw;
-                // vertical-align: top;
 		cursor: pointer;
                 font-size: 25px;
                 transition: border-bottom .75s;
@@ -475,7 +472,7 @@ footer {
     .footer-logo {
         margin: 10px auto 5px;
         width: 156px;
-        background: url("../images/cafe_jefe_text_no_trace.svg") no-repeat center /contain;
+        background: #000 url("../images/cafe_jefe_text_no_trace.svg") no-repeat center /contain;
     }
     .footer-copyright {
         text-align: center;
