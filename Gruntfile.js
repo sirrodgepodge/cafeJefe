@@ -16,14 +16,17 @@ module.exports = function(grunt) {
 		'assets/stylesheets/*.scss'
 	    ],
 	    options: {
-		    colorizeOutput: true,
-		    compact: true,
-		    force: true
+		colorizeOutput: true,
+		compact: true,
+		force: true
 	    }
 	},
 	exec: {
 	    browserifying: {
-			cmd: 'echo heyhey'
+		cmd: 'echo heyhey'
+	    },
+	    npmStarting: {
+		cmd: 'npm start'
 	    }
 	}
     });
