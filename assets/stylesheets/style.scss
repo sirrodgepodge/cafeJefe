@@ -205,10 +205,10 @@ html, body {
     left: 0;
     height: #{$title-height}vh;
     padding: 2px 0;
+    z-index: 6;
     &.sticky {
         top: 0;
         position: fixed;
-        z-index: 3;
     }
 }
 
@@ -475,7 +475,7 @@ footer {
     .footer-logo {
         margin: 10px auto 5px;
         width: 156px;
-        display: block;
+        background: url("../images/cafe_jefe_text_no_trace.svg") no-repeat center /contain;
     }
     .footer-copyright {
         text-align: center;
