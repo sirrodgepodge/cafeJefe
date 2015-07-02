@@ -21,6 +21,18 @@ module.exports = function(grunt) {
 		force: true
 	    }
 	},
+	jshint: {
+	    options: {
+		curly: false,
+		browser: true,
+		browserify: true,
+		globals: {
+		    jQuery: true
+		},
+		force: true
+	    },
+	    all: ['Gruntfile.js', 'assets/javascripts/*.js']
+	},
 	exec: {
 	    browserifying: {
 		cmd: 'echo heyhey'
@@ -34,8 +46,9 @@ module.exports = function(grunt) {
     // Load tasks
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-scss-lint');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-exec');
     
     // Set default tasks
-    grunt.registerTask('default', ['uglify','scsslint','exec']);
+    grunt.registerTask('default', ['uglify','scsslint','jshint','exec']);
 };

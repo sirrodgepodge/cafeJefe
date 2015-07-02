@@ -56,9 +56,9 @@ html, body {
     //main
     .landing {
 	position: relative;
-	z-index: -3;
+	z-index: -4;
 	display: block;
-	background-color: #FFF;
+	background-color: #000;
 	height: 100vh;
 	box-sizing: content-box;
 	border-bottom: solid 2px #222;
@@ -66,16 +66,18 @@ html, body {
         // Image
         .landing-img {
     	    @include vend(transition, 1s);
-    	    opacity: 0;
-            position: relative;
-            z-index: -2;
+            position: absolute;
             left: 0;
             top: 0;
             height: 100%;
             &.product-img {
+		opacity: 0;
+		z-index: -2;
                 background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
             }
             &.dream-img {
+		opacity: 0;
+		z-index: -3;
                 background: url('/images/jojobee.jpeg') no-repeat center /cover;
             }
         }
@@ -145,9 +147,9 @@ html, body {
                 font-size: 19px;
                 opacity: 0;
                 transition: 2s;
-        		.quote {
-        		    text-align: right;
-        		}
+        	.quote {
+        	    text-align: right;
+        	}
             }
             .landing-active .full {
                 @include vend(transition, 1.5s);
@@ -472,7 +474,7 @@ footer {
     .footer-logo {
         margin: 10px auto 5px;
         width: 156px;
-        background: #000 url("../images/cafe_jefe_text_no_trace.svg") no-repeat center /contain;
+        background: black url("../images/cafe_jefe_text_no_trace.svg") no-repeat center /contain;
     }
     .footer-copyright {
         text-align: center;
