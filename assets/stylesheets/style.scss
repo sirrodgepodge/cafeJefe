@@ -36,7 +36,7 @@ html, body {
 }
 
 .fade-out {
-    @include vend(transition, (opacity 1s))
+    @include vend(transition, (opacity 1s));
     opacity: 0!important;
 }
 
