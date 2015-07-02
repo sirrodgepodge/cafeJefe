@@ -5,7 +5,7 @@ var $purchaseToggle = $('.purchase-toggle'),
     $buttonFill = $('.button-fill'),
     $coffeePrice = $('.coffee-price'),
     $merchPrice = $('.merch-price'),
-    $backToTop = $('.back-to-top, .title'),
+    $backToTop = $('.back-to-top, .title, .footer-logo'),
     $title = $('.title'),
     $placeHolder = $('.place-holder');
     $landingHead = $('.landing-head');
@@ -23,7 +23,7 @@ var prices = {
 
 // Addresses array for map markers
 var addresses = [
-    // '300 W Rosemary Lane, falls church, va 22046',
+    '300 W Rosemary Lane, falls church, va 22046',
     '6147 Lakeside Dr #102, Reno, NV 89502'
 ];
 

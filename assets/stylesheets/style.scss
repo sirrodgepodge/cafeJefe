@@ -111,15 +111,14 @@ html, body {
         }
         //Dream & Product
         .landing-not-head {
-            cursor: pointer;
             position: absolute;
             top: 2.5vh;
             text-align: center;
             margin: 0 9vw;
             font-family: lato, sans-serif;
             vertical-align: top;
+	    display: flex;
             .dream, .product {
-                display: inline-block;
                 margin: 0 1.5vw;
                 width: 38vw;
                 vertical-align: top;
@@ -134,6 +133,7 @@ html, body {
                 // margin: 0 1.5vw;
                 // width: 38vw;
                 // vertical-align: top;
+		cursor: pointer;
                 font-size: 25px;
                 transition: border-bottom .75s;
                 border-bottom: solid 3px rgba(255,255,255,0);
@@ -367,10 +367,11 @@ html, body {
     width: 95%;
     font-family: 'Indie Flower', cursive;
     .merch-head {
-        margin: 0 25px 35px;
+        margin: 0 25px 3vw;
         font-family: lato, sans-serif;
         font-size: 53px;
         font-size: 7rem;
+	line-height: /75;
     }
     .merch-ind {
         a {
