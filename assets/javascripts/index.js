@@ -73,11 +73,17 @@ var main = function() {
 
     $landingTogglers.click(function() {
 	var notSelImg;
+	var tempThis; //for storing context
         if (!$(this).hasClass('landing-active')) {
             if (!$landingHead.hasClass('fade-out')) {
                 $landingHead.addClass('fade-out');
+		$startLandingActive = $('.landing-active');
+                $startLandingActive.toggleClass('landing-active');
+		tempThis = this;
+		setTimeout(function(){
+		    $startLandingActive.children('.full').toggleClass('show');
+		},500);
                 if ($(this).hasClass('dream')) {
-                    $(this).toggleClass('landing-active');
                     notSelImg = $('.landing-img').not('.show');
                     $('.landing-img.show').toggleClass('show');
                     setTimeout(function () {
@@ -85,13 +91,18 @@ var main = function() {
                     },500);
 		}
             } else {
-                $('.landing-active').toggleClass('landing-active');
+		$startLandingActive = $('.landing-active');
+		$startLandingActive.toggleClass('landing-active');
+		tempThis = this;
+                setTimeout(function(){
+                    $startLandingActive.children('.full').toggleClass('show');
+                },500);
                 $(this).toggleClass('landing-active');
                 notSelImg = $('.landing-img').not('.show');
                 $('.landing-img.show').toggleClass('show');
                 setTimeout(function () {
                     notSelImg.toggleClass('show');
-                },450);
+                },500);
             }
         }
     });
@@ -203,7 +214,7 @@ var listeners = function() {
 
     //Re-measure title distance from top of screen if screen is resized
     $(window).resize(function() {
-	console.log('resizing!');
+	console.log(titleTop);
         titleTop = Math.ceil($title.offset().top);
         downAnimReached = titleTop*0.395+4.5;
         landingScroll();
