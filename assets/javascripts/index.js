@@ -88,9 +88,8 @@ var main = function() {
 		} else {
 		    setTimeout(function(){
 			$(tempThis).children('.full').toggleClass('show');
-		    },500);	
+		    },350);	
 		}
-
             } else {
 		$startLandingActive = $('.landing-active');
 		$startLandingActive.toggleClass('landing-active');
