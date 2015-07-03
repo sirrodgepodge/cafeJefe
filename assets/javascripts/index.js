@@ -88,7 +88,7 @@ var main = function() {
 		} else {
 		    setTimeout(function(){
 			$(tempThis).children('.full').toggleClass('show');
-		    },350);	
+		    },400);	
 		}
             } else {
 		$startLandingActive = $('.landing-active');
