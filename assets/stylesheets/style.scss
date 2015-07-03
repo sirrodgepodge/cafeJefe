@@ -230,6 +230,7 @@ html, body {
     padding: 18px;
     margin: 8px auto;
     .purchase-toggle {
+	@include vend(transition, (.4s ease-in-out));
         clear: both;
         position: relative;
         color: black;
@@ -239,7 +240,6 @@ html, body {
         padding-top: 6px;
         border-top: solid 4px $border-yellowish;
         margin-bottom: 30px;
-        transition: border-top .3s ease-in-out;
         #save {
             float: right;
             background-color: $border-yellowish;
@@ -373,6 +373,7 @@ html, body {
     .merch-ind {
         a {
             img {
+		@include vend(transition, (.7s ease-in-out));
                 border-radius: 50%;
                 box-shadow: 0 0 10% 0 #000 inset;
                 border: 6px solid $border-yellowish;
