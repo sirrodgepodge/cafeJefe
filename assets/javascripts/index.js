@@ -79,20 +79,20 @@ var main = function() {
                 $landingHead.addClass('fade-out');
                 this.toggleClass('landing-active');
 		tempThis = this;
-		setTimeout(function(){
-		    $(tempThis).children('.full').toggleClass('show');
-		},500);
                 if ($(this).hasClass('dream')) {
                     notSelImg = $('.landing-img').not('.show');
                     $('.landing-img.show').toggleClass('show');
                     setTimeout(function () {
+			$(tempThis).children('.full').toggleClass('show');
 			notSelImg.toggleClass('show');
                     },500);
+		} else {
+		    $(tempThis).children('.full').toggleClass('show');
 		}
             } else {
 		$startLandingActive = $('.landing-active');
 		$startLandingActive.toggleClass('landing-active');
-		$startLandingActive.children('.full').toggleClass('full');
+		$startLandingActive.children('.full').toggleClass('show');
                 $(this).toggleClass('landing-active');
 		tempThis = this;
 		notSelImg = $('.landing-img').not('.show');
