@@ -72,12 +72,13 @@ var main = function() {
     });
 
     $landingTogglers.click(function() {
+	var notSelImg;
         if (!$(this).hasClass('landing-active')) {
             if (!$landingHead.hasClass('fade-out')) {
                 $landingHead.addClass('fade-out');
                 if ($(this).hasClass('dream')) {
                     $(this).toggleClass('landing-active');
-                    var notSelImg = $('.landing-img').not('.show');
+                    notSelImg = $('.landing-img').not('.show');
                     $('.landing-img.show').toggleClass('show');
                     setTimeout(function () {
 			notSelImg.toggleClass('show');
@@ -86,7 +87,7 @@ var main = function() {
             } else {
                 $('.landing-active').toggleClass('landing-active');
                 $(this).toggleClass('landing-active');
-                var notSelImg = $('.landing-img').not('.show');
+                notSelImg = $('.landing-img').not('.show');
                 $('.landing-img.show').toggleClass('show');
                 setTimeout(function () {
                     notSelImg.toggleClass('show');
