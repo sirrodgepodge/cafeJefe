@@ -74,11 +74,11 @@ html, body {
             z-index: -2;
             opacity: 0;
             &.product-img {
-        		z-index: -2;
+        	z-index: -2;
                 background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
             }
             &.dream-img {
-        		z-index: -3;
+        	z-index: -3;
                 background: url('/images/jojobee.jpeg') no-repeat center /cover;
             }
         }
@@ -141,7 +141,7 @@ html, body {
                 border-bottom: solid 3px rgba(255,255,255,1);
             }
             .full {
-                @include vend(transition, 1s);
+                @include vend(transition, .5s);
                 clear: both;
                 margin: 1.7vw 14px 0;
                 text-align: left;
