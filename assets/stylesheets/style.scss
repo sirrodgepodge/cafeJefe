@@ -274,7 +274,7 @@ html, body {
     .coffee-ind {
         padding: 0;
         .coffee-ind-inside {
-            @include vend(transition, 1s);
+            @include vend(transition, .35s);
             text-align: center;
             cursor: pointer;
             .coffee-amount {
