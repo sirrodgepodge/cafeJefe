@@ -173,7 +173,7 @@ var mapLoad = function(addresses) {
                     map.setCenter(marker.getPosition());
                 });
 
-                if(index>1) map.fitBounds(bounds);
+                if(index>0) map.fitBounds(bounds);
             });
         });
     });
