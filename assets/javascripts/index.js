@@ -2,7 +2,6 @@
 var $purchaseToggle = $('.purchase-toggle'),
     $coffeeInd = $('.coffee-ind'),
     $buyBtn = $('.buy-btn'),
-    $buttonFill = $('.button-fill'),
     $coffeePrice = $('.coffee-price'),
     $merchPrice = $('.merch-price'),
     $backToTop = $('.back-to-top, .title, .footer-logo'),
@@ -77,17 +76,17 @@ var main = function() {
         if (!$(this).hasClass('landing-active')) {
             if (!$landingHead.hasClass('fade-out')) {
                 $landingHead.addClass('fade-out');
-                this.toggleClass('landing-active');
-		tempThis = this;
+                $(this).toggleClass('landing-active');
                 if ($(this).hasClass('dream')) {
-                    notSelImg = $('.landing-img').not('.show');
+		    tempThis = this;
+		    notSelImg = $('.landing-img').not('.show');
                     $('.landing-img.show').toggleClass('show');
                     setTimeout(function () {
 			$(tempThis).children('.full').toggleClass('show');
 			notSelImg.toggleClass('show');
                     },500);
 		} else {
-		    $(tempThis).children('.full').toggleClass('show');
+		    $(this).children('.full').toggleClass('show');
 		}
             } else {
 		$startLandingActive = $('.landing-active');
