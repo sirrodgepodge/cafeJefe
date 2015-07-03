@@ -1,10 +1,10 @@
 script(type='text/javascript').
   if(screen.width >= 768) {
-    var landingImg = document.getElementsByClassName('product-img');
+    var productImg = document.getElementsByClassName('product-img');
     var landingText = document.getElementsByClassName('landing-text');
     var shading = document.getElementsByClassName('shading');
     setTimeout(function() {
-      landingImg[0].className += ' show';
+      productImg[0].className += ' show';
       shading[0].className += ' show';
       setTimeout(function() {
         landingText[0].className += ' show';

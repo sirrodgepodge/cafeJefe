@@ -76,14 +76,23 @@ var main = function() {
             if(!$landingHead.hasClass('fade-out')) {
                 $landingHead.addClass('fade-out');
                 var tempThis = this;
-                setTimeout(function(){
+                console.log(tempThis);
+                // setTimeout(function(){
                     $(tempThis).toggleClass('landing-active');
-                    $('.landing-img').toggleClass('show');
-                },250);
+                    var notSelImg = $('.landing-img').not('.show');
+                    $('.landing-img.show').toggleClass('show');
+                    setTimeout(function () {
+                        notSelImg.toggleClass('show');
+                    },500);
+                // },250);
             } else {
                 $('.landing-active').toggleClass('landing-active');
                 $(this).toggleClass('landing-active');
-                $('.landing-img').toggleClass('show');
+                var notSelImg = $('.landing-img').not('.show');
+                $('.landing-img.show').toggleClass('show');
+                setTimeout(function () {
+                    notSelImg.toggleClass('show');
+                },450);
             }
         }
     });
