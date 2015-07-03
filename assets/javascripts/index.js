@@ -79,6 +79,7 @@ var main = function() {
                 $(this).toggleClass('landing-active');
                 if ($(this).hasClass('dream')) {
 		    tempThis = this;
+		    console.log(tempThis);
 		    notSelImg = $('.landing-img').not('.show');
                     $('.landing-img.show').toggleClass('show');
                     setTimeout(function () {
@@ -86,6 +87,7 @@ var main = function() {
 			notSelImg.toggleClass('show');
                     },500);
 		} else {
+		    console.log('not dream');
 		    $(this).children('.full').toggleClass('show');
 		}
             } else {
