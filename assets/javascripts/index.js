@@ -96,12 +96,6 @@ var main = function() {
         }
     });
 
-    $buttonFill.hover(function() {
-        $(this).children('.button-inside').addClass('full');
-    }, function() {
-        $(this).children('.button-inside').removeClass('full');
-    });
-
     $backToTop.click(function() {
         $('html, body').animate({
             scrollTop: 0
@@ -209,6 +203,7 @@ var listeners = function() {
 
     //Re-measure title distance from top of screen if screen is resized
     $(window).resize(function() {
+	console.log('resizing!');
         titleTop = Math.ceil($title.offset().top);
         downAnimReached = titleTop*0.395+4.5;
         landingScroll();

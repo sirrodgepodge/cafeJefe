@@ -152,9 +152,6 @@ html, body {
             	    text-align: right;
             	}
             }
-            .landing-active .full {
-                opacity: 1;
-            }
         }
         .down-anim {
             @include vend(animation, (hover-bounce ease-in-out 1.5s infinite alternate));
@@ -169,7 +166,7 @@ html, body {
             transition: text-shadow .8s;
         }
         .down-anim:hover {
-            text-shadow: 0 0 8px #FFF; 
+            text-shadow: 0 0 8px #FFF;
         }
     }
 
@@ -344,12 +341,12 @@ html, body {
                 left: 50%;
                 position: absolute;
                 background: $main-color url('/images/coffee-love.png') no-repeat center /contain;
-                &.full {
-                    width: 100%;
-                    left: 0;
-                    border: 1px solid black;
-                }
             }
+        }
+	.button-fill:hover .button-inside {
+	    width: 100%;
+            left: 0;
+            border: 1px solid black;
         }
     }
 }
