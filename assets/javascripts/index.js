@@ -23,7 +23,7 @@ var prices = {
 
 // Addresses array for map markers
 var addresses = [
-    '300 W Rosemary Lane, falls church, va 22046',
+//    '300 W Rosemary Lane, falls church, va 22046',
     '6147 Lakeside Dr #102, Reno, NV 89502'
 ];
 
@@ -77,11 +77,10 @@ var main = function() {
         if (!$(this).hasClass('landing-active')) {
             if (!$landingHead.hasClass('fade-out')) {
                 $landingHead.addClass('fade-out');
-		$startLandingActive = $('.landing-active');
-                $startLandingActive.toggleClass('landing-active');
+                this.toggleClass('landing-active');
 		tempThis = this;
 		setTimeout(function(){
-		    $startLandingActive.children('.full').toggleClass('show');
+		    $(tempThis).children('.full').toggleClass('show');
 		},500);
                 if ($(this).hasClass('dream')) {
                     notSelImg = $('.landing-img').not('.show');
@@ -93,15 +92,14 @@ var main = function() {
             } else {
 		$startLandingActive = $('.landing-active');
 		$startLandingActive.toggleClass('landing-active');
-		tempThis = this;
-                setTimeout(function(){
-                    $startLandingActive.children('.full').toggleClass('show');
-                },500);
+		$startLandingActive.children('.full').toggleClass('full');
                 $(this).toggleClass('landing-active');
-                notSelImg = $('.landing-img').not('.show');
+		tempThis = this;
+		notSelImg = $('.landing-img').not('.show');
                 $('.landing-img.show').toggleClass('show');
                 setTimeout(function () {
-                    notSelImg.toggleClass('show');
+		    $(tempThis).children('.full').toggleClass('show');
+		    notSelImg.toggleClass('show');
                 },500);
             }
         }
