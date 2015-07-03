@@ -77,9 +77,8 @@ var main = function() {
             if (!$landingHead.hasClass('fade-out')) {
                 $landingHead.addClass('fade-out');
                 $(this).toggleClass('landing-active');
-                if ($(this).hasClass('dream')) {
-		    tempThis = this;
-		    console.log(tempThis);
+		tempThis = this;
+		if ($(this).hasClass('dream')) {
 		    notSelImg = $('.landing-img').not('.show');
                     $('.landing-img.show').toggleClass('show');
                     setTimeout(function () {
@@ -87,9 +86,11 @@ var main = function() {
 			notSelImg.toggleClass('show');
                     },500);
 		} else {
-		    console.log('not dream');
-		    $(this).children('.full').toggleClass('show');
+		    setTimeout(function(){
+			$(tempThis).children('.full').toggleClass('show');
+		    },500);	
 		}
+
             } else {
 		$startLandingActive = $('.landing-active');
 		$startLandingActive.toggleClass('landing-active');
