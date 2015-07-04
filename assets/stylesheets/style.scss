@@ -285,13 +285,16 @@ html, body {
                 width: 70%;
                 float: none;
                 margin: 0 auto 10px;
+                line-height: 1.1;
+                font-size: 30px;
+                font-weight: 500;
                 font-family: lato, sans-serif;
             }
             .coffee-price {
                 padding: 18px;
                 font-weight: 200;
                 font-size: 40px;
-                font-family: 'Indie Flower', cursive;
+                font-family: 'Indie Flower', sans-serif;
             }
             .coffee-pic {
                 display: block;
@@ -363,7 +366,7 @@ html, body {
     padding-right: 0;
     margin: 50px 2.5%;
     width: 95%;
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Indie Flower', sans-serif;
     .merch-head {
         margin: 0 25px 3vw;
         font-family: lato, sans-serif;
@@ -384,8 +387,10 @@ html, body {
                 border-color: black;
             }
             .merch-price {
-                margin-top: 15px;
+                margin: 15px 0 10px;
+                text-align: center;
 		        text-decoration: none;
+                line-height: 1.1;
 		        font-size: 3.6rem;
                 color: black;
             }
@@ -475,7 +480,7 @@ footer {
         margin: 10px 0 5px;
 	width: 100%;
         height: 32px;
-        background: black url("../images/cafe_jefe_text_no_trace.svg") no-repeat center /contain;
+        background: black url("../images/cafe_jefe_text_extra_trace.svg") no-repeat center /contain;
     }
     .footer-copyright {
         text-align: center;

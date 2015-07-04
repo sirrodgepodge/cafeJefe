@@ -12,7 +12,7 @@ block content
         .dream
           .head The Dream
           .full 
-            p As a patron, great coffee was few and far between when I moved west in 2013 from the Washington DC area. There were some solid shops here in the Reno-Tahoe area, but they were kinda pricy. Nobody blew my mind with the cups they were giving, but their prices sure did! My friend convinced me to roast beans for myself at a quarter of the price of the local coffee chains, but with unrivaled flavor. So I give to you my passion and meticulously microroasted coffee. Roasting less than a pound at a time allows a handcrafted experience that you won't find anywhere else. Thanks, again, for being a part of this and joining me in this beautiful world of coffee!
+            p As a patron, great coffee was few and far between when I moved west in 2013 from the Washington DC area. &nbsp;There were some solid shops here in the Reno-Tahoe area, but they were kinda pricy. &nbsp;Nobody blew my mind with the cups they were giving, but their prices sure did! #[br]#[br] My friend convinced me to roast beans for myself at a quarter of the price of the local coffee chains, but with unrivaled flavor. &nbsp;So I give to you my passion and meticulously microroasted coffee. &nbsp;Roasting less than a pound at a time allows a handcrafted experience that you won't find anywhere else. &nbsp;Thanks, again, for being a part of this and joining me in this beautiful world of coffee!
             p.quote -Julian Banuelos
         .product
           .head The Coffee
@@ -33,7 +33,7 @@ block content
     while n<5
       .coffee-ind.col-xs-6.col-sm-3
         .coffee-ind-inside(class= n===2? "active-coffee-amount": "")
-          .h2.coffee-amount #{n} bag
+          .coffee-amount #{n} bag
           .coffee-price
           img.coffee-pic.col-xs-12(src="../images/#{n} bag#{n>1? 's': ''}.png")
           .oz-coffee-amount ~ #{n*12}oz ~
@@ -48,6 +48,6 @@ block content
       .merch-ind.col-md-3.col-sm-6.col-sm-offset-0.col-xs-12
         a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{m}")
           img(src="../images/#{m}.jpg").col-xs-12
-          .merch-price.h1.text-center.col-xs-12
+          .merch-price.text-center.col-xs-12
   include footer
   include script
