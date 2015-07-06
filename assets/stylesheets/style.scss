@@ -71,6 +71,18 @@ hr {
 //// Show for Tablet+
 @media(min-width: $tablet-min) {    
     // Animation for bottom hover
+    @-o-keyframes hover-bounce {
+        from {transform: translate(0, 0);}
+        to {transform: translate(0, 1.5vh);}
+    }
+    @-moz-keyframes hover-bounce {
+        from {transform: translate(0, 0);}
+        to {transform: translate(0, 1.5vh);}
+    }
+    @-webkit-keyframes hover-bounce {
+        from {transform: translate(0, 0);}
+        to {transform: translate(0, 1.5vh);}
+    }
     @keyframes hover-bounce {
         from {transform: translate(0, 0);}
         to {transform: translate(0, 1.5vh);}
@@ -84,7 +96,6 @@ hr {
 	height: 100vh;
 	box-sizing: content-box;
 	border-bottom: solid 2px #222;
-	display: block;
         // Image
         .landing-img {
     	    @include vend(transition, 1s);
@@ -402,7 +413,6 @@ hr {
     .merch-head {
         margin: 0 25px 3vw;
         font-family: lato, sans-serif;
-        font-size: 53px;
         font-size: 7rem;
 	line-height: .75;
     }
