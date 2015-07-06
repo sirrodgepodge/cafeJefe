@@ -72,7 +72,7 @@ hr {
 @media(min-width: $tablet-min) {    
     // Animation for bottom hover
     @keyframes hover-bounce {
-        from {transform: translate(0, 0)}
+        from {transform: translate(0, 0);}
         to {transform: translate(0, 1.5vh);}
     }
     // Main
@@ -140,7 +140,7 @@ hr {
             margin: 0 9vw;
             font-family: lato, sans-serif;
             vertical-align: top;
-	        display: flex;
+	    display: flex;
             .dream, .product {
                 margin: 0 1.5vw;
                 width: 38vw;
@@ -153,7 +153,7 @@ hr {
                 text-align: left;
             }
             .head {
-		        cursor: pointer;
+		cursor: pointer;
                 font-size: 25px;
                 transition: border-bottom .75s;
                 border-bottom: solid 3px rgba(255,255,255,0);
@@ -169,7 +169,7 @@ hr {
                 font-size: 19px;
                 opacity: 0;
             	.quote {
-		            font-style: italic;
+		    font-style: italic;
             	    text-align: right;
             	}
                 a {
@@ -363,7 +363,7 @@ hr {
                 margin: 0 auto;
                 padding: 0 20px;
                 line-height: 42px;
-		        height: 42px;
+		height: 42px;
                 letter-spacing: .1em;
             }
             .button-inside {
@@ -378,10 +378,10 @@ hr {
                 background: $main-color url('/images/coffee-love.png') no-repeat center /contain;
             }
         }
-	    .button-fill:hover .button-inside {
-	        width: 100%;
-            left: 0;
-            border: 1px solid black;
+	.button-fill:hover .button-inside {
+	    width: 100%;
+	    left: 0;
+	    border: 1px solid black;
         }
     }
 }
@@ -404,12 +404,12 @@ hr {
         font-family: lato, sans-serif;
         font-size: 53px;
         font-size: 7rem;
-	    line-height: .75;
+	line-height: .75;
     }
     .merch-ind {
         a {
             img {
-		        @include vend(transition, (.7s ease-in-out));
+	        @include vend(transition, (.7s ease-in-out));
                 border-radius: 50%;
                 // box-shadow: 0 0 10% 0 #000 inset;
                 border: 6px solid $grayish-yellowish;
@@ -421,9 +421,9 @@ hr {
             .merch-price {
                 margin: 15px 0 10px;
                 text-align: center;
-		        text-decoration: none;
+	        text-decoration: none;
                 line-height: 1.1;
-		        font-size: 3.6rem;
+	        font-size: 3.6rem;
                 color: black;
             }
         }
