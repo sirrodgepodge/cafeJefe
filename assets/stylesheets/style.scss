@@ -481,13 +481,35 @@ hr {
         background-color: rgba(238,238,238,1);
         color: $main-color;
         padding: 2vh 2vh 4vh;
+        border: #900d13 dashed .8vh;
         border-radius: #{5*75/90}vh;
         font-size: #{11*75/90}vh;
-        font-family: lato;
+        font-family: lato, sans-serif;
         transition: .5s;
         .contact-sub {
             font-size: #{3*75/90}vh;
             text-align: center;
+        }
+    }
+    .contact-img {
+        margin: 11vh 0;
+        z-index: -1;
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        font-size: 10px;
+        color: black;
+        &.img1 {
+            margin-left: 25px;
+        }
+        &.img2 {
+            margin-left: 50px;
+        }
+        &.img3 {
+            margin-left: 75px;
+        }
+        &.img4 {
+            margin-left: 100px;
         }
     }
     .contact-head:hover {
