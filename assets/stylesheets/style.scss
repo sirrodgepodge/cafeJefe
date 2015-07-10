@@ -482,21 +482,22 @@ hr {
 .contact {
     clear: both;
     text-align: center;
+    display: block;
     .contact-head {
         @include vend(border-radius, #{5*75/90}vh);
 	border: black solid 10%;
-	display: block;
-        text-align: center;
-        width: 75vh;
-        margin: 11vh 0;
-        background: url("../images/cafe_jefe_contact.svg") no-repeat center /contain;
-        color: $main-color;
-        padding: 2vh 2vh 4vh;
-        border: black solid 10%;
+	display: inline-block;
+        width: 30vh;
+	height: 30vh;
+        margin: 11vh 0 1vh;
+        padding: 0;
+	box-sizing: content-box;
+	background: url("../images/cafe_jefe_contact.svg") no-repeat center /contain;
     }
     .contact-sub {
         font-size: #{3*75/90}vh;
         text-align: center;
+	margin-bottom: 9vh;
     }
     .contact-img {
 	@include vend(border-radius, 50%);
