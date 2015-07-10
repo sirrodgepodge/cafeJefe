@@ -484,12 +484,12 @@ hr {
     clear: both;
     text-align: center;
     .contact-head {
-        @include text-trace(#fff, 1.5px);
-        display: inline-block;
+        // @include text-trace(#fff, 1.5px);
+        display: block;
         text-align: center;
         width: 75vh;
         margin: 11vh 0;
-        background-color: rgba(238,238,238,1);
+        background: url("../images/cafe_jefe_contact.svg") no-repeat center /contain;
         color: $main-color;
         padding: 2vh 2vh 4vh;
         border: #900d13 dashed .8vh;
