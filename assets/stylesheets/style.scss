@@ -485,7 +485,7 @@ hr {
     display: block;
     .contact-head {
         @include vend(border-radius, #{5*75/90}vh);
-	border: black solid 10%;
+	border: black solid #{5*75/90}vh;
 	display: inline-block;
         width: 30vh;
 	height: 30vh;
