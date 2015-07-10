@@ -500,7 +500,7 @@ hr {
 	margin-bottom: 9vh;
 	.contact-sub-inside {
 	    @include vend(border-radius, #{1*75/90}vh);
-	    border: black solid font-size: #{1*75/90}vh;
+	    border: black solid #{1*75/90}vh;
 	    display: inline;
 	    color: white;
 	    background-color: black;
