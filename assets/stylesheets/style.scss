@@ -485,26 +485,25 @@ hr {
     display: block;
     .contact-head {
         @include vend(border-radius, #{5*75/90}vh);
-	border: black solid #{5*75/90}vh;
-	display: inline-block;
-        width: 30vh;
-	height: 30vh;
+    	border: black solid #{5*75/90}vh;
+    	display: inline-block;
+        width: 559px;
+    	height: 581px;
         margin: 11vh 0 1vh;
         padding: 0;
-	box-sizing: content-box;
-	background: url("../images/cafe_jefe_contact.svg") no-repeat center /contain;
+    	background: url("../images/cafe_jefe_contact.svg") no-repeat center /cover;
     }
     .contact-sub {
         font-size: #{3*75/90}vh;
         text-align: center;
-	margin-bottom: 9vh;
-	.contact-sub-inside {
-	    @include vend(border-radius, #{1*75/90}vh);
-	    border: black solid #{1*75/90}vh;
-	    display: inline;
-	    color: white;
-	    background-color: black;
-	}
+        margin-bottom: 9vh;
+    	.contact-sub-inside {
+    	    @include vend(border-radius, #{1*75/90}vh);
+    	    border: black solid #{1*75/90}vh;
+    	    display: inline;
+    	    color: white;
+    	    background-color: black;
+	    }
     }
     .contact-img {
 	@include vend(border-radius, 50%);
@@ -512,29 +511,29 @@ hr {
 	margin: 11vh 0;
         z-index: -1;
         position: absolute;
-        width: 25px;
-        height: 25px;
+        width: #{11*75/90}vh;
+        height: #{11*75/90}vh;
         color: white;
-	font-size: #{11*75/90}vh;
+        font-size: #{11*75/90}vh;
     }
     .contact-head:hover {
         .img1 {
-            left: -25px;
+            margin-left: #{-11*75/90}vh;
             background-color: red;
         }
         .img2 {
-            top: -25px;
-	    background-color: blue;
+            margin-top: #{-11*75/90}vh;
+            background-color: blue;
         }
         .img3 {
-            right: -25px;
-	    background-color: blue;
+            margin-left: 30vh;
+            background-color: yellow;
         }
         .img4 {
-	    right: -25px;
-	    top: -25px;
-	    background-color: green;
-	}
+            margin-left: 30vh;
+            margin-top: #{-11*75/90}vh;
+            background-color: green;
+        }
     }
 }
 
