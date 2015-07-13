@@ -514,7 +514,7 @@ $contact-img4-diameter: $contact-width/4.2;
 $contact-img-font-size: $contact-width/5;
 
 // Border width
-$contact-border-width: $contact-width/4;
+$contact-border-width: $contact-width/8;
 
 // Centering behind contact
 @mixin contactImgInit($imgSize) {
