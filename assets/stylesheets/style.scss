@@ -1,3 +1,20 @@
+// Add Square Root function
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+ 
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+ 
+  @return $x1;
+}
+
+@function stripUnits($number) {
+  @return $number / ($number * 0 + 1);
+}
+
 // Stored values
 $phone-max: 767px;
 $tablet-min: 768px;
@@ -478,61 +495,146 @@ hr {
 }
 
 
-// Contact section
+//// Contact section
+
+// Contact image dimensions
+@function contactWidthCalc($size) {
+    @return $size*559/581; //ratio comes from svg implicit height/width
+}
+
+$contact-height: 40vh;
+$contact-width: contactWidthCalc($contact-height);
+
+
+// Sub-image dimensions
+$contact-img1-diameter: $contact-width/3.5;
+$contact-img2-diameter: $contact-width/4.5;
+$contact-img3-diameter: $contact-width/4;
+$contact-img4-diameter: $contact-width/4.2;
+$contact-img-font-size: $contact-width/5;
+
+// Border width
+$contact-border-width: $contact-width/4;
+
+// Centering behind contact
+@mixin contactImgInit($imgSize) {
+    width: $imgSize;
+    height: $imgSize;
+    top: ($contact-height - $contact-border-width*2 - $imgSize)/1.97;
+    left: ($contact-width - $contact-border-width*2 - $imgSize)/1.97;
+}
+
+// For pushing images out
+$contact-height-strip: stripUnits($contact-height);
+$contact-width-strip: stripUnits($contact-width);
+$contact-border-width-strip: stripUnits($contact-border-width);
+$denom-vert: 2*$contact-border-width-strip/$contact-height-strip;
+$denom-horiz: 2*$contact-border-width-strip/$contact-width-strip;
+
+@mixin contactOutLeft($imgSize, $pct-vert) {
+    margin-top: ($contact-height + $imgSize)/-2*$pct-vert; //for adjusting vertically along side
+
+    //makes it hug the rounded part... so ridiculous lmao
+    $pct-vert: abs($pct-vert);
+    $left-push: stripUnits(($contact-width + $imgSize)/-2);
+    @if $pct-vert > (1 - $denom-vert) {
+        $pct-passed: ($pct-vert + $denom-vert - 1)/$denom-vert;
+        $left-push: $left-push + ($contact-border-width-strip - sqrt((1-$pct-passed)*(1-$pct-passed)*$contact-border-width-strip*$contact-border-width-strip));
+    }
+    margin-left: #{$left-push}vh;
+}
+
+@mixin contactOutRight($imgSize, $pct-vert) {
+    margin-top: ($contact-height + $imgSize)/-2*$pct-vert; //for adjusting vertically along side
+
+    //makes it hug the rounded part... so ridiculous lmao
+    $pct-vert: abs($pct-vert);
+    $left-push: stripUnits(($contact-width + $imgSize)/2);
+    @if $pct-vert > (1 - $denom-vert) {
+        $pct-passed: ($pct-vert + $denom-vert - 1)/$denom-vert;
+        $left-push: $left-push - ($contact-border-width-strip - sqrt((1-$pct-passed)*(1-$pct-passed)*$contact-border-width-strip*$contact-border-width-strip));
+    }
+    margin-left: #{$left-push}vh;
+}
+
+@mixin contactOutTop($imgSize, $pct-horiz) {
+    margin-left: ($contact-width + $imgSize)/2*$pct-horiz; //for adjusting vertically along side
+
+    //makes it hug the rounded part... so ridiculous lmao
+    $pct-horiz: abs($pct-horiz);
+    $top-push: stripUnits(($contact-height + $imgSize)/-2);
+    @if $pct-horiz > (1 - $denom-horiz) {
+        $pct-passed: ($pct-horiz + $denom-horiz - 1)/$denom-horiz;
+        $top-push: $top-push + ($contact-border-width-strip - sqrt((1-$pct-passed)*(1-$pct-passed)*$contact-border-width-strip*$contact-border-width-strip));
+    }
+    margin-top: #{$top-push}vh;
+}
+
 .contact {
     clear: both;
     text-align: center;
     display: block;
     .contact-head {
-        @include vend(border-radius, #{5*75/90}vh);
-    	border: black solid #{5*75/90}vh;
+        @include vend(border-radius, $contact-border-width);
+    	border: black solid $contact-border-width;
     	display: inline-block;
-        width: 559px;
-    	height: 581px;
-        margin: 11vh 0 1vh;
+        width: $contact-width;
+    	height: $contact-height;
+        margin: 11vh 0 $contact-border-width/1.75;
         padding: 0;
     	background: url("../images/cafe_jefe_contact.svg") no-repeat center /cover;
     }
     .contact-sub {
-        font-size: #{3*75/90}vh;
+        font-size: $contact-img-font-size/4;
         text-align: center;
         margin-bottom: 9vh;
     	.contact-sub-inside {
-    	    @include vend(border-radius, #{1*75/90}vh);
-    	    border: black solid #{1*75/90}vh;
+    	    @include vend(border-radius, $contact-border-width/4);
+    	    border: black solid $contact-border-width/4;
     	    display: inline;
     	    color: white;
     	    background-color: black;
 	    }
     }
     .contact-img {
-	@include vend(border-radius, 50%);
-	@include vend(transition, (.7s ease-in-out));
-	margin: 11vh 0;
+        @include vend(border-radius, 50%);
         z-index: -1;
         position: absolute;
-        width: #{11*75/90}vh;
-        height: #{11*75/90}vh;
+        font-size: $contact-img-font-size;
         color: white;
-        font-size: #{11*75/90}vh;
+        &.img1 {
+            @include vend(transition, (.45s ease-in-out));
+            @include contactImgInit($contact-img1-diameter);
+            background-color: red;
+        }
+        &.img2 {
+            @include vend(transition, (.5s ease-in-out));
+            @include contactImgInit($contact-img2-diameter);
+            background-color: blue;
+        }
+        &.img3 {
+            @include vend(transition, (.55s ease-in-out));
+            @include contactImgInit($contact-img3-diameter);
+            background-color: yellow;
+        }
+        &.img4 {
+            @include vend(transition, (.6s ease-in-out));
+            @include contactImgInit($contact-img4-diameter);
+            background-color: green;
+        }
     }
     .contact-head:hover {
         .img1 {
-            margin-left: #{-11*75/90}vh;
-            background-color: red;
+            @include contactOutRight($contact-img1-diameter, .7);
         }
         .img2 {
-            margin-top: #{-11*75/90}vh;
-            background-color: blue;
+            @include contactOutTop($contact-img2-diameter, .8);
         }
         .img3 {
-            margin-left: 30vh;
-            background-color: yellow;
+            @include contactOutLeft($contact-img3-diameter, -1);
         }
         .img4 {
-            margin-left: 30vh;
-            margin-top: #{-11*75/90}vh;
-            background-color: green;
+            @include contactOutTop($contact-img4-diameter, -.9);
         }
     }
 }
