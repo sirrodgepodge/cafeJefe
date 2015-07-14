@@ -1,0 +1,188 @@
+//Landing image
+
+//// Hide for Mobile
+.landing, #map {
+    display: none;
+}
+
+//// Show for Tablet+
+@media(min-width: $tablet-min) {    
+    // Animation for bottom hover
+    @-o-keyframes hover-bounce {
+        from {transform: translate(0, 0);}
+        to {transform: translate(0, 1.5vh);}
+    }
+    @-moz-keyframes hover-bounce {
+        from {transform: translate(0, 0);}
+        to {transform: translate(0, 1.5vh);}
+    }
+    @-webkit-keyframes hover-bounce {
+        from {transform: translate(0, 0);}
+        to {transform: translate(0, 1.5vh);}
+    }
+    @keyframes hover-bounce {
+        from {transform: translate(0, 0);}
+        to {transform: translate(0, 1.5vh);}
+    }
+    // Main
+    .landing {
+	position: relative;
+	z-index: -4;
+	display: block;
+	background-color: #000;
+	height: 100vh;
+	box-sizing: content-box;
+	border-bottom: solid 2px #222;
+        // Image
+        .landing-img {
+    	    @include vend(transition, 1s);
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            opacity: 0;
+            &.product-img {
+        	z-index: -2;
+                background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
+            }
+            &.dream-img {
+        	z-index: -3;
+                background: url('/images/jojobee.jpeg') no-repeat center /cover;
+            }
+        }
+        // Shading
+        .shading {
+    	    @include vend(transition, 1s);
+            display: block;
+            visibility: hidden;
+    	    position: absolute;
+            z-index: -1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url(/images/shader.png) repeat;
+        }
+    }
+    //white text in landing
+    .landing-text {
+        @include vend(transition, 1s);
+        z-index: 1;
+        opacity: 0;
+        color: white;
+        .landing-head {
+            @include vend(transition, (opacity .5s ease-in-out));
+            position: fixed;
+            top: calc(39vh - 1.5px);
+            z-index: 5;
+            background: url('/images/cafe_jefe_text_invert.svg') no-repeat center /contain;
+            width: 100%;
+            height: calc(#{$title-height}vh - 3px);
+        }
+        //Dream & Product
+        .landing-not-head {
+            position: absolute;
+            top: 2.5vh;
+            text-align: center;
+            margin: 0 9vw;
+            font-family: lato, sans-serif;
+            vertical-align: top;
+	    display: flex;
+            .dream, .product {
+                margin: 0 1.5vw;
+                width: 38vw;
+                vertical-align: top;
+            }
+            .dream .head {
+                text-align: right;
+            }
+            .product .head {
+                text-align: left;
+            }
+            .head {
+                cursor: pointer;
+                font-size: 25px;
+                transition: border-bottom .75s;
+                border-bottom: solid 3px rgba(255,255,255,0);
+            }
+            .head:hover, .landing-active .head {
+                border-bottom: solid 3px rgba(255,255,255,1);
+            }
+            .full {
+                @include vend(transition, .5s);
+                clear: both;
+                margin: 1.7vw 14px 0;
+                text-align: left;
+                font-size: 19px;
+                opacity: 0;
+            	.quote {
+                    font-style: italic;
+            	    text-align: right;
+            	}
+                a {
+                    color: white; 
+                    font-weight: 500;
+                    transition: .3s;
+                }
+                a:hover {
+                    text-shadow: 0 0 8px #FFF;
+                    text-decoration: none;
+                }
+            }
+        }
+        .down-anim {
+            @include vend(animation, (hover-bounce ease-in-out 1.5s infinite alternate));
+            cursor: pointer;
+            position: absolute;
+            top: 90vh;
+            margin: 0 calc(50vw - 20px); 
+            font-size: 40px;
+            width: 40px;
+            text-align: center;
+            text-shadow: 0 0 4px #000;
+            transition: text-shadow .8s;
+        }
+        .down-anim:hover {
+            text-shadow: 0 0 8px #FFF;
+        }
+    }
+
+    // Map section
+    #map {
+        display: block;
+        height: 480px;
+        max-height: 80vh;
+        .marker-caption, .gm-style-iw {
+            line-height: 1;
+        }
+        .marker-caption {
+            margin: 1.6px 0 0;
+        }
+    }
+}
+
+
+// Title section
+.place-holder {
+    height: #{$title-height}vh;
+    width: 100%;
+    &.no-show {
+        display: none;
+    }
+}
+.title {
+    position: sticky;
+    border-bottom: solid 3px $grayish-yellowish;
+    background: black url("../images/cafe_jefe_text.svg") no-repeat center /contain;
+    width: 100%;
+    left: 0;
+    height: #{$title-height}vh;
+    padding: 2px 0;
+    z-index: 6;
+    box-shadow: 0 16px 8px -8px #FFF;
+    &.sticky {
+        top: 0;
+        position: fixed;
+    }
+}

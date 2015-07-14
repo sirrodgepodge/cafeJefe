@@ -1,0 +1,78 @@
+// Merchandise section
+.merch-sect {
+    @include vend(border-image, (url('../images/cafe_jefe_border_invert.svg') 245 round));
+    clear: both;
+    float: left;
+    background-color: white;
+    border-width: 120px;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 50px 2.5% 0;
+    width: 95%;
+    font-family: 'Indie Flower', sans-serif;
+    .merch-head {
+        margin: 0 25px 3vw;
+        font-family: lato, sans-serif;
+        font-size: 7rem;
+	line-height: .75;
+    }
+    .merch-ind {
+        a {
+            img {
+	        @include vend(transition, (.7s ease-in-out));
+                border-radius: 50%;
+                border: 6px solid $grayish-yellowish;
+                padding: 0;
+            }
+            img:hover {
+                border-color: black;
+            }
+            .merch-price {
+                margin: 15px 0 10px;
+                text-align: center;
+	        text-decoration: none;
+                line-height: 1.1;
+	        font-size: 3.6rem;
+                color: black;
+            }
+        }
+    }
+}
+
+@media (max-width: $phone-max) {
+    .merch-sect {
+        @include vend(border-image, (url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round));
+        border-width: 90px;
+        margin: 40px 10px;
+        .merch-head {
+            margin: 0 0 40px;
+	       font-size: 4rem;
+        }
+        .merch-ind+.merch-ind {
+            margin-top: 30px;
+        }
+        .merch-ind {
+            padding: 0;
+        }
+    }
+}
+
+@media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    .merch-sect {
+        .motto {
+            margin: 0 25px 8px;
+        }
+    }
+    .merch-ind {
+        padding: 30px 2.2% 0;
+    }
+}
+
+@media (min-width: $laptop-min) {
+    .merch-ind {
+        padding: 0 1.25%;
+    }
+    .merch-price {
+        margin-top: 8px;
+    }
+}

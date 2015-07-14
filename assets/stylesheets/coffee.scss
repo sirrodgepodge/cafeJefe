@@ -1,0 +1,149 @@
+// Coffee Purchasing
+
+//// Coffee Header
+.coffee-head {
+    margin-top: 24px;
+    font-size: 42px;
+    font-family: lato, sans-serif;
+    font-weight: 300;
+    text-align: center;
+}
+
+.coffee-sub-head {
+    font-size: 17px;
+    text-align: center;
+}
+
+
+//// Purchase type toggle
+.purch-type {
+    padding: 18px;
+    margin: 8px 0;
+    .purchase-toggle {
+	@include vend(transition, (.4s ease-in-out));
+        clear: both;
+        position: relative;
+        color: black;
+        text-align: left;
+        cursor: pointer;
+        font-size: 16px;
+        padding-top: 6px;
+        border-top: solid 4px $grayish-yellowish;
+        margin-bottom: 30px;
+        #save {
+            float: right;
+            background-color: $grayish-yellowish;
+            font-size: 15px;
+            padding: 2px;
+            border: solid 1px $grayish-yellowish;
+            border-radius: 1px;
+            margin-top: -3px;
+        }
+        @media (max-width: 605px),
+        (min-width: $tablet-min) and (max-width: 895px),
+        (min-width: $laptop-min) and (max-width: 1170px) {
+            #save {
+                display: none!important;
+            }
+        }
+    }
+    .purchase-toggle:hover {
+        border-top: solid 4px $main-color;
+    }
+    .active-purch-type {
+        border-top: solid 4px $main-color;
+        font-weight: bold;
+    }
+}
+
+
+//// Coffee amount selection
+.coffee-sect {
+    float: none;
+    margin: 0 auto;
+    padding: 0;
+    .coffee-ind {
+        padding: 0;
+        .coffee-ind-inside {
+            @include vend(transition, .35s);
+            text-align: center;
+            cursor: pointer;
+            .coffee-amount {
+                padding-bottom: 12px;
+                white-space: nowrap;
+                word-spacing: -.12em;
+                border-bottom: solid 4px black;
+                width: 70%;
+                float: none;
+                margin: 0 auto 10px;
+                line-height: 1.1;
+                font-size: 30px;
+                font-weight: 500;
+                font-family: lato, sans-serif;
+            }
+            .coffee-price {
+                padding: 18px;
+                font-weight: 200;
+                font-size: 40px;
+                font-family: 'Indie Flower', sans-serif;
+            }
+            .coffee-pic {
+                display: block;
+                float: none;
+                margin: auto;
+                width: 100%;
+            }
+            .oz-coffee-amount {
+                font-size: 14px;
+                margin-bottom: 1px;
+            }
+        }
+        .coffee-ind-inside:hover {
+            background-color: #FAF7F1;
+        }
+        .coffee-ind-inside:not(.active-coffee-amount) {
+            border: solid 1px $grayish-yellowish;
+            padding: 14px 0px;
+            margin: 8px;
+        }
+        .active-coffee-amount {
+            border: solid 9px $main-color;
+            padding: 14px 0px;
+        }
+        // Buy button styling
+        .button-fill {
+            @include vend(border-radius, 5px);
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            background-color: black;
+            color: $main-color;
+            .button-text {
+                margin: 0 auto;
+                padding: 0 20px;
+                line-height: 42px;
+                height: 42px;
+                letter-spacing: .1em;
+                font-size: 1.45rem;
+                font-weight: 500;
+            }
+            .button-inside {
+                @include vend(border-radius, 5px);
+                @include vend(transition, 0.5s);
+                width: 0;
+                height: 42px;
+                margin: 0;
+                top: 0;
+                left: 50%;
+                position: absolute;
+                background: $main-color url('/images/coffee-love.png') no-repeat center /contain;
+            }
+        }
+	.button-fill:hover .button-inside {
+	    width: 100%;
+	    left: 0;
+	    border: 1px solid black;
+        }
+    }
+}

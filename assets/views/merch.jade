@@ -1,0 +1,7 @@
+.merch-sect
+    .merch-head.text-center Got Merch?
+    each m in ['tshirt','mug','tank','girlt']
+      .merch-ind.col-md-3.col-sm-6.col-sm-offset-0.col-xs-12
+        a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{m}")
+          img(src="../images/#{m}.jpg").col-xs-12
+          .merch-price.text-center.col-xs-12

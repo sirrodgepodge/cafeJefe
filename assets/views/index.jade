@@ -1,61 +1,10 @@
 extends layout
 
 block content
-  .place-holder.no-show
-  .landing
-    .landing-img.product-img
-    .shading
-    .landing-img.dream-img
-    .landing-text
-      .landing-head
-      .landing-not-head
-        .dream
-          .head The Dream
-          .full 
-            p As a patron, great coffee was few and far between when I moved west in 2013 from the Washington DC area. &nbsp;There were some solid shops here in the Reno-Tahoe area, but they were kinda pricy. &nbsp;Nobody blew my mind with the cups they were giving, but their prices sure did! #[br]#[br] My friend convinced me to roast beans for myself at a quarter of the price of the local coffee chains, but with unrivaled flavor. &nbsp;So I give to you my passion and meticulously microroasted coffee. &nbsp;Roasting less than a pound at a time allows a handcrafted experience that you won't find anywhere else. &nbsp;Thanks, again, for being a part of this and joining me in this beautiful world of coffee!
-            p.quote -Julian Banuelos
-        .product
-          .head The Coffee
-          .full
-            p You might not know that coffee actually comes from the inside of coffee cherries, like the ones in this picture. #[br]#[br] The coffee connoisseurs of Caf&eacute;Jefe sure do though! &nbsp;They travel to tropical climates to find the best coffee on the planet. &nbsp;It's not enough to stop there though, we also ensure that the people making our lovely beans are getting fair pay for their work and product, and we work to keep our prices fair as well so that our customers can feel good about their purchase on a personal and collective level. #[br]#[br] We hope you enjoy our product! &nbsp;If you have any suggestions, or just want to say hey, reach out to #[a(href='mailto:julian@cafejefe.com') julian@cafejefe.com]
-      .down-anim.glyphicon.glyphicon-menu-down
-  .title
-  .coffee-head Mi caf&eacute; es su caf&eacute;
-  .coffee-sub-head #[i.icon.ion-coffee] from the #[i.fa.fa-globe] to your #[span.glyphicon.glyphicon-home(aria-hidden="true")]
-  .purch-type
-    .col-xs-6.col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
-      #purchase.purchase-toggle One Time Purchase
-    .col-xs-6.col-sm-4.col-md-3
-      #subscribe.purchase-toggle.active-purch-type Monthly Subscription
-        #save Save 15%
-  .coffee-sect.col-lg-10.col-lg-offset-1.container
-    - var n=1
-    while n<5
-      .coffee-ind.col-xs-6.col-sm-3
-        .coffee-ind-inside(class= n===2? "active-coffee-amount": "")
-          .coffee-amount #{n} bag
-          .coffee-price
-          img.coffee-pic.col-xs-12(src="../images/#{n} bag#{n>1? 's': ''}.png")
-          .oz-coffee-amount ~ #{n*12}oz ~
-          a.buy-btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{n}-bag-subscribe")
-            .button-fill
-              .button-text Subscribe
-              .button-inside
-      - n++
-  .merch-sect
-    .merch-head.text-center Got Merch?
-    each m in ['tshirt','mug','tank','girlt']
-      .merch-ind.col-md-3.col-sm-6.col-sm-offset-0.col-xs-12
-        a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{m}")
-          img(src="../images/#{m}.jpg").col-xs-12
-          .merch-price.text-center.col-xs-12
-  .contact
-    .contact-head
-      .contact-img.img1 #[i.glyphicon.glyphicon-menu-down]
-      .contact-img.img2 #[i.glyphicon.glyphicon-menu-down]
-      .contact-img.img3 #[i.glyphicon.glyphicon-menu-down]
-      .contact-img.img4 #[i.glyphicon.glyphicon-menu-down]
-    .contact-sub
-      .contact-sub-inside 6147 Lakeside Dr #102, Reno, NV 89502
-  include footer
-  include script
+
+	include landing
+	include coffee
+	include merch
+	include contact
+	include footer
+	include script

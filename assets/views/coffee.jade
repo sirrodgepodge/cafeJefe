@@ -1,0 +1,22 @@
+.coffee-head Mi caf&eacute; es su caf&eacute;
+  .coffee-sub-head #[i.icon.ion-coffee] from the #[i.fa.fa-globe] to your #[span.glyphicon.glyphicon-home(aria-hidden="true")]
+  .purch-type
+    .col-xs-6.col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
+      #purchase.purchase-toggle One Time Purchase
+    .col-xs-6.col-sm-4.col-md-3
+      #subscribe.purchase-toggle.active-purch-type Monthly Subscription
+        #save Save 15%
+  .coffee-sect.col-lg-10.col-lg-offset-1.container
+    - var n=1
+    while n<5
+      .coffee-ind.col-xs-6.col-sm-3
+        .coffee-ind-inside(class= n===2? "active-coffee-amount": "")
+          .coffee-amount #{n} bag
+          .coffee-price
+          img.coffee-pic.col-xs-12(src="../images/#{n} bag#{n>1? 's': ''}.png")
+          .oz-coffee-amount ~ #{n*12}oz ~
+          a.buy-btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{n}-bag-subscribe")
+            .button-fill
+              .button-text Subscribe
+              .button-inside
+      - n++
