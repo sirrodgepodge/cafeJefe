@@ -9,8 +9,9 @@
     	display: inline-block;
         width: $contact-width;
     	height: $contact-height;
-        margin: 18vh 0 $contact-border-width/1.75;
+        margin: $contact-margin;
         padding: 0;
+        z-index: 1;
     	background: black url("../images/cafe_jefe_contact.svg") no-repeat center /cover;
     }
     .contact-sub {
@@ -19,31 +20,31 @@
         margin-bottom: 9vh;
     	.contact-sub-inside {
     	    @include vend(border-radius, $contact-border-width/4);
-    	    border: black solid $contact-border-width/4;
+    	    border-top: black solid $contact-border-width/4;
+            border-bottom: black solid $contact-border-width/4;
+            border-left: black solid $contact-border-width/3.55;
+            border-right: black solid $contact-border-width/3.55;
     	    display: inline;
     	    color: white;
     	    background-color: black;
 	    }
     }
-    a:hover {
-        text-shadow: 0 0 5px #FFF;
-    }
     .contact-img {
         @include vend(border-radius, 50%);
-        z-index: -1;
+        z-index: 0;
         position: absolute;
         color: white;
         &.img1 {
             @include vend(transition, (.45s ease-in-out));
             @include contactImgInit($contact-img1-diameter);
             font-size: $contact-img1-diameter/1.5;
-            background-color: red;
+            background-color: #FF3333;
         }
         &.img2 {
             @include vend(transition, (.5s ease-in-out));
             @include contactImgInit($contact-img2-diameter);
             font-size: $contact-img2-diameter/1.5;
-            background-color: yellow;
+            background-color: rgb(251,251,0);
             letter-spacing: -.45rem;
             line-height: 1.6;
         }
@@ -51,13 +52,14 @@
             @include vend(transition, (.55s ease-in-out));
             @include contactImgInit($contact-img3-diameter);
             font-size: $contact-img3-diameter/1.5;
-            background-color: blue;
+            background-color: #5C5CFF;
         }
         &.img4 {
             @include vend(transition, (.6s ease-in-out));
             @include contactImgInit($contact-img4-diameter);
             font-size: $contact-img4-diameter/1.5;
-            background-color: green;
+            background-color: #3EA25F;
+            line-height: 1.44;
         }
         &.img5 {
             @include vend(transition, (.65s ease-in-out));
@@ -66,21 +68,24 @@
             background-color: orange;
         }
     }
-}
-.contact:hover {
-    .img1 {
-        @include contactOutRight($contact-img1-diameter, .15);
+    &.poppin {
+        a:hover {
+            text-shadow: 0 0 5px #FFF;
+        }
+        .img1 {
+            @include contactOutRight($contact-img1-diameter, .15);
+        }
+        .img2 {
+            @include contactOutRight($contact-img2-diameter, .85);
+        }
+        .img3 {
+            @include contactOutLeft($contact-img3-diameter, -.25);
+        }
+        .img4 {
+            @include contactOutLeft($contact-img4-diameter, .705);
+        }
+        .img5 {
+            @include contactOutTop($contact-img5-diameter, -.1);
+        }
     }
-    .img2 {
-        @include contactOutRight($contact-img2-diameter, .85);
-    }
-    .img3 {
-        @include contactOutLeft($contact-img3-diameter, -.25);
-    }
-    .img4 {
-        @include contactOutLeft($contact-img4-diameter, .7);
-    }
-    .img5 {
-        @include contactOutTop($contact-img5-diameter, -.1);
-    } 
 }

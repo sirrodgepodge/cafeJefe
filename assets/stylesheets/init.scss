@@ -101,6 +101,11 @@ a, a:hover {
 ////// Height value drives all other calculations ///////
 $contact-height: 40vh; 
 $contact-width: contactWidthCalc($contact-height);
+$contact-margin-top: 18vh;
+
+//// Border width & margin
+$contact-border-width: $contact-width/8;
+$contact-margin: $contact-margin-top 0 $contact-border-width/1.75;
 
 //// Sub-image dimensions
 $contact-img1-diameter: $contact-width/2;
@@ -109,15 +114,12 @@ $contact-img3-diameter: $contact-width/1.5;
 $contact-img4-diameter: $contact-width/2.4;
 $contact-img5-diameter: $contact-width/3;
 
-//// Border width
-$contact-border-width: $contact-width/8;
-
 //// Centering behind contact
 @mixin contactImgInit($imgSize) {
     width: $imgSize;
     height: $imgSize;
-    top: ($contact-height - $contact-border-width*2 - $imgSize)/1.97;
-    left: ($contact-width - $contact-border-width*2 - $imgSize)/1.97;
+    left: calc(50vw - #{$imgSize/2});
+    top: $contact-margin-top + $contact-height/2 - $imgSize/2;
 }
 
 //// For pushing images out

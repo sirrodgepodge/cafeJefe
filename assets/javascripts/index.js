@@ -6,10 +6,11 @@ var $purchaseToggle = $('.purchase-toggle'),
     $merchPrice = $('.merch-price'),
     $backToTop = $('.back-to-top, .title, .footer-logo'),
     $title = $('.title'),
-    $placeHolder = $('.place-holder');
-    $landingHead = $('.landing-head');
-    $landingNotHead = $('.landing-not-head');
-    $landingTogglers = $('.dream, .product');
+    $contact = $('.contact'),
+    $placeHolder = $('.place-holder'),
+    $landingHead = $('.landing-head'),
+    $landingNotHead = $('.landing-not-head'),
+    $landingTogglers = $('.dream, .product'),
     $downAnim = $('.down-anim');
 
 // Prices array
@@ -22,7 +23,7 @@ var prices = {
 
 // Addresses array for map markers
 var addresses = [
-//    '300 W Rosemary Lane, falls church, va 22046',
+    //    '300 W Rosemary Lane, falls church, va 22046',
     '6147 Lakeside Dr #102, Reno, NV 89502'
 ];
 
@@ -71,37 +72,37 @@ var main = function() {
     });
 
     $landingTogglers.click(function() {
-	var notSelImg;
-	var tempThis; //for storing context
+        var notSelImg;
+        var tempThis; //for storing context
         if (!$(this).hasClass('landing-active')) {
             if (!$landingHead.hasClass('fade-out')) {
                 $landingHead.addClass('fade-out');
                 $(this).toggleClass('landing-active');
-		tempThis = this;
-		if ($(this).hasClass('dream')) {
-		    notSelImg = $('.landing-img').not('.show');
+                tempThis = this;
+                if ($(this).hasClass('dream')) {
+                    notSelImg = $('.landing-img').not('.show');
                     $('.landing-img.show').toggleClass('show');
-                    setTimeout(function () {
-			$(tempThis).children('.full').toggleClass('show');
-			notSelImg.toggleClass('show');
-                    },500);
-		} else {
-		    setTimeout(function(){
-			$(tempThis).children('.full').toggleClass('show');
-		    },400);	
-		}
+                    setTimeout(function() {
+                        $(tempThis).children('.full').toggleClass('show');
+                        notSelImg.toggleClass('show');
+                    }, 500);
+                } else {
+                    setTimeout(function() {
+                        $(tempThis).children('.full').toggleClass('show');
+                    }, 400);
+                }
             } else {
-		$startLandingActive = $('.landing-active');
-		$startLandingActive.toggleClass('landing-active');
-		$startLandingActive.children('.full').toggleClass('show');
+                $startLandingActive = $('.landing-active');
+                $startLandingActive.toggleClass('landing-active');
+                $startLandingActive.children('.full').toggleClass('show');
                 $(this).toggleClass('landing-active');
-		tempThis = this;
-		notSelImg = $('.landing-img').not('.show');
+                tempThis = this;
+                notSelImg = $('.landing-img').not('.show');
                 $('.landing-img.show').toggleClass('show');
-                setTimeout(function () {
-		    $(tempThis).children('.full').toggleClass('show');
-		    notSelImg.toggleClass('show');
-                },500);
+                setTimeout(function() {
+                    $(tempThis).children('.full').toggleClass('show');
+                    notSelImg.toggleClass('show');
+                }, 500);
             }
         }
     });
@@ -115,7 +116,7 @@ var main = function() {
     $downAnim.click(function() {
         $('html, body').animate({
             scrollTop: titleTop
-        }, titleTop-$(window).scrollTop() * 0.8);
+        }, titleTop - $(window).scrollTop() * 0.8);
     });
 };
 
@@ -150,7 +151,7 @@ var mapLoad = function(addresses) {
                 var p = data.results[0].geometry.location;
                 var latlng = new google.maps.LatLng(p.lat, p.lng);
                 bounds.extend(latlng);
-                
+
                 //Add marker
                 var marker = new google.maps.Marker({
                     position: latlng,
@@ -162,7 +163,7 @@ var mapLoad = function(addresses) {
                 var infowindow = new google.maps.InfoWindow({
                     content: '<p class="marker-caption">' + val + '</p>'
                 });
-                
+
                 //Add listeners to marker to open and close info window on click
                 google.maps.event.addListener(marker, 'click', function() {
                     infowindow.open(map, marker);
@@ -172,7 +173,7 @@ var mapLoad = function(addresses) {
                     map.setCenter(marker.getPosition());
                 });
 
-                if(index>0) map.fitBounds(bounds);
+                if (index > 0) map.fitBounds(bounds);
             });
         });
     });
@@ -180,7 +181,8 @@ var mapLoad = function(addresses) {
 
 // Store page height of top of title
 var titleTop = Math.ceil($title.offset().top),
-    downAnimReached = titleTop*0.395+4.5; //when Page position is such that the white "CafeJefe" is right above the down arrow;
+    contactTop = Math.ceil($contact.offset().top) * 0.92,
+    downAnimReached = titleTop * 0.395 + 4.5; //when Page position is such that the white "CafeJefe" is right above the down arrow;
 
 // Handle fixing title bar at the top of the page
 var listeners = function() {
@@ -189,6 +191,7 @@ var listeners = function() {
     var titleFixed = false;
     var landingHeadDimmed = false;
     var topTextShowing = true;
+    var contactPopped = false;
 
     var landingScroll = function() {
         pagePos = window.pageYOffset; //calculates current vertical scroll position
@@ -198,6 +201,12 @@ var listeners = function() {
             $placeHolder.toggleClass('no-show');
             titleFixed = !titleFixed;
         }
+        //make contact pop
+        if (pagePos >= contactTop && !contactPopped || pagePos < contactTop && contactPopped) {
+            $contact.toggleClass('poppin');
+            contactPopped = !contactPopped;
+        }
+
         //dims top title once below DownAnim
         if (pagePos >= downAnimReached && !landingHeadDimmed || pagePos < downAnimReached && landingHeadDimmed) {
             $landingHead.toggleClass('dim');
@@ -205,20 +214,20 @@ var listeners = function() {
         }
         //fades all but title with scroll
         if (pagePos < downAnimReached && !topTextShowing) topTextShowing = true;
-        if (pagePos===0) $landingNotHead.add($downAnim).css('opacity', 1);
+        if (pagePos === 0) $landingNotHead.add($downAnim).css('opacity', 1);
         else if (pagePos >= downAnimReached && topTextShowing) $landingNotHead.add($downAnim).css('opacity', +(topTextShowing = false));
-        else if (pagePos > 0 && pagePos < downAnimReached) $landingNotHead.add($downAnim).css('opacity', 1-pagePos/downAnimReached);
+        else if (pagePos > 0 && pagePos < downAnimReached) $landingNotHead.add($downAnim).css('opacity', 1 - pagePos / downAnimReached);
     };
     landingScroll();
 
     //Re-measure title distance from top of screen if screen is resized
     $(window).resize(function() {
-	console.log(titleTop);
+        console.log(titleTop);
         titleTop = Math.ceil($title.offset().top);
-        downAnimReached = titleTop*0.395+4.5;
+        downAnimReached = titleTop * 0.395 + 4.5;
         landingScroll();
     });
-    window.addEventListener('scroll',landingScroll);
+    window.addEventListener('scroll', landingScroll);
 };
 
 $(document).ready(main, mapLoad(addresses), listeners());
