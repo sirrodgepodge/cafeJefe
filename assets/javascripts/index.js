@@ -149,8 +149,8 @@ var main = function() {
         var selected = $(this).attr('class').split(' ')[1];
         $contactSubLink.attr('href', contactObj[selected].link);
         console.log(contactObj[selected].link);
-        $contactSubInside.data('text', contactObj[selected].text);
         if(!!contactObj[selected].link === $contactSubLink.hasClass('disable-link')) $contactSubLink.toggleClass('disable-link');
+        $contactSubInside.text(contactObj[selected].text);
     });
 };
 

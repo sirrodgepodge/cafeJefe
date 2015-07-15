@@ -28,9 +28,6 @@
             color: white;
             background-color: black;
 	    }
-        .contact-sub-inside:after {
-            content: attr(data-text);
-        }
     }
     .contact-img {
         @include vend(border-radius, 50%);
