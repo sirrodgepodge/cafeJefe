@@ -46,7 +46,7 @@ var contactObj = {
         link: 'http://www.facebook.com/cafejefellc'
     },
     phone: {
-        text: '(571)238-8256',
+        text: '(775)499-5134',
         link: ''
     },
     email: {
@@ -260,7 +260,6 @@ var listeners = function() {
 
     //Re-measure title distance from top of screen if screen is resized
     $(window).resize(function() {
-        console.log(titleTop);
         titleTop = Math.ceil($title.offset().top);
         downAnimReached = titleTop * 0.395 + 4.5;
         landingScroll();
