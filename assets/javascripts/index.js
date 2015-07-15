@@ -46,7 +46,7 @@ var contactObj = {
         link: 'http://www.facebook.com/cafejefellc'
     },
     phone: {
-        text: '(775)499-5134',
+        text: '(775) 499-5134',
         link: ''
     },
     email: {
