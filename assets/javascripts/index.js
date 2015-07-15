@@ -34,7 +34,7 @@ var addresses = [
 // Object for contact info
 var contactObj = {
     instagram: {
-        text: 'instagram.com/cafejefellc',
+        text: 'instagram.com/CafeJefeLLC',
         link: 'http://www.instagram.com/cafejefellc'
     },
     address: {
@@ -50,7 +50,7 @@ var contactObj = {
         link: ''
     },
     email: {
-        text: 'julian@cafejefe.com',
+        text: 'julian@CafeJefe.com',
         link: 'julian@cafejefe.com'
     }
 };
