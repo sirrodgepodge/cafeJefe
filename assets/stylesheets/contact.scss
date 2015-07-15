@@ -20,51 +20,54 @@
         margin-bottom: 9vh;
     	.contact-sub-inside {
     	    @include vend(border-radius, $contact-border-width/4);
-    	    border-top: black solid $contact-border-width/4;
+            border-top: black solid $contact-border-width/4;
             border-bottom: black solid $contact-border-width/4;
             border-left: black solid $contact-border-width/3.55;
             border-right: black solid $contact-border-width/3.55;
-    	    display: inline;
-    	    color: white;
-    	    background-color: black;
+            display: inline;
+            color: white;
+            background-color: black;
 	    }
+        .contact-sub-inside:after {
+            content: attr(data-text);
+        }
     }
     .contact-img {
         @include vend(border-radius, 50%);
         z-index: 0;
         position: absolute;
         color: white;
-        &.img1 {
+        &.instagram {
             @include vend(transition, (.45s ease-in-out));
-            @include contactImgInit($contact-img1-diameter);
-            font-size: $contact-img1-diameter/1.5;
+            @include contactImgInit($contact-instagram-diameter);
+            font-size: $contact-instagram-diameter/1.5;
             background-color: #FF3333;
         }
-        &.img2 {
+        &.address {
             @include vend(transition, (.5s ease-in-out));
-            @include contactImgInit($contact-img2-diameter);
-            font-size: $contact-img2-diameter/1.5;
+            @include contactImgInit($contact-address-diameter);
+            font-size: $contact-address-diameter/1.5;
             background-color: rgb(251,251,0);
             letter-spacing: -.45rem;
             line-height: 1.6;
         }
-        &.img3 {
+        &.facebook {
             @include vend(transition, (.55s ease-in-out));
-            @include contactImgInit($contact-img3-diameter);
-            font-size: $contact-img3-diameter/1.5;
+            @include contactImgInit($contact-facebook-diameter);
+            font-size: $contact-facebook-diameter/1.5;
             background-color: #5C5CFF;
         }
-        &.img4 {
+        &.phone {
             @include vend(transition, (.6s ease-in-out));
-            @include contactImgInit($contact-img4-diameter);
-            font-size: $contact-img4-diameter/1.5;
+            @include contactImgInit($contact-phone-diameter);
+            font-size: $contact-phone-diameter/1.5;
             background-color: #3EA25F;
             line-height: 1.44;
         }
-        &.img5 {
+        &.email {
             @include vend(transition, (.65s ease-in-out));
-            @include contactImgInit($contact-img4-diameter);
-            font-size: $contact-img5-diameter/1.5;
+            @include contactImgInit($contact-email-diameter);
+            font-size: $contact-email-diameter/1.5;
             background-color: orange;
         }
     }
@@ -72,20 +75,20 @@
         a:hover {
             text-shadow: 0 0 5px #FFF;
         }
-        .img1 {
-            @include contactOutRight($contact-img1-diameter, .15);
+        .instagram {
+            @include contactOutRight($contact-instagram-diameter, .15);
         }
-        .img2 {
-            @include contactOutRight($contact-img2-diameter, .85);
+        .address {
+            @include contactOutRight($contact-address-diameter, .85);
         }
-        .img3 {
-            @include contactOutLeft($contact-img3-diameter, -.25);
+        .facebook {
+            @include contactOutLeft($contact-facebook-diameter, -.25);
         }
-        .img4 {
-            @include contactOutLeft($contact-img4-diameter, .705);
+        .phone {
+            @include contactOutLeft($contact-phone-diameter, .705);
         }
-        .img5 {
-            @include contactOutTop($contact-img5-diameter, -.1);
+        .email {
+            @include contactOutTop($contact-email-diameter, -.1);
         }
     }
 }

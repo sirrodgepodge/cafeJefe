@@ -11,7 +11,10 @@ var $purchaseToggle = $('.purchase-toggle'),
     $landingHead = $('.landing-head'),
     $landingNotHead = $('.landing-not-head'),
     $landingTogglers = $('.dream, .product'),
-    $downAnim = $('.down-anim');
+    $downAnim = $('.down-anim'),
+    $contactImg = $('.contact-img'),
+    $contactSubInside = $('.contact-sub-inside'),
+    $contactSubLink = $('.contact-sub-inside').parent('a');
 
 // Prices array
 var prices = {
@@ -27,6 +30,29 @@ var addresses = [
     '6147 Lakeside Dr #102, Reno, NV 89502'
 ];
 
+// Object for contact info
+var contactObj = {
+    instagram: {
+        text: 'instagram.com/cafejefellc',
+        link: 'http://www.instagram.com/cafejefellc'
+    },
+    address: {
+        text: '6147 Lakeside Dr #102, Reno, NV 89502',
+        link: ''
+    },
+    facebook: {
+        text: 'facebook.com/CafeJefeLLC',
+        link: 'http://www.facebook.com/cafejefellc'
+    },
+    phone: {
+        text: '(571)238-8256',
+        link: ''
+    },
+    email: {
+        text: 'julian@cafejefe.com',
+        link: 'julian@cafejefe.com'
+    }
+};
 
 // UI Functionality
 var main = function() {
@@ -107,16 +133,24 @@ var main = function() {
         }
     });
 
+    $downAnim.click(function() {
+        $('html, body').animate({
+            scrollTop: titleTop
+        }, titleTop - $(window).scrollTop() * 0.8);
+    });
+
     $backToTop.click(function() {
         $('html, body').animate({
             scrollTop: 0
         }, $(window).scrollTop() * 0.65);
     });
 
-    $downAnim.click(function() {
-        $('html, body').animate({
-            scrollTop: titleTop
-        }, titleTop - $(window).scrollTop() * 0.8);
+    $contactImg.mouseenter(function() {
+        var selected = $(this).attr('class').split(' ')[1];
+        $contactSubLink.attr('href', contactObj[selected].link);
+        console.log(contactObj[selected].link);
+        $contactSubInside.data('text', contactObj[selected].text);
+        if(!!contactObj[selected].link === $contactSubLink.hasClass('disable-link')) $contactSubLink.toggleClass('disable-link');
     });
 };
 

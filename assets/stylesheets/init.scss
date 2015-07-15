@@ -54,6 +54,7 @@ html, body {
     padding: 0;
     position: absolute;
     z-index: 0;
+    cursor: default;
 }
 
 body * {
@@ -89,6 +90,14 @@ a, a:hover {
     opacity: 0!important;
 }
 
+.disable-link {
+   pointer-events: none;
+   cursor: default;
+}
+.disable-link:hover {
+    text-shadow: none;
+}
+
 
 // For contact section
 
@@ -108,11 +117,11 @@ $contact-border-width: $contact-width/8;
 $contact-margin: $contact-margin-top 0 $contact-border-width/1.75;
 
 //// Sub-image dimensions
-$contact-img1-diameter: $contact-width/2;
-$contact-img2-diameter: $contact-width/2.7;
-$contact-img3-diameter: $contact-width/1.5;
-$contact-img4-diameter: $contact-width/2.4;
-$contact-img5-diameter: $contact-width/3;
+$contact-instagram-diameter: $contact-width/2;
+$contact-address-diameter: $contact-width/2.7;
+$contact-facebook-diameter: $contact-width/1.5;
+$contact-phone-diameter: $contact-width/2.4;
+$contact-email-diameter: $contact-width/2.9;
 
 //// Centering behind contact
 @mixin contactImgInit($imgSize) {
