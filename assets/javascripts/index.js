@@ -47,11 +47,11 @@ var contactObj = {
     },
     phone: {
         text: '(775) 499-5134',
-        link: ''
+        link: 'tel:+17754995134'
     },
     email: {
         text: 'julian@CafeJefe.com',
-        link: 'julian@cafejefe.com'
+        link: 'mailto:julian@cafejefe.com'
     }
 };
 
