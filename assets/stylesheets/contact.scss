@@ -18,6 +18,7 @@
         font-size: $contact-width/12;
         text-align: center;
         margin-bottom: 9vh;
+        opacity: 1;
     	.contact-sub-inside {
     	    @include vend(border-radius, $contact-border-width/4);
             border-top: black solid $contact-border-width/4;

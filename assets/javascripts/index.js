@@ -14,7 +14,8 @@ var $purchaseToggle = $('.purchase-toggle'),
     $downAnim = $('.down-anim'),
     $contactImg = $('.contact-img'),
     $contactSubInside = $('.contact-sub-inside'),
-    $contactSubLink = $('.contact-sub-inside').parent('a');
+    $contactSubLink = $contactSubInside.parent(),
+    $contactSub = $contactSubLink.parent();
 
 // Prices array
 var prices = {
@@ -147,10 +148,13 @@ var main = function() {
 
     $contactImg.mouseenter(function() {
         var selected = $(this).attr('class').split(' ')[1];
-        $contactSubLink.attr('href', contactObj[selected].link);
-        console.log(contactObj[selected].link);
-        if(!!contactObj[selected].link === $contactSubLink.hasClass('disable-link')) $contactSubLink.toggleClass('disable-link');
-        $contactSubInside.text(contactObj[selected].text);
+        if($contactSubInside.text() !== contactObj[selected].text) {
+            $contactSubLink.attr('href', contactObj[selected].link);
+            if(!!contactObj[selected].link === $contactSubLink.hasClass('disable-link')) $contactSubLink.toggleClass('disable-link');
+            $contactSub.animate({opacity:0}, 300, 'swing', function(){
+                $contactSubInside.text(contactObj[selected].text);
+            }).animate({opacity:1}, 300, 'swing');
+        }
     });
 };
 
