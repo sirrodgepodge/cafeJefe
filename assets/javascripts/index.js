@@ -39,7 +39,7 @@ var contactObj = {
     },
     address: {
         text: '6147 Lakeside Dr #102, Reno, NV 89502',
-        link: ''
+        link: 'https://www.google.com/maps/place/Pedalers+Deli/@39.471266,-119.8087336,17z/data=!3m1!4b1!4m2!3m1!1s0x80994014c55a99eb:0xcf7d2a91ee0370be'
     },
     facebook: {
         text: 'facebook.com/CafeJefeLLC',
