@@ -7,15 +7,15 @@
         @include vend(border-radius, $contact-border-width);
     	border: black solid $contact-border-width;
     	display: inline-block;
-        width: $contact-width;
-    	height: $contact-height;
+        width: $contact-side;
+    	height: $contact-side;
         margin: $contact-margin;
         padding: 0;
         z-index: 1;
     	background: black url("../images/cafe_jefe_contact.svg") no-repeat center /cover;
     }
     .contact-sub {
-        font-size: $contact-width/12;
+        font-size: $contact-side/12;
         text-align: center;
         margin-bottom: 9vh;
         opacity: 1;
@@ -36,58 +36,20 @@
         z-index: 0;
         position: absolute;
         color: white;
-        &.instagram {
-            @include vend(transition, (.45s ease-in-out));
-            @include contactImgInit($contact-instagram-diameter);
-            font-size: $contact-instagram-diameter/1.5;
-            background-color: #FF3333;
-        }
         &.address {
-            @include vend(transition, (.5s ease-in-out));
-            @include contactImgInit($contact-address-diameter);
-            font-size: $contact-address-diameter/1.5;
-            background-color: rgb(251,251,0);
             letter-spacing: -.45rem;
             line-height: 1.6;
         }
-        &.facebook {
-            @include vend(transition, (.55s ease-in-out));
-            @include contactImgInit($contact-facebook-diameter);
-            font-size: $contact-facebook-diameter/1.5;
-            background-color: #5C5CFF;
-        }
         &.phone {
-            @include vend(transition, (.6s ease-in-out));
-            @include contactImgInit($contact-phone-diameter);
-            font-size: $contact-phone-diameter/1.5;
-            background-color: #3EA25F;
             line-height: 1.44;
         }
-        &.email {
-            @include vend(transition, (.65s ease-in-out));
-            @include contactImgInit($contact-email-diameter);
-            font-size: $contact-email-diameter/1.5;
-            background-color: orange;
-        }
-    }
-    &.poppin {
         a:hover {
             text-shadow: 0 0 5px #FFF;
         }
-        .instagram {
-            @include contactOutRight($contact-instagram-diameter, .15);
-        }
-        .address {
-            @include contactOutRight($contact-address-diameter, .85);
-        }
-        .facebook {
-            @include contactOutLeft($contact-facebook-diameter, -.25);
-        }
-        .phone {
-            @include contactOutLeft($contact-phone-diameter, .705);
-        }
-        .email {
-            @include contactOutTop($contact-email-diameter, -.1);
-        }
     }
 }
+@include contactImgInit(instagram, .5, #FF3333, .45s, right, .9, .15);
+@include contactImgInit(address, .37037037, rgb(251,251,0), .5s, right, .9, .85);
+@include contactImgInit(facebook, .6666666, #5C5CFF, .55s, left, .87, -.25);
+@include contactImgInit(phone, .4166666, #3EA25F, .6s, left, .87, .705);
+@include contactImgInit(email, .3448275, orange, .65s, top, .905, -.1);

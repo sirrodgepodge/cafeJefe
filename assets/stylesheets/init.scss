@@ -108,74 +108,58 @@ a, a:hover, a:visited {
 
 //// Height and width of contact image
 ////// Height value drives all other calculations ///////
-$contact-height: 40vh; 
-$contact-width: contactWidthCalc($contact-height);
+$contact-side: 40vh;
 $contact-margin-top: 18vh;
 
 //// Border width & margin
-$contact-border-width: $contact-width/8;
+$contact-border-width: $contact-side/8;
 $contact-margin: $contact-margin-top 0 $contact-border-width/1.75;
 
-//// Sub-image dimensions
-$contact-instagram-diameter: $contact-width/2;
-$contact-address-diameter: $contact-width/2.7;
-$contact-facebook-diameter: $contact-width/1.5;
-$contact-phone-diameter: $contact-width/2.4;
-$contact-email-diameter: $contact-width/2.9;
-
-//// Centering behind contact
-@mixin contactImgInit($imgSize) {
-    width: $imgSize;
-    height: $imgSize;
-    left: calc(50vw - #{$imgSize/2});
-    top: $contact-margin-top + $contact-height/2 - $imgSize/2;
-}
-
 //// For pushing images out
-$contact-height-strip: stripUnits($contact-height);
-$contact-width-strip: stripUnits($contact-width);
+$contact-side-strip: stripUnits($contact-side);
 $contact-border-width-strip: stripUnits($contact-border-width);
-$denom-vert: 2*$contact-border-width-strip/$contact-height-strip;
-$denom-horiz: 2*$contact-border-width-strip/$contact-width-strip;
+$denom: 2*$contact-border-width-strip/$contact-side-strip;
 
-@mixin contactOutLeft($imgSize, $pct-vert) {
-    margin-top: ($contact-height + $imgSize)/-2*$pct-vert; //for adjusting vertically along side
+//// Centering images behind contact and hanfling pop-out
+@mixin contactImgInit($name, $size-pct, $bg-color, $transition-time, $side, $dir-pct, $perp-pct) {
+    $img-size: $size-pct*$contact-side;
 
-    //makes it hug the rounded part... so ridiculous lmao
-    $pct-vert: abs($pct-vert);
-    $left-push: stripUnits(($contact-width + $imgSize)/-2);
-    @if $pct-vert > (1 - $denom-vert) {
-        $pct-passed: ($pct-vert + $denom-vert - 1)/$denom-vert;
-        $left-push: $left-push + ($contact-border-width-strip - sqrt((1-$pct-passed)*(1-$pct-passed)*$contact-border-width-strip*$contact-border-width-strip));
+    .#{$name} {
+        @include vend(transition, ($transition-time ease-in-out));
+        width: $img-size;
+        height: $img-size;
+        left: calc(50vw - #{$img-size/2});
+        top: $contact-margin-top + $contact-side/2 - $img-size/2;
+        font-size: $img-size/1.5;
+        background-color: $bg-color;
     }
-    $left-push: $left-push*.87;
-    margin-left: #{$left-push}vh;
-}
+    .poppin .#{$name} {
+        @if $side == bottom or $side == right {
+            $adjust: 1;
+        } @else if $side == top or $side == left {
+            $adjust: -1;
+        }
 
-@mixin contactOutRight($imgSize, $pct-vert) {
-    margin-top: ($contact-height + $imgSize)/-2*$pct-vert; //for adjusting vertically along side
+        @if $side == left or $side == right {
+            $side: left;
+            $perp-side: top;
+            $perp-adjust: -1;
+        } @else if $side == top or $side == bottom {
+            $side: top;
+            $perp-side: left;
+            $perp-adjust: 1;
+        }
 
-    //makes it hug the rounded part... so ridiculous lmao
-    $pct-vert: abs($pct-vert);
-    $left-push: stripUnits(($contact-width + $imgSize)/2);
-    @if $pct-vert > (1 - $denom-vert) {
-        $pct-passed: ($pct-vert + $denom-vert - 1)/$denom-vert;
-        $left-push: $left-push - ($contact-border-width-strip - sqrt((1-$pct-passed)*(1-$pct-passed)*$contact-border-width-strip*$contact-border-width-strip));
+        margin-#{$perp-side}: ($contact-side + $img-size)/2*$perp-pct*$perp-adjust; //for adjusting vertically along side
+
+        //makes it hug the rounded part... so ridiculous lmao
+        $perp-pct: abs($perp-pct);
+        $push: stripUnits(($contact-side + $img-size)/2*$adjust);
+        @if $perp-pct > (1 - $denom) {
+            $perp-pct-passed: ($perp-pct - 1)/$denom + 1;
+            $push: $push + $perp-adjust*($contact-border-width-strip - sqrt((1-$perp-pct-passed)*(1-$perp-pct-passed)*$contact-border-width-strip*$contact-border-width-strip));
+        }
+        $push: $push*$dir-pct;
+        margin-#{$side}: #{$push}vh;
     }
-    $left-push: $left-push*.9;
-    margin-left: #{$left-push}vh;
-}
-
-@mixin contactOutTop($imgSize, $pct-horiz) {
-    margin-left: ($contact-width + $imgSize)/2*$pct-horiz; //for adjusting vertically along side
-
-    //makes it hug the rounded part... so ridiculous lmao
-    $pct-horiz: abs($pct-horiz);
-    $top-push: stripUnits(($contact-height + $imgSize)/-2);
-    @if $pct-horiz > (1 - $denom-horiz) {
-        $pct-passed: ($pct-horiz + $denom-horiz - 1)/$denom-horiz;
-        $top-push: $top-push + ($contact-border-width-strip - sqrt((1-$pct-passed)*(1-$pct-passed)*$contact-border-width-strip*$contact-border-width-strip));
-    }
-    $top-push: $top-push*.905;
-    margin-top: #{$top-push}vh;
 }
