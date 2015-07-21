@@ -36,6 +36,7 @@
         // Image
         .landing-img {
     	    @include vend(transition, 1s);
+            display: block;
             position: absolute;
             left: 0;
             top: 0;
@@ -44,7 +45,7 @@
             opacity: 0;
             &.product-img {
         	z-index: -2;
-                background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
+                // background: url('/images/coffee_cherries.jpg') no-repeat center /cover;
             }
             &.dream-img {
         	z-index: -3;

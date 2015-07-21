@@ -1,12 +1,11 @@
 script(type='text/javascript').
   if(screen.width >= 768) {
-    var productImg = document.getElementsByClassName('product-img');
-    var landingText = document.getElementsByClassName('landing-text');
-    var shading = document.getElementsByClassName('shading');
+    var productImg = document.getElementsByClassName('product-img')[0];
+    var landingText = document.getElementsByClassName('landing-text')[0];
     setTimeout(function() {
-      productImg[0].className += ' show';
+      productImg.className += ' show';
       setTimeout(function() {
-        landingText[0].className += ' show';
+        landingText.className += ' show';
       },1000);
     },1500);
   } 
