@@ -5,22 +5,22 @@
     display: block;
     .contact-head {
         @include vend(border-radius, $contact-border-width);
-    	border: black solid $contact-border-width;
-    	display: inline-block;
+        border: black solid $contact-border-width;
+        display: inline-block;
         width: $contact-side;
-    	height: $contact-side;
+        height: $contact-side;
         margin: $contact-margin;
         padding: 0;
         z-index: 1;
-    	background: black url("../images/cafe_jefe_contact.svg") no-repeat center /cover;
+        background: black url("../images/cafe_jefe_contact.svg") no-repeat center /cover;
     }
     .contact-sub {
         font-size: $contact-side/12;
         text-align: center;
         margin-bottom: 9vh;
         opacity: 1;
-    	.contact-sub-inside {
-    	    @include vend(border-radius, $contact-border-width/4);
+        .contact-sub-inside {
+            @include vend(border-radius, $contact-border-width/4);
             border-top: black solid $contact-border-width/4;
             border-bottom: black solid $contact-border-width/4;
             border-left: black solid $contact-border-width/3.55;
@@ -28,8 +28,8 @@
             display: inline;
             color: white;
             background-color: black;
-	    font-family: lato, sans-serif;
-	    }
+            font-family: lato, sans-serif;
+        }
     }
     .contact-img {
         @include vend(border-radius, 50%);
@@ -48,8 +48,39 @@
         }
     }
 }
-@include contactImgInit(instagram, .5, #FF3333, .45s, right, .9, .15);
-@include contactImgInit(address, .37037037, rgb(251,251,0), .5s, right, .9, .85);
-@include contactImgInit(facebook, .6666666, #5C5CFF, .55s, left, .87, -.25);
-@include contactImgInit(phone, .4166666, #3EA25F, .6s, left, .87, .705);
-@include contactImgInit(email, .3448275, orange, .65s, top, .905, -.1);
+
+@include contactImgInit(instagram,
+.5,
+#FF3333,
+.45s,
+right,
+.9,
+.15);
+@include contactImgInit(address,
+.37037037,
+rgb(251, 251, 0),
+.5s,
+right,
+.9,
+.85);
+@include contactImgInit(facebook,
+.6666666,
+#5C5CFF,
+.55s,
+left,
+.87,
+-.25);
+@include contactImgInit(phone,
+.4166666,
+#3EA25F,
+.6s,
+left,
+.87,
+.705);
+@include contactImgInit(email,
+.3448275,
+orange,
+.65s,
+top,
+.905,
+-.1);

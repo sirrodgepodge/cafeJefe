@@ -55,7 +55,6 @@
         .shading {
     	    @include vend(transition, 1s);
             display: block;
-            visibility: hidden;
     	    position: absolute;
             z-index: -1;
             left: 0;
