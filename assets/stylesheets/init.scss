@@ -1,3 +1,13 @@
+// Stored values
+$phone-max: 767px;
+$tablet-min: 768px;
+$tablet-max: 991px;
+$laptop-min: 992px;
+$grayish-yellowish: #e1ded9;
+$main-color: #900d13;
+$title-height: 11.5;
+
+
 // Add Square Root function
 @function sqrt($r) {
   $x0: 1;
@@ -12,20 +22,10 @@
 }
 
 
-// Strip the units from a variable
+// Add function to strip the units from a variable
 @function stripUnits($number) {
   @return $number / ($number * 0 + 1);
 }
-
-
-// Stored values
-$phone-max: 767px;
-$tablet-min: 768px;
-$tablet-max: 991px;
-$laptop-min: 992px;
-$grayish-yellowish: #e1ded9;
-$main-color: #900d13;
-$title-height: 11.5;
 
 
 // Handle vendor prefixes
