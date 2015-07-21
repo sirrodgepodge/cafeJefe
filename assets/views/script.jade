@@ -1,11 +1,13 @@
 script(type='text/javascript').
-  if(screen.width >= 768) {
-    var productImg = document.getElementsByClassName('product-img')[0];
-    var landingText = document.getElementsByClassName('landing-text')[0];
-    setTimeout(function() {
+  function landing() {
+    if(screen.width >= 768) {
+      var productImg = document.getElementsByClassName('product-img')[0];
+      var landingText = document.getElementsByClassName('landing-text')[0];
       productImg.className += ' show';
       setTimeout(function() {
         landingText.className += ' show';
       },1000);
-    },1500);
-  } 
+    }
+    delete productImg.onload;
+    delete landing;
+  };
