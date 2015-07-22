@@ -117,17 +117,19 @@
             position: relative;
             text-align: center;
             text-transform: uppercase;
-            background-color: black;
+            background-color: $main-color;
             border: 2px solid $main-color;
             color: #FFF;
             .button-text {
+                @include vend(border-radius, 5px);
                 margin: 0 auto;
                 padding: 0 20px;
                 line-height: 42px;
                 height: 42px;
                 letter-spacing: .1em;
                 font-size: 1.45rem;
-                font-weight: 500;
+                font-weight: 300;
+                background-color: black;
             }
             .button-inside {
                 @include vend(border-radius, 5px);
@@ -138,13 +140,13 @@
                 top: 0;
                 left: 50%;
                 position: absolute;
+                background-color: $main-color;
                 background: $main-color url('/images/coffee-love.png') no-repeat center /contain;
             }
         }
 	.button-fill:hover .button-inside {
-	    width: 100%;
-	    left: 0;
-	    border: 1px solid $main-color;
+            width: 101%;
+            left: -.3%;
         }
     }
 }

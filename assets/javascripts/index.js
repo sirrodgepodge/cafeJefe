@@ -18,6 +18,11 @@ var $purchaseToggle = $('.purchase-toggle'),
     $contactSub = $contactSubLink.parent();
 
 // Prices array
+$.get('/api/info', function(data) {
+    purchase = data.purchase;
+    subscribe = data.subscribe;
+    merch = data.merch;
+});
 var prices = {
     purchase: [18, 33, 46, 57],
     subscribe: [15, 28, 39, 48],
