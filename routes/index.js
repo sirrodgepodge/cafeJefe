@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var infoObj = {
+
+var localsObj = {
 	coffee: [
 		{name: '1 bag', purchase: 18, subscribe: 15},
 		{name: '2 bags', purchase: 33, subscribe: 28},
@@ -13,16 +14,42 @@ var infoObj = {
 		{name: 'mug', price: 12},
 		{name: 'tank', price: 20},
 		{name: 'girlt', price: 20}
-		]
+		],
+	contact: {
+		instagram: {
+			text: 'instagram.com/CafeJefeLLC',
+			link: 'http://www.instagram.com/cafejefellc'
+		},
+		address: {
+			text: '6147 Lakeside Dr #102, Reno, NV 89502',
+			link: 'https://www.google.com/maps/place/Pedalers+Deli/@39.471266,-119.8087336,17z/data=!3m1!4b1!4m2!3m1!1s0x80994014c55a99eb:0xcf7d2a91ee0370be'
+		},
+		facebook: {
+			text: 'facebook.com/CafeJefeLLC',
+			link: 'http://www.facebook.com/cafejefellc'
+		},
+		phone: {
+			text: '(775) 499-5134',
+			link: 'tel:+17754995134'
+		},
+		email: {
+			text: 'julian@CafeJefe.com',
+			link: 'mailto:julian@cafejefe.com'
+		}
+	}
 };
 
-/* GET home page. */
+
+/* GET home page */
 router.get('/', function(req, res, next) {
-	res.render('index', infoObj);
+	res.render('index', localsObj);
 });
 
-router.get('/api/info', function(){
-	res.json(infoObj);
+
+/* GET server info */
+router.get('/api/info', function(req, res, next){
+	res.json(localsObj);
 });
+
 
 module.exports = router;

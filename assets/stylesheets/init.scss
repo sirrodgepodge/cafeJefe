@@ -162,3 +162,51 @@ $contact-margin: $contact-margin-top 0 $contact-border-width/1.75;
         margin-#{$side}: #{$push}vh;
     }
 }
+//// Refactor for transform3d
+
+@mixin contactImgInitAlt($name, $size-pct, $bg-color, $transition-time, $side, $dir-pct, $perp-pct) {
+    //// For pushing images out
+    $contact-side-strip: stripUnits($contact-side);
+    $contact-border-width-strip: stripUnits($contact-border-width);
+    $denom: 2*$contact-border-width-strip/$contact-side-strip;
+    $img-size: $size-pct*$contact-side;
+
+    .#{$name} {
+        @include vend(transition, ($transition-time ease-in-out));
+        width: $img-size;
+        height: $img-size;
+        left: calc(50vw - #{$img-size/2});
+        top: $contact-margin-top + $contact-side/2 - $img-size/2;
+        font-size: $img-size/1.5;
+        background-color: $bg-color;
+    }
+    .poppin .#{$name} {
+        @if $side == bottom or $side == right {
+            $adjust: 1;
+        } @else if $side == top or $side == left {
+            $adjust: -1;
+        }
+
+        @if $side == left or $side == right {
+            $side: left;
+            $perp-side: top;
+            $perp-adjust: -1;
+        } @else if $side == top or $side == bottom {
+            $side: top;
+            $perp-side: left;
+            $perp-adjust: 1;
+        }
+
+        margin-#{$perp-side}: ($contact-side + $img-size)/2*$perp-pct*$perp-adjust; //for adjusting vertically along side
+
+        //makes it hug the rounded part... so ridiculous lmao
+        $perp-pct: abs($perp-pct);
+        $push: stripUnits(($contact-side + $img-size)/2*$adjust);
+        @if $perp-pct > (1 - $denom) {
+            $perp-pct-passed: ($perp-pct - 1)/$denom + 1;
+            $push: $push + $perp-adjust*($contact-border-width-strip - sqrt((1-$perp-pct-passed)*(1-$perp-pct-passed)*$contact-border-width-strip*$contact-border-width-strip));
+        }
+        $push: $push*$dir-pct;
+        margin-#{$side}: #{$push}vh;
+    }
+}

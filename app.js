@@ -7,9 +7,6 @@ var bodyParser = require('body-parser');
 var sass = require('node-sass-middleware');
 var compression = require('compression');
 
-// get routes from 'routes' folder
-var routes = require('./routes/index');
-
 // create express app object (which is a function actually!)
 var app = express();
 
@@ -33,7 +30,7 @@ app.use(sass({
 app.use(express.static(path.join(__dirname, 'public'), {maxAge: 1800000}));
 
 // routes
-app.use('/', routes);
+app.use('/', require('./routes'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

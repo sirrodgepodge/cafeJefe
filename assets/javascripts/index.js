@@ -17,18 +17,17 @@ var $purchaseToggle = $('.purchase-toggle'),
     $contactSubLink = $contactSubInside.parent(),
     $contactSub = $contactSubLink.parent();
 
-// Prices array
-$.get('/api/info', function(data) {
-    purchase = data.purchase;
-    subscribe = data.subscribe;
-    merch = data.merch;
-});
-var prices = {
-    purchase: [18, 33, 46, 57],
-    subscribe: [15, 28, 39, 48],
-    merch: [20, 12, 20, 20]
-};
+// Getting back end data
+var coffee = [],
+    merch = [],
+    contact = {};
 
+$.get('/api/info', function(data) {
+    // data = JSON.parse(data);
+    coffee = data.coffee;
+    merch = data.merch;
+    contact = data.contact;
+});
 
 // Addresses array for map markers
 var addresses = [
@@ -36,44 +35,10 @@ var addresses = [
     '6147 Lakeside Dr #102, Reno, NV 89502'
 ];
 
-// Object for contact info
-var contactObj = {
-    instagram: {
-        text: 'instagram.com/CafeJefeLLC',
-        link: 'http://www.instagram.com/cafejefellc'
-    },
-    address: {
-        text: '6147 Lakeside Dr #102, Reno, NV 89502',
-        link: 'https://www.google.com/maps/place/Pedalers+Deli/@39.471266,-119.8087336,17z/data=!3m1!4b1!4m2!3m1!1s0x80994014c55a99eb:0xcf7d2a91ee0370be'
-    },
-    facebook: {
-        text: 'facebook.com/CafeJefeLLC',
-        link: 'http://www.facebook.com/cafejefellc'
-    },
-    phone: {
-        text: '(775) 499-5134',
-        link: 'tel:+17754995134'
-    },
-    email: {
-        text: 'julian@CafeJefe.com',
-        link: 'mailto:julian@cafejefe.com'
-    }
-};
-
 // UI Functionality
 var main = function() {
-    // Initialize prices
+    // Get price type
     var purchTypeVal = $('.active-purch-type').attr('id');
-    var inc = 0;
-    $coffeePrice.each(function() {
-        $(this).html('$' + prices[purchTypeVal][inc]);
-        inc++;
-    });
-    inc = 0;
-    $merchPrice.each(function() {
-        $(this).html('$' + prices.merch[inc]);
-        inc++;
-    });
 
     // Toggle between Subscription vs. One-Time Purchase
     $purchaseToggle.click(function() {
@@ -82,16 +47,12 @@ var main = function() {
                 $(this).toggleClass('active-purch-type');
             });
             purchTypeVal = $(this).attr('id');
-            $('.button-text').html(purchTypeVal.slice(0, 1).toUpperCase() + purchTypeVal.slice(1));
-            inc = 0;
-            $coffeePrice.each(function() {
-                $(this).html('$' + prices[purchTypeVal][inc]);
-                inc++;
-            });
-
-            $buyBtn.each(function() {
-                var currVal = $(this).attr('href').slice(0, $(this).attr('href').lastIndexOf("-") + 1);
-                $(this).attr('href', currVal + purchTypeVal);
+            $buyBtn.find('.button-text').html(purchTypeVal.slice(0, 1).toUpperCase() + purchTypeVal.slice(1));
+            $coffeePrice.each(function(index, val) {
+                console.log(index);
+                $(this).html('$' + coffee[index][purchTypeVal]);
+                var currVal = $($buyBtn[index]).attr('href').slice(0, $($buyBtn[index]).attr('href').lastIndexOf("-") + 1);
+                $($buyBtn[index]).attr('href', currVal + purchTypeVal);
             });
         }
     });
@@ -153,11 +114,11 @@ var main = function() {
 
     $contactImg.mouseenter(function() {
         var selected = $(this).attr('class').split(' ')[1];
-        if($contactSubInside.text() !== contactObj[selected].text) {
-            $contactSubLink.attr('href', contactObj[selected].link);
-            if(!!contactObj[selected].link === $contactSubLink.hasClass('disable-link')) $contactSubLink.toggleClass('disable-link');
+        if($contactSubInside.text() !== contact[selected].text) {
+            $contactSubLink.attr('href', contact[selected].link);
+            if(!!contact[selected].link === $contactSubLink.hasClass('disable-link')) $contactSubLink.toggleClass('disable-link');
             $contactSub.animate({opacity:0}, 300, 'swing', function(){
-                $contactSubInside.text(contactObj[selected].text);
+                $contactSubInside.text(contact[selected].text);
             }).animate({opacity:1}, 300, 'swing');
         }
     });

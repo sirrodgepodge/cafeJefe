@@ -7,16 +7,14 @@
       #subscribe.purchase-toggle.active-purch-type Monthly Subscription
         #save Save 15%
   .coffee-sect.col-lg-10.col-lg-offset-1.container
-    - var n=1
-    while n<5
+    each c, index in locals.coffee
       .coffee-ind.col-xs-6.col-sm-3
-        .coffee-ind-inside(class= n===2? "active-coffee-amount": "")
-          .coffee-amount #{n} bag
-          .coffee-price
-          img.coffee-pic.col-xs-12(src="../images/#{n} bag#{n>1? 's': ''}.png")
-          .oz-coffee-amount ~ #{n*12}oz ~
-          a.buy-btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{n}-bag-subscribe")
+        .coffee-ind-inside(class= index===2? "active-coffee-amount": "")
+          .coffee-amount= c.name
+          .coffee-price= '$'+c.purchase
+          img.coffee-pic.col-xs-12(src="../images/#{c.name}.png")
+          .oz-coffee-amount ~ #{index*12}oz ~
+          a.buy-btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{index+1}-bag-subscribe")
             .button-fill
               .button-text Subscribe
               .button-inside
-      - n++
