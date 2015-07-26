@@ -49,7 +49,6 @@ var main = function() {
             purchTypeVal = $(this).attr('id');
             $buyBtn.find('.button-text').html(purchTypeVal.slice(0, 1).toUpperCase() + purchTypeVal.slice(1));
             $coffeePrice.each(function(index, val) {
-                console.log(index);
                 $(this).html('$' + coffee[index][purchTypeVal]);
                 var currVal = $($buyBtn[index]).attr('href').slice(0, $($buyBtn[index]).attr('href').lastIndexOf("-") + 1);
                 $($buyBtn[index]).attr('href', currVal + purchTypeVal);
