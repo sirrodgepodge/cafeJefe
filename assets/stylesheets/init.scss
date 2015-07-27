@@ -77,10 +77,11 @@ a, a:hover, a:visited {
 
 
 // For jQuery use
-.show {
-    opacity: 1!important;
-    visibility: visible!important;
-}
+//// This commented code is moved into styleblock.jade for page load optimization
+// .show {
+//     opacity: 1!important;
+//     visibility: visible!important;
+// }
 
 .dim {
     opacity: .12!important;
