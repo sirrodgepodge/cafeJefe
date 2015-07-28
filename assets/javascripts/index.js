@@ -23,7 +23,6 @@ var coffee = [],
     contact = {};
 
 $.get('/api/info', function(data) {
-    // data = JSON.parse(data);
     coffee = data.coffee;
     merch = data.merch;
     contact = data.contact;
