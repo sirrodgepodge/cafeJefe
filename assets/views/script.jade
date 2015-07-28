@@ -1,13 +1,18 @@
 script(type='text/javascript').
+  var otherLoaded = false;
   function landing() {
-    if(screen.width >= 768) {
-      var productImg = document.getElementsByClassName('product-img')[0];
-      var landingText = document.getElementsByClassName('landing-text')[0];
-      productImg.className += ' show';
-      setTimeout(function() {
-        landingText.className += ' show';
-      },1150);
+    if(!otherLoaded) otherLoaded = true;
+    else {
+      if(screen.width >= 768) {
+        var productImg = document.getElementsByClassName('product-img')[0];
+        var landingText = document.getElementsByClassName('landing-text')[0];
+        productImg.className += ' show';
+        setTimeout(function() {
+          landingText.className += ' show';
+        },1150);
+      }
+      delete otherLoaded;
+      delete landing;
     }
-    delete landing;
   };
   with(document.documentElement){className=className.replace(/\bno-js\b/,'js')}
