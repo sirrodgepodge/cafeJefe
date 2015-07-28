@@ -1,15 +1,22 @@
 script(type='text/javascript').
-  preLoadShade = new Image();
-  preLoadShade.src = '/images/shader.png'
+  var otherOneLoaded = false;
+  var preLoadShade = new Image();
+  preLoadShade.src = '/images/shader.png';
   function landing() {
-    if(screen.width >= 768) {
-      var productImg = document.getElementsByClassName('product-img')[0];
-      var landingText = document.getElementsByClassName('landing-text')[0];
-      productImg.className += ' show';
-      setTimeout(function() {
-        landingText.className += ' show';
-      },1150);
+    if (!otherOneLoaded) otherOneLoaded = true;
+    else {
+      if(screen.width >= 768) {
+        var productImg = document.getElementsByClassName('product-img')[0];
+        var landingText = document.getElementsByClassName('landing-text')[0];
+        productImg.className += ' show';
+        setTimeout(function() {
+          landingText.className += ' show';
+        },1150);
+      }
+      delete otherOneLoaded;
+      delete preLoadShade;
+      delete landing;
     }
-    delete landing;
   };
+  preLoadShade.onload = landing();
   with(document.documentElement){className=className.replace(/\bno-js\b/,'js')}
