@@ -15,7 +15,8 @@ module.exports = function(grunt) {
         },
         scsslint: {
             allFiles: [
-                'assets/stylesheets/*.scss'
+                'assets/stylesheets/*.scss',
+                'assets/immediate_stylesheets/*.scss'
             ],
             options: {
                 colorizeOutput: true,

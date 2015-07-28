@@ -7,7 +7,6 @@ $grayish-yellowish: #e1ded9;
 $main-color: #900d13;
 $title-height: 11.5;
 
-
 // Add Square Root function
 @function sqrt($r) {
   $x0: 1;
@@ -44,59 +43,6 @@ $title-height: 11.5;
                  $px #{-$px} 0 $color, 
                  -$px $px 0 $color, 
                  $px $px 0 $color;
-}
-
-
-// Base formatting
-html, body {
-    margin: 0;
-    width: 100%;
-    padding: 0;
-    position: absolute;
-    z-index: 0;
-    cursor: default;
-}
-
-body * {
-    position: relative;
-}
-
-hr {
-    padding: 0;
-    border-top: 0;
-    margin: 0;
-    width: 100%;
-    clear: both;
-}
-
-a, a:hover, a:visited {
-    color: white;
-    text-decoration: none;
-    transition: .25s;
-}
-
-
-// For jQuery use
-//// This commented code is moved into styleblock.jade for page load optimization
-// .show {
-//     opacity: 1!important;
-//     visibility: visible!important;
-// }
-
-.dim {
-    opacity: .12!important;
-}
-
-.fade-out {
-    opacity: 0!important;
-}
-
-.disable-link {
-   pointer-events: none;
-   cursor: default;
-}
-.disable-link:hover {
-    text-shadow: none;
 }
 
 
