@@ -10,10 +10,10 @@ var localsObj = {
 		{name: '4 bags', purchase: 57, subscribe: 48}
 		],
 	merch: [
-		{name: 'tshirt', price: 20},
-		{name: 'mug', price: 12},
-		{name: 'tank', price: 20},
-		{name: 'girlt', price: 20}
+	    {name: 'tshirt', price: 20, sizes:['S','M','L','XL']},
+	    {name: 'mug', price: 12, sizes: []},
+	    {name: 'tank', price: 20, sizes: ['S', 'M', 'L', 'XL']},
+	    {name: 'girlt', price: 20, sizes: ['S', 'M', 'L', 'XL']}
 		],
 	contact: {
 		instagram: {

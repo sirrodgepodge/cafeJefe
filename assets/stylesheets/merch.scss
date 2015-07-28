@@ -17,6 +17,13 @@
 	line-height: .75;
     }
     .merch-ind {
+	.sizes {
+	    position: absolute;
+	    .size {
+		width: 50%;
+		height: 50%;
+	    }
+	}
         a {
             img {
 	        @include vend(transition, (.7s ease-in-out));

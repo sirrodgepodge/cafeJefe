@@ -8,10 +8,11 @@ var $purchaseToggle = $('.purchase-toggle'),
     $title = $('.title'),
     $contact = $('.contact'),
     $placeHolder = $('.place-holder'),
-    $landingHead = $('.landing-head'),
-    $landingNotHead = $('.landing-not-head'),
-    $landingTogglers = $('.dream, .product'),
-    $downAnim = $('.down-anim'),
+    $landing= $('.landing'),
+    $landingHead = $landing.find('.landing-head'),
+    $landingNotHead = $landing.find('.landing-not-head'),
+    $landingTogglers = $landing.find('.dream, .product'),
+    $downAnim = $landing.find('.down-anim'),
     $contactImg = $('.contact-img'),
     $contactSubInside = $('.contact-sub-inside'),
     $contactSubLink = $contactSubInside.parent(),
@@ -182,7 +183,8 @@ var mapLoad = function(addresses) {
 };
 
 // Store page height of top of title
-var titleTop = Math.ceil($title.offset().top),
+var titleTop = Math.ceil($landing.outerHeight()),
+    screenWidth = screen.width,
     contactTop = Math.ceil($contact.offset().top) * 0.92,
     downAnimReached = titleTop * 0.395 + 4.5; //when Page position is such that the white "CafeJefe" is right above the down arrow;
 
@@ -224,8 +226,9 @@ var listeners = function() {
 
     //Re-measure title distance from top of screen if screen is resized
     $(window).resize(function() {
-        titleTop = Math.ceil($title.offset().top);
-        downAnimReached = titleTop * 0.395 + 4.5;
+        titleTop = Math.ceil($landing.outerHeight());
+	screenWidth = screen.width;
+	downAnimReached = titleTop * 0.395 + 4.5;
         landingScroll();
     });
     window.addEventListener('scroll', landingScroll);
