@@ -2,7 +2,7 @@
 @import 'init';
 
 // Pre-Load Shader
-body:before {
+head:after {
     display: none;
     content: url('/images/shader.png');
 }
