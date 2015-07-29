@@ -19,25 +19,28 @@
         text-align: center;
         margin-bottom: 9vh;
         opacity: 1;
-        .contact-sub-inside {
-            @include vend(border-radius, $contact-border-width/4);
-            border-top: black solid $contact-border-width/4;
-            border-bottom: black solid $contact-border-width/4;
-            border-left: black solid $contact-border-width/3.55;
-            border-right: black solid $contact-border-width/3.55;
-            display: inline;
-            color: white;
-            background-color: black;
-            font-family: lato, sans-serif;
-        }
+	a {
+	    @include vend(border-radius, $contact-border-width/4);
+            .contact-sub-inside {
+		@include vend(transition, opacity 1s);
+		
+		border-top: black solid $contact-border-width/4;
+		border-bottom: black solid $contact-border-width/4;
+		border-left: black solid $contact-border-width/3.55;
+		border-right: black solid $contact-border-width/3.55;
+		display: inline;
+		color: white;
+		background-color: black;
+		font-family: lato, sans-serif;
+            }
+	}
     }
     .contact-img {
         @include vend(border-radius, 50%);
-        z-index: 0;
+        @include vend(transform, translate3d(0,0,0));
+	z-index: 0;
         position: absolute;
         color: white;
-        transform: translate3d(0,0,0);
-        -webkit-transform: translate3d(0,0,0);
         &.address {
             letter-spacing: -.45rem;
             line-height: 1.6;
