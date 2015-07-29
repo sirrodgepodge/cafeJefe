@@ -19,8 +19,8 @@
         @include vend(transition, .5s ease-in-out);
         display: block;
         margin: 0 auto 9vh;
-        border-top: black solid $contact-border-width/6.5;
-        border-bottom: black solid $contact-border-width/6;
+        border-top: black solid $contact-border-width/7;
+        border-bottom: black solid $contact-border-width/6.2;
         border-left: black solid $contact-border-width/3.55;
         border-right: black solid $contact-border-width/3.55;
         text-align: center;
