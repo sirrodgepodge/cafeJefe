@@ -117,7 +117,7 @@ var main = function() {
             $contactSubInside.text(val);
             $contactSubInside.toggleClass('show');
             $contactSub.innerWidth($contactSubInside.width());
-        },550);
+        },525);
     };
 
     //run once to initialize

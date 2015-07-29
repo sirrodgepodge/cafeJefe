@@ -16,10 +16,10 @@
     }
     .contact-sub {
         @include vend(border-radius, $contact-border-width/4);
-        @include vend(transition, .5s ease-in-out);
+        @include vend(transition, .6s ease-in-out);
         display: block;
         margin: 0 auto 9vh;
-        border-top: black solid $contact-border-width/7.3;
+        border-top: black solid $contact-border-width/7.15;
         border-bottom: black solid $contact-border-width/6.25;
         border-left: black solid $contact-border-width/3.55;
         border-right: black solid $contact-border-width/3.55;
@@ -29,14 +29,14 @@
         background-color: black;
         font-family: lato, sans-serif;
         .contact-sub-inside {
-            @include vend(transition, .7s);
+            @include vend(transition, .5s);
             display: inline !important;
             white-space: nowrap;
             opacity: 0;
         }
         &:hover {
-            @include vend(transition, .35s ease-in-out);
-            text-shadow: 0 0 7px #FFF;
+            @include vend(transition, .375s ease-in-out);
+            text-shadow: 0 0 8px #FFF;
         }
     }
     .contact-img {
