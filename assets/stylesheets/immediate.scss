@@ -115,7 +115,7 @@ a, a:hover, a:visited {
     }
     //white text in landing
     .landing-text {
-      @include vend(transition, 1s);
+      @include vend(transition, 1s ease-in-out 1.15s);
       z-index: 1;
       opacity: 0;
       color: white;

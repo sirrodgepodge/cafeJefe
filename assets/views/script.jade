@@ -6,12 +6,8 @@ script(type='text/javascript').
     if (!otherOneLoaded) otherOneLoaded = true;
     else {
       if(screen.width >= 768) {
-        var productImg = document.getElementsByClassName('product-img')[0];
-        var landingText = document.getElementsByClassName('landing-text')[0];
-        productImg.className += ' show';
-        setTimeout(function() {
-          landingText.className += ' show';
-        },1150);
+        document.getElementsByClassName('product-img')[0].className += ' show';
+        document.getElementsByClassName('landing-text')[0].className += ' show';
       }
       delete otherOneLoaded;
       delete preLoadShade;

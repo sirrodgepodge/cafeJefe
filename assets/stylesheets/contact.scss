@@ -15,30 +15,33 @@
         background: black url("../images/cafe_jefe_contact.svg") no-repeat center /cover;
     }
     .contact-sub {
-        font-size: $contact-side/12;
+        @include vend(border-radius, $contact-border-width/4);
+        @include vend(transition, .45s ease-in-out);
+        display: block;
+        margin: 0 auto 9vh;
+        border-top: black solid $contact-border-width/4;
+        border-bottom: black solid $contact-border-width/4;
+        border-left: black solid $contact-border-width/3.55;
+        border-right: black solid $contact-border-width/3.55;
         text-align: center;
-        margin-bottom: 9vh;
-        opacity: 1;
-	a {
-	    @include vend(border-radius, $contact-border-width/4);
-            .contact-sub-inside {
-		@include vend(transition, opacity 1s);
-		
-		border-top: black solid $contact-border-width/4;
-		border-bottom: black solid $contact-border-width/4;
-		border-left: black solid $contact-border-width/3.55;
-		border-right: black solid $contact-border-width/3.55;
-		display: inline;
-		color: white;
-		background-color: black;
-		font-family: lato, sans-serif;
+        font-size: $contact-side/12;
+        color: white;
+        background-color: black;
+        font-family: lato, sans-serif;
+        .contact-sub-inside {
+            @include vend(transition, .7s);
+            display: inline !important;
+            white-space: nowrap;
+            opacity: 0;
+            &:hover {
+                text-shadow: 0 0 5px #FFF;
             }
-	}
+        }
     }
     .contact-img {
         @include vend(border-radius, 50%);
-        @include vend(transform, translate3d(0,0,0));
-	z-index: 0;
+        @include vend(transform, translate3d(0, 0, 0));
+        z-index: 0;
         position: absolute;
         color: white;
         &.address {
@@ -54,38 +57,8 @@
     }
 }
 
-@include contactImgInit(instagram,
-.5,
-#FF3333,
-.45s,
-right,
-.9,
-.15);
-@include contactImgInit(address,
-.37037037,
-rgb(251, 251, 0),
-.5s,
-right,
-.9,
-.85);
-@include contactImgInit(facebook,
-.6666666,
-#5C5CFF,
-.55s,
-left,
-.87,
--.25);
-@include contactImgInit(phone,
-.4166666,
-#3EA25F,
-.6s,
-left,
-.87,
-.705);
-@include contactImgInit(email,
-.3448275,
-orange,
-.65s,
-top,
-.905,
--.1);
+@include contactImgInit(instagram, .5, #FF3333, .45s, right, .9, .15);
+@include contactImgInit(address, .37037037, rgb(251, 251, 0), .5s, right, .9, .85);
+@include contactImgInit(facebook, .6666666, #5C5CFF, .55s, left, .87, -.25);
+@include contactImgInit(phone, .4166666, #3EA25F, .6s, left, .87, .705);
+@include contactImgInit(email, .3448275, orange, .65s, top, .905, -.1);

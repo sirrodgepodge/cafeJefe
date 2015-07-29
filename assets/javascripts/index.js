@@ -8,15 +8,14 @@ var $purchaseToggle = $('.purchase-toggle'),
     $title = $('.title'),
     $contact = $('.contact'),
     $placeHolder = $('.place-holder'),
-    $landing= $('.landing'),
+    $landing = $('.landing'),
     $landingHead = $landing.find('.landing-head'),
     $landingNotHead = $landing.find('.landing-not-head'),
     $landingTogglers = $landing.find('.dream, .product'),
     $downAnim = $landing.find('.down-anim'),
     $contactImg = $('.contact-img'),
-    $contactSubInside = $('.contact-sub-inside'),
-    $contactSubLink = $contactSubInside.parent(),
-    $contactSub = $contactSubLink.parent();
+    $contactSub = $('.contact-sub'),
+    $contactSubInside = $contactSub.find('.contact-sub-inside');
 
 // Getting back end data
 var coffee = [],
@@ -111,14 +110,25 @@ var main = function() {
         }, $(window).scrollTop() * 0.65);
     });
 
+    //function to make sliding box on text change work
+    var slideSwitchText = function(val) {
+    $contactSubInside.toggleClass('show');
+        setTimeout(function(){
+            $contactSubInside.text(val);
+            $contactSubInside.toggleClass('show');
+            $contactSub.innerWidth($contactSubInside.width());
+        },550);
+    };
+
+    //run once to initialize
+    $contactSub.innerWidth($contactSubInside.width());
+
     $contactImg.mouseenter(function() {
         var selected = $(this).attr('class').split(' ')[1];
-        if($contactSubInside.text() !== contact[selected].text) {
-            $contactSubLink.attr('href', contact[selected].link);
-            if(!!contact[selected].link === $contactSubLink.hasClass('disable-link')) $contactSubLink.toggleClass('disable-link');
-            $contactSub.animate({opacity:0}, 300, 'swing', function(){
-                $contactSubInside.text(contact[selected].text);
-            }).animate({opacity:1}, 300, 'swing');
+        if ($contactSubInside.text() !== contact[selected].text) {
+            $contactSub.attr('href', contact[selected].link);
+            if (!!contact[selected].link === $contactSub.hasClass('disable-link')) $contactSub.toggleClass('disable-link');
+            slideSwitchText(contact[selected].text);
         }
     });
 };
@@ -200,19 +210,18 @@ var listeners = function() {
     var landingScroll = function() {
         pagePos = window.pageYOffset; //calculates current vertical scroll position
         //fixes main title to top of page
-	if(windowWidth < 768) {
-	    if(!titleFixed) {
-		$title.toggleClass('sticky');
-		$placeHolder.toggleClass('no-show');
-		titleFixed = !titleFixed;
-	    }
-	}
-	else if (pagePos >= titleTop && !titleFixed || pagePos < titleTop && titleFixed) {
+        if (windowWidth < 768) {
+            if (!titleFixed) {
+                $title.toggleClass('sticky');
+                $placeHolder.toggleClass('no-show');
+                titleFixed = !titleFixed;
+            }
+        } else if (pagePos >= titleTop && !titleFixed || pagePos < titleTop && titleFixed) {
             $title.toggleClass('sticky');
             $placeHolder.toggleClass('no-show');
             titleFixed = !titleFixed;
         }
-	
+
         //make contact pop
         if (pagePos >= contactTop && !contactPopped || pagePos < contactTop && contactPopped) {
             $contact.toggleClass('poppin');
@@ -234,9 +243,10 @@ var listeners = function() {
 
     //Re-measure title distance from top of screen if screen is resized
     $(window).resize(function() {
-	windowWidth = $(window).width();
-	titleTop = windowWidth < 768 ? 0 : Math.ceil($landing.outerHeight());
-	downAnimReached = titleTop * 0.395 + 4.5;
+        windowWidth = $(window).width();
+        titleTop = windowWidth < 768 ? 0 : Math.ceil($landing.outerHeight());
+        downAnimReached = titleTop * 0.395 + 4.5;
+        contactTop = Math.ceil($contact.offset().top) * 0.92;
         landingScroll();
     });
     window.addEventListener('scroll', landingScroll);
