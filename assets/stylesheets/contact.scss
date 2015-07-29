@@ -16,7 +16,7 @@
     }
     .contact-sub {
         @include vend(border-radius, $contact-border-width/4);
-        @include vend(transition, .45s ease-in-out);
+        @include vend(transition, .5s ease-in-out);
         display: block;
         margin: 0 auto 9vh;
         border-top: black solid $contact-border-width/4;
@@ -33,9 +33,10 @@
             display: inline !important;
             white-space: nowrap;
             opacity: 0;
-            &:hover {
-                text-shadow: 0 0 5px #FFF;
-            }
+        }
+        &:hover {
+            @include vend(transition, .35s ease-in-out);
+            text-shadow: 0 0 7px #FFF;
         }
     }
     .contact-img {
