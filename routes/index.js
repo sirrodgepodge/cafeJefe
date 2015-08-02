@@ -65,7 +65,7 @@ var localsObj = {
 router.get('*', function(req, res, next) {
     console.log(req.get('host'));
     console.log('https://' + req.get('host') + req.url);
-    if (req.protocol === 'http') res.redirect('https://' + req.get('host') + req.originalUrl);
+    if (req.protocol === 'http' || req.headers['x-forwarded-proto'] === 'http') res.redirect('https://' + req.get('host') + req.originalUrl);
     next();
     // if (req.headers['x-forwarded-proto'] != 'https') {
     //     console.log(process.env.NODE_ENV);
