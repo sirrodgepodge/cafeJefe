@@ -16,6 +16,7 @@ var path = require('path');
 var port = normalizePort(process.env.PORT || '443');
 app.set('port', port);
 
+console.log(process.env.NODE_ENV);
 
 //Create HTTPs server
 if (process.env.NODE_ENV === 'production') {

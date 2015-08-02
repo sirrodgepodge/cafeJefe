@@ -27,7 +27,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-console.log(__dirname);
 app.use(express.static(path.join(__dirname, 'public'), {maxAge: 1800000}));
 
 // routes
