@@ -3,19 +3,25 @@
 //New Relic
 require('newrelic');
 
+// HTTPS options
+// var httpsOptions = {
+//   key: fs.readFileSync(path.join(__dirname, 'auth/key.pem')),
+//   cert: fs.readFileSync(path.join(__dirname, 'auth/cert.pem'))
+// };
+
 //Module dependencies
 var app = require('../app');
 var debug = require('debug')('cafeJefe:server');
-var http = require('http');
+var https = require('https');
 
 
 //Get port from environment and store in Express.
-var port = normalizePort(process.env.PORT || '80');
+var port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 
 
 //Create HTTP server.
-var server = http.createServer(app);
+var server = https.createServer(app);
 
 
 //Listen on provided port, on all network interfaces.
