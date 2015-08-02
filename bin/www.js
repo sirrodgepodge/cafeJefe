@@ -7,6 +7,7 @@ require('newrelic');
 require('express');
 var app = require('../app');
 var debug = require('debug')('cafeJefe:server');
+var http = require('http');
 var https = require('https');
 var fs = require('fs');
 var path = require('path');
@@ -15,14 +16,27 @@ var path = require('path');
 var port = normalizePort(process.env.PORT || '443');
 app.set('port', port);
 
-//HTTPs options
-var httpsOptions = {
-    key: fs.readFileSync(path.join(__dirname, 'auth/key.pem')),
-    cert: fs.readFileSync(path.join(__dirname, 'auth/cert.pem'))
-};
 
 //Create HTTPs server
-var server = https.createServer(httpsOptions, app);
+if (process.env.NODE_ENV === 'production') {
+    //HTTPs options
+    var httpsOptions = {
+        key: fs.readFileSync(path.join(__dirname, 'auth/key.pem')),
+        cert: fs.readFileSync(path.join(__dirname, 'auth/cert.pem'))
+    };
+
+    var server = https.createServer(httpsOptions, app);
+    //Create HTTP server for redirecting to HTTPS
+    http.createServer(function(req, res) {
+        res.writeHead(301, {
+            "Location": "https://" + req.headers['host'] + req.url
+        });
+        res.end();
+    }).listen(80);
+} else {
+    var server = http.createServer(app);
+}
+
 
 //Listen on provided port, on all network interfaces.
 server.listen(port, function() {
@@ -70,13 +84,3 @@ function onListening() {
     debug('Listening on ' + bind);
     console.log('Listening on ' + bind);
 }
-
-
-//Create HTTP server for redirecting to HTTPS
-var http = require('http');
-http.createServer(function(req, res) {
-    res.writeHead(301, {
-        "Location": "https://" + req.headers['host'] + req.url
-    });
-    res.end();
-}).listen(80);
