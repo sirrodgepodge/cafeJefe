@@ -136,7 +136,7 @@ var main = function() {
 
 // Load Google Maps
 var mapLoad = function(addresses) {
-    $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + addresses[0] + '&sensor=false', null, function(centerData) {
+    $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address=' + addresses[0] + '&sensor=false', null, function(centerData) {
         var centerCoord = centerData.results[0].geometry.location;
         var map,
             mapOptions = {
@@ -160,7 +160,7 @@ var mapLoad = function(addresses) {
 
         var bounds = new google.maps.LatLngBounds(); //this code autofits & zooms to include all markers, bad if there's only one
         addresses.forEach(function(val, index) {
-            $.getJSON('http://maps.googleapis.com/maps/api/geocode/json?address=' + val + '&sensor=false', null, function(data) {
+            $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address=' + val + '&sensor=false', null, function(data) {
                 var p = data.results[0].geometry.location;
                 var latlng = new google.maps.LatLng(p.lat, p.lng);
                 bounds.extend(latlng);

@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-
 var localsObj = {
     coffee: [{
         name: '1 bag',
@@ -63,12 +62,18 @@ var localsObj = {
 
 
 /* force redirect*/
-router.get('*', function(req, res, next) {
-    if (req.headers['x-forwarded-proto'] != 'https') {
-        console.log(req.url);
-        res.redirect('https://www.cafejefe.com' + req.url);
-    } else next(); /* Continue to other routes if we're not redirecting */
-});
+// router.get('*', function(req, res, next) {
+//     console.log(req.get('host'));
+//     console.log('https://' + req.get('host') + req.url);
+//     if (req.protocol === 'http') res.redirect('https://' + req.get('host') + req.originalUrl);
+//     next();
+//     // if (req.headers['x-forwarded-proto'] != 'https') {
+//     //     console.log(process.env.NODE_ENV);
+//     //     console.log(req);
+//     //     res.redirect(process.env.NODE_ENV === 'production'? 'https://www.cafejefe.com' + req.url);
+//     // } else next(); /* Continue to other routes if we're not redirecting */
+// });
+
 
 /* GET home page */
 router.get('/', function(req, res, next) {
