@@ -39,8 +39,10 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-// error handlers
+// set app environment to NODE_ENV
+app.set('env', process.env.NODE_ENV || 'development');
 
+// error handlers
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {

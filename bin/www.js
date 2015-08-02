@@ -19,8 +19,9 @@ app.set('port', port);
 console.log(process.env.NODE_ENV);
 
 //Create HTTPs server
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV !== 'production') {
     //HTTPs options
+    console.log('Im here');
     var httpsOptions = {
         key: fs.readFileSync(path.join(__dirname, 'auth/key.pem')),
         cert: fs.readFileSync(path.join(__dirname, 'auth/cert.pem'))

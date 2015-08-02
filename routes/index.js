@@ -61,7 +61,7 @@ var localsObj = {
 };
 
 
-/* force redirect*/
+/* force redirect HTTP to HTTPS */
 router.get('*', function(req, res, next) {
     if (req.protocol === 'http' || req.headers['x-forwarded-proto'] === 'http') res.redirect('https://' + req.get('host') + req.originalUrl);
     else next();
