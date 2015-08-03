@@ -61,10 +61,11 @@ var localsObj = {
 };
 
 /* force redirect HTTP to HTTPS for heroku routes */
-// router.get('*', function(req, res, next) {
-// 	if (req.headers['x-forwarded-proto'] !== 'https') res.redirect('https://' + req.get('host') + req.originalUrl);
-//     else next();
-// });
+router.get('*', function(req, res, next) {
+	// if (req.headers['x-forwarded-proto'] !== 'https') res.redirect('https://' + req.get('host') + req.originalUrl);
+    if (req.protocol !== 'https') res.redirect('https://' + req.get('host') + req.originalUrl);
+    else next();
+});
 
 
 /* GET home page */
