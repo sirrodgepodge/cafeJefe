@@ -62,7 +62,7 @@ var localsObj = {
 
 /* force redirect HTTP to HTTPS for heroku routes */
 router.get('*', function(req, res, next) {
-    if (req.headers['x-forwarded-proto'] === 'http' && process.env.NODE_ENV === 'production') res.redirect('https://cafejefe.com' + req.originalUrl);
+	if (req.headers['x-forwarded-proto'] !== 'https') res.redirect('https://' + req.get('host') + req.originalUrl);
     else next();
 });
 
