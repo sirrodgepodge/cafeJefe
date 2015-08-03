@@ -62,10 +62,10 @@ var localsObj = {
 
 
 /* force redirect HTTP to HTTPS for heroku routes */
-router.get('*', function(req, res, next) {
-    if (req.headers['x-forwarded-proto'] === 'http' || req.get('host') !== 'cafejefe.herokuapp.com' && process.env.NODE_ENV === 'production') res.redirect('https://cafejefe.herokuapp.com' + req.originalUrl);
-    else next();
-});
+// router.get('*', function(req, res, next) {
+//     if (req.headers['x-forwarded-proto'] === 'http' || req.get('host') !== 'cafejefe.herokuapp.com' && process.env.NODE_ENV === 'production') res.redirect('https://cafejefe.herokuapp.com' + req.originalUrl);
+//     else next();
+// });
 
 
 /* GET home page */
