@@ -19,24 +19,22 @@ app.set('port', port);
 console.log(process.env.NODE_ENV);
 
 // Run HTTPS server if not in Heroku
-// if (process.env.NODE_ENV !== 'production') {
-//     // Load self-signed certificate
-//     var httpsOptions = {
-//         key: fs.readFileSync(path.join(__dirname, 'auth/key.pem')),
-//         cert: fs.readFileSync(path.join(__dirname, 'auth/cert.pem'))
-//     };
-//     var server = https.createServer(httpsOptions, app);
+if (process.env.NODE_ENV !== 'production') {
+    // Load self-signed certificate
+    var httpsOptions = {
+        key: fs.readFileSync(path.join(__dirname, 'auth/key.pem')),
+        cert: fs.readFileSync(path.join(__dirname, 'auth/cert.pem'))
+    };
+    var server = https.createServer(httpsOptions, app);
     
-//     // Create HTTP server for redirecting to HTTPS
-//     http.createServer(function(req, res) {
-//         res.writeHead(301, {
-//             "Location": "https://" + req.headers['host'] + req.url
-//         });
-//         res.end();
-//     }).listen(80);
-// } else {
+    // Create HTTP server for redirecting to HTTPS
+    http.createServer(function(req, res) {
+        res.writeHead(301, {"Location": "https://" + req.headers['host'] + req.url});
+        res.end();
+    }).listen(80);
+} else {
     var server = http.createServer(app);
-// }
+}
 
 
 // Listen on provided port, on all network interfaces.
