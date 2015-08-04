@@ -5,6 +5,9 @@ var router = require('express').Router(),
 var redisStore = require('connect-redis')(session),
     redisClient = redis.createClient(); //CREATE REDIS CLIENT
 
+console.log(process.env.REDIS_URL);
+console.log(process.env.REDISTOGO_URL);
+
 router.use(session({
     secret: 'mysecretcode',
     store: new redisStore({

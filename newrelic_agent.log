@@ -5381,3 +5381,15 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":1329,"time":"2015-08-04T21:00:07.303Z","msg":"Starting New Relic for Node.js connection process."}
 {"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":1329,"time":"2015-08-04T21:00:08.057Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1032470/applications/9459143","component":"new_relic_response"}
 {"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":1329,"time":"2015-08-04T21:00:08.058Z","msg":"Connected to collector-146.newrelic.com:443 with agent run ID 40686702311572526.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":1693,"time":"2015-08-04T21:02:54.758Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":1693,"time":"2015-08-04T21:02:55.529Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1032470/applications/9459143","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":1693,"time":"2015-08-04T21:02:55.530Z","msg":"Connected to collector-146.newrelic.com:443 with agent run ID 40686702311579395.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":2086,"time":"2015-08-04T21:05:32.683Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":2086,"time":"2015-08-04T21:05:33.433Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1032470/applications/9459143","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":2086,"time":"2015-08-04T21:05:33.433Z","msg":"Connected to collector-146.newrelic.com:443 with agent run ID 40686702311587032.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":2368,"time":"2015-08-04T21:07:16.308Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":2368,"time":"2015-08-04T21:07:17.075Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1032470/applications/9459143","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":2368,"time":"2015-08-04T21:07:17.075Z","msg":"Connected to collector-146.newrelic.com:443 with agent run ID 40686702311592000.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":3585,"time":"2015-08-04T21:16:18.273Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":3585,"time":"2015-08-04T21:16:19.039Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1032470/applications/9459143","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"ip-172-31-10-219","pid":3585,"time":"2015-08-04T21:16:19.039Z","msg":"Connected to collector-146.newrelic.com:443 with agent run ID 40686702311614825.","component":"collector_api"}
