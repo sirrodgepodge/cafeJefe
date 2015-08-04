@@ -4,7 +4,6 @@
 require('newrelic');
 
 // Module dependencies
-require('express');
 var app = require('../app');
 var debug = require('debug')('cafeJefe:server');
 var http = require('http');
@@ -22,8 +21,8 @@ console.log(process.env.NODE_ENV);
 if (process.env.NODE_ENV !== 'production') {
     // Load self-signed certificate
     var httpsOptions = {
-        key: fs.readFileSync(path.join(__dirname, 'auth/key.pem')),
-        cert: fs.readFileSync(path.join(__dirname, 'auth/cert.pem'))
+        key: fs.readFileSync(path.join(__dirname, 'certs/key.pem')),
+        cert: fs.readFileSync(path.join(__dirname, 'certs/cert.pem'))
     };
     var server = https.createServer(httpsOptions, app);
     

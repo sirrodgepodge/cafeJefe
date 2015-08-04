@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var sass = require('node-sass-middleware');
 var compression = require('compression');
 
+console.log(process.env.REDIS_URL);
+
 // create express app object (which is a function actually!)
 var app = express();
 
@@ -25,7 +27,7 @@ app.use(sass({
 app.use(compression());
 app.use(favicon(path.join(__dirname, '/public/favicon.ico')));
 
-//app.use(require('./bin/redis_sessions/')); //handles storing sessions in redis
+app.use(require('./bin/redis_sessions')); //handles storing sessions in redis
 //app.use(passport.initialize());
 //app.use(passport.session());
 
