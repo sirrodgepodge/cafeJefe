@@ -25,9 +25,9 @@ app.use(sass({
 app.use(compression());
 app.use(favicon(path.join(__dirname, '/public/favicon.ico')));
 
-app.use(require('./bin/redis_sessions/')); //handles storing sessions in redis
-app.use(passport.initialize());
-app.use(passport.session());
+//app.use(require('./bin/redis_sessions/')); //handles storing sessions in redis
+//app.use(passport.initialize());
+//app.use(passport.session());
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
