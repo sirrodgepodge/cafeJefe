@@ -5,16 +5,16 @@ var router = require('express').Router(),
     redisUrl = process.env.NODE_ENV === 'production' ? require('url').parse(process.env.REDIS_URL) : null;
 
 var redisStore = require('connect-redis')(session),
-    redisClient = redisUrl ? redis.createClient(redisURL.port, redisURL.hostname) : redis.createClient(); //CREATE REDIS CLIENT
-    process.env.NODE_ENV === 'production' && redisClient.auth(redisURL.auth.split(":")[1]); //authenticate redis connection
+    redisClient = redisUrl ? redis.createClient(redisUrl.port, redisUrl.hostname) : redis.createClient(); //CREATE REDIS CLIENT
+    process.env.NODE_ENV === 'production' && redisClient.auth(redisUrl.auth.split(":")[1]); //authenticate redis connection
 
 console.log(process.env.REDIS_URL);
 
 router.use(session({
     secret: 'mysecretcode',
     store: new redisStore({
-        host: redisUrl ? redisURL.hostname : 'localhost', //states the host to listen on
-        port: redisUrl ? redisURL.port : 6379, //listen for redis db on this port
+        host: redisUrl ? redisUrl.hostname : 'localhost', //states the host to listen on
+        port: redisUrl ? redisUrl.port : 6379, //listen for redis db on this port
         client: redisClient,
         ttl: 900 //time out after 15 minutes
     }),
