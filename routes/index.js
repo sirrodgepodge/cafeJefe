@@ -60,7 +60,7 @@ var localsObj = {
     }
 };
 
-/* force redirect HTTP to HTTPS for heroku routes */
+/* force redirect HTTP to HTTPS for heroku routes, no longer necessary because of CloudFlare */
 // router.get('*', function(req, res, next) {
 // 	// if (req.headers['x-forwarded-proto'] !== 'https') res.redirect('https://' + req.get('host') + req.originalUrl);
 //     if (req.headers['x-forwarded-proto'] !== 'https') res.redirect('https://' + req.get('host') + req.originalUrl);
@@ -70,6 +70,7 @@ var localsObj = {
 
 /* GET home page */
 router.get('/', function(req, res, next) {
+    localsObj.user = req.session.userId ? req.session.userId: null;
     res.render('index', localsObj);
 });
 
@@ -77,6 +78,22 @@ router.get('/', function(req, res, next) {
 /* GET server info */
 router.get('/api/info', function(req, res, next) {
     res.json(localsObj);
+});
+
+router.get('/login', function(req, res, next){
+    User.findByEmail(req.query.email).exec().then(function(user){
+	if(user && user.authenticate(req.query.password)) {
+	    req.session.userId = user._id;
+	    res.json(user);
+	} else {
+	    var err = new Error('unauthorized');
+	}.then(null, next);
+    })
+});
+
+router.get('/logout', function(req, res, next){
+    req.session.userId = null;
+    res.status(200).end();
 });
 
 
