@@ -2,9 +2,7 @@ var router = require('express').Router(),
     redis = require('redis'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
-    redisUrl = process.env.NODE_ENV === 'production' ?
-               require('url').parse(process.env.REDIS_URL) :
-               null;
+    redisUrl = process.env.NODE_ENV === 'production' ? require('url').parse(process.env.REDIS_URL) : null;
 
 var redisStore = require('connect-redis')(session),
     redisClient = redisUrl ? redis.createClient(redisURL.port, redisURL.hostname) : redis.createClient(); //CREATE REDIS CLIENT
