@@ -17,31 +17,30 @@
 	line-height: .75;
     }
     .merch-ind {
-	.sizes {
-	    position: absolute;
-	    .size {
-		width: 50%;
-		height: 50%;
-	    }
-	}
-        a {
-            img {
-	        @include vend(transition, (.7s ease-in-out));
-                border-radius: 50%;
-                border: 6px solid $grayish-yellowish;
-                padding: 0;
-            }
-            img:hover {
-                border-color: black;
-            }
-            .merch-price {
-                margin: 15px 0 10px;
-                text-align: center;
-	        text-decoration: none;
-                line-height: 1.1;
-	        font-size: 3.6rem;
-                color: black;
-            }
+    	.sizes {
+    	    position: absolute;
+    	    .size {
+        		width: 50%;
+        		height: 50%;
+                color: orange; //for debugging
+    	    }
+    	}
+        img {
+            @include vend(transition, (.7s ease-in-out));
+            border-radius: 50%;
+            border: 6px solid $grayish-yellowish;
+            padding: 0;
+        }
+        img:hover {
+            border-color: $main-color;
+        }
+        .merch-price {
+            margin: 15px 0 10px;
+            text-align: center;
+            text-decoration: none;
+            line-height: 1.1;
+            font-size: 3.6rem;
+            color: black;
         }
     }
 }

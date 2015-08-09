@@ -82,3 +82,6 @@ function onListening() {
     debug('Listening on ' + bind);
     console.log('Listening on ' + bind);
 }
+
+
+module.exports = server;

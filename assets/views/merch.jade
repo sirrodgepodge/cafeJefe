@@ -2,8 +2,10 @@
     .merch-head.text-center Got Merch?
     each merch in locals.merch
       .merch-ind.col-md-3.col-sm-6.col-sm-offset-0.col-xs-12
-        a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}")
-          img(src="../images/#{merch.name}.jpg").col-xs-12
-          each size in merch.sizes
-            .size(class="#{size}") #{size}
+          //- a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}")
+          //- .img(src="../images/#{merch.name}.jpg").col-xs-12
+          a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}", style="background:url(../images/#{merch.name}.jpg) no-repeat center /cover;").col-xs-12
+            .sizes
+              each size in merch.sizes
+                .size(class="#{size}") #{size}
           .merch-price.text-center.col-xs-12= '$'+merch.price
