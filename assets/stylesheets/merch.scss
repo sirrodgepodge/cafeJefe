@@ -62,8 +62,13 @@
                 color: orange; //for debugging
                 border-radius: 50%;
                 border: 4px solid $grayish-yellowish;
-                text-align: center;
-                vertical-align: middle;
+                padding: 0;
+                p {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
             }
             .size:hover {
                 border-color: $main-color;

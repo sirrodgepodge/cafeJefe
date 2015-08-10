@@ -6,5 +6,6 @@
           //- .img(src="../images/#{merch.name}.jpg").col-xs-12
           a.col-xs-12.sizes(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}", style="background:url(../images/#{merch.name}.jpg) no-repeat center /cover;")
             each size in merch.sizes
-              .size.col-xs-6(class="#{size}") #{size}
+              .size.col-xs-6(class="#{size}")
+                p #{size}
           .merch-price.col-xs-12= '$'+merch.price
