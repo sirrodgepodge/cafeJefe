@@ -14,25 +14,60 @@
         margin: 0 25px 3vw;
         font-family: lato, sans-serif;
         font-size: 7rem;
-	line-height: .75;
+        line-height: .75;
     }
     .merch-ind {
-    	.sizes {
-    	    position: absolute;
-    	    .size {
-        		width: 50%;
-        		height: 50%;
-                color: orange; //for debugging
-    	    }
-    	}
-        img {
+        .sizes {
             @include vend(transition, (.7s ease-in-out));
+            display: inline-block;
             border-radius: 50%;
             border: 6px solid $grayish-yellowish;
             padding: 0;
-        }
-        img:hover {
-            border-color: $main-color;
+            &:hover {
+                border-color: $main-color;
+                .size {
+                    opacity: 1 !important;
+                }
+            }
+            &:before {
+                content:"";
+                display:block;
+                margin-top:100%;
+            }
+    	    .size {
+                $push-in-val: 0;
+                &:nth-child(odd) {
+                    margin-left: $push-in-val;
+                }
+                &:nth-child(even) {
+                    margin-left: 50%;
+                    margin-right: $push-in-val;
+                }
+                &:nth-child(-n+2){
+                    margin-top: $push-in-val;
+                    margin-bottom: 50%;
+                }
+                &:nth-child(n+3){
+                    margin-top:50%;
+                    margin-bottom: $push-in-val;
+                }
+                @include vend(transition, (.7s ease-in-out));
+                opacity: 0;
+        		position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: silver;
+                color: orange; //for debugging
+                border-radius: 50%;
+                border: 4px solid $grayish-yellowish;
+                text-align: center;
+                vertical-align: middle;
+            }
+            .size:hover {
+                border-color: $main-color;
+            }
         }
         .merch-price {
             margin: 15px 0 10px;
