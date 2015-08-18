@@ -1,15 +1,15 @@
 // Map section
-    #map {
-        display: block;
-        height: 480px;
-        max-height: 80vh;
-        .marker-caption, .gm-style-iw {
-            line-height: 1;
-        }
-        .marker-caption {
-            margin: 1.6px 0 0;
-        }
+#map {
+    display: block;
+    height: 480px;
+    max-height: 80vh;
+    .marker-caption, .gm-style-iw {
+        line-height: 1;
     }
+    .marker-caption {
+        margin: 1.6px 0 0;
+    }
+}
 
 // Footer section
 .footer-split {

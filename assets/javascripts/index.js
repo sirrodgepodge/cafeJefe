@@ -193,8 +193,8 @@ var mapLoad = function(addresses) {
 };
 
 // Store page height of top of title
-var windowWidth = $(window).width(),
-    titleTop = windowWidth < 768 ? 0 : Math.ceil($landing.outerHeight()),
+// var windowWidth = $(window).width(),
+var titleTop = Math.ceil($landing.outerHeight()),
     contactTop = Math.ceil($contact.offset().top) * 0.92,
     downAnimReached = titleTop * 0.395 + 4.5; //when Page position is such that the white "CafeJefe" is right above the down arrow;
 
@@ -210,13 +210,7 @@ var listeners = function() {
     var landingScroll = function() {
         pagePos = window.pageYOffset; //calculates current vertical scroll position
         //fixes main title to top of page
-        if (windowWidth < 768) {
-            if (!titleFixed) {
-                $title.toggleClass('sticky');
-                $placeHolder.toggleClass('no-show');
-                titleFixed = !titleFixed;
-            }
-        } else if (pagePos >= titleTop && !titleFixed || pagePos < titleTop && titleFixed) {
+	if (pagePos >= titleTop && !titleFixed || pagePos < titleTop && titleFixed) {
             $title.toggleClass('sticky');
             $placeHolder.toggleClass('no-show');
             titleFixed = !titleFixed;
@@ -243,8 +237,8 @@ var listeners = function() {
 
     //Re-measure title distance from top of screen if screen is resized
     $(window).resize(function() {
-        windowWidth = $(window).width();
-        titleTop = windowWidth < 768 ? 0 : Math.ceil($landing.outerHeight());
+        //windowWidth = $(window).width();
+        titleTop = Math.ceil($landing.outerHeight());
         downAnimReached = titleTop * 0.395 + 4.5;
         contactTop = Math.ceil($contact.offset().top) * 0.92;
         landingScroll();
