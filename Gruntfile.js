@@ -38,9 +38,6 @@ module.exports = function(grunt) {
         exec: {
             browserifying: {
                 cmd: 'echo heyhey'
-            },
-            npmStarting: {
-                cmd: 'npm start'
             }
         }
     });
