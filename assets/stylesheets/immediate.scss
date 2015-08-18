@@ -56,12 +56,8 @@ a, a:hover, a:visited {
   visibility: visible!important;
 }
 
-//Landing image
-.landing {
-  display: none;
-}
-// Show for Tablet+
-@media(min-width: 768px) { 
+////Landing
+
   // Animation for bottom hover
   @-o-keyframes hover-bounce {
       from {transform: translate(0, 0);}
@@ -196,4 +192,10 @@ a, a:hover, a:visited {
       }
     }
   }
+}
+//hide info on phone
+@media(max-width: $phone-max) {
+    .landing-info, .dream-img {
+	display: none;
+    }
 }
