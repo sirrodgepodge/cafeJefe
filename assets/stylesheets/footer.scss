@@ -1,10 +1,4 @@
-// Map
-#map {
-    display: none;
-}
-
 // Map section
-@media(min-width: $tablet-min) {  
     #map {
         display: block;
         height: 480px;
@@ -16,7 +10,6 @@
             margin: 1.6px 0 0;
         }
     }
-}
 
 // Footer section
 .footer-split {
@@ -27,26 +20,24 @@
     display: none;
 }
 
-@media (min-width: $tablet-min) {
-    .back-to-top {
-    	@include vend(border-radius, (3px 3px 0 0));
-    	@include vend(transform, translateZ(0));
-    	display: block;
-    	text-align: center;
-    	color: white;
-    	width: 45px;
-    	height: 40px;
-    	font-size: 28px;
-    	line-height: 38px;
-    	position: absolute;
-    	top: -40px;
-    	left: 0;
-    	right: 0;
-    	margin: auto;
-    	cursor: pointer;
-    	background-color: inherit;
-    	font-family: FontAwesome;
-    }
+.back-to-top {
+    @include vend(border-radius, (3px 3px 0 0));
+    @include vend(transform, translateZ(0));
+    display: block;
+    text-align: center;
+    color: white;
+    width: 45px;
+    height: 40px;
+    font-size: 28px;
+    line-height: 38px;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    cursor: pointer;
+    background-color: inherit;
+    font-family: FontAwesome;
 }
 
 footer {
