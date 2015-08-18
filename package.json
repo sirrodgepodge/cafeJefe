@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "nodemon -e js,scss,jade ./bin",
-    "postinstall": "grunt"
+    "postinstall": "grunt uglify"
   },
   "dependencies": {
     "body-parser": "^1.12.0",
