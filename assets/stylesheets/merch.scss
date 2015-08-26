@@ -69,21 +69,21 @@
                 padding: 0;
                 $push-in-val: 0;
 		margin-top: 50%;
-		width: 25%;
+		margin-bottom: 25%;
+		width: 22%;
                 &.S {
-                    margin-left: 0;
+                    margin-left: 3%;
                 }
                 &.M {
-                    margin-left: 25%;
+                    margin-left: 27%;
                 }
                 &.L{
-                    margin-left: 50%;
+                    margin-left: 51%;
                 }
                 &.XL{
                     margin-left: 75%;
                 }
                 @include vend(transition, (.7s ease-in-out));
-                opacity: 0;
 		position: absolute;
                 top: 0;
                 bottom: 0;
