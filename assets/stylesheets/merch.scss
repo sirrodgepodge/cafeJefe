@@ -69,7 +69,7 @@
                 padding: 0;
                 $push-in-val: 0;
 		margin-top: 50%;
-		margin-bottom: 25%;
+		margin-bottom: 28%;
 		width: 22%;
                 &.S {
                     margin-left: 3%;
@@ -89,10 +89,10 @@
                 bottom: 0;
                 left: 0;
                 right: 0;
-                background-color: silver;
-                color: orange; //for debugging
+                background-color: rgba(0,0,0,0);
+                color: $main-color; //for debugging
                 border-radius: 50%;
-                border: 4px solid $grayish-yellowish;
+                border: 1px solid white;
                 padding: 0;
                 p {
                     position: absolute;
@@ -102,7 +102,7 @@
                 }
             }
             .size:hover {
-                border-color: $main-color;
+                background-color: rgba(255,255,255,1);
             }
         // }
         .merch-price {
