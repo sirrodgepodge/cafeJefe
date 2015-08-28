@@ -22,6 +22,7 @@
             border-radius: 50%;
             background-color: #000;
             background-size: cover;
+	    backface-visibility: hidden;
             padding: 15px;
             &:before {
                 content:"";
@@ -97,7 +98,9 @@
                 p {
                     position: absolute;
                     top: 50%;
+		    font-size: 
                     left: 50%;
+		    font-size: 3.5vh;
                     transform: translate(-50%, -50%);
                 }
             }
