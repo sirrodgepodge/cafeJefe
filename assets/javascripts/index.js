@@ -121,6 +121,7 @@ var main = function() {
         var buyMerchBtn = $(this).parent().children('.buy-merch').first();
         buyMerchBtn.attr('href', buyMerchBtn.attr('href').slice(0,buyMerchBtn.attr('href').lastIndexOf('_')+1)+$(this).text());
     });
+    //
 
     //// Contact Section
     //function for sliding box on text change in contact section

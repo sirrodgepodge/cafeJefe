@@ -8,8 +8,7 @@
           .back(style=merch.sizes.length? "" : "display:none;")
             .t-shirt(data-size='M')
             each size,index in merch.sizes
-              .size.col-xs-3(class="#{size}", class=index===1? "active" : "")
+              .size.merch-button.col-xs-3(class="#{size}", class=index===1? "active" : "")
                 p #{size}
-            a.buy-merch(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}_M")
-                p To Ya House
+            a.buy-merch.merch-button(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}_M") To Ya House
           .merch-price.col-xs-12= '$'+merch.price

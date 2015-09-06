@@ -45,74 +45,6 @@
             @include vend(transform, rotate3d(0, 0, 0, 0));
             border: 6px solid $grayish-yellowish;
         }
-        .size {
-            @include vend(transition, (.5s ease-in-out));
-            display: inline-block;
-            border-radius: 50%;
-            border: 6px solid $grayish-yellowish;
-            padding: 0;
-            $push-in-val: 0;
-            margin-top: 50%;
-            margin-bottom: 28%;
-            width: 22%;
-            &.S {
-                margin-left: 3%;
-            }
-            &.M {
-                margin-left: 27%;
-            }
-            &.L {
-                margin-left: 51%;
-            }
-            &.XL {
-                margin-left: 75%;
-            }
-            @include vend(transition,(.7s ease-in-out));
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0,0,0,0);
-            color: $main-color; 
-            border-radius: 50%;
-            border: 1px solid white;
-            padding: 0;
-            text-align: center;
-            p {
-                @include vend(transform, translate(-50%, -47.5%));
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                font-size: 3.5vh;
-                width: 100%;
-            }
-        }
-        .buy-merch {
-            @include vend(transform, translate(-50%, 0));
-            @include vend(transition,(.7s ease-in-out));
-            color: $main-color;
-            position: absolute;
-            left: 50%;
-            bottom: 10%;
-            height: 14%;
-            width: 40%;
-            border-radius: 8px;
-            border: 1.5px solid white;
-            padding: 0;
-            text-align: center;
-            p {
-                @include vend(transform, translate(-50%, -46.5%));
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                font-size: 2.8vh;
-                width: 100%;
-            }
-        }
-        .size:hover, .size.active, .buy-merch:hover {
-            background-color: rgba(255, 255, 255, 1);
-        }
         .t-shirt {
             @include vend(transform, translate(-50%, 50%));
             @include vend(transition,(.5s ease-in-out));
@@ -140,6 +72,60 @@
                 width: 40%;
                 height: 40%;
             }
+        }
+        .merch-button {
+            @include vend(transition,(.7s ease-in-out));
+            color: white;
+            position: absolute;
+            border: 1.5px solid white;
+            text-align: center;
+            display: inline-block;
+            &:hover, &.active {
+                background-color: white;
+                color: $main-color;
+            }
+        }
+        .size {
+            display: inline-block;
+            padding: 0;
+            margin-top: 50%;
+            margin-bottom: 28%;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 22%;
+            border-radius: 50%;
+            &.S {
+                margin-left: 3%;
+            }
+            &.M {
+                margin-left: 27%;
+            }
+            &.L {
+                margin-left: 51%;
+            }
+            &.XL {
+                margin-left: 75%;
+            }
+            p {
+                @include vend(transform, translate(-50%, -47.5%));
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-size: 3.5vh;
+                width: 100%;
+            }
+        }
+        .buy-merch {
+            @include vend(transform, translate(-50%, 0));
+            left: 50%;
+            bottom: 8%;
+            $padding-size: 1.6%;
+            padding: $padding-size $padding-size*1.75 $padding-size*0.485;
+            border-radius: 6px;
+            font-size: 2.5vh;
+            white-space: nowrap;
         }
         // Prices styling
         .merch-price {
