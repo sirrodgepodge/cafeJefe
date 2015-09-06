@@ -17,94 +17,105 @@
         line-height: .75;
     }
     .merch-ind {
-        .coin, .back {
-            @include vend(transition,(all 1s ease-in-out));
+        .coin,
+        .back {
+            @include vend(transition, (all 1s ease-in-out));
+            @include vend(backface-visibility, hidden);
             border-radius: 50%;
             background-color: #000;
             background-size: cover;
             padding: 15px;
             &:before {
-                content:"";
-                display:block;
-                margin-top:100%;
+                content: "";
+                display: block;
+                margin-top: 100%;
             }
         }
         .back {
-            @include vend(transform,rotate3d(0,1,0,180deg));
-            z-index: 0;
+            @include vend(transform, rotate3d(0, 1, 0, 180deg));
+            z-index: 1;
             border: 6px solid $main-color;
             &:before {
-                content:"";
-                display:block;
-                margin-top:100%;
+                content: "";
+                display: block;
+                margin-top: 100%;
             }
         }
         .coin {
-            @include vend(transform, rotate3d(0,0,0,0));
-            z-index: 1;
+            @include vend(transform, rotate3d(0, 0, 0, 0));
             border: 6px solid $grayish-yellowish;
         }
-        // .sizes {
-        //     @include vend(transition, (.7s ease-in-out));
-        //     display: inline-block;
-        //     border-radius: 50%;
-        //     border: 6px solid $grayish-yellowish;
-        //     padding: 0;
-        //     &:hover {
-        //         border-color: $main-color;
-        //         .size {
-        //             opacity: 1 !important;
-        //         }
-        //     }
-        //     &:before {
-        //         content:"";
-        //         display:block;
-        //         margin-top:100%;
-        //     }
-         .size {
-                @include vend(transition, (.7s ease-in-out));
-                display: inline-block;
-                border-radius: 50%;
-                border: 6px solid $grayish-yellowish;
-                padding: 0;
-                $push-in-val: 0;
-		margin-top: 50%;
-		margin-bottom: 28%;
-		width: 22%;
-                &.S {
-                    margin-left: 3%;
-                }
-                &.M {
-                    margin-left: 27%;
-                }
-                &.L{
-                    margin-left: 51%;
-                }
-                &.XL{
-                    margin-left: 75%;
-                }
-                @include vend(transition, (.7s ease-in-out));
-		position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background-color: rgba(0,0,0,0);
-                color: $main-color; //for debugging
-                border-radius: 50%;
-                border: 1px solid white;
-                padding: 0;
-                p {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
+        .size {
+            @include vend(transition, (.5s ease-in-out));
+            display: inline-block;
+            border-radius: 50%;
+            border: 6px solid $grayish-yellowish;
+            padding: 0;
+            $push-in-val: 0;
+            margin-top: 50%;
+            margin-bottom: 28%;
+            width: 22%;
+            &.S {
+                margin-left: 3%;
             }
-            .size:hover {
-                background-color: rgba(255,255,255,1);
+            &.M {
+                margin-left: 27%;
             }
-        // }
+            &.L {
+                margin-left: 51%;
+            }
+            &.XL {
+                margin-left: 75%;
+            }
+            @include vend(transition,(.7s ease-in-out));
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0,0,0,0);
+            color: $main-color; //for debugging
+            border-radius: 50%;
+            border: 1px solid white;
+            padding: 0;
+            p {
+                @include vend(transform, translate(-50%, -50%));
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+        }
+        .size:hover, .size.active {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        .t-shirt {
+            @include vend(transform, translate(-50%, 50%));
+            background: rgba(0,0,0,0) url("../images/t-shirt.svg") no-repeat center /contain;
+            position: absolute;
+            bottom: 73%;
+            left: 50%;
+            &.XS {
+                width: 20%;
+                height: 20%;
+            }
+            &.S {
+                width: 25%;
+                height: 25%;
+            }
+            &.M {
+                width: 30%;
+                height: 30%;
+            }
+            &.L {
+                width: 35%;
+                height: 35%;
+            }
+            &.XL {
+                width: 40%;
+                height: 40%;
+            }
+        }
+        // Prices styling
         .merch-price {
             margin: 15px 0 10px;
             text-align: center;
@@ -113,23 +124,26 @@
             font-size: 3.6rem;
             color: black;
         }
+        // Border color change for non-clothing
+        .not-clothes:hover {
+            @include vend(transition, (all .3s ease-in-out));
+            border-color: $main-color;
+        }
     }
+    // Handle coin flipping
     .merch-ind:hover {
-        .coin {
-            @include vend(transform,rotate3d(0,1,0,180deg));
-            z-index: 0;
+        .coin.coin-flip {
+            @include vend(transform, rotate3d(0, 1, 0, 180deg));
         }
         .back {
-            @include vend(transform, rotate3d(0,0,0,0));
-            z-index: 1;
+            @include vend(transform, rotate3d(0, 0, 0, 0));
         }
     }
 }
 
 @media (max-width: $phone-max) {
     .merch-sect {
-        @include vend(border-image,
-        (url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round));
+        @include vend(border-image,(url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round));
         border-width: 90px;
         margin: 40px 10px;
         .merch-head {

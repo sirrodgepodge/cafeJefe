@@ -4,9 +4,10 @@
       .merch-ind.col-md-3.col-sm-6.col-sm-offset-0.col-xs-12
           //- a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}")
           //- .img(src="../images/#{merch.name}.jpg").col-xs-12
-          a.front.col-xs-12.coin.front(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}", style="background:url(../images/#{merch.name}.jpg) no-repeat center /cover;")
-          .back  
-            each size in merch.sizes
-              .size.col-xs-3(class="#{size}")
+          a.col-xs-12.coin(class=merch.sizes.length? "coin-flip": "not-clothes",href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}", style="background:url(../images/#{merch.name}.jpg) no-repeat center /cover;")
+          .back(style=merch.sizes.length? "" : "display:none;")
+            .t-shirt.M
+            each size,index in merch.sizes
+              .size.col-xs-3(class="#{size}", class=index===1? "active" : "")
                 p #{size}
           .merch-price.col-xs-12= '$'+merch.price
