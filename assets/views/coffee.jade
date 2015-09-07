@@ -1,20 +1,33 @@
 .coffee-head Mi caf&eacute; es su caf&eacute;
   .coffee-sub-head Ethically traded #[i.icon.ion-coffee] from the #[i.fa.fa-globe] to your #[span.glyphicon.glyphicon-home(aria-hidden="true")]
-  .purch-type
-    .col-xs-6.col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
-      #purchase.purchase-toggle One Time Purchase
-    .col-xs-6.col-sm-4.col-md-3
-      #subscribe.purchase-toggle.active-purch-type Monthly Subscription
-        #save Save 15%
-  .coffee-sect.col-lg-10.col-lg-offset-1.container
-    each c, index in locals.coffee
-      .coffee-ind.col-xs-6.col-sm-3
-        .coffee-ind-inside(class= index===1? "active-coffee-amount": "")
-          .coffee-amount= c.name
-          .coffee-price= '$'+c.purchase
-          img.coffee-pic.col-xs-12(src="../images/#{c.name}.png")
-          .oz-coffee-amount ~ #{(index+1)*12}oz ~
-          a.buy-btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{index+1}-bag-subscribe")
-            .button-fill
-              .button-text Subscribe
-              .button-inside
+
+.fom-sect
+  .story-pic
+    p
+  .location-pic
+    p
+  .location-map
+    p
+
+.coffee-head Get You Some!
+  .coffee-sub-head *taxes and shipping included in all prices
+
+.purch-type
+  .col-xs-6.col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
+    #purchase.purchase-toggle One Time Purchase
+  .col-xs-6.col-sm-4.col-md-3
+    #subscribe.purchase-toggle.active-purch-type Monthly Subscription
+      #save Save 15%
+
+.coffee-sect.col-lg-10.col-lg-offset-1.container
+  each c, index in locals.coffee
+    .coffee-ind.col-xs-6.col-sm-3
+      .coffee-ind-inside(class= index===1? "active-coffee-amount": "")
+        .coffee-amount= c.name
+        .coffee-price= '$'+c.purchase
+        img.coffee-pic.col-xs-12(src="../images/#{c.name}.png")
+        .oz-coffee-amount ~ #{(index+1)*12}oz ~
+        a.buy-btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{index+1}-bag-subscribe")
+          .button-fill
+            .button-text Subscribe
+            .button-inside
