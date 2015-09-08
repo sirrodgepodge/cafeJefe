@@ -5,10 +5,8 @@ script(type='text/javascript').
   function landing() {
     if (!otherOneLoaded) otherOneLoaded = true;
     else {
-      if(screen.width >= 768) {
-        document.getElementsByClassName('product-img')[0].className += ' show';
-        document.getElementsByClassName('landing-text')[0].className += ' show';
-      }
+      document.getElementsByClassName('product-img')[0].className += ' show';
+      document.getElementsByClassName('landing-text')[0].className += ' show';
       delete otherOneLoaded;
       delete preLoadShade;
       delete landing;

@@ -3,6 +3,10 @@ var $purchaseToggle = $('.purchase-toggle'),
     $coffeeInd = $('.coffee-ind'),
     $buyBtn = $('.buy-btn'),
     $coffeePrice = $('.coffee-price'),
+    $merchIndBack = $('.merch-ind .back'),
+    $tShirt = $merchIndBack.children('.t-shirt'),
+    $buyMerch = $merchIndBack.children('.buy-merch'),
+    $size = $merchIndBack.children('.size'),
     $merchPrice = $('.merch-price'),
     $backToTop = $('.back-to-top, .title, .footer-logo'),
     $title = $('.title'),
@@ -15,7 +19,8 @@ var $purchaseToggle = $('.purchase-toggle'),
     $downAnim = $landing.find('.down-anim'),
     $contactImg = $('.contact-img'),
     $contactSub = $('.contact-sub'),
-    $contactSubInside = $contactSub.find('.contact-sub-inside');
+    $contactSubInside = $contactSub.find('.contact-sub-inside'),
+    $sizes = $();
 
 // Getting back end data
 var coffee = [],
@@ -36,32 +41,8 @@ var addresses = [
 
 // UI Functionality
 var main = function() {
-    // Get price type
-    var purchTypeVal = $('.active-purch-type').attr('id');
 
-    // Toggle between Subscription vs. One-Time Purchase
-    $purchaseToggle.click(function() {
-        if (!$(this).hasClass('active-purch-type')) {
-            $purchaseToggle.each(function() {
-                $(this).toggleClass('active-purch-type');
-            });
-            purchTypeVal = $(this).attr('id');
-            $buyBtn.find('.button-text').html(purchTypeVal.slice(0, 1).toUpperCase() + purchTypeVal.slice(1));
-            $coffeePrice.each(function(index, val) {
-                $(this).html('$' + coffee[index][purchTypeVal]);
-                var currVal = $($buyBtn[index]).attr('href').slice(0, $($buyBtn[index]).attr('href').lastIndexOf("-") + 1);
-                $($buyBtn[index]).attr('href', currVal + purchTypeVal);
-            });
-        }
-    });
-
-    $coffeeInd.click(function() {
-        if (!$(this).hasClass('active-coffee-amount')) {
-            $('.active-coffee-amount').toggleClass('active-coffee-amount');
-            $(this).children('.coffee-ind-inside').toggleClass('active-coffee-amount');
-        }
-    });
-
+    //// Landing Section
     $landingTogglers.click(function() {
         var notSelImg;
         var tempThis; //for storing context
@@ -104,13 +85,46 @@ var main = function() {
         }, titleTop - $(window).scrollTop() * 0.8);
     });
 
-    $backToTop.click(function() {
-        $('html, body').animate({
-            scrollTop: 0
-        }, $(window).scrollTop() * 0.65);
+    // Get price type
+    var purchTypeVal = $('.active-purch-type').attr('id');
+
+    // Toggle between Subscription vs. One-Time Purchase
+    $purchaseToggle.click(function() {
+        if (!$(this).hasClass('active-purch-type')) {
+            $purchaseToggle.each(function() {
+                $(this).toggleClass('active-purch-type');
+            });
+            purchTypeVal = $(this).attr('id');
+            $buyBtn.find('.button-text').html(purchTypeVal.slice(0, 1).toUpperCase() + purchTypeVal.slice(1));
+            $coffeePrice.each(function(index, val) {
+                $(this).html('$' + coffee[index][purchTypeVal]);
+                var currVal = $($buyBtn[index]).attr('href').slice(0, $($buyBtn[index]).attr('href').lastIndexOf("-") + 1);
+                $($buyBtn[index]).attr('href', currVal + purchTypeVal);
+            });
+        }
     });
 
-    //function to make sliding box on text change work
+    $coffeeInd.click(function() {
+        if (!$(this).hasClass('active-coffee-amount')) {
+            $('.active-coffee-amount').toggleClass('active-coffee-amount');
+            $(this).children('.coffee-ind-inside').toggleClass('active-coffee-amount');
+        }
+    });
+
+    //// Merch Section
+    $size.mouseenter(function() {
+        $(this).parent().children('.t-shirt').first().attr('data-size', $(this).text());
+        if (!$(this).hasClass('active')) {
+            $(this).parent().children('.size.active').toggleClass('active');
+            $(this).toggleClass('active');
+        }
+        var buyMerchBtn = $(this).parent().children('.buy-merch').first();
+        buyMerchBtn.attr('href', buyMerchBtn.attr('href').slice(0,buyMerchBtn.attr('href').lastIndexOf('_')+1)+$(this).text());
+    });
+    //
+
+    //// Contact Section
+    //function for sliding box on text change in contact section
     var slideSwitchText = function(val) {
     $contactSubInside.toggleClass('show');
         setTimeout(function(){
@@ -130,6 +144,13 @@ var main = function() {
             if (!!contact[selected].link === $contactSub.hasClass('disable-link')) $contactSub.toggleClass('disable-link');
             slideSwitchText(contact[selected].text);
         }
+    });
+    
+    //// back to top button on map
+    $backToTop.click(function() {
+        $('html, body').animate({
+            scrollTop: 0
+        }, $(window).scrollTop() * 0.6);
     });
 };
 

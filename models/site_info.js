@@ -20,16 +20,22 @@ var localsObj = {
         name: 'tshirt',
         price: 20,
         sizes: ['S', 'M', 'L', 'XL']
-    }, {
-        name: 'mug',
-        price: 12,
-        sizes: []
-    }, {
-        name: 'tank',
+    },
+    // {
+    //     name: 'mug',
+    //     price: 12,
+    //     sizes: []
+    // },
+    {
+        name: 'girlt',
         price: 20,
         sizes: ['S', 'M', 'L', 'XL']
     }, {
-        name: 'girlt',
+        name: 'jefe-hoodie',
+        price: 20,
+        sizes: ['S', 'M', 'L', 'XL']
+    }, {
+        name: 'tank',
         price: 20,
         sizes: ['S', 'M', 'L', 'XL']
     }],
