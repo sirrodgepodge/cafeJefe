@@ -19,8 +19,9 @@
 }
 
 //// Flavor of the month
-
 .fom-sect {
+    @include vend(border-image, (url('/images/cafe_jefe_border_invert.svg') 88 round));
+    border-width: 100px;
     display: inline-block;
     * {
         display: inline-block;
@@ -34,6 +35,7 @@
     color: white;
     padding: 0;
     background: black url('/images/METAD_coffee.jpg') no-repeat center /cover;
+    background-clip: content-box;
     $spacer-width: 22px;
     .spacer {
         width: $spacer-width;
@@ -59,24 +61,23 @@
         padding: 0;
         margin: 0;
     }
-}
-
-.ribbon {
-    // @include vend(box-shadow, (0 0 10px #000));
-    display: flex;
-    justify-content: center; // align horizontal
-    align-items: center; // align vertical
-    $height: 40%;
-    height: $height;
-    top: #{50% - $height/2};
-    width: 100%;
-    background-color: rgba(144,13,19,.5);
-    overflow: hidden;
-    white-space: nowrap;
-    position: absolute;
-    font-size: 27.5px;
-    font-weight: 500;
-    font-family: lato, sans-serif;
+    .ribbon {
+        // @include vend(box-shadow, (0 0 10px #000));
+        display: flex;
+        justify-content: center; // align horizontal
+        align-items: center; // align vertical
+        $height: 40%;
+        height: $height;
+        top: #{50% - $height/2};
+        width: 100%;
+        background-color: rgba(144,13,19,.5);
+        overflow: hidden;
+        white-space: nowrap;
+        position: absolute;
+        font-size: 27.5px;
+        font-weight: 900;
+        font-family: lato, sans-serif;
+    }
 }
 
 
