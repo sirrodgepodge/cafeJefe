@@ -1,9 +1,7 @@
 .merch-sect
-    .merch-head.text-center Merch It Up!
+    //- .merch-head.text-center Merch It Up!
     each merch in locals.merch
       .merch-ind.col-md-3.col-sm-6.col-sm-offset-0.col-xs-12
-          //- a(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}")
-          //- .img(src="../images/#{merch.name}.jpg").col-xs-12
           a.col-xs-12.coin(class=merch.sizes.length? "coin-flip disable-link": "not-clothes",href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}", style="background:url(../images/#{merch.name}.jpg) no-repeat center /cover;")
           .back(style=merch.sizes.length? "" : "display:none;")
             .t-shirt(data-size='M')

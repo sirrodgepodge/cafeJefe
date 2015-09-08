@@ -1,17 +1,82 @@
 // Coffee Purchasing
 
 //// Coffee Header
-.coffee-head {
+.head {
     margin-top: 24px;
     font-size: 42px;
     font-family: lato, sans-serif;
     font-weight: 300;
     text-align: center;
+    clear: both;
+    .sub-head {
+        font-size: 17px;
+        text-align: inherit;
+    }
+    .sub-sub-head {
+        font-size: 11px;
+        text-align: inherit;
+    }
 }
 
-.coffee-sub-head {
-    font-size: 17px;
-    text-align: center;
+//// Flavor of the month
+
+.fom-sect {
+    display: inline-block;
+    * {
+        display: inline-block;
+        margin: 0;
+    }
+    height: 320px;
+    min-height: 30%;
+    max-height: 70%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: white;
+    padding: 0;
+    background: black url('/images/METAD_coffee.jpg') no-repeat center /cover;
+    $spacer-width: 22px;
+    .spacer {
+        width: $spacer-width;
+        height: 100%;
+        padding: 0;
+        background-color: white;
+    }
+    .fom-fom {
+        width: calc(33.3333% - #{$spacer-width * 2/3});
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .fom-name {
+        width: calc(33.3333% - #{$spacer-width * 2/3});
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    .fom-flavors {
+        width: calc(33.3333% - #{$spacer-width * 2/3});
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.ribbon {
+    // @include vend(box-shadow, (0 0 10px #000));
+    display: flex;
+    justify-content: center; // align horizontal
+    align-items: center; // align vertical
+    $height: 40%;
+    height: $height;
+    top: #{50% - $height/2};
+    width: 100%;
+    background-color: rgba(144,13,19,.5);
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    font-size: 27.5px;
+    font-weight: 500;
+    font-family: lato, sans-serif;
 }
 
 

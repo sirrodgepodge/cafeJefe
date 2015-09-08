@@ -19,7 +19,7 @@
     .merch-ind {
         .coin,
         .back {
-            @include vend(transition, (all 1s ease-in-out));
+            @include vend(transition, (all .7s ease-in-out));
             @include vend(backface-visibility, hidden);
             border-radius: 50%;
             background-color: #000;
@@ -74,10 +74,10 @@
             }
         }
         .merch-button {
-            @include vend(transition,(.7s ease-in-out));
+            @include vend(transition,(.5s ease-in-out));
             color: white;
             position: absolute;
-            border: 1.5px solid white;
+            background-color: rgba(255,255,255,.135);
             text-align: center;
             display: inline-block;
             &:hover, &.active {
@@ -94,19 +94,21 @@
             bottom: 0;
             left: 0;
             right: 0;
-            width: 22%;
             border-radius: 50%;
+            $size-button-width: 21.625%;
+            $quarter-diff: 25% - $size-button-width;
+            width: $size-button-width;
             &.S {
-                margin-left: 3%;
+                margin-left: $quarter-diff;
             }
             &.M {
-                margin-left: 27%;
+                margin-left: $size-button-width + $quarter-diff*5/3;
             }
             &.L {
-                margin-left: 51%;
+                margin-left: $size-button-width*2 + $quarter-diff*7/3;
             }
             &.XL {
-                margin-left: 75%;
+                margin-left: $size-button-width*3 + $quarter-diff*3;
             }
             p {
                 @include vend(transform, translate(-50%, -47.5%));
@@ -129,7 +131,7 @@
         }
         // Prices styling
         .merch-price {
-            margin: 15px 0 10px;
+            margin: 15px 0 -12px;
             text-align: center;
             text-decoration: none;
             line-height: 1.1;
