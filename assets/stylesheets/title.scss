@@ -1,7 +1,7 @@
 // Title section
 .place-holder {
     height: #{$title-height}vh;
-    min-height: 74px;
+    min-height: 90px;
     width: 100%;
     &.no-show {
         display: none;
@@ -14,7 +14,7 @@
     width: 100%;
     left: 0;
     height: #{$title-height}vh;
-    min-height: 74px;
+    min-height: 80px;
     padding: 2px 0;
     z-index: 6;
     box-shadow: 0 16px 8px -9px #FFF;

@@ -22,11 +22,11 @@
 .fom-sect {
     // 6.88% 2.16%
     @include vend(border-image, (url('/images/border_gap_stretch.svg') 6.88% 2.16% round));
-    border-width: 31px;
+    border-width: 38px;
     background: black url('/images/METAD_coffee.jpg') no-repeat center /cover;
     background-clip: content-box;
     display: inline-block;
-    height: 400px;
+    height: 500px;
     min-height: 30%;
     max-height: 70%;
     width: 87.5%;
@@ -37,13 +37,7 @@
         display: inline-block;
         margin: 0;
     }
-    $spacer-width: 22px;
-    .spacer {
-        width: $spacer-width;
-        height: 100%;
-        padding: 0;
-        background-color: white;
-    }
+    $spacer-width: 27px;
     .fom-fom {
         width: calc(33.3333% - #{$spacer-width * 2/3});
         height: 100%;
@@ -55,6 +49,9 @@
         height: 100%;
         padding: 0;
         margin: 0;
+	box-sizing: content-box;
+	border: solid white;
+        border-width: 0 $spacer-width;
     }
     .fom-flavors {
         width: calc(33.3333% - #{$spacer-width * 2/3});
@@ -67,7 +64,7 @@
         display: flex;
         justify-content: center; // align horizontal
         align-items: center; // align vertical
-        $height: 40%;
+        $height: 41%;
         height: $height;
         top: #{50% - $height/2};
         width: 100%;
@@ -75,7 +72,7 @@
         overflow: hidden;
         white-space: nowrap;
         position: absolute;
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 500;
         font-family: lato, sans-serif;
     }
