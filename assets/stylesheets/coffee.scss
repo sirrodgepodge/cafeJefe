@@ -3,13 +3,13 @@
 //// Coffee Header
 .head {
     margin-top: 24px;
-    font-size: 42px;
+    font-size: 52px;
     font-family: lato, sans-serif;
     font-weight: 300;
     text-align: center;
     clear: both;
     .sub-head {
-        font-size: 17px;
+        font-size: 21px;
         text-align: inherit;
     }
     .sub-sub-head {
@@ -20,15 +20,13 @@
 
 //// Flavor of the month
 .fom-sect {
-    // 6.88% 2.16%
     @include vend(border-image, (url('/images/border_gap_stretch.svg') 6.88% 2.16% round));
     border-width: 38px;
     background: black url('/images/METAD_coffee.jpg') no-repeat center /cover;
     background-clip: content-box;
     display: inline-block;
-    height: 500px;
-    min-height: 30%;
-    max-height: 70%;
+    height: 50vh;
+    min-height: 325px;
     width: 87.5%;
     margin: 4% 6.125%;
     padding: 0;
@@ -38,26 +36,28 @@
         margin: 0;
     }
     $spacer-width: 27px;
-    .fom-fom {
+    .fom-fom, .fom-name, .fom-flavors {
         width: calc(33.3333% - #{$spacer-width * 2/3});
         height: 100%;
         padding: 0;
         margin: 0;
     }
     .fom-name {
-        width: calc(33.3333% - #{$spacer-width * 2/3});
-        height: 100%;
-        padding: 0;
-        margin: 0;
 	box-sizing: content-box;
 	border: solid white;
         border-width: 0 $spacer-width;
     }
-    .fom-flavors {
-        width: calc(33.3333% - #{$spacer-width * 2/3});
-        height: 100%;
-        padding: 0;
-        margin: 0;
+    @media (max-width: 1000) {
+	& {
+	    height: 140vh;
+	}
+	.fom-fom, .fom-name, .fom-flavors {
+	    width: 100%;
+	    height: calc(33.3333% - #{$spacer-width * 2/3});
+	}
+	.fom-name {
+	    border-width: $spacer-width 0;
+	}
     }
     .ribbon {
         // @include vend(box-shadow, (0 0 10px #000));
