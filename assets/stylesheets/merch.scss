@@ -159,7 +159,7 @@
     .merch-sect {
         @include vend(border-image,(url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round));
         border-width: 90px;
-        margin: 40px 10px;
+        margin: 40px 10px 0;
         .merch-head {
             margin: 0 0 40px;
             font-size: 4rem;

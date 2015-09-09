@@ -62,7 +62,7 @@ $contact-margin-top: 18vh;
 $contact-border-width: $contact-side/8;
 $contact-margin: $contact-margin-top 0 $contact-border-width/1.75;
 
-//// Centering images behind contact and hanfling pop-out
+//// Centering images behind contact and handling pop-out
 @mixin contactImgInit($name, $size-pct, $bg-color, $transition-time, $side, $dir-pct, $perp-pct) {
     //// For pushing images out
     $contact-side-strip: stripUnits($contact-side);
