@@ -1,6 +1,6 @@
 // Merchandise section
 .merch-sect {
-    @include vend(border-image, (url('../images/cafe_jefe_border_invert.svg') 245 round));
+    @include vend(border-image, (url('/images/cafe_jefe_border_invert.svg') 245 round));
     clear: both;
     float: left;
     background-color: white;
@@ -43,7 +43,7 @@
         .t-shirt {
             @include vend(transform, translate(-50%, 50%));
             @include vend(transition,(.5s ease-in-out));
-            background: rgba(0,0,0,0) url("../images/t-shirt.svg") no-repeat center /contain;
+            background: rgba(0,0,0,0) url("/images/t-shirt.svg") no-repeat center /contain;
             position: absolute;
             bottom: 73%;
             left: 50%;
@@ -154,7 +154,7 @@
 
 @media (max-width: $phone-max) {
     .merch-sect {
-        @include vend(border-image,(url('../images/cafe_jefe_border_invert_no_inside.svg') 245 round));
+        @include vend(border-image,(url('/images/cafe_jefe_border_invert_no_inside.svg') 245 round));
         border-width: 90px;
         margin: 40px 10px 0;
         .merch-head {
