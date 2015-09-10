@@ -33,12 +33,12 @@
         }
         .back {
             @include vend(transform, rotate3d(0, 1, 0, 90deg));
-	    transition-delay: .35s;
             z-index: 1;
             border: 6px solid $main-color;
         }
         .coin {
             @include vend(transform, rotate3d(0, 0, 0, 0));
+	    transition-delay: .35s;
             border: 6px solid $grayish-yellowish;
         }
         .t-shirt {
@@ -144,9 +144,11 @@
     .merch-ind:hover {
         .coin.coin-flip {
             @include vend(transform, rotate3d(0, 1, 0, 90deg));
+	    transition-delay: 0s;
         }
         .back {
             @include vend(transform, rotate3d(0, 0, 0, 0));
+	    transition-delay: .35s;
         }
     }
 }
