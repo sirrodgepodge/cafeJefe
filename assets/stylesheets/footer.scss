@@ -4,7 +4,9 @@
     height: 480px;
     max-height: 80vh;
     .marker-caption, .gm-style-iw {
-        line-height: 1;
+        line-height: .95;
+	white-space: nowrap;
+	overflow: hidden;
     }
     .marker-caption {
         margin: 1.6px 0 0;
