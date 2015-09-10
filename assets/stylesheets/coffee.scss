@@ -47,7 +47,7 @@
 	border: solid white;
         border-width: 0 $spacer-width;
     }
-    @media (max-width: 1000px) {
+    @media (max-width: 992px) {
 	& {
 	    @include vend(border-image, (url('/images/border_gap_stretch_vert.svg') 66 66 round));
 	    height: 145vh;
