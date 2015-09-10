@@ -33,7 +33,6 @@
         }
         .back {
             @include vend(transform, rotate3d(0, 1, 0, 90deg));
-            z-index: 1;
             border: 6px solid $main-color;
         }
         .coin {
