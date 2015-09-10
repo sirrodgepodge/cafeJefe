@@ -19,7 +19,7 @@
     .merch-ind {
         .coin,
         .back {
-            @include vend(transition, (all .7s ease-in-out));
+            @include vend(transition, (all .35s ease-in-out));
             @include vend(backface-visibility, hidden);
             border-radius: 50%;
             background-color: #000;
@@ -32,14 +32,10 @@
             }
         }
         .back {
-            @include vend(transform, rotate3d(0, 1, 0, 180deg));
+            @include vend(transform, rotate3d(0, 1, 0, 90deg));
+	    transition-delay: .35s;
             z-index: 1;
             border: 6px solid $main-color;
-            &:before {
-                content: "";
-                display: block;
-                margin-top: 100%;
-            }
         }
         .coin {
             @include vend(transform, rotate3d(0, 0, 0, 0));
@@ -147,7 +143,7 @@
     // Handle coin flipping
     .merch-ind:hover {
         .coin.coin-flip {
-            @include vend(transform, rotate3d(0, 1, 0, 180deg));
+            @include vend(transform, rotate3d(0, 1, 0, 90deg));
         }
         .back {
             @include vend(transform, rotate3d(0, 0, 0, 0));
