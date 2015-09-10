@@ -63,7 +63,11 @@
     }
     .ribbon {
         // @include vend(box-shadow, (0 0 10px #000));
-        display: flex;
+        display: -o-flex;
+	display: -ms-flex;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;
         justify-content: center; // align horizontal
         align-items: center; // align vertical
         $height: 41%;
