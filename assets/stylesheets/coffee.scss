@@ -52,6 +52,7 @@
 	& {
 	    @include vend(border-image, (url('/images/border_gap_stretch_vert.svg') 66 66 round));
 	    height: 145vh;
+	    min-height: 850px;
 	}
 	.fom-fom, .fom-name, .fom-flavors {
 	    width: 100%;
@@ -62,12 +63,12 @@
 	}
     }
     .ribbon {
-        // @include vend(box-shadow, (0 0 10px #000));
-        display: -o-flex;
+        @include vendVal(display, flex);
+        /*display: -o-flex;
 	display: -ms-flex;
 	display: -moz-flex;
 	display: -webkit-flex;
-	display: flex;
+	display: flex;*/
         justify-content: center; // align horizontal
         align-items: center; // align vertical
         $height: 41%;

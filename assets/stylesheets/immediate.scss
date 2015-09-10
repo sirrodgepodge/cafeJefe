@@ -156,12 +156,8 @@ a, a:hover, a:visited {
         }
         //Dream & Product
         .landing-info {
+	    @include vendVal(display, flex);
             position: absolute;
-	    display: -o-flex;
-	    display: -ms-flex;
-	    display: -moz-flex;
-            display: -webkit-flex;
-	    display: flex;
 	    top: 2.5vh;
             text-align: center;
             margin: 0 9vw;
