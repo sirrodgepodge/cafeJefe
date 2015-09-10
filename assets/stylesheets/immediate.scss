@@ -69,6 +69,15 @@ a:visited {
     }
 }
 
+@-ms-keyframes hover-bounce {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, 1.5vh);
+    }
+}
+
 @-moz-keyframes hover-bounce {
     from {
         transform: translate(0, 0);
