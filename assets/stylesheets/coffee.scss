@@ -51,8 +51,8 @@
     @media (max-width: 992px) {
 	& {
 	    @include vend(border-image, (url('/images/border_gap_stretch_vert.svg') 66 66 round));
-	    height: 145vh;
 	    min-height: 850px;
+	    height: 145vh;
 	}
 	.fom-fom, .fom-name, .fom-flavors {
 	    width: 100%;
