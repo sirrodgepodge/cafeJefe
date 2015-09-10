@@ -1,7 +1,7 @@
 // Title section
-.place-holder {
+.title, .place-holder {
     height: #{$title-height}vh;
-    min-height: 90px;
+    min-height: 80px;
     width: 100%;
     &.no-show {
         display: none;
@@ -11,10 +11,7 @@
     position: sticky;
     border-bottom: solid 2px $grayish-yellowish;
     background: black url("../images/cafe_jefe_text.svg") no-repeat center /contain;
-    width: 100%;
     left: 0;
-    height: #{$title-height}vh;
-    min-height: 80px;
     padding: 2px 0;
     z-index: 6;
     box-shadow: 0 16px 8px -9px #FFF;

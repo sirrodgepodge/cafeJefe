@@ -20,7 +20,7 @@
 
 //// Flavor of the month
 .fom-sect {
-    @include vend(border-image, (url('/images/border_gap_stretch.svg') 6.88% 2.16% round));
+    @include vend(border-image, (url('/images/border_gap_stretch.svg') 50 50 round));
     border-width: 38px;
     background: black url('/images/METAD_coffee.jpg') no-repeat center /cover;
     background-clip: content-box;
@@ -49,7 +49,8 @@
     }
     @media (max-width: 1000px) {
 	& {
-	    height: 140vh;
+	    @include vend(border-image, (url('/images/border_gap_stretch_vert.svg') 50 50 round));
+	    height: 145vh;
 	}
 	.fom-fom, .fom-name, .fom-flavors {
 	    width: 100%;
