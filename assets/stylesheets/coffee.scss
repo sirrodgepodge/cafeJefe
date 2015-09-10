@@ -21,6 +21,7 @@
 //// Flavor of the month
 .fom-sect {
     @include vend(border-image, (url('/images/border_gap_stretch.svg') 50 50 round));
+    border-stye: solid;
     border-width: 38px;
     background: black url('/images/METAD_coffee.jpg') no-repeat center /cover;
     background-clip: content-box;
