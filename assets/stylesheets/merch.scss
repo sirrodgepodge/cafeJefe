@@ -18,9 +18,11 @@
         line-height: .75;
     }
     $flip-transition-time: .5s;
-    .merch-ind {  
+    .merch-ind { 
+        @include vend(transform-style, preserve-3d);
         .coin, .back {
             @include vend(transition, (all #{$flip-transition-time/2} ease-in-out));
+            @include vend(transform-style, preserve-3d);
             @include vend(backface-visibility, hidden);
             border-radius: 50%;
             background-color: #000;
@@ -33,11 +35,11 @@
             }
         }
         .back {
-            @include vend(transform, rotate3d(0, 1, 0, 90deg));
+            @include vend(transform, rotateY(90deg));
             border: 6px solid $main-color;
         }
         .coin {
-            @include vend(transform, rotate3d(0, 0, 0, 0));
+            @include vend(transform, rotateY(0));
 	        transition-delay: #{$flip-transition-time/2};
             border: 6px solid $grayish-yellowish;
         }
@@ -143,11 +145,11 @@
     // Handle coin flipping
     .merch-ind:hover {
         .coin.coin-flip {
-            @include vend(transform, rotate3d(0, 1, 0, 90deg));
+            @include vend(transform, rotateY(90deg));
 	        transition-delay: 0s;
         }
         .back {
-            @include vend(transform, rotate3d(0, 0, 0, 0));
+            @include vend(transform, rotateY(0));
 	        transition-delay: #{$flip-transition-time/2};
         }
     }
