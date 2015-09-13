@@ -18,8 +18,9 @@
         line-height: .75;
     }
     .merch-ind {
+        $flip-transition-time: .6s;
         .coin, .back {
-            @include vend(transition, (all .35s ease-in-out));
+            @include vend(transition, (all #{$flip-transition-time/2} ease-in-out));
             @include vend(backface-visibility, hidden);
             border-radius: 50%;
             background-color: #000;
@@ -37,7 +38,7 @@
         }
         .coin {
             @include vend(transform, rotate3d(0, 0, 0, 0));
-	        transition-delay: .35s;
+	        transition-delay: #{$flip-transition-time/2};
             border: 6px solid $grayish-yellowish;
         }
         .t-shirt {
