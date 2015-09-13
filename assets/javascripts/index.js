@@ -201,11 +201,12 @@ var mapLoad = function(addresses) {
                 //Add listeners to marker to open and close info window on click
                 google.maps.event.addListener(marker, 'click', function() {
                     infowindow.open(map, marker);
-                });
-
-                google.maps.event.addListener(infowindow, 'closeclick', function() {
                     map.setCenter(marker.getPosition());
                 });
+
+                // google.maps.event.addListener(infowindow, 'closeclick', function() {
+                //     map.setCenter(marker.getPosition());
+                // });
 
                 if (index > 0) map.fitBounds(bounds);
             });
