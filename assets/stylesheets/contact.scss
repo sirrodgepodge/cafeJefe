@@ -79,10 +79,10 @@ $phone-contact-margin: $phone-contact-margin-top 0 $contact-border-width/1.75*$p
 
 
         //Apply result with transform, regular and phone 
-        @vend(transform, ($side-transform $perp-side-transform translateZ(0)));
+        @include vend(transform, ($side-transform $perp-side-transform translateZ(0)));
         @media (max-width: $phone-max) {
             & {
-                @vend(transform, ($phone-side-transform $phone-perp-side-transform translateZ(0)));
+                @include vend(transform, ($phone-side-transform $phone-perp-side-transform translateZ(0)));
             }
         }
     }
