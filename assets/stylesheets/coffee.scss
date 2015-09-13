@@ -49,26 +49,26 @@
         border-width: 0 $spacer-width;
     }
     @media (max-width: 992px) {
-	& {
-	    @include vend(border-image, (url('/images/border_gap_stretch_vert.svg') 66 66 round));
-	    min-height: 850px;
-	    height: 145vh;
-	}
-	.fom-fom, .fom-name, .fom-flavors {
-	    width: 100%;
-	    height: calc(33.3333% - #{$spacer-width * 2/3});
-	}
-	.fom-name {
-	    border-width: $spacer-width 0;
-	}
+    	& {
+    	    @include vend(border-image, (url('/images/border_gap_stretch_vert.svg') 66 66 round));
+    	    min-height: 850px;
+    	    height: 145vh;
+    	}
+    	.fom-fom, .fom-name, .fom-flavors {
+    	    width: 100%;
+    	    height: calc(33.3333% - #{$spacer-width * 2/3});
+    	}
+    	.fom-name {
+    	    border-width: $spacer-width 0;
+    	}
     }
     .ribbon {
         @include vendVal(display, flex);
         /*display: -o-flex;
-	display: -ms-flex;
-	display: -moz-flex;
-	display: -webkit-flex;
-	display: flex;*/
+    	display: -ms-flex;
+    	display: -moz-flex;
+    	display: -webkit-flex;
+    	display: flex;*/
         justify-content: center; // align horizontal
         align-items: center; // align vertical
         $height: 41%;
@@ -82,6 +82,11 @@
         font-size: 25px;
         font-weight: 500;
         font-family: lato, sans-serif;
+        @media (max-width: $phone-max) {
+            & {
+              font-size: 6.5vw;
+            }
+        }
     }
 }
 
