@@ -144,15 +144,16 @@
     .merch-ind:hover {
         .coin.coin-flip {
             @include vend(transform, rotate3d(0, 1, 0, 90deg));
-	    transition-delay: 0s;
+	        transition-delay: 0s;
         }
         .back {
             @include vend(transform, rotate3d(0, 0, 0, 0));
-	    transition-delay: .35s;
+	        transition-delay: #{$flip-transition-time/2};
         }
     }
 }
 
+// Phone
 @media (max-width: $phone-max) {
     .merch-sect {
         @include vend(border-image,(url('/images/cafe_jefe_border_invert_no_inside.svg') 245 round));
@@ -179,6 +180,7 @@
     }
 }
 
+// Tablet
 @media (min-width: $tablet-min) and (max-width: $tablet-max) {
     .merch-sect {
         .motto {
@@ -187,9 +189,13 @@
     }
     .merch-ind {
         padding: 30px 2.2% 0;
+        .buy-merch {
+            bottom: 10.5%;
+        }
     }
 }
 
+// Laptop
 @media (min-width: $laptop-min) {
     .merch-ind {
         padding: 0 1.25%;
