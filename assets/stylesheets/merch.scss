@@ -17,8 +17,8 @@
         font-size: 7rem;
         line-height: .75;
     }
-    .merch-ind {
-        $flip-transition-time: .6s;
+    $flip-transition-time: .6s;
+    .merch-ind {  
         .coin, .back {
             @include vend(transition, (all #{$flip-transition-time/2} ease-in-out));
             @include vend(backface-visibility, hidden);
