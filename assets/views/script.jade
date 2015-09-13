@@ -1,4 +1,8 @@
 script(type='text/javascript').
+  // Converts touch to hover for mobile and tablet
+  document.addEventListener("touchstart", function(){}, true);
+
+  // Handles expedited image load at top of page
   var otherOneLoaded = false;
   var preLoadShade = new Image();
   preLoadShade.src = '/images/shader.png';
