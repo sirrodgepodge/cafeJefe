@@ -7,8 +7,7 @@ head:after {
 }
 
 // Base formatting
-html,
-body {
+html, body {
     margin: 0;
     width: 100%;
     padding: 0;
@@ -28,9 +27,7 @@ body * {
 //     width: 100%;
 //     clear: both;
 // }
-a,
-a:hover,
-a:visited {
+a, a:hover, a:visited {
     color: white;
     text-decoration: none;
     transition: .25s;
@@ -61,6 +58,15 @@ a:visited {
 ////Landing
 // Animation for bottom hover
 @-o-keyframes hover-bounce {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, 1.5vh);
+    }
+}
+
+@-ms-keyframes hover-bounce {
     from {
         transform: translate(0, 0);
     }
@@ -150,9 +156,9 @@ a:visited {
         }
         //Dream & Product
         .landing-info {
+	    @include vendVal(display, flex);
             position: absolute;
-            display: flex;
-            top: 2.5vh;
+	    top: 2.5vh;
             text-align: center;
             margin: 0 9vw;
             font-family: lato, sans-serif;

@@ -3,13 +3,13 @@
 //// Coffee Header
 .head {
     margin-top: 24px;
-    font-size: 42px;
+    font-size: 52px;
     font-family: lato, sans-serif;
     font-weight: 300;
     text-align: center;
     clear: both;
     .sub-head {
-        font-size: 17px;
+        font-size: 21px;
         text-align: inherit;
     }
     .sub-sub-head {
@@ -20,15 +20,14 @@
 
 //// Flavor of the month
 .fom-sect {
-    // 6.88% 2.16%
-    @include vend(border-image, (url('/images/border_gap_stretch.svg') 6.88% 2.16% round));
-    border-width: 31px;
+    @include vend(border-image, (url('/images/border_gap_stretch.svg') 50 50 round));
+    border-style: solid;
+    border-width: 38px;
     background: black url('/images/METAD_coffee.jpg') no-repeat center /cover;
     background-clip: content-box;
     display: inline-block;
-    height: 400px;
-    min-height: 30%;
-    max-height: 70%;
+    height: 50vh;
+    min-height: 380px;
     width: 87.5%;
     margin: 4% 6.125%;
     padding: 0;
@@ -37,37 +36,42 @@
         display: inline-block;
         margin: 0;
     }
-    $spacer-width: 22px;
-    .spacer {
-        width: $spacer-width;
-        height: 100%;
-        padding: 0;
-        background-color: white;
-    }
-    .fom-fom {
+    $spacer-width: 27px;
+    .fom-fom, .fom-name, .fom-flavors {
         width: calc(33.3333% - #{$spacer-width * 2/3});
         height: 100%;
         padding: 0;
         margin: 0;
     }
     .fom-name {
-        width: calc(33.3333% - #{$spacer-width * 2/3});
-        height: 100%;
-        padding: 0;
-        margin: 0;
+	box-sizing: content-box;
+	border: solid white;
+        border-width: 0 $spacer-width;
     }
-    .fom-flavors {
-        width: calc(33.3333% - #{$spacer-width * 2/3});
-        height: 100%;
-        padding: 0;
-        margin: 0;
+    @media (max-width: 992px) {
+	& {
+	    @include vend(border-image, (url('/images/border_gap_stretch_vert.svg') 66 66 round));
+	    min-height: 850px;
+	    height: 145vh;
+	}
+	.fom-fom, .fom-name, .fom-flavors {
+	    width: 100%;
+	    height: calc(33.3333% - #{$spacer-width * 2/3});
+	}
+	.fom-name {
+	    border-width: $spacer-width 0;
+	}
     }
     .ribbon {
-        // @include vend(box-shadow, (0 0 10px #000));
-        display: flex;
+        @include vendVal(display, flex);
+        /*display: -o-flex;
+	display: -ms-flex;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: flex;*/
         justify-content: center; // align horizontal
         align-items: center; // align vertical
-        $height: 40%;
+        $height: 41%;
         height: $height;
         top: #{50% - $height/2};
         width: 100%;
@@ -75,7 +79,7 @@
         overflow: hidden;
         white-space: nowrap;
         position: absolute;
-        font-size: 20px;
+        font-size: 25px;
         font-weight: 500;
         font-family: lato, sans-serif;
     }

@@ -27,7 +27,7 @@ $title-height: 11.5;
 }
 
 
-// Handle vendor prefixes
+// Handle vendor property prefixes
 @mixin vend($prop, $val) {
     -webkit-#{$prop}: $val;
     -moz-#{$prop}: $val;
@@ -36,6 +36,14 @@ $title-height: 11.5;
     #{$prop}: $val;
 }
 
+// Handle vendor value prefixes
+@mixin vendVal($prop, $val) {
+    #{$prop}: -webkit-#{$val};
+    #{$prop}: -moz-#{$val};
+    #{$prop}: -ms-#{$val};
+    #{$prop}: -o-#{$val};
+    #{$prop}: #{$val};
+}
 
 // Do text-shadow (not used at present)
 @mixin text-trace($color, $px) {
