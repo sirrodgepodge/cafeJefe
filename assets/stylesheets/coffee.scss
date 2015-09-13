@@ -64,11 +64,6 @@
     }
     .ribbon {
         @include vendVal(display, flex);
-        /*display: -o-flex;
-    	display: -ms-flex;
-    	display: -moz-flex;
-    	display: -webkit-flex;
-    	display: flex;*/
         justify-content: center; // align horizontal
         align-items: center; // align vertical
         $height: 41%;
