@@ -83,12 +83,14 @@ $phone-contact-margin: $phone-contact-margin-top 0 $contact-border-width/1.75*$p
         @media (max-width: $phone-max) {
             & {
                 @include vend(transform, ($phone-side-transform $phone-perp-side-transform translateZ(0)));
-		a {
-		    pointer-events: none;
-		    cursor: default;
-		}
             }
         }
+	@media (max-width: $tablet-max) {
+	    a {
+		pointer-events: none;
+		cursor: default;
+	    }
+	}
     }
 }
 //// Refactor for transform3d
