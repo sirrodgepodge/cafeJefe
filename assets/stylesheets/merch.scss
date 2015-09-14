@@ -1,6 +1,7 @@
 // Merchandise section
 .merch-sect {
     @include vend(border-image, (url('/images/cafe_jefe_border_invert.svg') 245 round));
+    -moz-border-image: (url('/images/cafe_jefe_border_invert.svg') 245 round;
     border-style: solid;
     clear: both;
     float: left;
