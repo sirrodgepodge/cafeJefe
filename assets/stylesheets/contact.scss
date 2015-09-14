@@ -1,7 +1,7 @@
 // For contact section
 
 // For phone view
-$phone-adjust-factor: 0.75;
+$phone-adjust-factor: 0.6658;
 
 //// Height + width of contact image
 ////// This value drives all other calculations ///////
@@ -145,7 +145,7 @@ $phone-contact-margin: $phone-contact-margin-top 0 $contact-border-width/1.75*$p
                 border-bottom: black solid $contact-border-width/6.25 * $phone-adjust-factor;
                 border-left: black solid $contact-border-width/3.55 * $phone-adjust-factor;
                 border-right: black solid $contact-border-width/3.55 * $phone-adjust-factor;
-                font-size: $contact-side/12 * $phone-adjust-factor;
+                font-size: $contact-side/12 * $phone-adjust-factor * 1.25;
             }
         }
     }
