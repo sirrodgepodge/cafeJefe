@@ -220,4 +220,9 @@
             left: -.3%;
         }
     }
+    @media (min-width: 992px) and (max-width: 1199.99px) {
+        & {
+            float: left;
+        }
+    }
 }
