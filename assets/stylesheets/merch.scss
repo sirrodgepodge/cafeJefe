@@ -19,14 +19,14 @@
     }
     $flip-transition-time: .5s;
     .merch-ind {
-        @include vend(perspective, 1000);
+        @include vend(transform, perspective(1000px));
         .wrapper {
             @include vend(transition, (all $flip-transition-time ease-in-out));
             @include vend(transform-style, preserve-3d);
-            @include vend(transform, rotateY(0deg));
+            @include vend(transform, perspective(1000px) rotateY(0deg));
         }
         .wrapper.coin-flip:hover {
-            @include vend(transform, rotateY(180deg));
+            @include vend(transform, perspective(1000px) rotateY(180deg));
         }
         .coin, .back {
             @include vend(transition, (all $flip-transition-time ease-in-out));
