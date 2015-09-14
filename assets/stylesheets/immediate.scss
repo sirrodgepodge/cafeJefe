@@ -1,10 +1,10 @@
 // Shared vars
 @import 'init';
 // Pre-Load Shader
-head:after {
-    display: none;
-    content: url('/images/shader.png');
-}
+// head:before {
+//     display: none;
+//     content: url('/images/shader.png');
+// }
 
 // Base formatting
 html, body {
@@ -130,13 +130,13 @@ a, a:hover, a:visited {
         }
     }
     // Shading
-    .shading {
-        position: absolute;
-        z-index: -1;
-        width: 100%;
-        height: 100%;
-        background: url('/images/shader.png') repeat;
-    }
+    // .shading {
+    //     position: absolute;
+    //     z-index: -1;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: url('/images/shader.png') repeat;
+    // }
     //white text in landing
     .landing-text {
         @include vend(transition, 1s ease-in-out 1.15s);

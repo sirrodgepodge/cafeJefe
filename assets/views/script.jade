@@ -6,7 +6,9 @@ script(type='text/javascript').
   var otherOneLoaded = false;
   var preLoadShade = new Image();
   preLoadShade.src = '/images/shader.png';
+  preLoadShade.onload = landing;
   function landing() {
+    console.log('happening');
     if (!otherOneLoaded) otherOneLoaded = true;
     else {
       document.getElementsByClassName('product-img')[0].className += ' show';
@@ -16,5 +18,4 @@ script(type='text/javascript').
       delete landing;
     }
   };
-  preLoadShade.onload = landing;
   with(document.documentElement){className=className.replace(/\bno-js\b/,'js')}
