@@ -51,7 +51,7 @@ a, a:hover, a:visited {
 }
 
 .show {
-    opacity: 1!important;
+    @include vend(opacity, 1!important);
     visibility: visible!important;
 }
 
@@ -184,13 +184,12 @@ a, a:hover, a:visited {
                 border-bottom: solid 3px rgba(255, 255, 255, 1);
             }
             .full {
-                @include vend(transition,
-                .5s);
+                @include vend(transition, .5s);
+                @include vend(opacity, 0);
                 clear: both;
                 margin: 1.7vw 14px 0;
                 text-align: left;
                 font-size: 19px;
-                opacity: 0;
                 .quote {
                     font-style: italic;
                     text-align: right;
