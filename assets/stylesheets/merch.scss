@@ -43,7 +43,7 @@
             }
         }
         .back {
-            @include vend(transform, rotateY(180deg) translateZ(3px));
+            @include vend(transform, rotateY(180deg) translateZ(10px));
             border: 6px solid $main-color;
         }
         .coin {
