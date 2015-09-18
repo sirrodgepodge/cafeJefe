@@ -162,7 +162,7 @@ var mapLoad = function(addresses) {
         var map,
             mapOptions = {
                 center: new google.maps.LatLng(centerCoord.lat, centerCoord.lng),
-                mapTypeId: google.maps.MapTypeId.TERRAIN,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
                 styles: [{
                     stylers: [{
                         'saturation': -100
