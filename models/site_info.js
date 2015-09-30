@@ -1,20 +1,20 @@
 var localsObj = {
     coffee: [{
         name: '1 bag',
-        purchase: 18,
-        subscribe: 15
+        purchase: 15.50,
+        subscribe: 12.50
     }, {
         name: '2 bags',
-        purchase: 33,
-        subscribe: 28
+        purchase: 28,
+        subscribe: 24
     }, {
         name: '3 bags',
-        purchase: 46,
-        subscribe: 39
+        purchase: 40.50,
+        subscribe: 34.50
     }, {
         name: '4 bags',
-        purchase: 57,
-        subscribe: 48
+        purchase: 51,
+        subscribe: 44
     }],
     merch: [{
         name: 'tshirt',
