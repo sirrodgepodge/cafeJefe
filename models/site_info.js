@@ -30,15 +30,16 @@ var localsObj = {
         name: 'girlt',
         price: 20,
         sizes: ['S', 'M', 'L', 'XL']
-    }, {
-        name: 'jefe-hoodie',
-        price: 20,
-        sizes: ['S', 'M', 'L', 'XL']
-    }, {
-        name: 'tank',
-        price: 20,
-        sizes: ['S', 'M', 'L', 'XL']
-    }],
+    } //, {
+    //     name: 'jefe-hoodie',
+    //     price: 20,
+    //     sizes: ['S', 'M', 'L', 'XL']
+    // }, {
+    //     name: 'tank',
+    //     price: 20,
+    //     sizes: ['S', 'M', 'L', 'XL']
+    // }
+    ],
     contact: {
         instagram: {
             text: 'instagram.com/CafeJefeLLC',
