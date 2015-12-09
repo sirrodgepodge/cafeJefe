@@ -2,5 +2,4 @@
 .*~
 **.pem
 /node_modules
-/public/javascripts
 newrelic_agent.log
