@@ -19,29 +19,23 @@ var $purchaseToggle = $('.purchase-toggle'),
     $downAnim = $landing.find('.down-anim'),
     $contactImg = $('.contact-img'),
     $contactSub = $('.contact-sub'),
-    $contactSubInside = $contactSub.find('.contact-sub-inside'),
-    $sizes = $();
+    $contactSubInside = $contactSub.find('.contact-sub-inside');
 
 // Getting back end data
 var coffee = [],
     merch = [],
-    contact = {};
+    contact = {},
+    addresses = [];
 
 $.get('/api/info', function(data) {
     coffee = data.coffee;
     merch = data.merch;
     contact = data.contact;
+    addresses = data.addresses; // Addresses array for map markers
 });
-
-// Addresses array for map markers
-var addresses = [
-    //    '300 W Rosemary Lane, falls church, va 22046',
-    '6147 Lakeside Dr #102, Reno, NV 89502'
-];
 
 // UI Functionality
 var main = function() {
-
     //// Landing Section
     $landingTogglers.click(function() {
         var notSelImg;
@@ -64,7 +58,7 @@ var main = function() {
                     }, 400);
                 }
             } else {
-                $startLandingActive = $('.landing-active');
+                var $startLandingActive = $('.landing-active');
                 $startLandingActive.toggleClass('landing-active');
                 $startLandingActive.children('.full').toggleClass('show');
                 $(this).toggleClass('landing-active');
@@ -145,7 +139,7 @@ var main = function() {
             slideSwitchText(contact[selected].text);
         }
     });
-    
+
     //// back to top button on map
     $backToTop.click(function() {
         $('html, body').animate({
@@ -157,7 +151,7 @@ var main = function() {
 
 // Load Google Maps
 var mapLoad = function(addresses) {
-    $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address=' + addresses[0] + '&sensor=false', null, function(centerData) {
+    $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address=' + addresses[0] , null, function(centerData) {
         var centerCoord = centerData.results[0].geometry.location;
         var map,
             mapOptions = {
@@ -181,7 +175,7 @@ var mapLoad = function(addresses) {
 
         var bounds = new google.maps.LatLngBounds(); //this code autofits & zooms to include all markers, bad if there's only one
         addresses.forEach(function(val, index) {
-            $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address=' + val + '&sensor=false', null, function(data) {
+            $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address=' + val, null, function(data) {
                 var p = data.results[0].geometry.location;
                 var latlng = new google.maps.LatLng(p.lat, p.lng);
                 bounds.extend(latlng);
@@ -212,21 +206,25 @@ var mapLoad = function(addresses) {
             });
         });
     });
-};
+}
 
 // Store page height of top of title
 var titleTop = Math.ceil($landing.outerHeight()),
     contactTop = Math.ceil($contact.offset().top) * 0.92,
     downAnimReached = titleTop * 0.395 + 4.5; //when Page position is such that the white "CafeJefe" is right above the down arrow;
 
+console.log('heyy');
+
 // Handle fixing title bar at the top of the page
 var listeners = function() {
-    var pagePos = 0;
-    var titleHeight = 0;
-    var titleFixed = false;
-    var landingHeadDimmed = false;
-    var topTextShowing = true;
-    var contactPopped = false;
+    console.log('happening');
+
+    var pagePos = 0,
+        titleHeight = 0,
+        titleFixed = false,
+        landingHeadDimmed = false,
+        topTextShowing = true,
+        contactPopped = false;
 
     var landingScroll = function() {
         pagePos = window.pageYOffset; //calculates current vertical scroll position
@@ -236,6 +234,9 @@ var listeners = function() {
             $placeHolder.toggleClass('no-show');
             titleFixed = !titleFixed;
         }
+
+        console.log('contactTop', contactTop);
+        console.log('contactPopped', contactPopped);
 
         //make contact pop
         if (pagePos >= contactTop && !contactPopped || pagePos < contactTop && contactPopped) {
@@ -264,6 +265,6 @@ var listeners = function() {
         landingScroll();
     });
     window.addEventListener('scroll', landingScroll);
-};
+}
 
 $(document).ready(main, mapLoad(addresses), listeners());

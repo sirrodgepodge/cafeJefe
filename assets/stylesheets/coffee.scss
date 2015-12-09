@@ -24,7 +24,11 @@
     -moz-border-image: url('/images/border_gap_stretch.svg') 50 50 round;
     border-style: solid;
     border-width: 38px;
-    background: black url('/images/METAD_coffee.jpg') no-repeat center /cover;
+    background-image: url('/images/METAD_coffee.jpg');
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-clip: content-box;
     display: inline-block;
     height: 50vh;

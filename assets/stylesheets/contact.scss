@@ -60,8 +60,8 @@ $phone-contact-margin: $phone-contact-margin-top 0 $contact-border-width/1.75*$p
             $perp-adjust: 1;
         }
 
-        $perp-side-transform: translate#{$perp-side}(($contact-side + $img-size)/2*$perp-pct*$perp-adjust); //for adjusting vertically along side
-        $phone-perp-side-transform: translate#{$perp-side}(($contact-side + $img-size)/2*$perp-pct*$perp-adjust*$phone-adjust-factor);
+        $perp-side-transform: unquote("translate#{$perp-side}(#{($contact-side + $img-size)/2*$perp-pct*$perp-adjust})"); //for adjusting vertically along side
+        $phone-perp-side-transform: unquote("translate#{$perp-side}(#{($contact-side + $img-size)/2*$perp-pct*$perp-adjust*$phone-adjust-factor})");
 
         //makes it hug the rounded part... so ridiculous lmao
         $perp-pct: abs($perp-pct);
@@ -74,11 +74,11 @@ $phone-contact-margin: $phone-contact-margin-top 0 $contact-border-width/1.75*$p
         }
         $push: $push*$dir-pct;
         $phone-push: $phone-push*$dir-pct;
-        $side-transform: translate#{$side}(#{$push}vh);
-        $phone-side-transform: translate#{$side}(#{$phone-push}vh);
+        $side-transform: unquote("translate#{$side}(#{$push}vh)");
+        $phone-side-transform: unquote("translate#{$side}(#{$phone-push}vh)");
 
 
-        //Apply result with transform, regular and phone 
+        //Apply result with transform, regular and phone
         @include vend(transform, ($side-transform $perp-side-transform translateZ(0)));
         @media (max-width: $phone-max) {
             & {

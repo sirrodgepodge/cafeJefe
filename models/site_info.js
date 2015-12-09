@@ -1,4 +1,17 @@
-var localsObj = {
+module.exports = {
+    fom: {
+        image: {
+            filename: 'IMG_8378.jpeg',
+            x: 50,
+            y: 12
+        },
+        name: 'ETHIOPIA HAMBELA',
+        flavors: [
+            "JASMINE",
+            "MANDARIN",
+            "FLORAL"
+        ]
+    },
     coffee: [{
         name: '1 bag',
         purchase: 15.50,
@@ -46,7 +59,7 @@ var localsObj = {
             link: 'http://www.instagram.com/cafejefellc'
         },
         address: {
-            text: '6147 Lakeside Dr #102, Reno, NV 89502',
+            text: '6147 Lakeside Dr #102, Reno, NV 89511',
             link: 'https://www.google.com/maps/place/Pedalers+Deli/@39.471266,-119.8087336,17z/data=!3m1!4b1!4m2!3m1!1s0x80994014c55a99eb:0xcf7d2a91ee0370be'
         },
         facebook: {
@@ -61,7 +74,9 @@ var localsObj = {
             text: 'julian@CafeJefe.com',
             link: 'mailto:julian@cafejefe.com'
         }
-    }
+    },
+    addresses: [
+        //    '300 W Rosemary Lane, falls church, va 22046',
+        '6147 Lakeside Dr #102, Reno, NV 89511'
+    ]
 };
-
-module.exports = localsObj;

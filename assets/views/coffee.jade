@@ -2,20 +2,19 @@
   .sub-head Ethically traded #[i.icon.ion-coffee] from the #[i.fa.fa-globe] to your #[span.glyphicon.glyphicon-home(aria-hidden="true")]
   //- .sub-sub-head *taxes and shipping included in all prices
 
-.fom-sect
+.fom-sect(style="background-image: url('/images/#{locals.fom.image.filename}'); background-position-x: #{locals.fom.image.x}%; background-position-y: #{locals.fom.image.y}%;")
   .fom-fom
     .ribbon.text-center
       |  FLAVOR OF #[br]
       |  THE MONTH
   .fom-name
     .ribbon 
-      |  ETHIOPIA #[br]
-      |  HAMBELA
+      each line in locals.fom.name.split(' ')
+        |  #{line} #[br]
   .fom-flavors
     .ribbon.text-indent 
-      |  #DEEP CHOCOLATE #[br]
-      |  #MERLOT #[br]
-      |  #STRAWBERRY 
+      each flavor in locals.fom.flavors
+        | ##{flavor} #[br]
 
 .purch-type
   .col-xs-6.col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
@@ -29,7 +28,7 @@
     .coffee-ind.col-xs-6.col-sm-3
       .coffee-ind-inside(class= index===1? "active-coffee-amount": "")
         .coffee-amount= c.name
-        .coffee-price= '$'+c.purchase
+        .coffee-price= '$'+c.subscribe
         img.coffee-pic.col-xs-12(src="../images/#{c.name}.png")
         .oz-coffee-amount ~ #{(index+1)*12}oz ~
         a.buy-btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{index+1}-bag-subscribe")
