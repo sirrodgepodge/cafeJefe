@@ -1,11 +1,11 @@
 module.exports = {
     fom: {
         image: {
-            filename: 'IMG_8378.jpeg',
+            filename: '11942098_1053719894678571_8400662873106799036_o.jpg',
             x: 50,
-            y: 12
+            y: 66
         },
-        name: 'ETHIOPIA HAMBELA',
+        name: 'ETHIOPIA HAMBELA ALAKA',
         flavors: [
             "JASMINE",
             "MANDARIN",

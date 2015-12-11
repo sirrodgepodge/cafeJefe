@@ -4,10 +4,7 @@ var $purchaseToggle = $('.purchase-toggle'),
     $buyBtn = $('.buy-btn'),
     $coffeePrice = $('.coffee-price'),
     $merchIndBack = $('.merch-ind .back'),
-    $tShirt = $merchIndBack.children('.t-shirt'),
-    $buyMerch = $merchIndBack.children('.buy-merch'),
     $size = $merchIndBack.children('.size'),
-    $merchPrice = $('.merch-price'),
     $backToTop = $('.back-to-top, .title, .footer-logo'),
     $title = $('.title'),
     $contact = $('.contact'),
@@ -24,14 +21,13 @@ var $purchaseToggle = $('.purchase-toggle'),
 // Getting back end data
 var coffee = [],
     merch = [],
-    contact = {},
-    addresses = [];
+    contact = {};
 
 $.get('/api/info', function(data) {
     coffee = data.coffee;
     merch = data.merch;
     contact = data.contact;
-    addresses = data.addresses; // Addresses array for map markers
+    mapLoad(data.addresses); // Addresses array for map markers
 });
 
 // UI Functionality
@@ -150,7 +146,7 @@ var main = function() {
 
 
 // Load Google Maps
-var mapLoad = function(addresses) {
+function mapLoad(addresses) {
     $.getJSON('//maps.googleapis.com/maps/api/geocode/json?address=' + addresses[0] , null, function(centerData) {
         var centerCoord = centerData.results[0].geometry.location;
         var map,
@@ -261,10 +257,10 @@ var listeners = function() {
     $(window).resize(function() {
         titleTop = Math.ceil($landing.outerHeight());
         downAnimReached = titleTop * 0.395 + 4.5;
-        contactTop = Math.ceil($contact.offset().top) * 0.92;
+        contactTop = Math.ceil($contact.offset().top) * 0.905;
         landingScroll();
     });
     window.addEventListener('scroll', landingScroll);
-}
+};
 
-$(document).ready(main, mapLoad(addresses), listeners());
+$(document).ready(main, listeners());
