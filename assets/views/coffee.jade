@@ -33,7 +33,7 @@
     .coffee-ind.col-xs-6.col-sm-3
       .coffee-ind-inside(class= index===1? "active-coffee-amount": "")
         .coffee-amount= c.name
-        .coffee-price= '$'+c.subscribe+'*'
+        .coffee-price= '$'+c.subscribe
         img.coffee-pic.col-xs-12(src="../images/#{c.name}.png")
         .oz-coffee-amount ~ #{(index+1)*12}oz ~
         a.buy-btn(href="https://cafejefe.chargebee.com/hosted_pages/plans/#{index+1}-bag-subscribe")
