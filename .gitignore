@@ -1,6 +1,7 @@
 *~
 .*~
 **.pem
-/public
+/public/javascripts
+/public/stylesheets
 /node_modules
 newrelic_agent.log

@@ -18,7 +18,7 @@
         font-size: 7rem;
         line-height: .75;
     }
-    $flip-transition-time: .5s;
+    $flip-transition-time: .35s;
     .merch-ind {
         @include vend(transform, perspective(1000px));
         .wrapper {

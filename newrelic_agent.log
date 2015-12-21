@@ -3130,3 +3130,9 @@
 {"v":0,"level":30,"name":"newrelic","hostname":"AdminisatorsMBP.home","pid":25627,"time":"2015-12-21T08:07:45.476Z","msg":"Starting New Relic for Node.js connection process."}
 {"v":0,"level":30,"name":"newrelic","hostname":"AdminisatorsMBP.home","pid":25627,"time":"2015-12-21T08:07:47.679Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1032470/applications/9459143","component":"new_relic_response"}
 {"v":0,"level":30,"name":"newrelic","hostname":"AdminisatorsMBP.home","pid":25627,"time":"2015-12-21T08:07:47.680Z","msg":"Connected to collector-146.newrelic.com:443 with agent run ID 40645028754092393.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"AdminisatorsMBP.home","pid":25754,"time":"2015-12-21T08:09:18.770Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"AdminisatorsMBP.home","pid":25754,"time":"2015-12-21T08:09:21.065Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1032470/applications/9459143","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"AdminisatorsMBP.home","pid":25754,"time":"2015-12-21T08:09:21.067Z","msg":"Connected to collector-146.newrelic.com:443 with agent run ID 40645028754096185.","component":"collector_api"}
+{"v":0,"level":30,"name":"newrelic","hostname":"AdminisatorsMBP.home","pid":25783,"time":"2015-12-21T08:09:35.412Z","msg":"Starting New Relic for Node.js connection process."}
+{"v":0,"level":30,"name":"newrelic","hostname":"AdminisatorsMBP.home","pid":25783,"time":"2015-12-21T08:09:37.681Z","msg":"Reporting to: https://rpm.newrelic.com/accounts/1032470/applications/9459143","component":"new_relic_response"}
+{"v":0,"level":30,"name":"newrelic","hostname":"AdminisatorsMBP.home","pid":25783,"time":"2015-12-21T08:09:37.682Z","msg":"Connected to collector-146.newrelic.com:443 with agent run ID 40645028754096811.","component":"collector_api"}
