@@ -1,5 +1,6 @@
 *~
 .*~
 **.pem
+/public
 /node_modules
 newrelic_agent.log

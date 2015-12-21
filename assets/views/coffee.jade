@@ -19,7 +19,7 @@
   .sub-head.purch-sub-head
     | #[span.asterisk *]
     = coffee.subHeader
-    | #[i.fa.fa-smile-o]
+    | #[i.fa.fa-smile-o.smiley-face]
 
 .purch-type
   .col-xs-6.col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
@@ -36,7 +36,7 @@
         .coffee-price= '$'+c.subscribe
         img.coffee-pic.col-xs-12(src="../images/#{c.name}.png")
         .oz-coffee-amount ~ #{(index+1)*12}oz ~
-        a.buy-btn(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{index+1}-bag-subscribe")
+        a.buy-btn(href="https://cafejefe.chargebee.com/hosted_pages/plans/#{index+1}-bag-subscribe")
           .button-fill
             .button-text Subscribe
             .button-inside

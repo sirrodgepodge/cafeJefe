@@ -4,11 +4,11 @@
     each merch in locals.merch
       div.merch-ind.col-md-3.col-md-offset-2.col-sm-6.col-sm-offset-0.col-xs-12 
           .wrapper(class=merch.sizes.length? "coin-flip" : "")
-            a.col-xs-12.coin(class=merch.sizes.length? "disable-link": "not-clothes",href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}", style="background:url(../images/#{merch.name}.jpg) no-repeat center /cover;")
+            a.col-xs-12.coin(class=merch.sizes.length? "disable-link": "not-clothes",href="https://cafejefe.chargebee.com/hosted_pages/plans/#{merch.name}", style="background:url(../images/#{merch.name}.jpg) no-repeat center /cover;")
             .back(style=merch.sizes.length? "" : "display:none;")
               .t-shirt(data-size='M')
               each size,index in merch.sizes
                 .size.merch-button.col-xs-3(class="#{size}", class=index===1? "active" : "")
                   p #{size}
-              a.buy-merch.merch-button(href="https://cafejefe-test.chargebee.com/hosted_pages/plans/#{merch.name}_M") To your casa!
+              a.buy-merch.merch-button(href="https://cafejefe.chargebee.com/hosted_pages/plans/#{merch.name}_M") To your casa!
           .merch-price.col-xs-12= '$'+merch.price
