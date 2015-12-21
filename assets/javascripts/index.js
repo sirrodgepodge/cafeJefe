@@ -24,7 +24,7 @@ var coffee = [],
     contact = {};
 
 $.get('/api/info', function(data) {
-    coffee = data.coffee;
+    coffee = data.coffee.product;
     merch = data.merch;
     contact = data.contact;
     mapLoad(data.addresses); // Addresses array for map markers
@@ -140,7 +140,7 @@ var main = function() {
     $backToTop.click(function() {
         $('html, body').animate({
             scrollTop: 0
-        }, $(window).scrollTop() * 0.6);
+        }, $(window).scrollTop() * 2);
     });
 };
 

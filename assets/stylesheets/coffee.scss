@@ -18,6 +18,25 @@
     }
 }
 
+.purch-head {
+    margin: 0 0 15.5px;
+    font-size: 40px;
+
+    .purch-sub-head {
+        font-size: 16px;
+        margin-top: -16px;
+
+        .asterisk {
+            font-size: 31.5px;
+            top: 10px;
+        }
+        .fa-smile-o {
+            font-size: 12px;
+            top: -5px;
+        }
+    }
+}
+
 //// Flavor of the month
 .fom-sect {
     @include vend(border-image, (url('/images/border_gap_stretch.svg') 50 50 round));
@@ -34,13 +53,15 @@
     height: 50vh;
     min-height: 380px;
     width: 87.5%;
-    margin: 4% 6.125%;
+    margin: 4% 6.125% 2.8%;
     padding: 0;
     color: white;
+
     * {
         display: inline-block;
         margin: 0;
     }
+
     $spacer-width: 27px;
     .fom-fom, .fom-name, .fom-flavors {
         width: calc(33.3333% - #{$spacer-width * 2/3});
@@ -96,7 +117,7 @@
     padding: 18px;
     margin: 8px 0;
     .purchase-toggle {
-	@include vend(transition, (.4s ease-in-out));
+	@include vend(transition, (.2s ease-in-out));
         clear: both;
         position: relative;
         color: black;
@@ -141,7 +162,7 @@
     .coffee-ind {
         padding: 0;
         .coffee-ind-inside {
-            @include vend(transition, .35s);
+            @include vend(transition, .2s);
             text-align: center;
             cursor: pointer;
             .coffee-amount {
@@ -203,13 +224,14 @@
                 line-height: 42px;
                 height: 42px;
                 letter-spacing: .1em;
+                font-family: 'Lato', Arial, sans-serif;
                 font-size: 1.45rem;
                 font-weight: 300;
                 background-color: black;
             }
             .button-inside {
                 @include vend(border-radius, 5px);
-                @include vend(transition, 0.5s);
+                @include vend(transition, 0.35s);
                 width: 0;
                 height: 42px;
                 margin: 0;

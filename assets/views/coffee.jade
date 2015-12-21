@@ -1,6 +1,5 @@
-.head Mi caf&eacute; es su caf&eacute;
-  .sub-head Ethically traded #[i.icon.ion-coffee] from the #[i.fa.fa-globe] to your #[span.glyphicon.glyphicon-home(aria-hidden="true")]
-  //- .sub-sub-head *taxes and shipping included in all prices
+.head.site-head Mi caf&eacute; es su caf&eacute;
+  .sub-head.site-sub-head Ethically traded #[i.icon.ion-coffee] from the #[i.fa.fa-globe] to your #[span.glyphicon.glyphicon-home(aria-hidden="true")]
 
 .fom-sect(style="background-image: url('/images/#{locals.fom.image.filename}'); background-position-x: #{locals.fom.image.x}%; background-position-y: #{locals.fom.image.y}%;")
   .fom-fom
@@ -16,15 +15,21 @@
       each flavor in locals.fom.flavors
         | ##{flavor} #[br]
 
+.head.purch-head= coffee.header
+  .sub-head.purch-sub-head
+    | #[span.asterisk *]
+    = coffee.subHeader
+    | #[i.fa.fa-smile-o]
+
 .purch-type
   .col-xs-6.col-sm-4.col-sm-offset-2.col-md-3.col-md-offset-3
-    #purchase.purchase-toggle One Time Purchase
+    #purchase.purchase-toggle= locals.coffee.purchaseLabel
   .col-xs-6.col-sm-4.col-md-3
-    #subscribe.purchase-toggle.active-purch-type Monthly Subscription
-      #save Save 15%
+    #subscribe.purchase-toggle.active-purch-type= locals.coffee.subscriptionLabel
+      #save= locals.coffee.subscriptionSavingsClaim
 
 .coffee-sect.col-lg-10.col-lg-offset-1
-  each c, index in locals.coffee
+  each c, index in locals.coffee.product
     .coffee-ind.col-xs-6.col-sm-3
       .coffee-ind-inside(class= index===1? "active-coffee-amount": "")
         .coffee-amount= c.name

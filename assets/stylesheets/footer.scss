@@ -29,6 +29,9 @@
     display: block;
     text-align: center;
     color: white;
+    border-bottom: 40px solid black;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
     width: 45px;
     height: 40px;
     font-size: 28px;
@@ -39,8 +42,10 @@
     right: 0;
     margin: auto;
     cursor: pointer;
-    background-color: inherit;
     font-family: FontAwesome;
+    .fa-angle-double-up {
+        transform: translate(-50%, 8%);
+    }
 }
 
 footer {

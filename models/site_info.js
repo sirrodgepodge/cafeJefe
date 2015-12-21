@@ -1,9 +1,9 @@
 module.exports = {
     fom: {
         image: {
-            filename: '11942098_1053719894678571_8400662873106799036_o.jpg',
-            x: 50,
-            y: 66
+            filename: 'METAD_coffee.jpg',
+            x: 0,
+            y: 0
         },
         name: 'ETHIOPIA HAMBELA ALAKA',
         flavors: [
@@ -12,23 +12,30 @@ module.exports = {
             "FLORAL"
         ]
     },
-    coffee: [{
-        name: '1 bag',
-        purchase: 15.50,
-        subscribe: 12.50
-    }, {
-        name: '2 bags',
-        purchase: 28,
-        subscribe: 24
-    }, {
-        name: '3 bags',
-        purchase: 40.50,
-        subscribe: 34.50
-    }, {
-        name: '4 bags',
-        purchase: 51,
-        subscribe: 44
-    }],
+    coffee: {
+        header: 'Las Cafés Sabrosas',
+        subHeader: 'Taxes and Shipping included in all prices',
+        purchaseLabel: 'One Time Purchase',
+        subscriptionLabel: 'Monthly Subscription',
+        subscriptionSavingsClaim: 'Save $1/bag',
+        product: [{
+            name: '1 bag',
+            subscribe: 15,
+            purchase: 16
+        }, {
+            name: '2 bags',
+            subscribe: 28,
+            purchase: 30
+        }, {
+            name: '3 bags',
+            subscribe: 39,
+            purchase: 42
+        }, {
+            name: '4 bags',
+            subscribe: 48,
+            purchase: 52
+        }]
+    },
     merch: [{
         name: 'tshirt',
         price: 20,
