@@ -1,4 +1,5 @@
 module.exports = {
+    title: 'Cafe Jefe',
     fom: {
         image: {
             filename: 'METAD_coffee.jpg',
