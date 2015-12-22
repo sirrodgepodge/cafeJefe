@@ -209,30 +209,24 @@ var titleTop = Math.ceil($landing.outerHeight()),
     contactTop = Math.ceil($contact.offset().top) * 0.92,
     downAnimReached = titleTop * 0.395 + 4.5; //when Page position is such that the white "CafeJefe" is right above the down arrow;
 
-console.log('heyy');
-
 // Handle fixing title bar at the top of the page
 var listeners = function() {
-    console.log('happening');
+  var pagePos = 0,
+      titleHeight = 0,
+      titleFixed = false,
+      landingHeadDimmed = false,
+      topTextShowing = true,
+      contactPopped = false;
 
-    var pagePos = 0,
-        titleHeight = 0,
-        titleFixed = false,
-        landingHeadDimmed = false,
-        topTextShowing = true,
-        contactPopped = false;
-
-    var landingScroll = function() {
-        pagePos = window.pageYOffset; //calculates current vertical scroll position
-        //fixes main title to top of page
+  var landingScroll = function() {
+      pagePos = window.pageYOffset; //calculates current vertical scroll position
+      //fixes main title to top of page
+      
 	if (pagePos >= titleTop && !titleFixed || pagePos < titleTop && titleFixed) {
             $title.toggleClass('sticky');
             $placeHolder.toggleClass('no-show');
             titleFixed = !titleFixed;
         }
-
-        console.log('contactTop', contactTop);
-        console.log('contactPopped', contactPopped);
 
         //make contact pop
         if (pagePos >= contactTop && !contactPopped || pagePos < contactTop && contactPopped) {
