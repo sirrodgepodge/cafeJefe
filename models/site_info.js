@@ -24,16 +24,16 @@ module.exports = {
             purchase: 16
         }, {
             name: '2 bags',
-            subscribe: 28,
-            purchase: 30
+            subscribe: 27.50,
+            purchase: 29.50
         }, {
             name: '3 bags',
-            subscribe: 39,
-            purchase: 42
+            subscribe: 37.50,
+            purchase: 40.50
         }, {
             name: '4 bags',
-            subscribe: 48,
-            purchase: 52
+            subscribe: 45,
+            purchase: 49
         }]
     },
     merch: [{
