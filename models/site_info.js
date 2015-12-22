@@ -2,8 +2,8 @@ module.exports = {
     fom: {
         image: {
             filename: 'METAD_coffee.jpg',
-            x: 0,
-            y: 0
+            x: 50,
+            y: 50
         },
         name: 'ETHIOPIA HAMBELA ALAKA',
         flavors: [
