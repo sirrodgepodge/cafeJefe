@@ -140,7 +140,7 @@ var main = function() {
     $backToTop.click(function() {
         $('html, body').animate({
             scrollTop: 0
-        }, $(window).scrollTop() * 1.2);
+        }, $(window).scrollTop() * 1.5);
     });
 };
 
