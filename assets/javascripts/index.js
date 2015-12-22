@@ -140,7 +140,7 @@ var main = function() {
     $backToTop.click(function() {
         $('html, body').animate({
             scrollTop: 0
-        }, $(window).scrollTop() * 2);
+        }, $(window).scrollTop() * 1.2);
     });
 };
 
@@ -221,7 +221,7 @@ var listeners = function() {
   var landingScroll = function() {
       pagePos = window.pageYOffset; //calculates current vertical scroll position
       //fixes main title to top of page
-      
+
 	if (pagePos >= titleTop && !titleFixed || pagePos < titleTop && titleFixed) {
             $title.toggleClass('sticky');
             $placeHolder.toggleClass('no-show');
